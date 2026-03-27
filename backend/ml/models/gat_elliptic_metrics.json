@@ -1,0 +1,9 @@
+{
+  "accuracy": 0.8849994631160744,
+  "illicit_precision": 0.45223961144090663,
+  "illicit_recall": 0.9373601789709173,
+  "illicit_f1": 0.6101201310520568,
+  "licit_f1": 0.932552427734744,
+  "epochs_trained": 200,
+  "best_f1_epoch": 0.6101201310520568
+}

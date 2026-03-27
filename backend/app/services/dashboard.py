@@ -5,6 +5,7 @@ from app.services.analysis import extract_chain
 from app.services.briefing import generate_brief
 from app.services.detection import compute_scores
 from app.services.interception import build_intercept_plan
+from app.services.ml_models import get_model_metrics
 from app.services.state import demo_state
 
 
@@ -114,6 +115,7 @@ def build_dashboard_response() -> DashboardResponse:
             "frozen_accounts": [action.model_dump() for action in intercept["frozen_accounts"]],
         },
         "chain_transactions": chain["transactions"],
+        "model_metrics": get_model_metrics(),
     }
     payload["brief"] = generate_brief(payload)
     return DashboardResponse(**payload)

@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import { AlertTriangle, ShieldCheck, Sparkles, TimerReset } from "lucide-react";
+import { useState, useCallback } from "react";
+import { AlertTriangle, ShieldCheck, Sparkles, TimerReset, Siren, Brain } from "lucide-react";
 import { Shell } from "./components/layout/Shell";
 import { ThreatGraph } from "./components/graph/ThreatGraph";
 import { BriefPanel } from "./components/panels/BriefPanel";
@@ -9,25 +9,54 @@ import { EventFeed } from "./components/panels/EventFeed";
 import { India3DModelPanel } from "./components/panels/India3DModelPanel";
 import { InterceptPanel } from "./components/panels/InterceptPanel";
 import { MetricCard } from "./components/panels/MetricCard";
+import { ModelMetricsPanel } from "./components/panels/ModelMetricsPanel";
+import { NodeDetailPanel } from "./components/panels/NodeDetailPanel";
 import { SentinelPanel } from "./components/panels/SentinelPanel";
 import { StatesSection } from "./components/panels/StatesSection";
 import { TimelinePanel } from "./components/panels/TimelinePanel";
 import { useDashboardData } from "./hooks/useDashboardData";
 import { buildBankIntel, buildStateIntel } from "./lib/bankIntel";
 import { formatCurrency, formatSeconds } from "./lib/format";
+import { getApiBase } from "./lib/api";
 
 export default function App() {
-  const { data, loading, error } = useDashboardData();
+  const { data, loading, error, refresh } = useDashboardData();
   const [activeDashboard, setActiveDashboard] = useState("command");
+  const [selectedNodeId, setSelectedNodeId] = useState(null);
+  const [injecting, setInjecting] = useState(false);
+
+  const handleInjectFraud = useCallback(async () => {
+    setInjecting(true);
+    try {
+      const res = await fetch(`${getApiBase()}/inject-fraud`, { method: "POST" });
+      if (res.ok) {
+        setTimeout(() => refresh?.(), 500);
+      }
+    } catch {
+      // silent fail
+    } finally {
+      setTimeout(() => setInjecting(false), 2000);
+    }
+  }, [refresh]);
+
+  const handleSelectAccount = useCallback((accountId) => {
+    setSelectedNodeId(accountId);
+  }, []);
 
   if (loading) {
     return (
       <Shell>
         <div className="flex min-h-[80vh] items-center justify-center">
           <div className="panel max-w-xl p-10 text-center">
-            <div className="font-display text-3xl text-white">Initializing VARUNA</div>
+            <motion.div
+              animate={{ opacity: [0.4, 1, 0.4] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="font-display text-3xl text-white"
+            >
+              Initializing VARUNA
+            </motion.div>
             <div className="mt-3 text-slate-400">
-              Building live cross-bank graph, scoring dissipation risk, and staging freeze pathways.
+              Loading ML models, scoring dissipation risk, staging freeze pathways…
             </div>
           </div>
         </div>
@@ -50,6 +79,12 @@ export default function App() {
   const activeCase = data.cases[0];
   const bankIntel = buildBankIntel(data.graph, data.event_feed);
   const stateIntel = buildStateIntel(bankIntel);
+  const scoreByAccount = Object.fromEntries(
+    (data.sentinel_scores || []).map((s) => [s.account_id, s])
+  );
+  const selectedNode = selectedNodeId
+    ? data.graph.nodes.find((n) => n.id === selectedNodeId)
+    : null;
 
   return (
     <Shell>
@@ -63,13 +98,33 @@ export default function App() {
             VARUNA
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
-            Real-time mule-chain interception for UPI and banking fraud. Detect, predict, freeze, and brief before funds disappear.
+            Real-time mule-chain interception powered by VarunaGAT + VarunaLSTM + 10-flag RBI rule engine.
+            Detect, predict, freeze, and brief before funds disappear.
           </p>
         </div>
-        <div className="grid gap-3 sm:grid-cols-3">
-          <StatusPill icon={AlertTriangle} label="Threat Index" value={`${overview.threat_index}/100`} tone="red" />
-          <StatusPill icon={TimerReset} label="Intercept Window" value={formatSeconds(overview.average_intercept_time_seconds)} tone="orange" />
-          <StatusPill icon={ShieldCheck} label="Case Mode" value={activeCase.threat_level} tone="cyan" />
+        <div className="flex flex-col gap-3">
+          <div className="grid gap-3 sm:grid-cols-3">
+            <StatusPill icon={AlertTriangle} label="Threat Index" value={`${overview.threat_index}/100`} tone="red" />
+            <StatusPill icon={TimerReset} label="Intercept Window" value={formatSeconds(overview.average_intercept_time_seconds)} tone="orange" />
+            <StatusPill icon={ShieldCheck} label="Case Mode" value={activeCase.threat_level} tone="cyan" />
+          </div>
+          {/* Inject Fraud Button */}
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={handleInjectFraud}
+            disabled={injecting}
+            className={`w-full rounded-2xl border px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] transition ${
+              injecting
+                ? "border-red/50 bg-red/20 text-red cursor-wait"
+                : "border-red/30 bg-red/10 text-red hover:bg-red/20 hover:border-red/50"
+            }`}
+          >
+            <span className="flex items-center justify-center gap-2">
+              <Siren size={16} className={injecting ? "animate-spin" : ""} />
+              {injecting ? "Injecting Fraud Sequence…" : "Inject Fraud Sequence"}
+            </span>
+          </motion.button>
         </div>
       </header>
 
@@ -77,18 +132,20 @@ export default function App() {
         <div className="flex flex-wrap gap-3">
           {[
             { id: "command", label: "Command Center" },
+            { id: "ml", label: "ML Models", icon: Brain },
             { id: "states", label: "States" },
             { id: "banks", label: "Banks" },
           ].map((item) => (
             <button
               key={item.id}
               onClick={() => setActiveDashboard(item.id)}
-              className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.2em] transition ${
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs uppercase tracking-[0.2em] transition ${
                 activeDashboard === item.id
                   ? "border-cyan/30 bg-cyan/10 text-cyan"
                   : "border-line bg-white/[0.02] text-slate-300 hover:bg-white/[0.08]"
               }`}
             >
+              {item.icon && <item.icon size={12} />}
               {item.label}
             </button>
           ))}
@@ -128,8 +185,19 @@ export default function App() {
       {activeDashboard === "command" && (
         <>
           <section className="mb-6 grid gap-6 xl:grid-cols-[1.4fr_0.8fr]">
-            <ThreatGraph graph={data.graph} selectedCase={activeCase} />
-            <EventFeed events={data.event_feed} />
+            <ThreatGraph graph={data.graph} selectedCase={activeCase} onNodeClick={handleSelectAccount} />
+            <div className="space-y-6">
+              <EventFeed events={data.event_feed} />
+              <AnimatePresence>
+                {selectedNode && (
+                  <NodeDetailPanel
+                    node={selectedNode}
+                    score={scoreByAccount[selectedNodeId]}
+                    onClose={() => setSelectedNodeId(null)}
+                  />
+                )}
+              </AnimatePresence>
+            </div>
           </section>
 
           <section className="mb-6">
@@ -141,7 +209,7 @@ export default function App() {
               <CaseSpotlight caseItem={activeCase} />
               <TimelinePanel timeline={data.timeline} />
             </div>
-            <SentinelPanel scores={data.sentinel_scores} />
+            <SentinelPanel scores={data.sentinel_scores} onSelectAccount={handleSelectAccount} />
           </section>
 
           <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
@@ -149,6 +217,12 @@ export default function App() {
             <BriefPanel brief={data.brief} caseItem={activeCase} />
           </section>
         </>
+      )}
+
+      {activeDashboard === "ml" && (
+        <section className="grid gap-6">
+          <ModelMetricsPanel metrics={data.model_metrics} />
+        </section>
       )}
 
       {activeDashboard === "states" && (

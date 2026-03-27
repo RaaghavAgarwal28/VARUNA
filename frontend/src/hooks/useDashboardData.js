@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { DASHBOARD_URL } from "../lib/api";
 import { demoData } from "../lib/demoData";
 
@@ -6,6 +6,11 @@ export function useDashboardData() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  const refresh = useCallback(() => {
+    setRefreshKey((k) => k + 1);
+  }, []);
 
   useEffect(() => {
     let active = true;
@@ -36,7 +41,7 @@ export function useDashboardData() {
       active = false;
       clearInterval(interval);
     };
-  }, []);
+  }, [refreshKey]);
 
-  return { data, loading, error };
+  return { data, loading, error, refresh };
 }

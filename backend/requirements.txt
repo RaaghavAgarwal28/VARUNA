@@ -1,4 +1,11 @@
 fastapi==0.116.1
 uvicorn[standard]==0.35.0
 pydantic==2.11.7
-
+torch
+torch-geometric
+networkx
+pandas
+numpy
+scikit-learn
+reportlab
+openpyxl

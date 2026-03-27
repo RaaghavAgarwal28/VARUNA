@@ -3,9 +3,9 @@ from __future__ import annotations
 from collections import defaultdict, deque
 
 from app.models.schemas import Transaction
-from app.services.detection import compute_scores
+from app.services.detection import compute_scores, run_all_flags, FLAG_INFO
 from app.services.interception import build_intercept_plan
-from app.services.ml_models import continual_learning_stub, gat_placeholder_score, lstm_temporal_placeholder
+from app.services.ml_models import continual_learning_stub, gat_score, lstm_temporal_score
 
 
 def extract_chain(seed_account: str, transactions: list[Transaction], hops: int = 3) -> dict:
@@ -45,8 +45,9 @@ def analyze_account(account_id: str, transactions, nodes, account_profiles) -> d
     sentinel_scores = compute_scores(transactions, nodes, account_profiles)
     score_by_id = {item.account_id: item for item in sentinel_scores}
     chain = extract_chain(account_id, transactions, hops=3)
-    gat_result = gat_placeholder_score(account_id, transactions)
-    lstm_result = lstm_temporal_placeholder(account_id, transactions)
+    gat_result = gat_score(account_id, transactions)
+    lstm_result = lstm_temporal_score(account_id, transactions)
+    flag_hits = run_all_flags(account_id, transactions, account_profiles)
     intercept = build_intercept_plan(transactions, nodes)
     score = score_by_id.get(account_id)
 
@@ -56,16 +57,21 @@ def analyze_account(account_id: str, transactions, nodes, account_profiles) -> d
         "risk": score.model_dump() if score else None,
         "graph_model": gat_result,
         "temporal_model": lstm_result,
+        "flag_analysis": {
+            "hits": flag_hits,
+            "total_flags": len(flag_hits),
+            "critical_count": sum(1 for f in flag_hits if f.get("severity") == "critical"),
+            "all_flag_definitions": FLAG_INFO,
+        },
         "combined_score": round(
             (
-                ((score.risk_score / 100) if score else 0.4) * 0.45
-                + gat_result["fraud_probability"] * 0.35
-                + lstm_result["coordination_score"] * 0.2
+                gat_result["fraud_probability"] * 0.45
+                + lstm_result["coordination_score"] * 0.35
+                + min(len(flag_hits) * 0.1, 0.20)
             ),
-            3,
+            4,
         ),
         "chain": chain,
         "intercept_preview": intercept,
         "continual_learning": continual_learning_stub(),
     }
-

@@ -47,6 +47,9 @@ class RiskScore(BaseModel):
     human_coordination_score: float
     dissipation_risk: float
     indicators: list[str]
+    gat_score: float = 0.0
+    lstm_score: float = 0.0
+    flag_hits: list[str] = []
 
 
 class FreezeAction(BaseModel):
@@ -87,8 +90,9 @@ class DashboardResponse(BaseModel):
     sentinel_scores: list[RiskScore]
     intercept: dict
     brief: BriefArtifact
+    model_metrics: dict = {}
     architecture_note: str = Field(
-        default="Scoring stack is rule-enhanced today and can be upgraded to GAT + LSTM sequence intelligence without changing the service contracts."
+        default="Scoring powered by VarunaGAT (EWC fine-tuned) + VarunaLSTM + 10-flag RBI rule engine."
     )
 
 

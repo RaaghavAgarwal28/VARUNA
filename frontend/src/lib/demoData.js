@@ -69,12 +69,14 @@ export const demoData = {
     { time: "10:02:35", title: "Freeze execution", amount: "INR 96,000 recoverable" }
   ],
   sentinel_scores: [
-    { account_id: "CRYPTO-RAMP-09", risk_score: 95, chain_confidence: 92.2, human_coordination_score: 89, dissipation_risk: 99, indicators: ["cash-out corridor", "wallet or crypto off-ramp behavior"] },
-    { account_id: "MULE-BLR-07", risk_score: 95, chain_confidence: 91.4, human_coordination_score: 90, dissipation_risk: 93, indicators: ["rapid transfer velocity", "fan-out layering", "cross-bank chain expansion", "coordinated burst timing"] },
-    { account_id: "MULE-GGN-14", risk_score: 94, chain_confidence: 91, human_coordination_score: 88, dissipation_risk: 96, indicators: ["rapid transfer velocity", "fan-out layering", "cross-bank chain expansion", "coordinated burst timing"] },
-    { account_id: "MULE-HYD-01", risk_score: 92, chain_confidence: 88.6, human_coordination_score: 85, dissipation_risk: 91, indicators: ["rapid transfer velocity", "fan-out layering", "cross-bank chain expansion", "coordinated burst timing"] },
-    { account_id: "PRED-NCR-88", risk_score: 91, chain_confidence: 88.3, human_coordination_score: 86, dissipation_risk: 88, indicators: ["predicted next-hop", "high downstream cash-out probability"] },
-    { account_id: "PRED-WALLET-04", risk_score: 89, chain_confidence: 86.1, human_coordination_score: 80, dissipation_risk: 94, indicators: ["predicted next-hop", "high downstream cash-out probability"] }
+    { account_id: "CRYPTO-RAMP-09", risk_score: 95, chain_confidence: 92.2, human_coordination_score: 89, dissipation_risk: 99, indicators: ["F1 Zero-Washout: ₹22,000 outflow (100% of inflow) within 2 hours", "F10 Circular Flow: funds return via 3 intermediaries", "GAT: high fraud topology similarity (87.2%)"], gat_score: 0.872, lstm_score: 0.89, flag_hits: ["F1", "F5", "F10"] },
+    { account_id: "MULE-BLR-07", risk_score: 95, chain_confidence: 91.4, human_coordination_score: 90, dissipation_risk: 93, indicators: ["F5 Cross-Bank Layering Chain: 4 banks across 6 accounts in 60-minute window", "F1 Zero-Washout: 95% credits withdrawn in 2 hours", "LSTM: coordinated burst pattern (90.1%)"], gat_score: 0.84, lstm_score: 0.901, flag_hits: ["F1", "F3", "F5"] },
+    { account_id: "MULE-GGN-14", risk_score: 94, chain_confidence: 91, human_coordination_score: 88, dissipation_risk: 96, indicators: ["F5 Cross-Bank Chain: 5 banks involved", "F9 Rapid Opening: account only 12 days old", "GAT: high fraud topology similarity (81.5%)"], gat_score: 0.815, lstm_score: 0.88, flag_hits: ["F5", "F9"] },
+    { account_id: "MULE-HYD-01", risk_score: 92, chain_confidence: 88.6, human_coordination_score: 85, dissipation_risk: 91, indicators: ["F1 Zero-Washout: ₹118K outflow (94% of ₹125K inflow) within 2 hours", "F5 Cross-Bank Layering: 4 banks in 60-minute window", "LSTM: coordinated burst pattern (85%)"], gat_score: 0.79, lstm_score: 0.85, flag_hits: ["F1", "F5"] },
+    { account_id: "PRED-NCR-88", risk_score: 91, chain_confidence: 88.3, human_coordination_score: 86, dissipation_risk: 88, indicators: ["predicted next-hop", "GAT: moderate fraud topology similarity (72.1%)", "high downstream cash-out probability"], gat_score: 0.721, lstm_score: 0.86, flag_hits: ["F5"] },
+    { account_id: "PRED-WALLET-04", risk_score: 89, chain_confidence: 86.1, human_coordination_score: 80, dissipation_risk: 94, indicators: ["predicted off-ramp exit", "F10 Circular Flow potential", "GAT: fraud topology similarity (68.4%)"], gat_score: 0.684, lstm_score: 0.80, flag_hits: ["F10"] },
+    { account_id: "MULE-PUNE-11", risk_score: 88, chain_confidence: 84.2, human_coordination_score: 80, dissipation_risk: 86, indicators: ["F3 High-Velocity Micro-Credits: 12 senders for sub-threshold amounts", "LSTM: coordinated burst pattern (80%)"], gat_score: 0.75, lstm_score: 0.80, flag_hits: ["F3", "F5"] },
+    { account_id: "VICTIM-A1", risk_score: 38, chain_confidence: 30, human_coordination_score: 15, dissipation_risk: 41, indicators: ["victim origin account — funds depleted"], gat_score: 0.12, lstm_score: 0.15, flag_hits: [] }
   ],
   intercept: {
     frozen_accounts: [
@@ -90,6 +92,10 @@ export const demoData = {
       recoverable_after_delay: 28000,
       narrative: "A 3-minute response delay allows the chain to reach wallet and cash-out rails before bank acknowledgements complete."
     }
+  },
+  model_metrics: {
+    gat: { accuracy: 0.81, illicit_f1: 0.54, illicit_precision: 0.62, illicit_recall: 0.48 },
+    lstm: { accuracy: 1.0, best_accuracy: 1.0, n_samples: 2000, epochs_trained: 50 },
   },
   brief: {
     html_report_path: "/reports/demo-brief.html",
