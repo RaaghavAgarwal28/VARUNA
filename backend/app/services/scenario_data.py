@@ -139,6 +139,19 @@ def build_scenario() -> dict:
             is_suspicious=True,
             tx_hash="HASH-TX-1009",
         ),
+        Transaction(
+            tx_id="TX-1010",
+            timestamp="2026-03-27T10:02:45Z",
+            from_account="MULE-JPR-06",
+            to_account="CRYPTO-RAMP-09",
+            amount=8900,
+            bank_from="Canara Bank",
+            bank_to="Fintech Settlement",
+            channel="Wallet Transfer",
+            status="processing",
+            is_suspicious=True,
+            tx_hash="HASH-TX-1010",
+        ),
     ]
 
     balances = defaultdict(float)

@@ -152,7 +152,7 @@
         "label": "CRYPTO-RAMP-09",
         "bank": "Fintech Settlement",
         "node_type": "sink",
-        "balance": 22000.0,
+        "balance": 30900.0,
         "risk_score": 95,
         "human_coordination_score": 89,
         "dissipation_risk": 99,
@@ -185,10 +185,10 @@
         "label": "MULE-JPR-06",
         "bank": "Canara Bank",
         "node_type": "mule",
-        "balance": 9000.0,
-        "risk_score": 37.5,
-        "human_coordination_score": 42.0,
-        "dissipation_risk": 39.6,
+        "balance": 100.0,
+        "risk_score": 35.5,
+        "human_coordination_score": 0.0,
+        "dissipation_risk": 50.7,
         "status": "active"
       },
       {
@@ -288,6 +288,14 @@
         "status": "observed"
       },
       {
+        "source": "MULE-JPR-06",
+        "target": "CRYPTO-RAMP-09",
+        "amount": 8900.0,
+        "timestamp": "2026-03-27T10:02:45Z",
+        "hop": 4,
+        "status": "observed"
+      },
+      {
         "source": "MULE-DEL-21",
         "target": "PRED-NCR-88",
         "amount": 13000.0,
@@ -306,8 +314,8 @@
     ],
     "stats": {
       "total_accounts": 12,
-      "cross_bank_edges": 9,
-      "total_suspicious_flow": 389000.0
+      "cross_bank_edges": 10,
+      "total_suspicious_flow": 397900.0
     }
   },
   "timeline": [
@@ -347,8 +355,8 @@
       "indicators": [
         "no significant risk indicators detected"
       ],
-      "gat_score": 0.4524,
-      "lstm_score": 0.42,
+      "gat_score": 0.4316,
+      "lstm_score": 0.0,
       "flag_hits": []
     },
     {
@@ -491,16 +499,18 @@
     },
     {
       "account_id": "MULE-JPR-06",
-      "risk_score": 37.5,
-      "chain_confidence": 39.5,
-      "human_coordination_score": 42.0,
-      "dissipation_risk": 39.6,
+      "risk_score": 35.5,
+      "chain_confidence": 26.1,
+      "human_coordination_score": 0.0,
+      "dissipation_risk": 50.7,
       "indicators": [
+        "F1 Zero-Washout (FIFO): \u20b98,900 outflow (99% of \u20b99,000 inflow) within 2 hours",
         "F9 Rapid Account Opening: Account only 18 days old \u2014 new account risk"
       ],
-      "gat_score": 0.4408,
-      "lstm_score": 0.42,
+      "gat_score": 0.4251,
+      "lstm_score": 0.0001,
       "flag_hits": [
+        "F1",
         "F9"
       ]
     },
@@ -563,7 +573,7 @@
     ],
     "projected_recoverable_amount": 47000.0,
     "funds_already_dissipated": 22000.0,
-    "freeze_coverage_ratio": 12.1,
+    "freeze_coverage_ratio": 11.8,
     "simulate_3_minute_delay": {
       "additional_loss": 68000,
       "recoverable_after_delay": 0,

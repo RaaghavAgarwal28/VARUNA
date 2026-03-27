@@ -6,7 +6,7 @@ import { ThreatGraph } from "./components/graph/ThreatGraph";
 import { BriefPanel } from "./components/panels/BriefPanel";
 import { BanksSection } from "./components/panels/BanksSection";
 import { EventFeed } from "./components/panels/EventFeed";
-import { India3DModelPanel } from "./components/panels/India3DModelPanel";
+import { IndiaNetworkMap } from "./components/panels/IndiaNetworkMap";
 import { InterceptPanel } from "./components/panels/InterceptPanel";
 import { MetricCard } from "./components/panels/MetricCard";
 import { ModelMetricsPanel } from "./components/panels/ModelMetricsPanel";
@@ -201,7 +201,7 @@ export default function App() {
           </section>
 
           <section className="mb-6">
-            <India3DModelPanel />
+            <IndiaNetworkMap stateIntel={stateIntel} />
           </section>
 
           <section className="mb-6 grid gap-6 xl:grid-cols-[1.25fr_0.95fr]">
@@ -228,7 +228,7 @@ export default function App() {
       {activeDashboard === "states" && (
         <section className="grid gap-6">
           <StatesHero />
-          <India3DModelPanel />
+          <IndiaNetworkMap stateIntel={stateIntel} />
           <StatesSection states={stateIntel} />
         </section>
       )}
