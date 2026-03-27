@@ -1,0 +1,7 @@
+{
+  "case_id": "CASE-VARUNA-042",
+  "title": "UPI Mule Chain Interception - Multi-bank Dissipation Attempt",
+  "estimated_recoverable_amount": 96000,
+  "predicted_next_hops": ["PRED-NCR-88", "PRED-WALLET-04"]
+}
+

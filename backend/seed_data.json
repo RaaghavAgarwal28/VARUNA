@@ -1,0 +1,21 @@
+{
+  "scenario": "CASE-VARUNA-042",
+  "description": "Deterministic multi-bank mule-chain flow for demo playback",
+  "banks": [
+    "State Bank of India",
+    "Axis Bank",
+    "HDFC Bank",
+    "ICICI Bank",
+    "Kotak Mahindra Bank",
+    "Yes Bank",
+    "Punjab National Bank",
+    "Bank of Baroda",
+    "Canara Bank"
+  ],
+  "flagged_source_account": "VICTIM-A1",
+  "predicted_next_hops": [
+    "PRED-NCR-88",
+    "PRED-WALLET-04"
+  ]
+}
+
