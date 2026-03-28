@@ -11,6 +11,7 @@ import {
   LogOut,
   User,
   Database,
+  PlayCircle,
 } from "lucide-react";
 import { Shell } from "./components/layout/Shell";
 import { ThreatGraph } from "./components/graph/ThreatGraph";
@@ -26,7 +27,7 @@ import { SecurityDashboard } from "./components/panels/SecurityDashboard";
 import { SentinelPanel } from "./components/panels/SentinelPanel";
 import { StatesSection } from "./components/panels/StatesSection";
 import { TimelinePanel } from "./components/panels/TimelinePanel";
-import { AuditLedgerPanel } from "./components/panels/AuditLedgerPanel";
+import { DemoPipelinePanel } from "./components/panels/DemoPipelinePanel";
 import { LoginScreen } from "./components/auth/LoginScreen";
 import { useAuth } from "./context/AuthContext";
 import { useDashboardData } from "./hooks/useDashboardData";
@@ -192,9 +193,9 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
         <div className="flex flex-wrap gap-3">
           {[
             { id: "command", label: "Command Center" },
+            { id: "demo", label: "Live Simulation", icon: PlayCircle },
             { id: "ml", label: "ML Models", icon: Brain },
             { id: "security", label: "Security", icon: Shield },
-            { id: "audit", label: "Audit Ledger", icon: Database },
             { id: "states", label: "States" },
             { id: "banks", label: "Banks" },
           ].map((item) => (
@@ -293,9 +294,9 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
         </section>
       )}
 
-      {activeDashboard === "audit" && (
+      {activeDashboard === "demo" && (
         <section className="grid gap-6">
-          <AuditLedgerPanel />
+          <DemoPipelinePanel />
         </section>
       )}
 

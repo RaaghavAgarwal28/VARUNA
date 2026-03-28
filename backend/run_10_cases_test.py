@@ -56,24 +56,12 @@ def run_test():
     print(f"Combined 4-Pillar Risk Score: {analyze_data.get('combined_score', 'N/A')} (Thresholds: Block ≥0.75, Review ≥0.45)")
     print(f"EIF Anomaly Score: {eif_score:.4f}")
     
-    print("\nFlag Hits:")
-    for flag in flags_data.get('flag_hits', []):
-        print(f" [x] {flag.get('code', 'UNK')}: {flag.get('name', str(flag))}")
-
-    # 4. Verify Cryptographic Audit Ledger
-    print_section("4. MERKLE AUDIT LEDGER INTEGRITY")
-    res = requests.get(f"{BASE_URL}/audit-ledger")
-    ledger = res.json()
-    
-    print(f"Total Blocks Sealed: {ledger['total_blocks']}")
-    print(f"Total Entries: {ledger['total_entries']}")
-    print(f"Latest Root Hash: {ledger['latest_root_hash']}")
-    
-    res = requests.get(f"{BASE_URL}/audit-ledger/verify")
-    verify = res.json()
-    print(f"Ledger Chain Valid: {verify['chain_valid']}")
-
-    print_section("TEST SUITE COMPLETE - ALL SYSTEMS SYNCED")
+    print(f"\nFlag Hits:")
+    for fh in flags_data.get("flag_hits", []):
+        print(f" - {fh.get('flag', 'UNK')}: {fh.get('description', 'Unknown')} ({fh.get('severity', 'Unknown')})")
+    print()
+        
+    print("\nTEST AUTOMATION COMPLETE.")
 
 if __name__ == "__main__":
     try:

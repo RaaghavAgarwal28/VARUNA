@@ -24,7 +24,6 @@ from datetime import datetime
 from app.models.schemas import GraphNode, RiskScore, Transaction
 from app.services.ml_models import gat_score, lstm_temporal_score, eif_anomaly_score
 from app.services.graph_analysis import analyze_graph, get_node_role
-from app.services.blockchain import varuna_ledger
 
 
 def parse_time(timestamp: str) -> datetime:
@@ -392,18 +391,7 @@ def compute_scores(
             (risk_score * 0.45) + (coordination * 0.35) + (dissipation * 0.2), 99
         )
 
-        # ── Record to Blockchain Ledger ──
-        if decision in ("BLOCK", "REVIEW"):
-            varuna_ledger.record_decision(
-                account_id=account_id,
-                risk_score=round(risk_score, 1),
-                decision=decision,
-                gat_score=round(gat_prob, 4),
-                lstm_score=round(lstm_coord, 4),
-                eif_score=round(eif_anom, 4),
-                flag_hits=[f["flag"] for f in flag_hits],
-            )
-
+        # ── Decision Made ──
         results.append(
             RiskScore(
                 account_id=account_id,

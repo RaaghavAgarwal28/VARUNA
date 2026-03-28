@@ -190,7 +190,7 @@ def build_dashboard_response() -> DashboardResponse:
     if not predicted_next_hops:
         predicted_next_hops = [n.id for n in nodes if n.node_type == "predicted"]
 
-    flagged_source = next(
+    flagged_source = primary_mule_id or next(
         (n.id for n in nodes if n.node_type == "victim"),
         transactions[0].from_account if transactions else "UNKNOWN"
     )

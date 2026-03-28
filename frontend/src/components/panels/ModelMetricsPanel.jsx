@@ -87,21 +87,7 @@ export function ModelMetricsPanel({ metrics }) {
           />
         )}
 
-        {/* Transfer Validation */}
-        {tv.test_nodes && (
-          <ModelCard
-            icon={<GitBranch size={16} />}
-            title="Cross-Domain Transfer"
-            subtitle="Bitcoin → UPI Validation"
-            stats={[
-              { label: "Test Nodes", value: tv.test_nodes },
-              { label: "Detected Suspicious", value: tv.predicted_suspicious || 0 },
-              { label: "Accuracy", value: `${((tv.accuracy || 0) * 100).toFixed(1)}%` },
-              { label: "Model Used", value: tv.model_used?.split("(")[0] || "—" },
-            ]}
-            color="purple"
-          />
-        )}
+
       </div>
     </motion.div>
   );

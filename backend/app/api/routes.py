@@ -5,7 +5,7 @@ All endpoints are protected by the security layer:
     - Public: /health, /auth/*
     - Viewer+: /dashboard, /graph-analysis, /rings
     - Analyst+: /analyze, /chain, /flags, /model-metrics, /continual-learning
-    - Admin: /freeze, /inject-fraud, /reset, /audit-ledger
+    - Admin: /freeze, /inject-fraud, /reset
 """
 from __future__ import annotations
 
@@ -24,7 +24,6 @@ from app.services.dashboard import build_dashboard_response
 from app.services.detection import run_all_flags, FLAG_INFO
 from app.services.ml_models import get_model_metrics, continual_learning_stub, eif_anomaly_score
 from app.services.graph_analysis import analyze_graph, get_node_role, get_rings
-from app.services.blockchain import varuna_ledger
 from app.services.state import demo_state
 
 
@@ -179,31 +178,3 @@ def freeze(
         "WARNING",
     )
     return demo_state.freeze_account(account_id)
-
-
-@router.get("/audit-ledger")
-def audit_ledger(
-    user: TokenPayload = Depends(require_role(UserRole.ADMIN, UserRole.ANALYST)),
-):
-    """Return the cryptographic audit ledger summary."""
-    return varuna_ledger.get_ledger_summary()
-
-
-@router.get("/audit-ledger/verify")
-def verify_ledger(
-    user: TokenPayload = Depends(require_role(UserRole.ADMIN)),
-):
-    """Verify the integrity of the entire audit chain."""
-    return varuna_ledger.verify_integrity()
-
-
-@router.get("/audit-ledger/entry/{entry_id}")
-def audit_entry(
-    entry_id: str,
-    user: TokenPayload = Depends(require_role(UserRole.ADMIN)),
-):
-    """Get a Merkle proof for a specific audit entry."""
-    proof = varuna_ledger.get_entry_proof(entry_id)
-    if proof is None:
-        return {"error": f"Entry {entry_id} not found"}
-    return proof

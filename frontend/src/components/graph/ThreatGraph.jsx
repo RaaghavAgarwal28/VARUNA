@@ -153,6 +153,53 @@ export function ThreatGraph({ graph, selectedCase, onNodeClick, selectedAccount 
         linkCurvature={0.12}
         linkLineDash={(link) => (link.status === "predicted" ? [4, 4] : null)}
         onNodeClick={(node) => onNodeClick?.(node.id)}
+        /* ── Link rendering for amounts ── */
+        linkCanvasObjectMode={() => "after"}
+        linkCanvasObject={(link, ctx, globalScale) => {
+          const start = link.source;
+          const end = link.target;
+          if (typeof start !== "object" || typeof end !== "object") return;
+
+          // calculate label positioning
+          const textPos = Object.assign(...['x', 'y'].map(c => ({
+            [c]: start[c] + (end[c] - start[c]) / 2 // calc middle point
+          })));
+
+          const relLink = { x: end.x - start.x, y: end.y - start.y };
+          let textAngle = Math.atan2(relLink.y, relLink.x);
+          // maintain label vertical orientation for legibility
+          if (textAngle > Math.PI / 2) textAngle = -(Math.PI - textAngle);
+          if (textAngle < -Math.PI / 2) textAngle = -(-Math.PI - textAngle);
+
+          const label = `₹${link.amount?.toLocaleString("en-IN") || 0}`;
+          const fs = Math.max(8 / globalScale, 1.5);
+
+          ctx.save();
+          ctx.translate(textPos.x, textPos.y);
+          ctx.rotate(textAngle);
+          
+          /* Background pill for link label */
+          ctx.font = `600 ${fs}px Space Grotesk`;
+          const textWidth = ctx.measureText(label).width;
+          const bgHeight = fs * 1.4;
+          const paddingX = fs * 0.8;
+          ctx.fillStyle = "rgba(10, 15, 30, 0.85)";
+          // Draw rounded rectangle
+          ctx.beginPath();
+          ctx.roundRect(-textWidth/2 - paddingX/2, -bgHeight/2 - 2, textWidth + paddingX, bgHeight, 2);
+          ctx.fill();
+
+          // Border for the pill based on risk
+          ctx.strokeStyle = link.color.replace("0.35", "0.6").replace("0.25", "0.5").replace("0.4", "0.6");
+          ctx.lineWidth = 0.5 / globalScale;
+          ctx.stroke();
+
+          ctx.fillStyle = "rgba(226, 232, 240, 0.95)";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText(label, 0, -2);
+          ctx.restore();
+        }}
         /* ── Node rendering ── */
         nodeCanvasObject={(node, ctx, globalScale) => {
           const r = node.id === selectedAccount ? node.val + 3 : node.val;
@@ -223,6 +270,22 @@ export function ThreatGraph({ graph, selectedCase, onNodeClick, selectedAccount 
           ctx.font = `${bfs}px Space Grotesk`;
           ctx.fillStyle = "#64748b";
           ctx.fillText(node.bank || "", node.x + r + 5, node.y + fs * 0.9);
+
+          /* Granular Fraud Metadata (Risk metrics) */
+          if (node.risk_score) {
+            const riskFs = Math.max(7.5 / globalScale, 2.2);
+            ctx.font = `600 ${riskFs}px Space Grotesk`;
+            const riskColor = node.risk_score > 85 ? "#e8475f" : node.risk_score > 60 ? "#f0a040" : "#5ee9d5";
+            ctx.fillStyle = riskColor;
+            ctx.fillText(`VARUNA Risk: ${node.risk_score.toFixed(1)}/100`, node.x + r + 5, node.y + fs * 0.9 + bfs * 1.4);
+            
+            if (node.dissipation_risk > 50) {
+              const dissColor = "rgba(240, 160, 64, 0.9)";
+              ctx.font = `500 ${riskFs - 0.5/globalScale}px Space Grotesk`;
+              ctx.fillStyle = dissColor;
+              ctx.fillText(`⚡ Dissipation Risk: ${node.dissipation_risk.toFixed(1)}%`, node.x + r + 5, node.y + fs * 0.9 + bfs * 1.4 + riskFs * 1.2);
+            }
+          }
 
           /* Type badge */
           const tfs = Math.max(6.5 / globalScale, 2);
