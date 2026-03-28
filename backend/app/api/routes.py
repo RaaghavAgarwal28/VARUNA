@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from fastapi import APIRouter
 
-from app.models.schemas import FreezeRequest, TransactionIngestRequest
+from app.models.schemas import FreezeRequest, TransactionIngestRequest, SimulateTransactionRequest
 from app.services.analysis import analyze_account, extract_chain
 from app.services.dashboard import build_dashboard_response
-from app.services.detection import run_all_flags, FLAG_INFO
+from app.services.detection import run_all_flags, FLAG_INFO, simulate_comprehensive_scores
 from app.services.ml_models import get_model_metrics, continual_learning_stub, eif_anomaly_score
 from app.services.graph_analysis import analyze_graph, get_node_role, get_rings
 from app.services.blockchain import varuna_ledger
@@ -33,6 +33,10 @@ def ingest_transaction(payload: TransactionIngestRequest):
 @router.post("/inject-fraud")
 def inject_fraud():
     return demo_state.inject_scenario()
+
+@router.post("/simulate-transaction")
+def simulate_transaction(payload: SimulateTransactionRequest):
+    return simulate_comprehensive_scores(payload)
 
 
 @router.post("/reset")

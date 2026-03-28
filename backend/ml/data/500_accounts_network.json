@@ -1,0 +1,7842 @@
+{
+  "nodes": [
+    {
+      "id": "ACC0001",
+      "label": "Account ACC0001",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 26776.02,
+      "risk_score": 21,
+      "human_coordination_score": 56,
+      "dissipation_risk": 18,
+      "status": "active"
+    },
+    {
+      "id": "ACC0002",
+      "label": "Account ACC0002",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 19528.17,
+      "risk_score": 25,
+      "human_coordination_score": 11,
+      "dissipation_risk": 38,
+      "status": "active"
+    },
+    {
+      "id": "ACC0003",
+      "label": "Account ACC0003",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 68401.88,
+      "risk_score": 30,
+      "human_coordination_score": 66,
+      "dissipation_risk": 87,
+      "status": "active"
+    },
+    {
+      "id": "ACC0004",
+      "label": "Account ACC0004",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 67566.14,
+      "risk_score": 12,
+      "human_coordination_score": 20,
+      "dissipation_risk": 34,
+      "status": "active"
+    },
+    {
+      "id": "ACC0005",
+      "label": "Account ACC0005",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 42532.18,
+      "risk_score": 70,
+      "human_coordination_score": 42,
+      "dissipation_risk": 34,
+      "status": "active"
+    },
+    {
+      "id": "ACC0006",
+      "label": "Account ACC0006",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 22718.64,
+      "risk_score": 14,
+      "human_coordination_score": 20,
+      "dissipation_risk": 64,
+      "status": "active"
+    },
+    {
+      "id": "ACC0007",
+      "label": "Account ACC0007",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 99385.05,
+      "risk_score": 38,
+      "human_coordination_score": 67,
+      "dissipation_risk": 37,
+      "status": "active"
+    },
+    {
+      "id": "ACC0008",
+      "label": "Account ACC0008",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 94702.1,
+      "risk_score": 28,
+      "human_coordination_score": 55,
+      "dissipation_risk": 77,
+      "status": "active"
+    },
+    {
+      "id": "ACC0009",
+      "label": "Account ACC0009",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 98429.33,
+      "risk_score": 10,
+      "human_coordination_score": 32,
+      "dissipation_risk": 14,
+      "status": "active"
+    },
+    {
+      "id": "ACC0010",
+      "label": "Account ACC0010",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 19146.05,
+      "risk_score": 9,
+      "human_coordination_score": 61,
+      "dissipation_risk": 23,
+      "status": "active"
+    },
+    {
+      "id": "ACC0011",
+      "label": "Account ACC0011",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 14133.14,
+      "risk_score": 8,
+      "human_coordination_score": 42,
+      "dissipation_risk": 36,
+      "status": "active"
+    },
+    {
+      "id": "ACC0012",
+      "label": "Account ACC0012",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 7635.59,
+      "risk_score": 87,
+      "human_coordination_score": 15,
+      "dissipation_risk": 24,
+      "status": "active"
+    },
+    {
+      "id": "ACC0013",
+      "label": "Account ACC0013",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 49941.94,
+      "risk_score": 6,
+      "human_coordination_score": 73,
+      "dissipation_risk": 72,
+      "status": "active"
+    },
+    {
+      "id": "ACC0014",
+      "label": "Account ACC0014",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 46925.32,
+      "risk_score": 12,
+      "human_coordination_score": 14,
+      "dissipation_risk": 48,
+      "status": "active"
+    },
+    {
+      "id": "ACC0015",
+      "label": "Account ACC0015",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 63003.36,
+      "risk_score": 98,
+      "human_coordination_score": 78,
+      "dissipation_risk": 87,
+      "status": "active"
+    },
+    {
+      "id": "ACC0016",
+      "label": "Account ACC0016",
+      "bank": "Yes Bank",
+      "node_type": "sink",
+      "balance": 88666.36,
+      "risk_score": 80,
+      "human_coordination_score": 80,
+      "dissipation_risk": 38,
+      "status": "active"
+    },
+    {
+      "id": "ACC0017",
+      "label": "Account ACC0017",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 58156.77,
+      "risk_score": 78,
+      "human_coordination_score": 25,
+      "dissipation_risk": 37,
+      "status": "active"
+    },
+    {
+      "id": "ACC0018",
+      "label": "Account ACC0018",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 90170.3,
+      "risk_score": 89,
+      "human_coordination_score": 27,
+      "dissipation_risk": 77,
+      "status": "active"
+    },
+    {
+      "id": "ACC0019",
+      "label": "Account ACC0019",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 95047.94,
+      "risk_score": 5,
+      "human_coordination_score": 70,
+      "dissipation_risk": 41,
+      "status": "active"
+    },
+    {
+      "id": "ACC0020",
+      "label": "Account ACC0020",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 54907.27,
+      "risk_score": 77,
+      "human_coordination_score": 25,
+      "dissipation_risk": 14,
+      "status": "active"
+    },
+    {
+      "id": "ACC0021",
+      "label": "Account ACC0021",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 46115.56,
+      "risk_score": 17,
+      "human_coordination_score": 49,
+      "dissipation_risk": 78,
+      "status": "active"
+    },
+    {
+      "id": "ACC0022",
+      "label": "Account ACC0022",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 11466.31,
+      "risk_score": 18,
+      "human_coordination_score": 16,
+      "dissipation_risk": 75,
+      "status": "active"
+    },
+    {
+      "id": "ACC0023",
+      "label": "Account ACC0023",
+      "bank": "Axis",
+      "node_type": "sink",
+      "balance": 31308.42,
+      "risk_score": 90,
+      "human_coordination_score": 17,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0024",
+      "label": "Account ACC0024",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 4968.76,
+      "risk_score": 24,
+      "human_coordination_score": 59,
+      "dissipation_risk": 63,
+      "status": "active"
+    },
+    {
+      "id": "ACC0025",
+      "label": "Account ACC0025",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 33412.52,
+      "risk_score": 36,
+      "human_coordination_score": 23,
+      "dissipation_risk": 15,
+      "status": "active"
+    },
+    {
+      "id": "ACC0026",
+      "label": "Account ACC0026",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 8136.36,
+      "risk_score": 37,
+      "human_coordination_score": 48,
+      "dissipation_risk": 39,
+      "status": "active"
+    },
+    {
+      "id": "ACC0027",
+      "label": "Account ACC0027",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 97213.5,
+      "risk_score": 29,
+      "human_coordination_score": 78,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0028",
+      "label": "Account ACC0028",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 51647.2,
+      "risk_score": 70,
+      "human_coordination_score": 30,
+      "dissipation_risk": 85,
+      "status": "active"
+    },
+    {
+      "id": "ACC0029",
+      "label": "Account ACC0029",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 9136.08,
+      "risk_score": 30,
+      "human_coordination_score": 78,
+      "dissipation_risk": 86,
+      "status": "active"
+    },
+    {
+      "id": "ACC0030",
+      "label": "Account ACC0030",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 91043.76,
+      "risk_score": 84,
+      "human_coordination_score": 24,
+      "dissipation_risk": 72,
+      "status": "active"
+    },
+    {
+      "id": "ACC0031",
+      "label": "Account ACC0031",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 924.97,
+      "risk_score": 33,
+      "human_coordination_score": 56,
+      "dissipation_risk": 67,
+      "status": "active"
+    },
+    {
+      "id": "ACC0032",
+      "label": "Account ACC0032",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 31592.05,
+      "risk_score": 22,
+      "human_coordination_score": 90,
+      "dissipation_risk": 76,
+      "status": "active"
+    },
+    {
+      "id": "ACC0033",
+      "label": "Account ACC0033",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 69395.98,
+      "risk_score": 12,
+      "human_coordination_score": 49,
+      "dissipation_risk": 44,
+      "status": "active"
+    },
+    {
+      "id": "ACC0034",
+      "label": "Account ACC0034",
+      "bank": "HDFC",
+      "node_type": "victim",
+      "balance": 54210.37,
+      "risk_score": 82,
+      "human_coordination_score": 27,
+      "dissipation_risk": 23,
+      "status": "active"
+    },
+    {
+      "id": "ACC0035",
+      "label": "Account ACC0035",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 12971.7,
+      "risk_score": 10,
+      "human_coordination_score": 41,
+      "dissipation_risk": 16,
+      "status": "active"
+    },
+    {
+      "id": "ACC0036",
+      "label": "Account ACC0036",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 22180.67,
+      "risk_score": 6,
+      "human_coordination_score": 83,
+      "dissipation_risk": 68,
+      "status": "active"
+    },
+    {
+      "id": "ACC0037",
+      "label": "Account ACC0037",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 88680.03,
+      "risk_score": 31,
+      "human_coordination_score": 46,
+      "dissipation_risk": 51,
+      "status": "active"
+    },
+    {
+      "id": "ACC0038",
+      "label": "Account ACC0038",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 38050.32,
+      "risk_score": 83,
+      "human_coordination_score": 51,
+      "dissipation_risk": 34,
+      "status": "active"
+    },
+    {
+      "id": "ACC0039",
+      "label": "Account ACC0039",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 20704.52,
+      "risk_score": 79,
+      "human_coordination_score": 40,
+      "dissipation_risk": 36,
+      "status": "active"
+    },
+    {
+      "id": "ACC0040",
+      "label": "Account ACC0040",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 21993.85,
+      "risk_score": 7,
+      "human_coordination_score": 34,
+      "dissipation_risk": 42,
+      "status": "active"
+    },
+    {
+      "id": "ACC0041",
+      "label": "Account ACC0041",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 66608.17,
+      "risk_score": 96,
+      "human_coordination_score": 83,
+      "dissipation_risk": 28,
+      "status": "active"
+    },
+    {
+      "id": "ACC0042",
+      "label": "Account ACC0042",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 83599.36,
+      "risk_score": 19,
+      "human_coordination_score": 48,
+      "dissipation_risk": 88,
+      "status": "active"
+    },
+    {
+      "id": "ACC0043",
+      "label": "Account ACC0043",
+      "bank": "SBI",
+      "node_type": "victim",
+      "balance": 35573.92,
+      "risk_score": 93,
+      "human_coordination_score": 79,
+      "dissipation_risk": 72,
+      "status": "active"
+    },
+    {
+      "id": "ACC0044",
+      "label": "Account ACC0044",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 39054.42,
+      "risk_score": 92,
+      "human_coordination_score": 84,
+      "dissipation_risk": 82,
+      "status": "active"
+    },
+    {
+      "id": "ACC0045",
+      "label": "Account ACC0045",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 2258.59,
+      "risk_score": 17,
+      "human_coordination_score": 68,
+      "dissipation_risk": 28,
+      "status": "active"
+    },
+    {
+      "id": "ACC0046",
+      "label": "Account ACC0046",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 43484.17,
+      "risk_score": 20,
+      "human_coordination_score": 84,
+      "dissipation_risk": 84,
+      "status": "active"
+    },
+    {
+      "id": "ACC0047",
+      "label": "Account ACC0047",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 26489.64,
+      "risk_score": 5,
+      "human_coordination_score": 33,
+      "dissipation_risk": 10,
+      "status": "active"
+    },
+    {
+      "id": "ACC0048",
+      "label": "Account ACC0048",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 56091.26,
+      "risk_score": 95,
+      "human_coordination_score": 65,
+      "dissipation_risk": 23,
+      "status": "active"
+    },
+    {
+      "id": "ACC0049",
+      "label": "Account ACC0049",
+      "bank": "HDFC",
+      "node_type": "sink",
+      "balance": 62889.02,
+      "risk_score": 78,
+      "human_coordination_score": 31,
+      "dissipation_risk": 21,
+      "status": "active"
+    },
+    {
+      "id": "ACC0050",
+      "label": "Account ACC0050",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 25798.15,
+      "risk_score": 14,
+      "human_coordination_score": 58,
+      "dissipation_risk": 87,
+      "status": "active"
+    },
+    {
+      "id": "ACC0051",
+      "label": "Account ACC0051",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 14609.68,
+      "risk_score": 96,
+      "human_coordination_score": 88,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0052",
+      "label": "Account ACC0052",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 55037.78,
+      "risk_score": 38,
+      "human_coordination_score": 38,
+      "dissipation_risk": 71,
+      "status": "active"
+    },
+    {
+      "id": "ACC0053",
+      "label": "Account ACC0053",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 25845.94,
+      "risk_score": 10,
+      "human_coordination_score": 12,
+      "dissipation_risk": 45,
+      "status": "active"
+    },
+    {
+      "id": "ACC0054",
+      "label": "Account ACC0054",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 77841.85,
+      "risk_score": 14,
+      "human_coordination_score": 50,
+      "dissipation_risk": 42,
+      "status": "active"
+    },
+    {
+      "id": "ACC0055",
+      "label": "Account ACC0055",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 29791.67,
+      "risk_score": 28,
+      "human_coordination_score": 51,
+      "dissipation_risk": 88,
+      "status": "active"
+    },
+    {
+      "id": "ACC0056",
+      "label": "Account ACC0056",
+      "bank": "HDFC",
+      "node_type": "sink",
+      "balance": 65462.95,
+      "risk_score": 88,
+      "human_coordination_score": 74,
+      "dissipation_risk": 63,
+      "status": "active"
+    },
+    {
+      "id": "ACC0057",
+      "label": "Account ACC0057",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 82379.03,
+      "risk_score": 19,
+      "human_coordination_score": 30,
+      "dissipation_risk": 45,
+      "status": "active"
+    },
+    {
+      "id": "ACC0058",
+      "label": "Account ACC0058",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 13971.43,
+      "risk_score": 76,
+      "human_coordination_score": 72,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0059",
+      "label": "Account ACC0059",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 25994.72,
+      "risk_score": 11,
+      "human_coordination_score": 66,
+      "dissipation_risk": 85,
+      "status": "active"
+    },
+    {
+      "id": "ACC0060",
+      "label": "Account ACC0060",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 31374.82,
+      "risk_score": 33,
+      "human_coordination_score": 63,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0061",
+      "label": "Account ACC0061",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 84935.73,
+      "risk_score": 15,
+      "human_coordination_score": 83,
+      "dissipation_risk": 87,
+      "status": "active"
+    },
+    {
+      "id": "ACC0062",
+      "label": "Account ACC0062",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 82953.35,
+      "risk_score": 22,
+      "human_coordination_score": 64,
+      "dissipation_risk": 10,
+      "status": "active"
+    },
+    {
+      "id": "ACC0063",
+      "label": "Account ACC0063",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 31773.99,
+      "risk_score": 40,
+      "human_coordination_score": 47,
+      "dissipation_risk": 17,
+      "status": "active"
+    },
+    {
+      "id": "ACC0064",
+      "label": "Account ACC0064",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 87588.79,
+      "risk_score": 21,
+      "human_coordination_score": 52,
+      "dissipation_risk": 83,
+      "status": "active"
+    },
+    {
+      "id": "ACC0065",
+      "label": "Account ACC0065",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 81283.46,
+      "risk_score": 24,
+      "human_coordination_score": 18,
+      "dissipation_risk": 88,
+      "status": "active"
+    },
+    {
+      "id": "ACC0066",
+      "label": "Account ACC0066",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 92890.39,
+      "risk_score": 26,
+      "human_coordination_score": 86,
+      "dissipation_risk": 75,
+      "status": "active"
+    },
+    {
+      "id": "ACC0067",
+      "label": "Account ACC0067",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 1666.57,
+      "risk_score": 15,
+      "human_coordination_score": 67,
+      "dissipation_risk": 86,
+      "status": "active"
+    },
+    {
+      "id": "ACC0068",
+      "label": "Account ACC0068",
+      "bank": "HDFC",
+      "node_type": "victim",
+      "balance": 21876.26,
+      "risk_score": 86,
+      "human_coordination_score": 87,
+      "dissipation_risk": 40,
+      "status": "active"
+    },
+    {
+      "id": "ACC0069",
+      "label": "Account ACC0069",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 77613.53,
+      "risk_score": 14,
+      "human_coordination_score": 30,
+      "dissipation_risk": 34,
+      "status": "active"
+    },
+    {
+      "id": "ACC0070",
+      "label": "Account ACC0070",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 84612.4,
+      "risk_score": 81,
+      "human_coordination_score": 13,
+      "dissipation_risk": 54,
+      "status": "active"
+    },
+    {
+      "id": "ACC0071",
+      "label": "Account ACC0071",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 44510.93,
+      "risk_score": 13,
+      "human_coordination_score": 27,
+      "dissipation_risk": 73,
+      "status": "active"
+    },
+    {
+      "id": "ACC0072",
+      "label": "Account ACC0072",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 1525.33,
+      "risk_score": 12,
+      "human_coordination_score": 86,
+      "dissipation_risk": 36,
+      "status": "active"
+    },
+    {
+      "id": "ACC0073",
+      "label": "Account ACC0073",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 85527.77,
+      "risk_score": 30,
+      "human_coordination_score": 76,
+      "dissipation_risk": 15,
+      "status": "active"
+    },
+    {
+      "id": "ACC0074",
+      "label": "Account ACC0074",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 21321.4,
+      "risk_score": 77,
+      "human_coordination_score": 80,
+      "dissipation_risk": 50,
+      "status": "active"
+    },
+    {
+      "id": "ACC0075",
+      "label": "Account ACC0075",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 56234.9,
+      "risk_score": 82,
+      "human_coordination_score": 85,
+      "dissipation_risk": 62,
+      "status": "active"
+    },
+    {
+      "id": "ACC0076",
+      "label": "Account ACC0076",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 74390.39,
+      "risk_score": 6,
+      "human_coordination_score": 61,
+      "dissipation_risk": 43,
+      "status": "active"
+    },
+    {
+      "id": "ACC0077",
+      "label": "Account ACC0077",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 9957.03,
+      "risk_score": 25,
+      "human_coordination_score": 16,
+      "dissipation_risk": 52,
+      "status": "active"
+    },
+    {
+      "id": "ACC0078",
+      "label": "Account ACC0078",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 10160.91,
+      "risk_score": 9,
+      "human_coordination_score": 25,
+      "dissipation_risk": 26,
+      "status": "active"
+    },
+    {
+      "id": "ACC0079",
+      "label": "Account ACC0079",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 77379.61,
+      "risk_score": 10,
+      "human_coordination_score": 76,
+      "dissipation_risk": 51,
+      "status": "active"
+    },
+    {
+      "id": "ACC0080",
+      "label": "Account ACC0080",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 16943.8,
+      "risk_score": 91,
+      "human_coordination_score": 17,
+      "dissipation_risk": 24,
+      "status": "active"
+    },
+    {
+      "id": "ACC0081",
+      "label": "Account ACC0081",
+      "bank": "Yes Bank",
+      "node_type": "victim",
+      "balance": 71755.8,
+      "risk_score": 97,
+      "human_coordination_score": 72,
+      "dissipation_risk": 47,
+      "status": "active"
+    },
+    {
+      "id": "ACC0082",
+      "label": "Account ACC0082",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 518.81,
+      "risk_score": 39,
+      "human_coordination_score": 34,
+      "dissipation_risk": 39,
+      "status": "active"
+    },
+    {
+      "id": "ACC0083",
+      "label": "Account ACC0083",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 15565.62,
+      "risk_score": 38,
+      "human_coordination_score": 83,
+      "dissipation_risk": 26,
+      "status": "active"
+    },
+    {
+      "id": "ACC0084",
+      "label": "Account ACC0084",
+      "bank": "SBI",
+      "node_type": "sink",
+      "balance": 18637.49,
+      "risk_score": 92,
+      "human_coordination_score": 55,
+      "dissipation_risk": 30,
+      "status": "active"
+    },
+    {
+      "id": "ACC0085",
+      "label": "Account ACC0085",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 77324.7,
+      "risk_score": 22,
+      "human_coordination_score": 60,
+      "dissipation_risk": 39,
+      "status": "active"
+    },
+    {
+      "id": "ACC0086",
+      "label": "Account ACC0086",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 34356.13,
+      "risk_score": 82,
+      "human_coordination_score": 60,
+      "dissipation_risk": 56,
+      "status": "active"
+    },
+    {
+      "id": "ACC0087",
+      "label": "Account ACC0087",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 7359.19,
+      "risk_score": 11,
+      "human_coordination_score": 22,
+      "dissipation_risk": 27,
+      "status": "active"
+    },
+    {
+      "id": "ACC0088",
+      "label": "Account ACC0088",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 240.98,
+      "risk_score": 35,
+      "human_coordination_score": 60,
+      "dissipation_risk": 19,
+      "status": "active"
+    },
+    {
+      "id": "ACC0089",
+      "label": "Account ACC0089",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 32169.52,
+      "risk_score": 8,
+      "human_coordination_score": 15,
+      "dissipation_risk": 60,
+      "status": "active"
+    },
+    {
+      "id": "ACC0090",
+      "label": "Account ACC0090",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 40235.58,
+      "risk_score": 29,
+      "human_coordination_score": 57,
+      "dissipation_risk": 22,
+      "status": "active"
+    },
+    {
+      "id": "ACC0091",
+      "label": "Account ACC0091",
+      "bank": "ICICI",
+      "node_type": "victim",
+      "balance": 65572.27,
+      "risk_score": 93,
+      "human_coordination_score": 72,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0092",
+      "label": "Account ACC0092",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 4124.65,
+      "risk_score": 19,
+      "human_coordination_score": 50,
+      "dissipation_risk": 88,
+      "status": "active"
+    },
+    {
+      "id": "ACC0093",
+      "label": "Account ACC0093",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 1653.57,
+      "risk_score": 11,
+      "human_coordination_score": 12,
+      "dissipation_risk": 33,
+      "status": "active"
+    },
+    {
+      "id": "ACC0094",
+      "label": "Account ACC0094",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 5994.08,
+      "risk_score": 34,
+      "human_coordination_score": 17,
+      "dissipation_risk": 48,
+      "status": "active"
+    },
+    {
+      "id": "ACC0095",
+      "label": "Account ACC0095",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 54179.06,
+      "risk_score": 31,
+      "human_coordination_score": 44,
+      "dissipation_risk": 45,
+      "status": "active"
+    },
+    {
+      "id": "ACC0096",
+      "label": "Account ACC0096",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 15248.43,
+      "risk_score": 36,
+      "human_coordination_score": 26,
+      "dissipation_risk": 66,
+      "status": "active"
+    },
+    {
+      "id": "ACC0097",
+      "label": "Account ACC0097",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 97249.11,
+      "risk_score": 28,
+      "human_coordination_score": 58,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0098",
+      "label": "Account ACC0098",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 23166.07,
+      "risk_score": 26,
+      "human_coordination_score": 86,
+      "dissipation_risk": 46,
+      "status": "active"
+    },
+    {
+      "id": "ACC0099",
+      "label": "Account ACC0099",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 47004.43,
+      "risk_score": 7,
+      "human_coordination_score": 76,
+      "dissipation_risk": 34,
+      "status": "active"
+    },
+    {
+      "id": "ACC0100",
+      "label": "Account ACC0100",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 11545.01,
+      "risk_score": 97,
+      "human_coordination_score": 65,
+      "dissipation_risk": 15,
+      "status": "active"
+    },
+    {
+      "id": "ACC0101",
+      "label": "Account ACC0101",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 55153.88,
+      "risk_score": 27,
+      "human_coordination_score": 44,
+      "dissipation_risk": 65,
+      "status": "active"
+    },
+    {
+      "id": "ACC0102",
+      "label": "Account ACC0102",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 20971.43,
+      "risk_score": 77,
+      "human_coordination_score": 71,
+      "dissipation_risk": 28,
+      "status": "active"
+    },
+    {
+      "id": "ACC0103",
+      "label": "Account ACC0103",
+      "bank": "HDFC",
+      "node_type": "sink",
+      "balance": 81665.59,
+      "risk_score": 98,
+      "human_coordination_score": 87,
+      "dissipation_risk": 89,
+      "status": "active"
+    },
+    {
+      "id": "ACC0104",
+      "label": "Account ACC0104",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 49663.69,
+      "risk_score": 75,
+      "human_coordination_score": 30,
+      "dissipation_risk": 65,
+      "status": "active"
+    },
+    {
+      "id": "ACC0105",
+      "label": "Account ACC0105",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 6379.35,
+      "risk_score": 19,
+      "human_coordination_score": 51,
+      "dissipation_risk": 86,
+      "status": "active"
+    },
+    {
+      "id": "ACC0106",
+      "label": "Account ACC0106",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 77971.97,
+      "risk_score": 16,
+      "human_coordination_score": 82,
+      "dissipation_risk": 67,
+      "status": "active"
+    },
+    {
+      "id": "ACC0107",
+      "label": "Account ACC0107",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 1962.17,
+      "risk_score": 18,
+      "human_coordination_score": 79,
+      "dissipation_risk": 61,
+      "status": "active"
+    },
+    {
+      "id": "ACC0108",
+      "label": "Account ACC0108",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 34701.3,
+      "risk_score": 6,
+      "human_coordination_score": 48,
+      "dissipation_risk": 80,
+      "status": "active"
+    },
+    {
+      "id": "ACC0109",
+      "label": "Account ACC0109",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 92302.18,
+      "risk_score": 80,
+      "human_coordination_score": 75,
+      "dissipation_risk": 38,
+      "status": "active"
+    },
+    {
+      "id": "ACC0110",
+      "label": "Account ACC0110",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 35899.73,
+      "risk_score": 83,
+      "human_coordination_score": 59,
+      "dissipation_risk": 77,
+      "status": "active"
+    },
+    {
+      "id": "ACC0111",
+      "label": "Account ACC0111",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 58640.02,
+      "risk_score": 85,
+      "human_coordination_score": 86,
+      "dissipation_risk": 29,
+      "status": "active"
+    },
+    {
+      "id": "ACC0112",
+      "label": "Account ACC0112",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 48679.26,
+      "risk_score": 18,
+      "human_coordination_score": 35,
+      "dissipation_risk": 15,
+      "status": "active"
+    },
+    {
+      "id": "ACC0113",
+      "label": "Account ACC0113",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 88986.68,
+      "risk_score": 17,
+      "human_coordination_score": 29,
+      "dissipation_risk": 77,
+      "status": "active"
+    },
+    {
+      "id": "ACC0114",
+      "label": "Account ACC0114",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 83612.91,
+      "risk_score": 17,
+      "human_coordination_score": 82,
+      "dissipation_risk": 42,
+      "status": "active"
+    },
+    {
+      "id": "ACC0115",
+      "label": "Account ACC0115",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 4774.14,
+      "risk_score": 89,
+      "human_coordination_score": 64,
+      "dissipation_risk": 77,
+      "status": "active"
+    },
+    {
+      "id": "ACC0116",
+      "label": "Account ACC0116",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 41669.27,
+      "risk_score": 33,
+      "human_coordination_score": 48,
+      "dissipation_risk": 61,
+      "status": "active"
+    },
+    {
+      "id": "ACC0117",
+      "label": "Account ACC0117",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 21608.24,
+      "risk_score": 26,
+      "human_coordination_score": 36,
+      "dissipation_risk": 88,
+      "status": "active"
+    },
+    {
+      "id": "ACC0118",
+      "label": "Account ACC0118",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 17105.52,
+      "risk_score": 29,
+      "human_coordination_score": 59,
+      "dissipation_risk": 71,
+      "status": "active"
+    },
+    {
+      "id": "ACC0119",
+      "label": "Account ACC0119",
+      "bank": "SBI",
+      "node_type": "sink",
+      "balance": 94441.86,
+      "risk_score": 73,
+      "human_coordination_score": 11,
+      "dissipation_risk": 19,
+      "status": "active"
+    },
+    {
+      "id": "ACC0120",
+      "label": "Account ACC0120",
+      "bank": "Axis",
+      "node_type": "sink",
+      "balance": 25435.66,
+      "risk_score": 89,
+      "human_coordination_score": 88,
+      "dissipation_risk": 18,
+      "status": "active"
+    },
+    {
+      "id": "ACC0121",
+      "label": "Account ACC0121",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 29216.52,
+      "risk_score": 27,
+      "human_coordination_score": 11,
+      "dissipation_risk": 73,
+      "status": "active"
+    },
+    {
+      "id": "ACC0122",
+      "label": "Account ACC0122",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 59136.96,
+      "risk_score": 13,
+      "human_coordination_score": 69,
+      "dissipation_risk": 54,
+      "status": "active"
+    },
+    {
+      "id": "ACC0123",
+      "label": "Account ACC0123",
+      "bank": "Yes Bank",
+      "node_type": "sink",
+      "balance": 15764.96,
+      "risk_score": 95,
+      "human_coordination_score": 80,
+      "dissipation_risk": 37,
+      "status": "active"
+    },
+    {
+      "id": "ACC0124",
+      "label": "Account ACC0124",
+      "bank": "Yes Bank",
+      "node_type": "sink",
+      "balance": 26489.75,
+      "risk_score": 89,
+      "human_coordination_score": 50,
+      "dissipation_risk": 38,
+      "status": "active"
+    },
+    {
+      "id": "ACC0125",
+      "label": "Account ACC0125",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 18192.99,
+      "risk_score": 16,
+      "human_coordination_score": 31,
+      "dissipation_risk": 84,
+      "status": "active"
+    },
+    {
+      "id": "ACC0126",
+      "label": "Account ACC0126",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 67408.1,
+      "risk_score": 13,
+      "human_coordination_score": 10,
+      "dissipation_risk": 43,
+      "status": "active"
+    },
+    {
+      "id": "ACC0127",
+      "label": "Account ACC0127",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 97427.13,
+      "risk_score": 36,
+      "human_coordination_score": 70,
+      "dissipation_risk": 50,
+      "status": "active"
+    },
+    {
+      "id": "ACC0128",
+      "label": "Account ACC0128",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 85056.67,
+      "risk_score": 16,
+      "human_coordination_score": 84,
+      "dissipation_risk": 10,
+      "status": "active"
+    },
+    {
+      "id": "ACC0129",
+      "label": "Account ACC0129",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 89331.11,
+      "risk_score": 26,
+      "human_coordination_score": 71,
+      "dissipation_risk": 57,
+      "status": "active"
+    },
+    {
+      "id": "ACC0130",
+      "label": "Account ACC0130",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 58418.32,
+      "risk_score": 27,
+      "human_coordination_score": 23,
+      "dissipation_risk": 21,
+      "status": "active"
+    },
+    {
+      "id": "ACC0131",
+      "label": "Account ACC0131",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 53537.73,
+      "risk_score": 21,
+      "human_coordination_score": 38,
+      "dissipation_risk": 28,
+      "status": "active"
+    },
+    {
+      "id": "ACC0132",
+      "label": "Account ACC0132",
+      "bank": "Axis",
+      "node_type": "victim",
+      "balance": 16561.25,
+      "risk_score": 91,
+      "human_coordination_score": 84,
+      "dissipation_risk": 87,
+      "status": "active"
+    },
+    {
+      "id": "ACC0133",
+      "label": "Account ACC0133",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 45105.62,
+      "risk_score": 36,
+      "human_coordination_score": 73,
+      "dissipation_risk": 33,
+      "status": "active"
+    },
+    {
+      "id": "ACC0134",
+      "label": "Account ACC0134",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 82659.92,
+      "risk_score": 18,
+      "human_coordination_score": 45,
+      "dissipation_risk": 41,
+      "status": "active"
+    },
+    {
+      "id": "ACC0135",
+      "label": "Account ACC0135",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 66296.23,
+      "risk_score": 75,
+      "human_coordination_score": 56,
+      "dissipation_risk": 18,
+      "status": "active"
+    },
+    {
+      "id": "ACC0136",
+      "label": "Account ACC0136",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 32101.74,
+      "risk_score": 37,
+      "human_coordination_score": 34,
+      "dissipation_risk": 68,
+      "status": "active"
+    },
+    {
+      "id": "ACC0137",
+      "label": "Account ACC0137",
+      "bank": "SBI",
+      "node_type": "victim",
+      "balance": 79022.12,
+      "risk_score": 83,
+      "human_coordination_score": 77,
+      "dissipation_risk": 57,
+      "status": "active"
+    },
+    {
+      "id": "ACC0138",
+      "label": "Account ACC0138",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 90655.88,
+      "risk_score": 22,
+      "human_coordination_score": 87,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0139",
+      "label": "Account ACC0139",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 23586.62,
+      "risk_score": 32,
+      "human_coordination_score": 66,
+      "dissipation_risk": 83,
+      "status": "active"
+    },
+    {
+      "id": "ACC0140",
+      "label": "Account ACC0140",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 11294.71,
+      "risk_score": 6,
+      "human_coordination_score": 45,
+      "dissipation_risk": 67,
+      "status": "active"
+    },
+    {
+      "id": "ACC0141",
+      "label": "Account ACC0141",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 49411.27,
+      "risk_score": 37,
+      "human_coordination_score": 86,
+      "dissipation_risk": 66,
+      "status": "active"
+    },
+    {
+      "id": "ACC0142",
+      "label": "Account ACC0142",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 59495.63,
+      "risk_score": 28,
+      "human_coordination_score": 35,
+      "dissipation_risk": 61,
+      "status": "active"
+    },
+    {
+      "id": "ACC0143",
+      "label": "Account ACC0143",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 81529.59,
+      "risk_score": 17,
+      "human_coordination_score": 49,
+      "dissipation_risk": 63,
+      "status": "active"
+    },
+    {
+      "id": "ACC0144",
+      "label": "Account ACC0144",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 26606.49,
+      "risk_score": 7,
+      "human_coordination_score": 27,
+      "dissipation_risk": 67,
+      "status": "active"
+    },
+    {
+      "id": "ACC0145",
+      "label": "Account ACC0145",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 5524.08,
+      "risk_score": 96,
+      "human_coordination_score": 69,
+      "dissipation_risk": 89,
+      "status": "active"
+    },
+    {
+      "id": "ACC0146",
+      "label": "Account ACC0146",
+      "bank": "SBI",
+      "node_type": "victim",
+      "balance": 64271.31,
+      "risk_score": 75,
+      "human_coordination_score": 88,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0147",
+      "label": "Account ACC0147",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 75090.14,
+      "risk_score": 5,
+      "human_coordination_score": 80,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0148",
+      "label": "Account ACC0148",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 2599.38,
+      "risk_score": 8,
+      "human_coordination_score": 53,
+      "dissipation_risk": 40,
+      "status": "active"
+    },
+    {
+      "id": "ACC0149",
+      "label": "Account ACC0149",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 26129.25,
+      "risk_score": 77,
+      "human_coordination_score": 13,
+      "dissipation_risk": 87,
+      "status": "active"
+    },
+    {
+      "id": "ACC0150",
+      "label": "Account ACC0150",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 71822.8,
+      "risk_score": 35,
+      "human_coordination_score": 30,
+      "dissipation_risk": 18,
+      "status": "active"
+    },
+    {
+      "id": "ACC0151",
+      "label": "Account ACC0151",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 42673.46,
+      "risk_score": 82,
+      "human_coordination_score": 41,
+      "dissipation_risk": 88,
+      "status": "active"
+    },
+    {
+      "id": "ACC0152",
+      "label": "Account ACC0152",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 82435.66,
+      "risk_score": 71,
+      "human_coordination_score": 87,
+      "dissipation_risk": 74,
+      "status": "active"
+    },
+    {
+      "id": "ACC0153",
+      "label": "Account ACC0153",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 79860.25,
+      "risk_score": 16,
+      "human_coordination_score": 16,
+      "dissipation_risk": 22,
+      "status": "active"
+    },
+    {
+      "id": "ACC0154",
+      "label": "Account ACC0154",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 40090.65,
+      "risk_score": 75,
+      "human_coordination_score": 79,
+      "dissipation_risk": 23,
+      "status": "active"
+    },
+    {
+      "id": "ACC0155",
+      "label": "Account ACC0155",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 88636.43,
+      "risk_score": 32,
+      "human_coordination_score": 13,
+      "dissipation_risk": 44,
+      "status": "active"
+    },
+    {
+      "id": "ACC0156",
+      "label": "Account ACC0156",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 37254.47,
+      "risk_score": 38,
+      "human_coordination_score": 10,
+      "dissipation_risk": 26,
+      "status": "active"
+    },
+    {
+      "id": "ACC0157",
+      "label": "Account ACC0157",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 73576.37,
+      "risk_score": 21,
+      "human_coordination_score": 65,
+      "dissipation_risk": 33,
+      "status": "active"
+    },
+    {
+      "id": "ACC0158",
+      "label": "Account ACC0158",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 96529.48,
+      "risk_score": 7,
+      "human_coordination_score": 79,
+      "dissipation_risk": 51,
+      "status": "active"
+    },
+    {
+      "id": "ACC0159",
+      "label": "Account ACC0159",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 41062.81,
+      "risk_score": 24,
+      "human_coordination_score": 13,
+      "dissipation_risk": 45,
+      "status": "active"
+    },
+    {
+      "id": "ACC0160",
+      "label": "Account ACC0160",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 67851.42,
+      "risk_score": 5,
+      "human_coordination_score": 67,
+      "dissipation_risk": 11,
+      "status": "active"
+    },
+    {
+      "id": "ACC0161",
+      "label": "Account ACC0161",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 94400.09,
+      "risk_score": 11,
+      "human_coordination_score": 33,
+      "dissipation_risk": 37,
+      "status": "active"
+    },
+    {
+      "id": "ACC0162",
+      "label": "Account ACC0162",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 85580.24,
+      "risk_score": 7,
+      "human_coordination_score": 11,
+      "dissipation_risk": 29,
+      "status": "active"
+    },
+    {
+      "id": "ACC0163",
+      "label": "Account ACC0163",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 27143.12,
+      "risk_score": 36,
+      "human_coordination_score": 52,
+      "dissipation_risk": 82,
+      "status": "active"
+    },
+    {
+      "id": "ACC0164",
+      "label": "Account ACC0164",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 20165.0,
+      "risk_score": 16,
+      "human_coordination_score": 21,
+      "dissipation_risk": 90,
+      "status": "active"
+    },
+    {
+      "id": "ACC0165",
+      "label": "Account ACC0165",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 37857.03,
+      "risk_score": 40,
+      "human_coordination_score": 72,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0166",
+      "label": "Account ACC0166",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 31603.35,
+      "risk_score": 70,
+      "human_coordination_score": 51,
+      "dissipation_risk": 71,
+      "status": "active"
+    },
+    {
+      "id": "ACC0167",
+      "label": "Account ACC0167",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 36947.72,
+      "risk_score": 26,
+      "human_coordination_score": 65,
+      "dissipation_risk": 65,
+      "status": "active"
+    },
+    {
+      "id": "ACC0168",
+      "label": "Account ACC0168",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 45802.46,
+      "risk_score": 34,
+      "human_coordination_score": 21,
+      "dissipation_risk": 23,
+      "status": "active"
+    },
+    {
+      "id": "ACC0169",
+      "label": "Account ACC0169",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 17658.71,
+      "risk_score": 30,
+      "human_coordination_score": 42,
+      "dissipation_risk": 55,
+      "status": "active"
+    },
+    {
+      "id": "ACC0170",
+      "label": "Account ACC0170",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 1198.06,
+      "risk_score": 33,
+      "human_coordination_score": 78,
+      "dissipation_risk": 62,
+      "status": "active"
+    },
+    {
+      "id": "ACC0171",
+      "label": "Account ACC0171",
+      "bank": "SBI",
+      "node_type": "victim",
+      "balance": 13793.22,
+      "risk_score": 82,
+      "human_coordination_score": 73,
+      "dissipation_risk": 24,
+      "status": "active"
+    },
+    {
+      "id": "ACC0172",
+      "label": "Account ACC0172",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 68185.52,
+      "risk_score": 6,
+      "human_coordination_score": 87,
+      "dissipation_risk": 22,
+      "status": "active"
+    },
+    {
+      "id": "ACC0173",
+      "label": "Account ACC0173",
+      "bank": "SBI",
+      "node_type": "sink",
+      "balance": 38397.7,
+      "risk_score": 70,
+      "human_coordination_score": 45,
+      "dissipation_risk": 54,
+      "status": "active"
+    },
+    {
+      "id": "ACC0174",
+      "label": "Account ACC0174",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 64013.36,
+      "risk_score": 22,
+      "human_coordination_score": 25,
+      "dissipation_risk": 84,
+      "status": "active"
+    },
+    {
+      "id": "ACC0175",
+      "label": "Account ACC0175",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 14964.3,
+      "risk_score": 7,
+      "human_coordination_score": 26,
+      "dissipation_risk": 67,
+      "status": "active"
+    },
+    {
+      "id": "ACC0176",
+      "label": "Account ACC0176",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 92356.78,
+      "risk_score": 18,
+      "human_coordination_score": 75,
+      "dissipation_risk": 16,
+      "status": "active"
+    },
+    {
+      "id": "ACC0177",
+      "label": "Account ACC0177",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 11787.68,
+      "risk_score": 9,
+      "human_coordination_score": 37,
+      "dissipation_risk": 35,
+      "status": "active"
+    },
+    {
+      "id": "ACC0178",
+      "label": "Account ACC0178",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 67632.15,
+      "risk_score": 28,
+      "human_coordination_score": 58,
+      "dissipation_risk": 62,
+      "status": "active"
+    },
+    {
+      "id": "ACC0179",
+      "label": "Account ACC0179",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 53889.91,
+      "risk_score": 25,
+      "human_coordination_score": 83,
+      "dissipation_risk": 20,
+      "status": "active"
+    },
+    {
+      "id": "ACC0180",
+      "label": "Account ACC0180",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 94515.76,
+      "risk_score": 39,
+      "human_coordination_score": 77,
+      "dissipation_risk": 27,
+      "status": "active"
+    },
+    {
+      "id": "ACC0181",
+      "label": "Account ACC0181",
+      "bank": "Axis",
+      "node_type": "sink",
+      "balance": 22400.9,
+      "risk_score": 95,
+      "human_coordination_score": 21,
+      "dissipation_risk": 19,
+      "status": "active"
+    },
+    {
+      "id": "ACC0182",
+      "label": "Account ACC0182",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 85858.09,
+      "risk_score": 12,
+      "human_coordination_score": 14,
+      "dissipation_risk": 81,
+      "status": "active"
+    },
+    {
+      "id": "ACC0183",
+      "label": "Account ACC0183",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 11133.87,
+      "risk_score": 14,
+      "human_coordination_score": 17,
+      "dissipation_risk": 68,
+      "status": "active"
+    },
+    {
+      "id": "ACC0184",
+      "label": "Account ACC0184",
+      "bank": "Yes Bank",
+      "node_type": "sink",
+      "balance": 24057.04,
+      "risk_score": 83,
+      "human_coordination_score": 32,
+      "dissipation_risk": 69,
+      "status": "active"
+    },
+    {
+      "id": "ACC0185",
+      "label": "Account ACC0185",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 42204.15,
+      "risk_score": 24,
+      "human_coordination_score": 67,
+      "dissipation_risk": 42,
+      "status": "active"
+    },
+    {
+      "id": "ACC0186",
+      "label": "Account ACC0186",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 30669.05,
+      "risk_score": 37,
+      "human_coordination_score": 42,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0187",
+      "label": "Account ACC0187",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 63004.2,
+      "risk_score": 11,
+      "human_coordination_score": 78,
+      "dissipation_risk": 47,
+      "status": "active"
+    },
+    {
+      "id": "ACC0188",
+      "label": "Account ACC0188",
+      "bank": "SBI",
+      "node_type": "sink",
+      "balance": 85033.06,
+      "risk_score": 77,
+      "human_coordination_score": 58,
+      "dissipation_risk": 79,
+      "status": "active"
+    },
+    {
+      "id": "ACC0189",
+      "label": "Account ACC0189",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 27105.89,
+      "risk_score": 10,
+      "human_coordination_score": 26,
+      "dissipation_risk": 41,
+      "status": "active"
+    },
+    {
+      "id": "ACC0190",
+      "label": "Account ACC0190",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 30335.54,
+      "risk_score": 38,
+      "human_coordination_score": 81,
+      "dissipation_risk": 45,
+      "status": "active"
+    },
+    {
+      "id": "ACC0191",
+      "label": "Account ACC0191",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 4511.2,
+      "risk_score": 11,
+      "human_coordination_score": 15,
+      "dissipation_risk": 57,
+      "status": "active"
+    },
+    {
+      "id": "ACC0192",
+      "label": "Account ACC0192",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 72889.09,
+      "risk_score": 13,
+      "human_coordination_score": 76,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0193",
+      "label": "Account ACC0193",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 39439.62,
+      "risk_score": 35,
+      "human_coordination_score": 39,
+      "dissipation_risk": 82,
+      "status": "active"
+    },
+    {
+      "id": "ACC0194",
+      "label": "Account ACC0194",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 70282.69,
+      "risk_score": 14,
+      "human_coordination_score": 53,
+      "dissipation_risk": 33,
+      "status": "active"
+    },
+    {
+      "id": "ACC0195",
+      "label": "Account ACC0195",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 45234.47,
+      "risk_score": 32,
+      "human_coordination_score": 30,
+      "dissipation_risk": 32,
+      "status": "active"
+    },
+    {
+      "id": "ACC0196",
+      "label": "Account ACC0196",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 57957.63,
+      "risk_score": 31,
+      "human_coordination_score": 38,
+      "dissipation_risk": 24,
+      "status": "active"
+    },
+    {
+      "id": "ACC0197",
+      "label": "Account ACC0197",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 12688.84,
+      "risk_score": 16,
+      "human_coordination_score": 79,
+      "dissipation_risk": 61,
+      "status": "active"
+    },
+    {
+      "id": "ACC0198",
+      "label": "Account ACC0198",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 51760.55,
+      "risk_score": 71,
+      "human_coordination_score": 55,
+      "dissipation_risk": 68,
+      "status": "active"
+    },
+    {
+      "id": "ACC0199",
+      "label": "Account ACC0199",
+      "bank": "Axis",
+      "node_type": "victim",
+      "balance": 76134.95,
+      "risk_score": 83,
+      "human_coordination_score": 61,
+      "dissipation_risk": 28,
+      "status": "active"
+    },
+    {
+      "id": "ACC0200",
+      "label": "Account ACC0200",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 88127.54,
+      "risk_score": 34,
+      "human_coordination_score": 74,
+      "dissipation_risk": 15,
+      "status": "active"
+    },
+    {
+      "id": "ACC0201",
+      "label": "Account ACC0201",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 60845.0,
+      "risk_score": 98,
+      "human_coordination_score": 57,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0202",
+      "label": "Account ACC0202",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 31025.54,
+      "risk_score": 20,
+      "human_coordination_score": 25,
+      "dissipation_risk": 15,
+      "status": "active"
+    },
+    {
+      "id": "ACC0203",
+      "label": "Account ACC0203",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 68561.27,
+      "risk_score": 34,
+      "human_coordination_score": 21,
+      "dissipation_risk": 30,
+      "status": "active"
+    },
+    {
+      "id": "ACC0204",
+      "label": "Account ACC0204",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 20927.26,
+      "risk_score": 10,
+      "human_coordination_score": 73,
+      "dissipation_risk": 40,
+      "status": "active"
+    },
+    {
+      "id": "ACC0205",
+      "label": "Account ACC0205",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 6580.38,
+      "risk_score": 25,
+      "human_coordination_score": 88,
+      "dissipation_risk": 44,
+      "status": "active"
+    },
+    {
+      "id": "ACC0206",
+      "label": "Account ACC0206",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 97040.06,
+      "risk_score": 19,
+      "human_coordination_score": 17,
+      "dissipation_risk": 26,
+      "status": "active"
+    },
+    {
+      "id": "ACC0207",
+      "label": "Account ACC0207",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 38423.72,
+      "risk_score": 7,
+      "human_coordination_score": 34,
+      "dissipation_risk": 17,
+      "status": "active"
+    },
+    {
+      "id": "ACC0208",
+      "label": "Account ACC0208",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 64099.18,
+      "risk_score": 91,
+      "human_coordination_score": 25,
+      "dissipation_risk": 25,
+      "status": "active"
+    },
+    {
+      "id": "ACC0209",
+      "label": "Account ACC0209",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 91352.47,
+      "risk_score": 38,
+      "human_coordination_score": 65,
+      "dissipation_risk": 34,
+      "status": "active"
+    },
+    {
+      "id": "ACC0210",
+      "label": "Account ACC0210",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 796.31,
+      "risk_score": 32,
+      "human_coordination_score": 24,
+      "dissipation_risk": 14,
+      "status": "active"
+    },
+    {
+      "id": "ACC0211",
+      "label": "Account ACC0211",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 89982.8,
+      "risk_score": 10,
+      "human_coordination_score": 49,
+      "dissipation_risk": 33,
+      "status": "active"
+    },
+    {
+      "id": "ACC0212",
+      "label": "Account ACC0212",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 93520.63,
+      "risk_score": 73,
+      "human_coordination_score": 60,
+      "dissipation_risk": 11,
+      "status": "active"
+    },
+    {
+      "id": "ACC0213",
+      "label": "Account ACC0213",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 8039.02,
+      "risk_score": 22,
+      "human_coordination_score": 63,
+      "dissipation_risk": 88,
+      "status": "active"
+    },
+    {
+      "id": "ACC0214",
+      "label": "Account ACC0214",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 19854.87,
+      "risk_score": 38,
+      "human_coordination_score": 57,
+      "dissipation_risk": 83,
+      "status": "active"
+    },
+    {
+      "id": "ACC0215",
+      "label": "Account ACC0215",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 52847.41,
+      "risk_score": 19,
+      "human_coordination_score": 11,
+      "dissipation_risk": 69,
+      "status": "active"
+    },
+    {
+      "id": "ACC0216",
+      "label": "Account ACC0216",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 38109.21,
+      "risk_score": 23,
+      "human_coordination_score": 81,
+      "dissipation_risk": 38,
+      "status": "active"
+    },
+    {
+      "id": "ACC0217",
+      "label": "Account ACC0217",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 81593.53,
+      "risk_score": 16,
+      "human_coordination_score": 67,
+      "dissipation_risk": 88,
+      "status": "active"
+    },
+    {
+      "id": "ACC0218",
+      "label": "Account ACC0218",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 87384.31,
+      "risk_score": 23,
+      "human_coordination_score": 68,
+      "dissipation_risk": 63,
+      "status": "active"
+    },
+    {
+      "id": "ACC0219",
+      "label": "Account ACC0219",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 97116.75,
+      "risk_score": 25,
+      "human_coordination_score": 65,
+      "dissipation_risk": 34,
+      "status": "active"
+    },
+    {
+      "id": "ACC0220",
+      "label": "Account ACC0220",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 73556.88,
+      "risk_score": 34,
+      "human_coordination_score": 82,
+      "dissipation_risk": 51,
+      "status": "active"
+    },
+    {
+      "id": "ACC0221",
+      "label": "Account ACC0221",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 45984.78,
+      "risk_score": 33,
+      "human_coordination_score": 76,
+      "dissipation_risk": 19,
+      "status": "active"
+    },
+    {
+      "id": "ACC0222",
+      "label": "Account ACC0222",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 21209.18,
+      "risk_score": 28,
+      "human_coordination_score": 44,
+      "dissipation_risk": 37,
+      "status": "active"
+    },
+    {
+      "id": "ACC0223",
+      "label": "Account ACC0223",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 96590.93,
+      "risk_score": 23,
+      "human_coordination_score": 56,
+      "dissipation_risk": 78,
+      "status": "active"
+    },
+    {
+      "id": "ACC0224",
+      "label": "Account ACC0224",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 26148.18,
+      "risk_score": 75,
+      "human_coordination_score": 51,
+      "dissipation_risk": 65,
+      "status": "active"
+    },
+    {
+      "id": "ACC0225",
+      "label": "Account ACC0225",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 37267.39,
+      "risk_score": 6,
+      "human_coordination_score": 81,
+      "dissipation_risk": 20,
+      "status": "active"
+    },
+    {
+      "id": "ACC0226",
+      "label": "Account ACC0226",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 13958.45,
+      "risk_score": 40,
+      "human_coordination_score": 51,
+      "dissipation_risk": 45,
+      "status": "active"
+    },
+    {
+      "id": "ACC0227",
+      "label": "Account ACC0227",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 32442.08,
+      "risk_score": 24,
+      "human_coordination_score": 33,
+      "dissipation_risk": 32,
+      "status": "active"
+    },
+    {
+      "id": "ACC0228",
+      "label": "Account ACC0228",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 50030.74,
+      "risk_score": 5,
+      "human_coordination_score": 29,
+      "dissipation_risk": 22,
+      "status": "active"
+    },
+    {
+      "id": "ACC0229",
+      "label": "Account ACC0229",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 47385.33,
+      "risk_score": 29,
+      "human_coordination_score": 86,
+      "dissipation_risk": 48,
+      "status": "active"
+    },
+    {
+      "id": "ACC0230",
+      "label": "Account ACC0230",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 12042.24,
+      "risk_score": 39,
+      "human_coordination_score": 90,
+      "dissipation_risk": 47,
+      "status": "active"
+    },
+    {
+      "id": "ACC0231",
+      "label": "Account ACC0231",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 81932.65,
+      "risk_score": 9,
+      "human_coordination_score": 14,
+      "dissipation_risk": 35,
+      "status": "active"
+    },
+    {
+      "id": "ACC0232",
+      "label": "Account ACC0232",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 17930.29,
+      "risk_score": 36,
+      "human_coordination_score": 36,
+      "dissipation_risk": 10,
+      "status": "active"
+    },
+    {
+      "id": "ACC0233",
+      "label": "Account ACC0233",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 22228.97,
+      "risk_score": 8,
+      "human_coordination_score": 67,
+      "dissipation_risk": 51,
+      "status": "active"
+    },
+    {
+      "id": "ACC0234",
+      "label": "Account ACC0234",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 20602.64,
+      "risk_score": 37,
+      "human_coordination_score": 26,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0235",
+      "label": "Account ACC0235",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 45203.04,
+      "risk_score": 81,
+      "human_coordination_score": 71,
+      "dissipation_risk": 76,
+      "status": "active"
+    },
+    {
+      "id": "ACC0236",
+      "label": "Account ACC0236",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 63133.38,
+      "risk_score": 81,
+      "human_coordination_score": 64,
+      "dissipation_risk": 56,
+      "status": "active"
+    },
+    {
+      "id": "ACC0237",
+      "label": "Account ACC0237",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 87498.73,
+      "risk_score": 80,
+      "human_coordination_score": 70,
+      "dissipation_risk": 64,
+      "status": "active"
+    },
+    {
+      "id": "ACC0238",
+      "label": "Account ACC0238",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 362.15,
+      "risk_score": 74,
+      "human_coordination_score": 18,
+      "dissipation_risk": 57,
+      "status": "active"
+    },
+    {
+      "id": "ACC0239",
+      "label": "Account ACC0239",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 55523.28,
+      "risk_score": 25,
+      "human_coordination_score": 56,
+      "dissipation_risk": 59,
+      "status": "active"
+    },
+    {
+      "id": "ACC0240",
+      "label": "Account ACC0240",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 88842.33,
+      "risk_score": 17,
+      "human_coordination_score": 16,
+      "dissipation_risk": 81,
+      "status": "active"
+    },
+    {
+      "id": "ACC0241",
+      "label": "Account ACC0241",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 88507.72,
+      "risk_score": 38,
+      "human_coordination_score": 62,
+      "dissipation_risk": 73,
+      "status": "active"
+    },
+    {
+      "id": "ACC0242",
+      "label": "Account ACC0242",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 37930.2,
+      "risk_score": 17,
+      "human_coordination_score": 83,
+      "dissipation_risk": 19,
+      "status": "active"
+    },
+    {
+      "id": "ACC0243",
+      "label": "Account ACC0243",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 56415.59,
+      "risk_score": 90,
+      "human_coordination_score": 28,
+      "dissipation_risk": 34,
+      "status": "active"
+    },
+    {
+      "id": "ACC0244",
+      "label": "Account ACC0244",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 73076.04,
+      "risk_score": 91,
+      "human_coordination_score": 89,
+      "dissipation_risk": 47,
+      "status": "active"
+    },
+    {
+      "id": "ACC0245",
+      "label": "Account ACC0245",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 80428.86,
+      "risk_score": 26,
+      "human_coordination_score": 30,
+      "dissipation_risk": 11,
+      "status": "active"
+    },
+    {
+      "id": "ACC0246",
+      "label": "Account ACC0246",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 30209.67,
+      "risk_score": 34,
+      "human_coordination_score": 21,
+      "dissipation_risk": 14,
+      "status": "active"
+    },
+    {
+      "id": "ACC0247",
+      "label": "Account ACC0247",
+      "bank": "ICICI",
+      "node_type": "victim",
+      "balance": 14094.5,
+      "risk_score": 83,
+      "human_coordination_score": 38,
+      "dissipation_risk": 78,
+      "status": "active"
+    },
+    {
+      "id": "ACC0248",
+      "label": "Account ACC0248",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 41699.25,
+      "risk_score": 91,
+      "human_coordination_score": 46,
+      "dissipation_risk": 56,
+      "status": "active"
+    },
+    {
+      "id": "ACC0249",
+      "label": "Account ACC0249",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 9894.2,
+      "risk_score": 10,
+      "human_coordination_score": 55,
+      "dissipation_risk": 67,
+      "status": "active"
+    },
+    {
+      "id": "ACC0250",
+      "label": "Account ACC0250",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 29030.21,
+      "risk_score": 12,
+      "human_coordination_score": 71,
+      "dissipation_risk": 18,
+      "status": "active"
+    },
+    {
+      "id": "ACC0251",
+      "label": "Account ACC0251",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 94893.23,
+      "risk_score": 97,
+      "human_coordination_score": 10,
+      "dissipation_risk": 73,
+      "status": "active"
+    },
+    {
+      "id": "ACC0252",
+      "label": "Account ACC0252",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 78033.0,
+      "risk_score": 22,
+      "human_coordination_score": 28,
+      "dissipation_risk": 18,
+      "status": "active"
+    },
+    {
+      "id": "ACC0253",
+      "label": "Account ACC0253",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 96437.94,
+      "risk_score": 71,
+      "human_coordination_score": 42,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0254",
+      "label": "Account ACC0254",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 92313.91,
+      "risk_score": 22,
+      "human_coordination_score": 27,
+      "dissipation_risk": 84,
+      "status": "active"
+    },
+    {
+      "id": "ACC0255",
+      "label": "Account ACC0255",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 12676.78,
+      "risk_score": 20,
+      "human_coordination_score": 65,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0256",
+      "label": "Account ACC0256",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 74355.64,
+      "risk_score": 32,
+      "human_coordination_score": 70,
+      "dissipation_risk": 80,
+      "status": "active"
+    },
+    {
+      "id": "ACC0257",
+      "label": "Account ACC0257",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 1622.0,
+      "risk_score": 91,
+      "human_coordination_score": 31,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0258",
+      "label": "Account ACC0258",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 18851.0,
+      "risk_score": 23,
+      "human_coordination_score": 79,
+      "dissipation_risk": 67,
+      "status": "active"
+    },
+    {
+      "id": "ACC0259",
+      "label": "Account ACC0259",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 49764.68,
+      "risk_score": 8,
+      "human_coordination_score": 20,
+      "dissipation_risk": 36,
+      "status": "active"
+    },
+    {
+      "id": "ACC0260",
+      "label": "Account ACC0260",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 45980.92,
+      "risk_score": 78,
+      "human_coordination_score": 71,
+      "dissipation_risk": 86,
+      "status": "active"
+    },
+    {
+      "id": "ACC0261",
+      "label": "Account ACC0261",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 87168.94,
+      "risk_score": 15,
+      "human_coordination_score": 27,
+      "dissipation_risk": 77,
+      "status": "active"
+    },
+    {
+      "id": "ACC0262",
+      "label": "Account ACC0262",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 17582.1,
+      "risk_score": 32,
+      "human_coordination_score": 54,
+      "dissipation_risk": 68,
+      "status": "active"
+    },
+    {
+      "id": "ACC0263",
+      "label": "Account ACC0263",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 85602.79,
+      "risk_score": 26,
+      "human_coordination_score": 24,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0264",
+      "label": "Account ACC0264",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 96147.08,
+      "risk_score": 99,
+      "human_coordination_score": 15,
+      "dissipation_risk": 78,
+      "status": "active"
+    },
+    {
+      "id": "ACC0265",
+      "label": "Account ACC0265",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 84029.15,
+      "risk_score": 12,
+      "human_coordination_score": 79,
+      "dissipation_risk": 29,
+      "status": "active"
+    },
+    {
+      "id": "ACC0266",
+      "label": "Account ACC0266",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 45516.84,
+      "risk_score": 22,
+      "human_coordination_score": 10,
+      "dissipation_risk": 59,
+      "status": "active"
+    },
+    {
+      "id": "ACC0267",
+      "label": "Account ACC0267",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 93426.83,
+      "risk_score": 23,
+      "human_coordination_score": 32,
+      "dissipation_risk": 87,
+      "status": "active"
+    },
+    {
+      "id": "ACC0268",
+      "label": "Account ACC0268",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 99017.82,
+      "risk_score": 92,
+      "human_coordination_score": 77,
+      "dissipation_risk": 44,
+      "status": "active"
+    },
+    {
+      "id": "ACC0269",
+      "label": "Account ACC0269",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 31597.9,
+      "risk_score": 21,
+      "human_coordination_score": 90,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0270",
+      "label": "Account ACC0270",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 41353.54,
+      "risk_score": 28,
+      "human_coordination_score": 35,
+      "dissipation_risk": 22,
+      "status": "active"
+    },
+    {
+      "id": "ACC0271",
+      "label": "Account ACC0271",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 56666.09,
+      "risk_score": 24,
+      "human_coordination_score": 81,
+      "dissipation_risk": 38,
+      "status": "active"
+    },
+    {
+      "id": "ACC0272",
+      "label": "Account ACC0272",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 21115.56,
+      "risk_score": 25,
+      "human_coordination_score": 83,
+      "dissipation_risk": 57,
+      "status": "active"
+    },
+    {
+      "id": "ACC0273",
+      "label": "Account ACC0273",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 18214.57,
+      "risk_score": 91,
+      "human_coordination_score": 40,
+      "dissipation_risk": 13,
+      "status": "active"
+    },
+    {
+      "id": "ACC0274",
+      "label": "Account ACC0274",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 18804.2,
+      "risk_score": 90,
+      "human_coordination_score": 31,
+      "dissipation_risk": 87,
+      "status": "active"
+    },
+    {
+      "id": "ACC0275",
+      "label": "Account ACC0275",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 31399.51,
+      "risk_score": 16,
+      "human_coordination_score": 34,
+      "dissipation_risk": 14,
+      "status": "active"
+    },
+    {
+      "id": "ACC0276",
+      "label": "Account ACC0276",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 30262.4,
+      "risk_score": 24,
+      "human_coordination_score": 52,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0277",
+      "label": "Account ACC0277",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 20283.33,
+      "risk_score": 37,
+      "human_coordination_score": 71,
+      "dissipation_risk": 77,
+      "status": "active"
+    },
+    {
+      "id": "ACC0278",
+      "label": "Account ACC0278",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 86882.91,
+      "risk_score": 21,
+      "human_coordination_score": 27,
+      "dissipation_risk": 52,
+      "status": "active"
+    },
+    {
+      "id": "ACC0279",
+      "label": "Account ACC0279",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 94091.51,
+      "risk_score": 27,
+      "human_coordination_score": 22,
+      "dissipation_risk": 45,
+      "status": "active"
+    },
+    {
+      "id": "ACC0280",
+      "label": "Account ACC0280",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 21972.68,
+      "risk_score": 14,
+      "human_coordination_score": 61,
+      "dissipation_risk": 44,
+      "status": "active"
+    },
+    {
+      "id": "ACC0281",
+      "label": "Account ACC0281",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 16260.75,
+      "risk_score": 16,
+      "human_coordination_score": 74,
+      "dissipation_risk": 70,
+      "status": "active"
+    },
+    {
+      "id": "ACC0282",
+      "label": "Account ACC0282",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 75228.49,
+      "risk_score": 15,
+      "human_coordination_score": 62,
+      "dissipation_risk": 48,
+      "status": "active"
+    },
+    {
+      "id": "ACC0283",
+      "label": "Account ACC0283",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 20937.7,
+      "risk_score": 12,
+      "human_coordination_score": 36,
+      "dissipation_risk": 16,
+      "status": "active"
+    },
+    {
+      "id": "ACC0284",
+      "label": "Account ACC0284",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 72356.59,
+      "risk_score": 20,
+      "human_coordination_score": 22,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0285",
+      "label": "Account ACC0285",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 815.19,
+      "risk_score": 40,
+      "human_coordination_score": 53,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0286",
+      "label": "Account ACC0286",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 12679.55,
+      "risk_score": 8,
+      "human_coordination_score": 82,
+      "dissipation_risk": 48,
+      "status": "active"
+    },
+    {
+      "id": "ACC0287",
+      "label": "Account ACC0287",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 66523.48,
+      "risk_score": 29,
+      "human_coordination_score": 21,
+      "dissipation_risk": 32,
+      "status": "active"
+    },
+    {
+      "id": "ACC0288",
+      "label": "Account ACC0288",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 46406.2,
+      "risk_score": 35,
+      "human_coordination_score": 29,
+      "dissipation_risk": 54,
+      "status": "active"
+    },
+    {
+      "id": "ACC0289",
+      "label": "Account ACC0289",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 85187.03,
+      "risk_score": 21,
+      "human_coordination_score": 68,
+      "dissipation_risk": 26,
+      "status": "active"
+    },
+    {
+      "id": "ACC0290",
+      "label": "Account ACC0290",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 23130.2,
+      "risk_score": 29,
+      "human_coordination_score": 84,
+      "dissipation_risk": 65,
+      "status": "active"
+    },
+    {
+      "id": "ACC0291",
+      "label": "Account ACC0291",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 76518.81,
+      "risk_score": 35,
+      "human_coordination_score": 70,
+      "dissipation_risk": 52,
+      "status": "active"
+    },
+    {
+      "id": "ACC0292",
+      "label": "Account ACC0292",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 60532.91,
+      "risk_score": 78,
+      "human_coordination_score": 35,
+      "dissipation_risk": 37,
+      "status": "active"
+    },
+    {
+      "id": "ACC0293",
+      "label": "Account ACC0293",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 10092.02,
+      "risk_score": 6,
+      "human_coordination_score": 52,
+      "dissipation_risk": 33,
+      "status": "active"
+    },
+    {
+      "id": "ACC0294",
+      "label": "Account ACC0294",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 66345.4,
+      "risk_score": 32,
+      "human_coordination_score": 82,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0295",
+      "label": "Account ACC0295",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 88177.32,
+      "risk_score": 36,
+      "human_coordination_score": 40,
+      "dissipation_risk": 88,
+      "status": "active"
+    },
+    {
+      "id": "ACC0296",
+      "label": "Account ACC0296",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 69637.99,
+      "risk_score": 20,
+      "human_coordination_score": 76,
+      "dissipation_risk": 18,
+      "status": "active"
+    },
+    {
+      "id": "ACC0297",
+      "label": "Account ACC0297",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 12932.29,
+      "risk_score": 12,
+      "human_coordination_score": 87,
+      "dissipation_risk": 34,
+      "status": "active"
+    },
+    {
+      "id": "ACC0298",
+      "label": "Account ACC0298",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 17288.08,
+      "risk_score": 24,
+      "human_coordination_score": 76,
+      "dissipation_risk": 78,
+      "status": "active"
+    },
+    {
+      "id": "ACC0299",
+      "label": "Account ACC0299",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 48324.79,
+      "risk_score": 21,
+      "human_coordination_score": 88,
+      "dissipation_risk": 27,
+      "status": "active"
+    },
+    {
+      "id": "ACC0300",
+      "label": "Account ACC0300",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 60336.61,
+      "risk_score": 22,
+      "human_coordination_score": 71,
+      "dissipation_risk": 38,
+      "status": "active"
+    },
+    {
+      "id": "ACC0301",
+      "label": "Account ACC0301",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 88054.26,
+      "risk_score": 78,
+      "human_coordination_score": 52,
+      "dissipation_risk": 17,
+      "status": "active"
+    },
+    {
+      "id": "ACC0302",
+      "label": "Account ACC0302",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 542.56,
+      "risk_score": 10,
+      "human_coordination_score": 37,
+      "dissipation_risk": 63,
+      "status": "active"
+    },
+    {
+      "id": "ACC0303",
+      "label": "Account ACC0303",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 40770.38,
+      "risk_score": 70,
+      "human_coordination_score": 13,
+      "dissipation_risk": 80,
+      "status": "active"
+    },
+    {
+      "id": "ACC0304",
+      "label": "Account ACC0304",
+      "bank": "Axis",
+      "node_type": "victim",
+      "balance": 68229.83,
+      "risk_score": 90,
+      "human_coordination_score": 78,
+      "dissipation_risk": 47,
+      "status": "active"
+    },
+    {
+      "id": "ACC0305",
+      "label": "Account ACC0305",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 85430.39,
+      "risk_score": 5,
+      "human_coordination_score": 30,
+      "dissipation_risk": 24,
+      "status": "active"
+    },
+    {
+      "id": "ACC0306",
+      "label": "Account ACC0306",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 32295.55,
+      "risk_score": 34,
+      "human_coordination_score": 62,
+      "dissipation_risk": 16,
+      "status": "active"
+    },
+    {
+      "id": "ACC0307",
+      "label": "Account ACC0307",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 28068.27,
+      "risk_score": 33,
+      "human_coordination_score": 51,
+      "dissipation_risk": 13,
+      "status": "active"
+    },
+    {
+      "id": "ACC0308",
+      "label": "Account ACC0308",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 20348.67,
+      "risk_score": 25,
+      "human_coordination_score": 84,
+      "dissipation_risk": 62,
+      "status": "active"
+    },
+    {
+      "id": "ACC0309",
+      "label": "Account ACC0309",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 81128.01,
+      "risk_score": 31,
+      "human_coordination_score": 73,
+      "dissipation_risk": 55,
+      "status": "active"
+    },
+    {
+      "id": "ACC0310",
+      "label": "Account ACC0310",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 65313.57,
+      "risk_score": 97,
+      "human_coordination_score": 50,
+      "dissipation_risk": 25,
+      "status": "active"
+    },
+    {
+      "id": "ACC0311",
+      "label": "Account ACC0311",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 31650.48,
+      "risk_score": 23,
+      "human_coordination_score": 61,
+      "dissipation_risk": 77,
+      "status": "active"
+    },
+    {
+      "id": "ACC0312",
+      "label": "Account ACC0312",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 17297.95,
+      "risk_score": 8,
+      "human_coordination_score": 20,
+      "dissipation_risk": 73,
+      "status": "active"
+    },
+    {
+      "id": "ACC0313",
+      "label": "Account ACC0313",
+      "bank": "Yes Bank",
+      "node_type": "victim",
+      "balance": 37940.24,
+      "risk_score": 73,
+      "human_coordination_score": 26,
+      "dissipation_risk": 69,
+      "status": "active"
+    },
+    {
+      "id": "ACC0314",
+      "label": "Account ACC0314",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 91627.02,
+      "risk_score": 70,
+      "human_coordination_score": 84,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0315",
+      "label": "Account ACC0315",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 51610.69,
+      "risk_score": 88,
+      "human_coordination_score": 52,
+      "dissipation_risk": 13,
+      "status": "active"
+    },
+    {
+      "id": "ACC0316",
+      "label": "Account ACC0316",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 92368.08,
+      "risk_score": 12,
+      "human_coordination_score": 63,
+      "dissipation_risk": 50,
+      "status": "active"
+    },
+    {
+      "id": "ACC0317",
+      "label": "Account ACC0317",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 93356.02,
+      "risk_score": 82,
+      "human_coordination_score": 60,
+      "dissipation_risk": 80,
+      "status": "active"
+    },
+    {
+      "id": "ACC0318",
+      "label": "Account ACC0318",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 65994.26,
+      "risk_score": 33,
+      "human_coordination_score": 58,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0319",
+      "label": "Account ACC0319",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 34692.81,
+      "risk_score": 87,
+      "human_coordination_score": 36,
+      "dissipation_risk": 21,
+      "status": "active"
+    },
+    {
+      "id": "ACC0320",
+      "label": "Account ACC0320",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 98446.85,
+      "risk_score": 29,
+      "human_coordination_score": 43,
+      "dissipation_risk": 89,
+      "status": "active"
+    },
+    {
+      "id": "ACC0321",
+      "label": "Account ACC0321",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 20082.5,
+      "risk_score": 6,
+      "human_coordination_score": 76,
+      "dissipation_risk": 85,
+      "status": "active"
+    },
+    {
+      "id": "ACC0322",
+      "label": "Account ACC0322",
+      "bank": "Axis",
+      "node_type": "sink",
+      "balance": 72780.06,
+      "risk_score": 89,
+      "human_coordination_score": 20,
+      "dissipation_risk": 33,
+      "status": "active"
+    },
+    {
+      "id": "ACC0323",
+      "label": "Account ACC0323",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 23956.04,
+      "risk_score": 17,
+      "human_coordination_score": 50,
+      "dissipation_risk": 24,
+      "status": "active"
+    },
+    {
+      "id": "ACC0324",
+      "label": "Account ACC0324",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 14224.37,
+      "risk_score": 31,
+      "human_coordination_score": 80,
+      "dissipation_risk": 67,
+      "status": "active"
+    },
+    {
+      "id": "ACC0325",
+      "label": "Account ACC0325",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 87952.99,
+      "risk_score": 24,
+      "human_coordination_score": 26,
+      "dissipation_risk": 40,
+      "status": "active"
+    },
+    {
+      "id": "ACC0326",
+      "label": "Account ACC0326",
+      "bank": "ICICI",
+      "node_type": "sink",
+      "balance": 97983.42,
+      "risk_score": 80,
+      "human_coordination_score": 84,
+      "dissipation_risk": 18,
+      "status": "active"
+    },
+    {
+      "id": "ACC0327",
+      "label": "Account ACC0327",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 74947.97,
+      "risk_score": 71,
+      "human_coordination_score": 37,
+      "dissipation_risk": 42,
+      "status": "active"
+    },
+    {
+      "id": "ACC0328",
+      "label": "Account ACC0328",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 9857.93,
+      "risk_score": 28,
+      "human_coordination_score": 62,
+      "dissipation_risk": 54,
+      "status": "active"
+    },
+    {
+      "id": "ACC0329",
+      "label": "Account ACC0329",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 2533.83,
+      "risk_score": 21,
+      "human_coordination_score": 26,
+      "dissipation_risk": 40,
+      "status": "active"
+    },
+    {
+      "id": "ACC0330",
+      "label": "Account ACC0330",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 59345.93,
+      "risk_score": 15,
+      "human_coordination_score": 39,
+      "dissipation_risk": 34,
+      "status": "active"
+    },
+    {
+      "id": "ACC0331",
+      "label": "Account ACC0331",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 23474.03,
+      "risk_score": 21,
+      "human_coordination_score": 56,
+      "dissipation_risk": 11,
+      "status": "active"
+    },
+    {
+      "id": "ACC0332",
+      "label": "Account ACC0332",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 95520.82,
+      "risk_score": 16,
+      "human_coordination_score": 52,
+      "dissipation_risk": 33,
+      "status": "active"
+    },
+    {
+      "id": "ACC0333",
+      "label": "Account ACC0333",
+      "bank": "SBI",
+      "node_type": "sink",
+      "balance": 38903.58,
+      "risk_score": 98,
+      "human_coordination_score": 62,
+      "dissipation_risk": 16,
+      "status": "active"
+    },
+    {
+      "id": "ACC0334",
+      "label": "Account ACC0334",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 69919.82,
+      "risk_score": 18,
+      "human_coordination_score": 68,
+      "dissipation_risk": 51,
+      "status": "active"
+    },
+    {
+      "id": "ACC0335",
+      "label": "Account ACC0335",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 11467.17,
+      "risk_score": 13,
+      "human_coordination_score": 70,
+      "dissipation_risk": 78,
+      "status": "active"
+    },
+    {
+      "id": "ACC0336",
+      "label": "Account ACC0336",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 60905.73,
+      "risk_score": 8,
+      "human_coordination_score": 87,
+      "dissipation_risk": 46,
+      "status": "active"
+    },
+    {
+      "id": "ACC0337",
+      "label": "Account ACC0337",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 31739.4,
+      "risk_score": 29,
+      "human_coordination_score": 31,
+      "dissipation_risk": 27,
+      "status": "active"
+    },
+    {
+      "id": "ACC0338",
+      "label": "Account ACC0338",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 39351.61,
+      "risk_score": 78,
+      "human_coordination_score": 79,
+      "dissipation_risk": 81,
+      "status": "active"
+    },
+    {
+      "id": "ACC0339",
+      "label": "Account ACC0339",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 66747.48,
+      "risk_score": 32,
+      "human_coordination_score": 49,
+      "dissipation_risk": 15,
+      "status": "active"
+    },
+    {
+      "id": "ACC0340",
+      "label": "Account ACC0340",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 74130.14,
+      "risk_score": 16,
+      "human_coordination_score": 40,
+      "dissipation_risk": 38,
+      "status": "active"
+    },
+    {
+      "id": "ACC0341",
+      "label": "Account ACC0341",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 81022.81,
+      "risk_score": 77,
+      "human_coordination_score": 15,
+      "dissipation_risk": 32,
+      "status": "active"
+    },
+    {
+      "id": "ACC0342",
+      "label": "Account ACC0342",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 29947.23,
+      "risk_score": 31,
+      "human_coordination_score": 59,
+      "dissipation_risk": 52,
+      "status": "active"
+    },
+    {
+      "id": "ACC0343",
+      "label": "Account ACC0343",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 51504.68,
+      "risk_score": 21,
+      "human_coordination_score": 30,
+      "dissipation_risk": 69,
+      "status": "active"
+    },
+    {
+      "id": "ACC0344",
+      "label": "Account ACC0344",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 38747.77,
+      "risk_score": 34,
+      "human_coordination_score": 45,
+      "dissipation_risk": 64,
+      "status": "active"
+    },
+    {
+      "id": "ACC0345",
+      "label": "Account ACC0345",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 34447.04,
+      "risk_score": 71,
+      "human_coordination_score": 29,
+      "dissipation_risk": 47,
+      "status": "active"
+    },
+    {
+      "id": "ACC0346",
+      "label": "Account ACC0346",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 92570.04,
+      "risk_score": 12,
+      "human_coordination_score": 59,
+      "dissipation_risk": 73,
+      "status": "active"
+    },
+    {
+      "id": "ACC0347",
+      "label": "Account ACC0347",
+      "bank": "SBI",
+      "node_type": "victim",
+      "balance": 67592.5,
+      "risk_score": 73,
+      "human_coordination_score": 70,
+      "dissipation_risk": 70,
+      "status": "active"
+    },
+    {
+      "id": "ACC0348",
+      "label": "Account ACC0348",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 82137.32,
+      "risk_score": 75,
+      "human_coordination_score": 35,
+      "dissipation_risk": 48,
+      "status": "active"
+    },
+    {
+      "id": "ACC0349",
+      "label": "Account ACC0349",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 13421.25,
+      "risk_score": 19,
+      "human_coordination_score": 69,
+      "dissipation_risk": 73,
+      "status": "active"
+    },
+    {
+      "id": "ACC0350",
+      "label": "Account ACC0350",
+      "bank": "ICICI",
+      "node_type": "sink",
+      "balance": 3730.63,
+      "risk_score": 76,
+      "human_coordination_score": 65,
+      "dissipation_risk": 48,
+      "status": "active"
+    },
+    {
+      "id": "ACC0351",
+      "label": "Account ACC0351",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 95881.6,
+      "risk_score": 22,
+      "human_coordination_score": 37,
+      "dissipation_risk": 24,
+      "status": "active"
+    },
+    {
+      "id": "ACC0352",
+      "label": "Account ACC0352",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 83332.52,
+      "risk_score": 14,
+      "human_coordination_score": 76,
+      "dissipation_risk": 61,
+      "status": "active"
+    },
+    {
+      "id": "ACC0353",
+      "label": "Account ACC0353",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 40044.68,
+      "risk_score": 30,
+      "human_coordination_score": 81,
+      "dissipation_risk": 40,
+      "status": "active"
+    },
+    {
+      "id": "ACC0354",
+      "label": "Account ACC0354",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 44984.69,
+      "risk_score": 99,
+      "human_coordination_score": 68,
+      "dissipation_risk": 65,
+      "status": "active"
+    },
+    {
+      "id": "ACC0355",
+      "label": "Account ACC0355",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 98113.96,
+      "risk_score": 79,
+      "human_coordination_score": 26,
+      "dissipation_risk": 54,
+      "status": "active"
+    },
+    {
+      "id": "ACC0356",
+      "label": "Account ACC0356",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 94282.09,
+      "risk_score": 18,
+      "human_coordination_score": 43,
+      "dissipation_risk": 30,
+      "status": "active"
+    },
+    {
+      "id": "ACC0357",
+      "label": "Account ACC0357",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 36888.97,
+      "risk_score": 79,
+      "human_coordination_score": 67,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0358",
+      "label": "Account ACC0358",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 55451.66,
+      "risk_score": 91,
+      "human_coordination_score": 76,
+      "dissipation_risk": 27,
+      "status": "active"
+    },
+    {
+      "id": "ACC0359",
+      "label": "Account ACC0359",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 28753.52,
+      "risk_score": 15,
+      "human_coordination_score": 37,
+      "dissipation_risk": 79,
+      "status": "active"
+    },
+    {
+      "id": "ACC0360",
+      "label": "Account ACC0360",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 3654.76,
+      "risk_score": 94,
+      "human_coordination_score": 21,
+      "dissipation_risk": 87,
+      "status": "active"
+    },
+    {
+      "id": "ACC0361",
+      "label": "Account ACC0361",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 47394.17,
+      "risk_score": 33,
+      "human_coordination_score": 70,
+      "dissipation_risk": 60,
+      "status": "active"
+    },
+    {
+      "id": "ACC0362",
+      "label": "Account ACC0362",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 15660.24,
+      "risk_score": 79,
+      "human_coordination_score": 51,
+      "dissipation_risk": 11,
+      "status": "active"
+    },
+    {
+      "id": "ACC0363",
+      "label": "Account ACC0363",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 46691.39,
+      "risk_score": 6,
+      "human_coordination_score": 62,
+      "dissipation_risk": 24,
+      "status": "active"
+    },
+    {
+      "id": "ACC0364",
+      "label": "Account ACC0364",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 31816.42,
+      "risk_score": 27,
+      "human_coordination_score": 27,
+      "dissipation_risk": 87,
+      "status": "active"
+    },
+    {
+      "id": "ACC0365",
+      "label": "Account ACC0365",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 51438.24,
+      "risk_score": 26,
+      "human_coordination_score": 46,
+      "dissipation_risk": 21,
+      "status": "active"
+    },
+    {
+      "id": "ACC0366",
+      "label": "Account ACC0366",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 77649.04,
+      "risk_score": 24,
+      "human_coordination_score": 43,
+      "dissipation_risk": 86,
+      "status": "active"
+    },
+    {
+      "id": "ACC0367",
+      "label": "Account ACC0367",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 70325.99,
+      "risk_score": 21,
+      "human_coordination_score": 61,
+      "dissipation_risk": 59,
+      "status": "active"
+    },
+    {
+      "id": "ACC0368",
+      "label": "Account ACC0368",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 62111.35,
+      "risk_score": 88,
+      "human_coordination_score": 86,
+      "dissipation_risk": 57,
+      "status": "active"
+    },
+    {
+      "id": "ACC0369",
+      "label": "Account ACC0369",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 8738.88,
+      "risk_score": 10,
+      "human_coordination_score": 17,
+      "dissipation_risk": 73,
+      "status": "active"
+    },
+    {
+      "id": "ACC0370",
+      "label": "Account ACC0370",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 65589.24,
+      "risk_score": 12,
+      "human_coordination_score": 24,
+      "dissipation_risk": 47,
+      "status": "active"
+    },
+    {
+      "id": "ACC0371",
+      "label": "Account ACC0371",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 45687.27,
+      "risk_score": 30,
+      "human_coordination_score": 61,
+      "dissipation_risk": 87,
+      "status": "active"
+    },
+    {
+      "id": "ACC0372",
+      "label": "Account ACC0372",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 17514.38,
+      "risk_score": 75,
+      "human_coordination_score": 50,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0373",
+      "label": "Account ACC0373",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 1748.89,
+      "risk_score": 93,
+      "human_coordination_score": 49,
+      "dissipation_risk": 54,
+      "status": "active"
+    },
+    {
+      "id": "ACC0374",
+      "label": "Account ACC0374",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 25931.02,
+      "risk_score": 19,
+      "human_coordination_score": 56,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0375",
+      "label": "Account ACC0375",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 37305.87,
+      "risk_score": 28,
+      "human_coordination_score": 89,
+      "dissipation_risk": 70,
+      "status": "active"
+    },
+    {
+      "id": "ACC0376",
+      "label": "Account ACC0376",
+      "bank": "SBI",
+      "node_type": "victim",
+      "balance": 72336.66,
+      "risk_score": 90,
+      "human_coordination_score": 45,
+      "dissipation_risk": 39,
+      "status": "active"
+    },
+    {
+      "id": "ACC0377",
+      "label": "Account ACC0377",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 29936.47,
+      "risk_score": 71,
+      "human_coordination_score": 13,
+      "dissipation_risk": 67,
+      "status": "active"
+    },
+    {
+      "id": "ACC0378",
+      "label": "Account ACC0378",
+      "bank": "ICICI",
+      "node_type": "sink",
+      "balance": 64505.85,
+      "risk_score": 95,
+      "human_coordination_score": 29,
+      "dissipation_risk": 50,
+      "status": "active"
+    },
+    {
+      "id": "ACC0379",
+      "label": "Account ACC0379",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 34713.98,
+      "risk_score": 22,
+      "human_coordination_score": 41,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0380",
+      "label": "Account ACC0380",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 92090.59,
+      "risk_score": 89,
+      "human_coordination_score": 11,
+      "dissipation_risk": 29,
+      "status": "active"
+    },
+    {
+      "id": "ACC0381",
+      "label": "Account ACC0381",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 77520.12,
+      "risk_score": 70,
+      "human_coordination_score": 37,
+      "dissipation_risk": 17,
+      "status": "active"
+    },
+    {
+      "id": "ACC0382",
+      "label": "Account ACC0382",
+      "bank": "SBI",
+      "node_type": "victim",
+      "balance": 26663.12,
+      "risk_score": 88,
+      "human_coordination_score": 53,
+      "dissipation_risk": 81,
+      "status": "active"
+    },
+    {
+      "id": "ACC0383",
+      "label": "Account ACC0383",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 21058.07,
+      "risk_score": 17,
+      "human_coordination_score": 46,
+      "dissipation_risk": 38,
+      "status": "active"
+    },
+    {
+      "id": "ACC0384",
+      "label": "Account ACC0384",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 23059.8,
+      "risk_score": 12,
+      "human_coordination_score": 57,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0385",
+      "label": "Account ACC0385",
+      "bank": "Yes Bank",
+      "node_type": "victim",
+      "balance": 58682.88,
+      "risk_score": 88,
+      "human_coordination_score": 84,
+      "dissipation_risk": 80,
+      "status": "active"
+    },
+    {
+      "id": "ACC0386",
+      "label": "Account ACC0386",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 7180.02,
+      "risk_score": 29,
+      "human_coordination_score": 79,
+      "dissipation_risk": 19,
+      "status": "active"
+    },
+    {
+      "id": "ACC0387",
+      "label": "Account ACC0387",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 19797.9,
+      "risk_score": 34,
+      "human_coordination_score": 62,
+      "dissipation_risk": 51,
+      "status": "active"
+    },
+    {
+      "id": "ACC0388",
+      "label": "Account ACC0388",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 54419.44,
+      "risk_score": 11,
+      "human_coordination_score": 40,
+      "dissipation_risk": 69,
+      "status": "active"
+    },
+    {
+      "id": "ACC0389",
+      "label": "Account ACC0389",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 2829.79,
+      "risk_score": 39,
+      "human_coordination_score": 86,
+      "dissipation_risk": 10,
+      "status": "active"
+    },
+    {
+      "id": "ACC0390",
+      "label": "Account ACC0390",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 97615.38,
+      "risk_score": 17,
+      "human_coordination_score": 88,
+      "dissipation_risk": 89,
+      "status": "active"
+    },
+    {
+      "id": "ACC0391",
+      "label": "Account ACC0391",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 91526.82,
+      "risk_score": 80,
+      "human_coordination_score": 72,
+      "dissipation_risk": 22,
+      "status": "active"
+    },
+    {
+      "id": "ACC0392",
+      "label": "Account ACC0392",
+      "bank": "SBI",
+      "node_type": "victim",
+      "balance": 25008.39,
+      "risk_score": 80,
+      "human_coordination_score": 59,
+      "dissipation_risk": 12,
+      "status": "active"
+    },
+    {
+      "id": "ACC0393",
+      "label": "Account ACC0393",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 61488.57,
+      "risk_score": 10,
+      "human_coordination_score": 34,
+      "dissipation_risk": 20,
+      "status": "active"
+    },
+    {
+      "id": "ACC0394",
+      "label": "Account ACC0394",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 89886.18,
+      "risk_score": 31,
+      "human_coordination_score": 53,
+      "dissipation_risk": 74,
+      "status": "active"
+    },
+    {
+      "id": "ACC0395",
+      "label": "Account ACC0395",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 24286.38,
+      "risk_score": 72,
+      "human_coordination_score": 35,
+      "dissipation_risk": 21,
+      "status": "active"
+    },
+    {
+      "id": "ACC0396",
+      "label": "Account ACC0396",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 50023.51,
+      "risk_score": 20,
+      "human_coordination_score": 38,
+      "dissipation_risk": 32,
+      "status": "active"
+    },
+    {
+      "id": "ACC0397",
+      "label": "Account ACC0397",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 46496.37,
+      "risk_score": 33,
+      "human_coordination_score": 43,
+      "dissipation_risk": 86,
+      "status": "active"
+    },
+    {
+      "id": "ACC0398",
+      "label": "Account ACC0398",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 25899.39,
+      "risk_score": 81,
+      "human_coordination_score": 72,
+      "dissipation_risk": 47,
+      "status": "active"
+    },
+    {
+      "id": "ACC0399",
+      "label": "Account ACC0399",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 10635.89,
+      "risk_score": 6,
+      "human_coordination_score": 18,
+      "dissipation_risk": 25,
+      "status": "active"
+    },
+    {
+      "id": "ACC0400",
+      "label": "Account ACC0400",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 80528.14,
+      "risk_score": 12,
+      "human_coordination_score": 85,
+      "dissipation_risk": 79,
+      "status": "active"
+    },
+    {
+      "id": "ACC0401",
+      "label": "Account ACC0401",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 37640.1,
+      "risk_score": 20,
+      "human_coordination_score": 77,
+      "dissipation_risk": 80,
+      "status": "active"
+    },
+    {
+      "id": "ACC0402",
+      "label": "Account ACC0402",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 11595.97,
+      "risk_score": 87,
+      "human_coordination_score": 85,
+      "dissipation_risk": 36,
+      "status": "active"
+    },
+    {
+      "id": "ACC0403",
+      "label": "Account ACC0403",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 4084.69,
+      "risk_score": 33,
+      "human_coordination_score": 23,
+      "dissipation_risk": 89,
+      "status": "active"
+    },
+    {
+      "id": "ACC0404",
+      "label": "Account ACC0404",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 25604.77,
+      "risk_score": 11,
+      "human_coordination_score": 76,
+      "dissipation_risk": 33,
+      "status": "active"
+    },
+    {
+      "id": "ACC0405",
+      "label": "Account ACC0405",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 6395.14,
+      "risk_score": 32,
+      "human_coordination_score": 35,
+      "dissipation_risk": 13,
+      "status": "active"
+    },
+    {
+      "id": "ACC0406",
+      "label": "Account ACC0406",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 72565.84,
+      "risk_score": 11,
+      "human_coordination_score": 63,
+      "dissipation_risk": 46,
+      "status": "active"
+    },
+    {
+      "id": "ACC0407",
+      "label": "Account ACC0407",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 47108.33,
+      "risk_score": 40,
+      "human_coordination_score": 80,
+      "dissipation_risk": 35,
+      "status": "active"
+    },
+    {
+      "id": "ACC0408",
+      "label": "Account ACC0408",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 97561.04,
+      "risk_score": 25,
+      "human_coordination_score": 50,
+      "dissipation_risk": 57,
+      "status": "active"
+    },
+    {
+      "id": "ACC0409",
+      "label": "Account ACC0409",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 23825.3,
+      "risk_score": 94,
+      "human_coordination_score": 21,
+      "dissipation_risk": 81,
+      "status": "active"
+    },
+    {
+      "id": "ACC0410",
+      "label": "Account ACC0410",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 83863.2,
+      "risk_score": 21,
+      "human_coordination_score": 77,
+      "dissipation_risk": 16,
+      "status": "active"
+    },
+    {
+      "id": "ACC0411",
+      "label": "Account ACC0411",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 27144.52,
+      "risk_score": 92,
+      "human_coordination_score": 86,
+      "dissipation_risk": 13,
+      "status": "active"
+    },
+    {
+      "id": "ACC0412",
+      "label": "Account ACC0412",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 72229.93,
+      "risk_score": 95,
+      "human_coordination_score": 17,
+      "dissipation_risk": 11,
+      "status": "active"
+    },
+    {
+      "id": "ACC0413",
+      "label": "Account ACC0413",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 18823.33,
+      "risk_score": 39,
+      "human_coordination_score": 80,
+      "dissipation_risk": 33,
+      "status": "active"
+    },
+    {
+      "id": "ACC0414",
+      "label": "Account ACC0414",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 7664.33,
+      "risk_score": 24,
+      "human_coordination_score": 11,
+      "dissipation_risk": 71,
+      "status": "active"
+    },
+    {
+      "id": "ACC0415",
+      "label": "Account ACC0415",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 91413.1,
+      "risk_score": 94,
+      "human_coordination_score": 60,
+      "dissipation_risk": 77,
+      "status": "active"
+    },
+    {
+      "id": "ACC0416",
+      "label": "Account ACC0416",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 40257.61,
+      "risk_score": 24,
+      "human_coordination_score": 36,
+      "dissipation_risk": 37,
+      "status": "active"
+    },
+    {
+      "id": "ACC0417",
+      "label": "Account ACC0417",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 58396.69,
+      "risk_score": 25,
+      "human_coordination_score": 14,
+      "dissipation_risk": 90,
+      "status": "active"
+    },
+    {
+      "id": "ACC0418",
+      "label": "Account ACC0418",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 61776.1,
+      "risk_score": 30,
+      "human_coordination_score": 61,
+      "dissipation_risk": 14,
+      "status": "active"
+    },
+    {
+      "id": "ACC0419",
+      "label": "Account ACC0419",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 48254.65,
+      "risk_score": 27,
+      "human_coordination_score": 10,
+      "dissipation_risk": 39,
+      "status": "active"
+    },
+    {
+      "id": "ACC0420",
+      "label": "Account ACC0420",
+      "bank": "Yes Bank",
+      "node_type": "victim",
+      "balance": 6022.19,
+      "risk_score": 70,
+      "human_coordination_score": 37,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0421",
+      "label": "Account ACC0421",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 83036.73,
+      "risk_score": 21,
+      "human_coordination_score": 27,
+      "dissipation_risk": 90,
+      "status": "active"
+    },
+    {
+      "id": "ACC0422",
+      "label": "Account ACC0422",
+      "bank": "Yes Bank",
+      "node_type": "sink",
+      "balance": 13948.02,
+      "risk_score": 87,
+      "human_coordination_score": 77,
+      "dissipation_risk": 20,
+      "status": "active"
+    },
+    {
+      "id": "ACC0423",
+      "label": "Account ACC0423",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 31610.91,
+      "risk_score": 24,
+      "human_coordination_score": 73,
+      "dissipation_risk": 13,
+      "status": "active"
+    },
+    {
+      "id": "ACC0424",
+      "label": "Account ACC0424",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 53695.71,
+      "risk_score": 21,
+      "human_coordination_score": 38,
+      "dissipation_risk": 49,
+      "status": "active"
+    },
+    {
+      "id": "ACC0425",
+      "label": "Account ACC0425",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 62686.01,
+      "risk_score": 22,
+      "human_coordination_score": 39,
+      "dissipation_risk": 53,
+      "status": "active"
+    },
+    {
+      "id": "ACC0426",
+      "label": "Account ACC0426",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 80573.23,
+      "risk_score": 76,
+      "human_coordination_score": 48,
+      "dissipation_risk": 50,
+      "status": "active"
+    },
+    {
+      "id": "ACC0427",
+      "label": "Account ACC0427",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 74594.89,
+      "risk_score": 16,
+      "human_coordination_score": 63,
+      "dissipation_risk": 52,
+      "status": "active"
+    },
+    {
+      "id": "ACC0428",
+      "label": "Account ACC0428",
+      "bank": "HDFC",
+      "node_type": "mule",
+      "balance": 65520.34,
+      "risk_score": 89,
+      "human_coordination_score": 75,
+      "dissipation_risk": 27,
+      "status": "active"
+    },
+    {
+      "id": "ACC0429",
+      "label": "Account ACC0429",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 75569.34,
+      "risk_score": 14,
+      "human_coordination_score": 43,
+      "dissipation_risk": 24,
+      "status": "active"
+    },
+    {
+      "id": "ACC0430",
+      "label": "Account ACC0430",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 15167.51,
+      "risk_score": 34,
+      "human_coordination_score": 39,
+      "dissipation_risk": 72,
+      "status": "active"
+    },
+    {
+      "id": "ACC0431",
+      "label": "Account ACC0431",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 39267.35,
+      "risk_score": 26,
+      "human_coordination_score": 39,
+      "dissipation_risk": 54,
+      "status": "active"
+    },
+    {
+      "id": "ACC0432",
+      "label": "Account ACC0432",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 91551.01,
+      "risk_score": 28,
+      "human_coordination_score": 43,
+      "dissipation_risk": 71,
+      "status": "active"
+    },
+    {
+      "id": "ACC0433",
+      "label": "Account ACC0433",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 4241.25,
+      "risk_score": 40,
+      "human_coordination_score": 88,
+      "dissipation_risk": 16,
+      "status": "active"
+    },
+    {
+      "id": "ACC0434",
+      "label": "Account ACC0434",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 60566.83,
+      "risk_score": 20,
+      "human_coordination_score": 53,
+      "dissipation_risk": 11,
+      "status": "active"
+    },
+    {
+      "id": "ACC0435",
+      "label": "Account ACC0435",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 13277.96,
+      "risk_score": 5,
+      "human_coordination_score": 43,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0436",
+      "label": "Account ACC0436",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 42219.72,
+      "risk_score": 6,
+      "human_coordination_score": 36,
+      "dissipation_risk": 25,
+      "status": "active"
+    },
+    {
+      "id": "ACC0437",
+      "label": "Account ACC0437",
+      "bank": "HDFC",
+      "node_type": "sink",
+      "balance": 58719.39,
+      "risk_score": 98,
+      "human_coordination_score": 20,
+      "dissipation_risk": 13,
+      "status": "active"
+    },
+    {
+      "id": "ACC0438",
+      "label": "Account ACC0438",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 51083.02,
+      "risk_score": 31,
+      "human_coordination_score": 60,
+      "dissipation_risk": 57,
+      "status": "active"
+    },
+    {
+      "id": "ACC0439",
+      "label": "Account ACC0439",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 82271.97,
+      "risk_score": 7,
+      "human_coordination_score": 61,
+      "dissipation_risk": 65,
+      "status": "active"
+    },
+    {
+      "id": "ACC0440",
+      "label": "Account ACC0440",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 23080.27,
+      "risk_score": 13,
+      "human_coordination_score": 49,
+      "dissipation_risk": 26,
+      "status": "active"
+    },
+    {
+      "id": "ACC0441",
+      "label": "Account ACC0441",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 20623.62,
+      "risk_score": 26,
+      "human_coordination_score": 49,
+      "dissipation_risk": 24,
+      "status": "active"
+    },
+    {
+      "id": "ACC0442",
+      "label": "Account ACC0442",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 45787.45,
+      "risk_score": 75,
+      "human_coordination_score": 40,
+      "dissipation_risk": 80,
+      "status": "active"
+    },
+    {
+      "id": "ACC0443",
+      "label": "Account ACC0443",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 11495.9,
+      "risk_score": 9,
+      "human_coordination_score": 18,
+      "dissipation_risk": 67,
+      "status": "active"
+    },
+    {
+      "id": "ACC0444",
+      "label": "Account ACC0444",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 24706.07,
+      "risk_score": 28,
+      "human_coordination_score": 63,
+      "dissipation_risk": 76,
+      "status": "active"
+    },
+    {
+      "id": "ACC0445",
+      "label": "Account ACC0445",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 28110.47,
+      "risk_score": 39,
+      "human_coordination_score": 71,
+      "dissipation_risk": 17,
+      "status": "active"
+    },
+    {
+      "id": "ACC0446",
+      "label": "Account ACC0446",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 33218.79,
+      "risk_score": 37,
+      "human_coordination_score": 40,
+      "dissipation_risk": 43,
+      "status": "active"
+    },
+    {
+      "id": "ACC0447",
+      "label": "Account ACC0447",
+      "bank": "ICICI",
+      "node_type": "sink",
+      "balance": 26599.16,
+      "risk_score": 76,
+      "human_coordination_score": 90,
+      "dissipation_risk": 27,
+      "status": "active"
+    },
+    {
+      "id": "ACC0448",
+      "label": "Account ACC0448",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 71127.54,
+      "risk_score": 74,
+      "human_coordination_score": 48,
+      "dissipation_risk": 34,
+      "status": "active"
+    },
+    {
+      "id": "ACC0449",
+      "label": "Account ACC0449",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 65727.37,
+      "risk_score": 7,
+      "human_coordination_score": 58,
+      "dissipation_risk": 86,
+      "status": "active"
+    },
+    {
+      "id": "ACC0450",
+      "label": "Account ACC0450",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 92931.34,
+      "risk_score": 25,
+      "human_coordination_score": 71,
+      "dissipation_risk": 27,
+      "status": "active"
+    },
+    {
+      "id": "ACC0451",
+      "label": "Account ACC0451",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 77736.82,
+      "risk_score": 21,
+      "human_coordination_score": 42,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0452",
+      "label": "Account ACC0452",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 26109.24,
+      "risk_score": 24,
+      "human_coordination_score": 38,
+      "dissipation_risk": 16,
+      "status": "active"
+    },
+    {
+      "id": "ACC0453",
+      "label": "Account ACC0453",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 88635.74,
+      "risk_score": 38,
+      "human_coordination_score": 75,
+      "dissipation_risk": 30,
+      "status": "active"
+    },
+    {
+      "id": "ACC0454",
+      "label": "Account ACC0454",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 2363.02,
+      "risk_score": 97,
+      "human_coordination_score": 69,
+      "dissipation_risk": 70,
+      "status": "active"
+    },
+    {
+      "id": "ACC0455",
+      "label": "Account ACC0455",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 71723.4,
+      "risk_score": 40,
+      "human_coordination_score": 21,
+      "dissipation_risk": 69,
+      "status": "active"
+    },
+    {
+      "id": "ACC0456",
+      "label": "Account ACC0456",
+      "bank": "Yes Bank",
+      "node_type": "victim",
+      "balance": 17805.64,
+      "risk_score": 92,
+      "human_coordination_score": 65,
+      "dissipation_risk": 80,
+      "status": "active"
+    },
+    {
+      "id": "ACC0457",
+      "label": "Account ACC0457",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 6196.97,
+      "risk_score": 8,
+      "human_coordination_score": 69,
+      "dissipation_risk": 57,
+      "status": "active"
+    },
+    {
+      "id": "ACC0458",
+      "label": "Account ACC0458",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 62675.98,
+      "risk_score": 16,
+      "human_coordination_score": 28,
+      "dissipation_risk": 71,
+      "status": "active"
+    },
+    {
+      "id": "ACC0459",
+      "label": "Account ACC0459",
+      "bank": "Yes Bank",
+      "node_type": "victim",
+      "balance": 96526.79,
+      "risk_score": 92,
+      "human_coordination_score": 36,
+      "dissipation_risk": 26,
+      "status": "active"
+    },
+    {
+      "id": "ACC0460",
+      "label": "Account ACC0460",
+      "bank": "Axis",
+      "node_type": "sink",
+      "balance": 64433.84,
+      "risk_score": 98,
+      "human_coordination_score": 16,
+      "dissipation_risk": 31,
+      "status": "active"
+    },
+    {
+      "id": "ACC0461",
+      "label": "Account ACC0461",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 68954.41,
+      "risk_score": 5,
+      "human_coordination_score": 27,
+      "dissipation_risk": 39,
+      "status": "active"
+    },
+    {
+      "id": "ACC0462",
+      "label": "Account ACC0462",
+      "bank": "ICICI",
+      "node_type": "sink",
+      "balance": 18590.36,
+      "risk_score": 78,
+      "human_coordination_score": 37,
+      "dissipation_risk": 59,
+      "status": "active"
+    },
+    {
+      "id": "ACC0463",
+      "label": "Account ACC0463",
+      "bank": "ICICI",
+      "node_type": "victim",
+      "balance": 55862.0,
+      "risk_score": 98,
+      "human_coordination_score": 64,
+      "dissipation_risk": 65,
+      "status": "active"
+    },
+    {
+      "id": "ACC0464",
+      "label": "Account ACC0464",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 60300.25,
+      "risk_score": 20,
+      "human_coordination_score": 40,
+      "dissipation_risk": 90,
+      "status": "active"
+    },
+    {
+      "id": "ACC0465",
+      "label": "Account ACC0465",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 25663.43,
+      "risk_score": 16,
+      "human_coordination_score": 23,
+      "dissipation_risk": 32,
+      "status": "active"
+    },
+    {
+      "id": "ACC0466",
+      "label": "Account ACC0466",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 17306.84,
+      "risk_score": 24,
+      "human_coordination_score": 22,
+      "dissipation_risk": 89,
+      "status": "active"
+    },
+    {
+      "id": "ACC0467",
+      "label": "Account ACC0467",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 79436.87,
+      "risk_score": 37,
+      "human_coordination_score": 57,
+      "dissipation_risk": 11,
+      "status": "active"
+    },
+    {
+      "id": "ACC0468",
+      "label": "Account ACC0468",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 30520.5,
+      "risk_score": 33,
+      "human_coordination_score": 12,
+      "dissipation_risk": 30,
+      "status": "active"
+    },
+    {
+      "id": "ACC0469",
+      "label": "Account ACC0469",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 15208.43,
+      "risk_score": 13,
+      "human_coordination_score": 50,
+      "dissipation_risk": 17,
+      "status": "active"
+    },
+    {
+      "id": "ACC0470",
+      "label": "Account ACC0470",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 4940.5,
+      "risk_score": 70,
+      "human_coordination_score": 89,
+      "dissipation_risk": 12,
+      "status": "active"
+    },
+    {
+      "id": "ACC0471",
+      "label": "Account ACC0471",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 33988.97,
+      "risk_score": 90,
+      "human_coordination_score": 32,
+      "dissipation_risk": 74,
+      "status": "active"
+    },
+    {
+      "id": "ACC0472",
+      "label": "Account ACC0472",
+      "bank": "Yes Bank",
+      "node_type": "mule",
+      "balance": 43858.66,
+      "risk_score": 75,
+      "human_coordination_score": 63,
+      "dissipation_risk": 19,
+      "status": "active"
+    },
+    {
+      "id": "ACC0473",
+      "label": "Account ACC0473",
+      "bank": "Yes Bank",
+      "node_type": "predicted",
+      "balance": 17589.55,
+      "risk_score": 18,
+      "human_coordination_score": 22,
+      "dissipation_risk": 78,
+      "status": "active"
+    },
+    {
+      "id": "ACC0474",
+      "label": "Account ACC0474",
+      "bank": "ICICI",
+      "node_type": "sink",
+      "balance": 76332.3,
+      "risk_score": 76,
+      "human_coordination_score": 26,
+      "dissipation_risk": 22,
+      "status": "active"
+    },
+    {
+      "id": "ACC0475",
+      "label": "Account ACC0475",
+      "bank": "Yes Bank",
+      "node_type": "victim",
+      "balance": 41201.0,
+      "risk_score": 80,
+      "human_coordination_score": 77,
+      "dissipation_risk": 20,
+      "status": "active"
+    },
+    {
+      "id": "ACC0476",
+      "label": "Account ACC0476",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 86563.71,
+      "risk_score": 5,
+      "human_coordination_score": 34,
+      "dissipation_risk": 28,
+      "status": "active"
+    },
+    {
+      "id": "ACC0477",
+      "label": "Account ACC0477",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 14685.25,
+      "risk_score": 23,
+      "human_coordination_score": 19,
+      "dissipation_risk": 32,
+      "status": "active"
+    },
+    {
+      "id": "ACC0478",
+      "label": "Account ACC0478",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 55186.15,
+      "risk_score": 7,
+      "human_coordination_score": 49,
+      "dissipation_risk": 71,
+      "status": "active"
+    },
+    {
+      "id": "ACC0479",
+      "label": "Account ACC0479",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 70290.42,
+      "risk_score": 24,
+      "human_coordination_score": 69,
+      "dissipation_risk": 13,
+      "status": "active"
+    },
+    {
+      "id": "ACC0480",
+      "label": "Account ACC0480",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 75432.67,
+      "risk_score": 14,
+      "human_coordination_score": 48,
+      "dissipation_risk": 79,
+      "status": "active"
+    },
+    {
+      "id": "ACC0481",
+      "label": "Account ACC0481",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 16564.4,
+      "risk_score": 40,
+      "human_coordination_score": 11,
+      "dissipation_risk": 85,
+      "status": "active"
+    },
+    {
+      "id": "ACC0482",
+      "label": "Account ACC0482",
+      "bank": "SBI",
+      "node_type": "mule",
+      "balance": 88825.86,
+      "risk_score": 76,
+      "human_coordination_score": 76,
+      "dissipation_risk": 58,
+      "status": "active"
+    },
+    {
+      "id": "ACC0483",
+      "label": "Account ACC0483",
+      "bank": "Axis",
+      "node_type": "victim",
+      "balance": 16986.01,
+      "risk_score": 84,
+      "human_coordination_score": 59,
+      "dissipation_risk": 56,
+      "status": "active"
+    },
+    {
+      "id": "ACC0484",
+      "label": "Account ACC0484",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 26111.35,
+      "risk_score": 33,
+      "human_coordination_score": 82,
+      "dissipation_risk": 30,
+      "status": "active"
+    },
+    {
+      "id": "ACC0485",
+      "label": "Account ACC0485",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 86905.55,
+      "risk_score": 80,
+      "human_coordination_score": 58,
+      "dissipation_risk": 35,
+      "status": "active"
+    },
+    {
+      "id": "ACC0486",
+      "label": "Account ACC0486",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 24003.62,
+      "risk_score": 34,
+      "human_coordination_score": 81,
+      "dissipation_risk": 79,
+      "status": "active"
+    },
+    {
+      "id": "ACC0487",
+      "label": "Account ACC0487",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 11235.74,
+      "risk_score": 19,
+      "human_coordination_score": 78,
+      "dissipation_risk": 14,
+      "status": "active"
+    },
+    {
+      "id": "ACC0488",
+      "label": "Account ACC0488",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 11431.63,
+      "risk_score": 32,
+      "human_coordination_score": 54,
+      "dissipation_risk": 27,
+      "status": "active"
+    },
+    {
+      "id": "ACC0489",
+      "label": "Account ACC0489",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 55808.86,
+      "risk_score": 20,
+      "human_coordination_score": 89,
+      "dissipation_risk": 73,
+      "status": "active"
+    },
+    {
+      "id": "ACC0490",
+      "label": "Account ACC0490",
+      "bank": "SBI",
+      "node_type": "predicted",
+      "balance": 69398.92,
+      "risk_score": 16,
+      "human_coordination_score": 80,
+      "dissipation_risk": 77,
+      "status": "active"
+    },
+    {
+      "id": "ACC0491",
+      "label": "Account ACC0491",
+      "bank": "Axis",
+      "node_type": "predicted",
+      "balance": 72530.74,
+      "risk_score": 12,
+      "human_coordination_score": 68,
+      "dissipation_risk": 65,
+      "status": "active"
+    },
+    {
+      "id": "ACC0492",
+      "label": "Account ACC0492",
+      "bank": "Yes Bank",
+      "node_type": "victim",
+      "balance": 55168.02,
+      "risk_score": 91,
+      "human_coordination_score": 21,
+      "dissipation_risk": 39,
+      "status": "active"
+    },
+    {
+      "id": "ACC0493",
+      "label": "Account ACC0493",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 63034.45,
+      "risk_score": 17,
+      "human_coordination_score": 64,
+      "dissipation_risk": 47,
+      "status": "active"
+    },
+    {
+      "id": "ACC0494",
+      "label": "Account ACC0494",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 81908.01,
+      "risk_score": 74,
+      "human_coordination_score": 77,
+      "dissipation_risk": 74,
+      "status": "active"
+    },
+    {
+      "id": "ACC0495",
+      "label": "Account ACC0495",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 97679.81,
+      "risk_score": 27,
+      "human_coordination_score": 60,
+      "dissipation_risk": 88,
+      "status": "active"
+    },
+    {
+      "id": "ACC0496",
+      "label": "Account ACC0496",
+      "bank": "Axis",
+      "node_type": "mule",
+      "balance": 62449.29,
+      "risk_score": 87,
+      "human_coordination_score": 70,
+      "dissipation_risk": 36,
+      "status": "active"
+    },
+    {
+      "id": "ACC0497",
+      "label": "Account ACC0497",
+      "bank": "ICICI",
+      "node_type": "predicted",
+      "balance": 40354.83,
+      "risk_score": 27,
+      "human_coordination_score": 56,
+      "dissipation_risk": 88,
+      "status": "active"
+    },
+    {
+      "id": "ACC0498",
+      "label": "Account ACC0498",
+      "bank": "ICICI",
+      "node_type": "mule",
+      "balance": 24077.32,
+      "risk_score": 91,
+      "human_coordination_score": 47,
+      "dissipation_risk": 33,
+      "status": "active"
+    },
+    {
+      "id": "ACC0499",
+      "label": "Account ACC0499",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 88131.1,
+      "risk_score": 15,
+      "human_coordination_score": 34,
+      "dissipation_risk": 74,
+      "status": "active"
+    },
+    {
+      "id": "ACC0500",
+      "label": "Account ACC0500",
+      "bank": "HDFC",
+      "node_type": "predicted",
+      "balance": 42327.49,
+      "risk_score": 24,
+      "human_coordination_score": 23,
+      "dissipation_risk": 10,
+      "status": "active"
+    }
+  ],
+  "links": [
+    {
+      "source": "ACC0034",
+      "target": "ACC0362"
+    },
+    {
+      "source": "ACC0043",
+      "target": "ACC0426"
+    },
+    {
+      "source": "ACC0068",
+      "target": "ACC0362"
+    },
+    {
+      "source": "ACC0068",
+      "target": "ACC0051"
+    },
+    {
+      "source": "ACC0081",
+      "target": "ACC0145"
+    },
+    {
+      "source": "ACC0081",
+      "target": "ACC0315"
+    },
+    {
+      "source": "ACC0081",
+      "target": "ACC0381"
+    },
+    {
+      "source": "ACC0091",
+      "target": "ACC0338"
+    },
+    {
+      "source": "ACC0132",
+      "target": "ACC0260"
+    },
+    {
+      "source": "ACC0137",
+      "target": "ACC0412"
+    },
+    {
+      "source": "ACC0146",
+      "target": "ACC0273"
+    },
+    {
+      "source": "ACC0146",
+      "target": "ACC0145"
+    },
+    {
+      "source": "ACC0171",
+      "target": "ACC0395"
+    },
+    {
+      "source": "ACC0171",
+      "target": "ACC0208"
+    },
+    {
+      "source": "ACC0199",
+      "target": "ACC0257"
+    },
+    {
+      "source": "ACC0247",
+      "target": "ACC0358"
+    },
+    {
+      "source": "ACC0247",
+      "target": "ACC0100"
+    },
+    {
+      "source": "ACC0247",
+      "target": "ACC0368"
+    },
+    {
+      "source": "ACC0304",
+      "target": "ACC0381"
+    },
+    {
+      "source": "ACC0304",
+      "target": "ACC0496"
+    },
+    {
+      "source": "ACC0313",
+      "target": "ACC0086"
+    },
+    {
+      "source": "ACC0313",
+      "target": "ACC0109"
+    },
+    {
+      "source": "ACC0313",
+      "target": "ACC0041"
+    },
+    {
+      "source": "ACC0347",
+      "target": "ACC0314"
+    },
+    {
+      "source": "ACC0376",
+      "target": "ACC0005"
+    },
+    {
+      "source": "ACC0376",
+      "target": "ACC0355"
+    },
+    {
+      "source": "ACC0382",
+      "target": "ACC0198"
+    },
+    {
+      "source": "ACC0382",
+      "target": "ACC0470"
+    },
+    {
+      "source": "ACC0382",
+      "target": "ACC0485"
+    },
+    {
+      "source": "ACC0385",
+      "target": "ACC0198"
+    },
+    {
+      "source": "ACC0385",
+      "target": "ACC0058"
+    },
+    {
+      "source": "ACC0385",
+      "target": "ACC0030"
+    },
+    {
+      "source": "ACC0392",
+      "target": "ACC0074"
+    },
+    {
+      "source": "ACC0392",
+      "target": "ACC0058"
+    },
+    {
+      "source": "ACC0392",
+      "target": "ACC0235"
+    },
+    {
+      "source": "ACC0420",
+      "target": "ACC0208"
+    },
+    {
+      "source": "ACC0420",
+      "target": "ACC0058"
+    },
+    {
+      "source": "ACC0456",
+      "target": "ACC0110"
+    },
+    {
+      "source": "ACC0456",
+      "target": "ACC0317"
+    },
+    {
+      "source": "ACC0459",
+      "target": "ACC0377"
+    },
+    {
+      "source": "ACC0459",
+      "target": "ACC0373"
+    },
+    {
+      "source": "ACC0463",
+      "target": "ACC0448"
+    },
+    {
+      "source": "ACC0463",
+      "target": "ACC0145"
+    },
+    {
+      "source": "ACC0475",
+      "target": "ACC0411"
+    },
+    {
+      "source": "ACC0475",
+      "target": "ACC0372"
+    },
+    {
+      "source": "ACC0475",
+      "target": "ACC0402"
+    },
+    {
+      "source": "ACC0483",
+      "target": "ACC0224"
+    },
+    {
+      "source": "ACC0492",
+      "target": "ACC0109"
+    },
+    {
+      "source": "ACC0492",
+      "target": "ACC0310"
+    },
+    {
+      "source": "ACC0492",
+      "target": "ACC0409"
+    },
+    {
+      "source": "ACC0005",
+      "target": "ACC0398"
+    },
+    {
+      "source": "ACC0012",
+      "target": "ACC0075"
+    },
+    {
+      "source": "ACC0012",
+      "target": "ACC0120"
+    },
+    {
+      "source": "ACC0015",
+      "target": "ACC0123"
+    },
+    {
+      "source": "ACC0017",
+      "target": "ACC0338"
+    },
+    {
+      "source": "ACC0018",
+      "target": "ACC0412"
+    },
+    {
+      "source": "ACC0018",
+      "target": "ACC0362"
+    },
+    {
+      "source": "ACC0018",
+      "target": "ACC0134"
+    },
+    {
+      "source": "ACC0028",
+      "target": "ACC0145"
+    },
+    {
+      "source": "ACC0028",
+      "target": "ACC0358"
+    },
+    {
+      "source": "ACC0028",
+      "target": "ACC0268"
+    },
+    {
+      "source": "ACC0028",
+      "target": "ACC0354"
+    },
+    {
+      "source": "ACC0028",
+      "target": "ACC0164"
+    },
+    {
+      "source": "ACC0038",
+      "target": "ACC0274"
+    },
+    {
+      "source": "ACC0038",
+      "target": "ACC0485"
+    },
+    {
+      "source": "ACC0038",
+      "target": "ACC0428"
+    },
+    {
+      "source": "ACC0038",
+      "target": "ACC0442"
+    },
+    {
+      "source": "ACC0041",
+      "target": "ACC0372"
+    },
+    {
+      "source": "ACC0041",
+      "target": "ACC0391"
+    },
+    {
+      "source": "ACC0041",
+      "target": "ACC0405"
+    },
+    {
+      "source": "ACC0041",
+      "target": "ACC0026"
+    },
+    {
+      "source": "ACC0044",
+      "target": "ACC0438"
+    },
+    {
+      "source": "ACC0044",
+      "target": "ACC0397"
+    },
+    {
+      "source": "ACC0048",
+      "target": "ACC0412"
+    },
+    {
+      "source": "ACC0048",
+      "target": "ACC0264"
+    },
+    {
+      "source": "ACC0048",
+      "target": "ACC0244"
+    },
+    {
+      "source": "ACC0048",
+      "target": "ACC0030"
+    },
+    {
+      "source": "ACC0051",
+      "target": "ACC0115"
+    },
+    {
+      "source": "ACC0051",
+      "target": "ACC0149"
+    },
+    {
+      "source": "ACC0058",
+      "target": "ACC0048"
+    },
+    {
+      "source": "ACC0075",
+      "target": "ACC0020"
+    },
+    {
+      "source": "ACC0075",
+      "target": "ACC0058"
+    },
+    {
+      "source": "ACC0075",
+      "target": "ACC0426"
+    },
+    {
+      "source": "ACC0075",
+      "target": "ACC0056"
+    },
+    {
+      "source": "ACC0080",
+      "target": "ACC0310"
+    },
+    {
+      "source": "ACC0080",
+      "target": "ACC0395"
+    },
+    {
+      "source": "ACC0080",
+      "target": "ACC0075"
+    },
+    {
+      "source": "ACC0102",
+      "target": "ACC0124"
+    },
+    {
+      "source": "ACC0104",
+      "target": "ACC0317"
+    },
+    {
+      "source": "ACC0104",
+      "target": "ACC0017"
+    },
+    {
+      "source": "ACC0104",
+      "target": "ACC0084"
+    },
+    {
+      "source": "ACC0109",
+      "target": "ACC0154"
+    },
+    {
+      "source": "ACC0109",
+      "target": "ACC0015"
+    },
+    {
+      "source": "ACC0109",
+      "target": "ACC0005"
+    },
+    {
+      "source": "ACC0110",
+      "target": "ACC0056"
+    },
+    {
+      "source": "ACC0111",
+      "target": "ACC0358"
+    },
+    {
+      "source": "ACC0111",
+      "target": "ACC0274"
+    },
+    {
+      "source": "ACC0111",
+      "target": "ACC0028"
+    },
+    {
+      "source": "ACC0111",
+      "target": "ACC0341"
+    },
+    {
+      "source": "ACC0111",
+      "target": "ACC0184"
+    },
+    {
+      "source": "ACC0135",
+      "target": "ACC0412"
+    },
+    {
+      "source": "ACC0135",
+      "target": "ACC0402"
+    },
+    {
+      "source": "ACC0135",
+      "target": "ACC0212"
+    },
+    {
+      "source": "ACC0135",
+      "target": "ACC0264"
+    },
+    {
+      "source": "ACC0145",
+      "target": "ACC0348"
+    },
+    {
+      "source": "ACC0145",
+      "target": "ACC0482"
+    },
+    {
+      "source": "ACC0145",
+      "target": "ACC0070"
+    },
+    {
+      "source": "ACC0145",
+      "target": "ACC0326"
+    },
+    {
+      "source": "ACC0149",
+      "target": "ACC0260"
+    },
+    {
+      "source": "ACC0149",
+      "target": "ACC0442"
+    },
+    {
+      "source": "ACC0149",
+      "target": "ACC0058"
+    },
+    {
+      "source": "ACC0149",
+      "target": "ACC0273"
+    },
+    {
+      "source": "ACC0149",
+      "target": "ACC0103"
+    },
+    {
+      "source": "ACC0152",
+      "target": "ACC0184"
+    },
+    {
+      "source": "ACC0166",
+      "target": "ACC0273"
+    },
+    {
+      "source": "ACC0166",
+      "target": "ACC0260"
+    },
+    {
+      "source": "ACC0166",
+      "target": "ACC0109"
+    },
+    {
+      "source": "ACC0166",
+      "target": "ACC0016"
+    },
+    {
+      "source": "ACC0198",
+      "target": "ACC0102"
+    },
+    {
+      "source": "ACC0198",
+      "target": "ACC0243"
+    },
+    {
+      "source": "ACC0201",
+      "target": "ACC0050"
+    },
+    {
+      "source": "ACC0201",
+      "target": "ACC0406"
+    },
+    {
+      "source": "ACC0212",
+      "target": "ACC0485"
+    },
+    {
+      "source": "ACC0212",
+      "target": "ACC0341"
+    },
+    {
+      "source": "ACC0224",
+      "target": "ACC0442"
+    },
+    {
+      "source": "ACC0224",
+      "target": "ACC0327"
+    },
+    {
+      "source": "ACC0235",
+      "target": "ACC0354"
+    },
+    {
+      "source": "ACC0235",
+      "target": "ACC0422"
+    },
+    {
+      "source": "ACC0236",
+      "target": "ACC0044"
+    },
+    {
+      "source": "ACC0236",
+      "target": "ACC0012"
+    },
+    {
+      "source": "ACC0236",
+      "target": "ACC0145"
+    },
+    {
+      "source": "ACC0237",
+      "target": "ACC0357"
+    },
+    {
+      "source": "ACC0243",
+      "target": "ACC0378"
+    },
+    {
+      "source": "ACC0243",
+      "target": "ACC0031"
+    },
+    {
+      "source": "ACC0243",
+      "target": "ACC0007"
+    },
+    {
+      "source": "ACC0244",
+      "target": "ACC0412"
+    },
+    {
+      "source": "ACC0244",
+      "target": "ACC0498"
+    },
+    {
+      "source": "ACC0244",
+      "target": "ACC0355"
+    },
+    {
+      "source": "ACC0244",
+      "target": "ACC0350"
+    },
+    {
+      "source": "ACC0251",
+      "target": "ACC0212"
+    },
+    {
+      "source": "ACC0251",
+      "target": "ACC0235"
+    },
+    {
+      "source": "ACC0251",
+      "target": "ACC0268"
+    },
+    {
+      "source": "ACC0251",
+      "target": "ACC0355"
+    },
+    {
+      "source": "ACC0257",
+      "target": "ACC0442"
+    },
+    {
+      "source": "ACC0257",
+      "target": "ACC0498"
+    },
+    {
+      "source": "ACC0264",
+      "target": "ACC0464"
+    },
+    {
+      "source": "ACC0274",
+      "target": "ACC0208"
+    },
+    {
+      "source": "ACC0274",
+      "target": "ACC0264"
+    },
+    {
+      "source": "ACC0274",
+      "target": "ACC0149"
+    },
+    {
+      "source": "ACC0274",
+      "target": "ACC0123"
+    },
+    {
+      "source": "ACC0292",
+      "target": "ACC0120"
+    },
+    {
+      "source": "ACC0301",
+      "target": "ACC0224"
+    },
+    {
+      "source": "ACC0301",
+      "target": "ACC0159"
+    },
+    {
+      "source": "ACC0301",
+      "target": "ACC0050"
+    },
+    {
+      "source": "ACC0303",
+      "target": "ACC0100"
+    },
+    {
+      "source": "ACC0310",
+      "target": "ACC0327"
+    },
+    {
+      "source": "ACC0315",
+      "target": "ACC0402"
+    },
+    {
+      "source": "ACC0315",
+      "target": "ACC0109"
+    },
+    {
+      "source": "ACC0315",
+      "target": "ACC0448"
+    },
+    {
+      "source": "ACC0315",
+      "target": "ACC0273"
+    },
+    {
+      "source": "ACC0317",
+      "target": "ACC0238"
+    },
+    {
+      "source": "ACC0317",
+      "target": "ACC0154"
+    },
+    {
+      "source": "ACC0317",
+      "target": "ACC0115"
+    },
+    {
+      "source": "ACC0319",
+      "target": "ACC0151"
+    },
+    {
+      "source": "ACC0319",
+      "target": "ACC0381"
+    },
+    {
+      "source": "ACC0338",
+      "target": "ACC0115"
+    },
+    {
+      "source": "ACC0338",
+      "target": "ACC0149"
+    },
+    {
+      "source": "ACC0338",
+      "target": "ACC0070"
+    },
+    {
+      "source": "ACC0338",
+      "target": "ACC0412"
+    },
+    {
+      "source": "ACC0338",
+      "target": "ACC0422"
+    },
+    {
+      "source": "ACC0338",
+      "target": "ACC0026"
+    },
+    {
+      "source": "ACC0338",
+      "target": "ACC0275"
+    },
+    {
+      "source": "ACC0354",
+      "target": "ACC0442"
+    },
+    {
+      "source": "ACC0354",
+      "target": "ACC0380"
+    },
+    {
+      "source": "ACC0354",
+      "target": "ACC0012"
+    },
+    {
+      "source": "ACC0354",
+      "target": "ACC0472"
+    },
+    {
+      "source": "ACC0355",
+      "target": "ACC0041"
+    },
+    {
+      "source": "ACC0355",
+      "target": "ACC0303"
+    },
+    {
+      "source": "ACC0355",
+      "target": "ACC0415"
+    },
+    {
+      "source": "ACC0355",
+      "target": "ACC0103"
+    },
+    {
+      "source": "ACC0360",
+      "target": "ACC0152"
+    },
+    {
+      "source": "ACC0360",
+      "target": "ACC0319"
+    },
+    {
+      "source": "ACC0360",
+      "target": "ACC0104"
+    },
+    {
+      "source": "ACC0360",
+      "target": "ACC0395"
+    },
+    {
+      "source": "ACC0360",
+      "target": "ACC0239"
+    },
+    {
+      "source": "ACC0360",
+      "target": "ACC0275"
+    },
+    {
+      "source": "ACC0362",
+      "target": "ACC0381"
+    },
+    {
+      "source": "ACC0368",
+      "target": "ACC0355"
+    },
+    {
+      "source": "ACC0368",
+      "target": "ACC0472"
+    },
+    {
+      "source": "ACC0368",
+      "target": "ACC0358"
+    },
+    {
+      "source": "ACC0368",
+      "target": "ACC0123"
+    },
+    {
+      "source": "ACC0368",
+      "target": "ACC0370"
+    },
+    {
+      "source": "ACC0372",
+      "target": "ACC0041"
+    },
+    {
+      "source": "ACC0372",
+      "target": "ACC0356"
+    },
+    {
+      "source": "ACC0372",
+      "target": "ACC0189"
+    },
+    {
+      "source": "ACC0373",
+      "target": "ACC0411"
+    },
+    {
+      "source": "ACC0373",
+      "target": "ACC0058"
+    },
+    {
+      "source": "ACC0373",
+      "target": "ACC0327"
+    },
+    {
+      "source": "ACC0373",
+      "target": "ACC0213"
+    },
+    {
+      "source": "ACC0377",
+      "target": "ACC0224"
+    },
+    {
+      "source": "ACC0377",
+      "target": "ACC0411"
+    },
+    {
+      "source": "ACC0377",
+      "target": "ACC0260"
+    },
+    {
+      "source": "ACC0381",
+      "target": "ACC0415"
+    },
+    {
+      "source": "ACC0381",
+      "target": "ACC0485"
+    },
+    {
+      "source": "ACC0381",
+      "target": "ACC0041"
+    },
+    {
+      "source": "ACC0381",
+      "target": "ACC0354"
+    },
+    {
+      "source": "ACC0391",
+      "target": "ACC0041"
+    },
+    {
+      "source": "ACC0391",
+      "target": "ACC0482"
+    },
+    {
+      "source": "ACC0395",
+      "target": "ACC0415"
+    },
+    {
+      "source": "ACC0402",
+      "target": "ACC0017"
+    },
+    {
+      "source": "ACC0402",
+      "target": "ACC0377"
+    },
+    {
+      "source": "ACC0409",
+      "target": "ACC0005"
+    },
+    {
+      "source": "ACC0409",
+      "target": "ACC0402"
+    },
+    {
+      "source": "ACC0409",
+      "target": "ACC0235"
+    },
+    {
+      "source": "ACC0415",
+      "target": "ACC0319"
+    },
+    {
+      "source": "ACC0415",
+      "target": "ACC0448"
+    },
+    {
+      "source": "ACC0415",
+      "target": "ACC0498"
+    },
+    {
+      "source": "ACC0426",
+      "target": "ACC0338"
+    },
+    {
+      "source": "ACC0426",
+      "target": "ACC0257"
+    },
+    {
+      "source": "ACC0426",
+      "target": "ACC0184"
+    },
+    {
+      "source": "ACC0428",
+      "target": "ACC0236"
+    },
+    {
+      "source": "ACC0428",
+      "target": "ACC0360"
+    },
+    {
+      "source": "ACC0428",
+      "target": "ACC0303"
+    },
+    {
+      "source": "ACC0442",
+      "target": "ACC0341"
+    },
+    {
+      "source": "ACC0442",
+      "target": "ACC0042"
+    },
+    {
+      "source": "ACC0448",
+      "target": "ACC0354"
+    },
+    {
+      "source": "ACC0448",
+      "target": "ACC0104"
+    },
+    {
+      "source": "ACC0454",
+      "target": "ACC0038"
+    },
+    {
+      "source": "ACC0454",
+      "target": "ACC0412"
+    },
+    {
+      "source": "ACC0454",
+      "target": "ACC0109"
+    },
+    {
+      "source": "ACC0454",
+      "target": "ACC0166"
+    },
+    {
+      "source": "ACC0454",
+      "target": "ACC0084"
+    },
+    {
+      "source": "ACC0470",
+      "target": "ACC0198"
+    },
+    {
+      "source": "ACC0470",
+      "target": "ACC0044"
+    },
+    {
+      "source": "ACC0471",
+      "target": "ACC0086"
+    },
+    {
+      "source": "ACC0472",
+      "target": "ACC0124"
+    },
+    {
+      "source": "ACC0485",
+      "target": "ACC0103"
+    },
+    {
+      "source": "ACC0498",
+      "target": "ACC0264"
+    },
+    {
+      "source": "ACC0498",
+      "target": "ACC0212"
+    },
+    {
+      "source": "ACC0004",
+      "target": "ACC0332"
+    },
+    {
+      "source": "ACC0013",
+      "target": "ACC0095"
+    },
+    {
+      "source": "ACC0027",
+      "target": "ACC0290"
+    },
+    {
+      "source": "ACC0027",
+      "target": "ACC0408"
+    },
+    {
+      "source": "ACC0027",
+      "target": "ACC0278"
+    },
+    {
+      "source": "ACC0035",
+      "target": "ACC0027"
+    },
+    {
+      "source": "ACC0035",
+      "target": "ACC0371"
+    },
+    {
+      "source": "ACC0035",
+      "target": "ACC0261"
+    },
+    {
+      "source": "ACC0046",
+      "target": "ACC0431"
+    },
+    {
+      "source": "ACC0046",
+      "target": "ACC0262"
+    },
+    {
+      "source": "ACC0046",
+      "target": "ACC0202"
+    },
+    {
+      "source": "ACC0054",
+      "target": "ACC0254"
+    },
+    {
+      "source": "ACC0054",
+      "target": "ACC0417"
+    },
+    {
+      "source": "ACC0067",
+      "target": "ACC0401"
+    },
+    {
+      "source": "ACC0069",
+      "target": "ACC0480"
+    },
+    {
+      "source": "ACC0069",
+      "target": "ACC0112"
+    },
+    {
+      "source": "ACC0069",
+      "target": "ACC0336"
+    },
+    {
+      "source": "ACC0087",
+      "target": "ACC0419"
+    },
+    {
+      "source": "ACC0089",
+      "target": "ACC0384"
+    },
+    {
+      "source": "ACC0089",
+      "target": "ACC0094"
+    },
+    {
+      "source": "ACC0093",
+      "target": "ACC0002"
+    },
+    {
+      "source": "ACC0093",
+      "target": "ACC0175"
+    },
+    {
+      "source": "ACC0113",
+      "target": "ACC0249"
+    },
+    {
+      "source": "ACC0113",
+      "target": "ACC0203"
+    },
+    {
+      "source": "ACC0142",
+      "target": "ACC0324"
+    },
+    {
+      "source": "ACC0156",
+      "target": "ACC0169"
+    },
+    {
+      "source": "ACC0180",
+      "target": "ACC0134"
+    },
+    {
+      "source": "ACC0180",
+      "target": "ACC0008"
+    },
+    {
+      "source": "ACC0180",
+      "target": "ACC0407"
+    },
+    {
+      "source": "ACC0185",
+      "target": "ACC0416"
+    },
+    {
+      "source": "ACC0185",
+      "target": "ACC0089"
+    },
+    {
+      "source": "ACC0215",
+      "target": "ACC0076"
+    },
+    {
+      "source": "ACC0215",
+      "target": "ACC0406"
+    },
+    {
+      "source": "ACC0219",
+      "target": "ACC0240"
+    },
+    {
+      "source": "ACC0232",
+      "target": "ACC0190"
+    },
+    {
+      "source": "ACC0232",
+      "target": "ACC0196"
+    },
+    {
+      "source": "ACC0250",
+      "target": "ACC0029"
+    },
+    {
+      "source": "ACC0262",
+      "target": "ACC0393"
+    },
+    {
+      "source": "ACC0262",
+      "target": "ACC0207"
+    },
+    {
+      "source": "ACC0263",
+      "target": "ACC0025"
+    },
+    {
+      "source": "ACC0263",
+      "target": "ACC0400"
+    },
+    {
+      "source": "ACC0266",
+      "target": "ACC0196"
+    },
+    {
+      "source": "ACC0271",
+      "target": "ACC0072"
+    },
+    {
+      "source": "ACC0271",
+      "target": "ACC0059"
+    },
+    {
+      "source": "ACC0272",
+      "target": "ACC0495"
+    },
+    {
+      "source": "ACC0275",
+      "target": "ACC0078"
+    },
+    {
+      "source": "ACC0275",
+      "target": "ACC0433"
+    },
+    {
+      "source": "ACC0275",
+      "target": "ACC0055"
+    },
+    {
+      "source": "ACC0281",
+      "target": "ACC0480"
+    },
+    {
+      "source": "ACC0281",
+      "target": "ACC0117"
+    },
+    {
+      "source": "ACC0281",
+      "target": "ACC0245"
+    },
+    {
+      "source": "ACC0287",
+      "target": "ACC0057"
+    },
+    {
+      "source": "ACC0287",
+      "target": "ACC0162"
+    },
+    {
+      "source": "ACC0287",
+      "target": "ACC0089"
+    },
+    {
+      "source": "ACC0295",
+      "target": "ACC0163"
+    },
+    {
+      "source": "ACC0295",
+      "target": "ACC0098"
+    },
+    {
+      "source": "ACC0295",
+      "target": "ACC0179"
+    },
+    {
+      "source": "ACC0300",
+      "target": "ACC0259"
+    },
+    {
+      "source": "ACC0300",
+      "target": "ACC0002"
+    },
+    {
+      "source": "ACC0300",
+      "target": "ACC0275"
+    },
+    {
+      "source": "ACC0306",
+      "target": "ACC0457"
+    },
+    {
+      "source": "ACC0306",
+      "target": "ACC0289"
+    },
+    {
+      "source": "ACC0306",
+      "target": "ACC0218"
+    },
+    {
+      "source": "ACC0308",
+      "target": "ACC0129"
+    },
+    {
+      "source": "ACC0308",
+      "target": "ACC0156"
+    },
+    {
+      "source": "ACC0316",
+      "target": "ACC0194"
+    },
+    {
+      "source": "ACC0330",
+      "target": "ACC0336"
+    },
+    {
+      "source": "ACC0335",
+      "target": "ACC0258"
+    },
+    {
+      "source": "ACC0335",
+      "target": "ACC0142"
+    },
+    {
+      "source": "ACC0337",
+      "target": "ACC0116"
+    },
+    {
+      "source": "ACC0337",
+      "target": "ACC0082"
+    },
+    {
+      "source": "ACC0339",
+      "target": "ACC0337"
+    },
+    {
+      "source": "ACC0349",
+      "target": "ACC0403"
+    },
+    {
+      "source": "ACC0349",
+      "target": "ACC0195"
+    },
+    {
+      "source": "ACC0353",
+      "target": "ACC0178"
+    },
+    {
+      "source": "ACC0353",
+      "target": "ACC0403"
+    },
+    {
+      "source": "ACC0361",
+      "target": "ACC0076"
+    },
+    {
+      "source": "ACC0371",
+      "target": "ACC0168"
+    },
+    {
+      "source": "ACC0383",
+      "target": "ACC0205"
+    },
+    {
+      "source": "ACC0393",
+      "target": "ACC0336"
+    },
+    {
+      "source": "ACC0393",
+      "target": "ACC0027"
+    },
+    {
+      "source": "ACC0394",
+      "target": "ACC0085"
+    },
+    {
+      "source": "ACC0401",
+      "target": "ACC0158"
+    },
+    {
+      "source": "ACC0401",
+      "target": "ACC0278"
+    },
+    {
+      "source": "ACC0406",
+      "target": "ACC0393"
+    },
+    {
+      "source": "ACC0406",
+      "target": "ACC0189"
+    },
+    {
+      "source": "ACC0406",
+      "target": "ACC0057"
+    },
+    {
+      "source": "ACC0414",
+      "target": "ACC0112"
+    },
+    {
+      "source": "ACC0414",
+      "target": "ACC0225"
+    },
+    {
+      "source": "ACC0423",
+      "target": "ACC0071"
+    },
+    {
+      "source": "ACC0423",
+      "target": "ACC0488"
+    },
+    {
+      "source": "ACC0425",
+      "target": "ACC0069"
+    },
+    {
+      "source": "ACC0425",
+      "target": "ACC0272"
+    },
+    {
+      "source": "ACC0425",
+      "target": "ACC0262"
+    },
+    {
+      "source": "ACC0435",
+      "target": "ACC0192"
+    },
+    {
+      "source": "ACC0351",
+      "target": "ACC0380"
+    },
+    {
+      "source": "ACC0221",
+      "target": "ACC0054"
+    },
+    {
+      "source": "ACC0427",
+      "target": "ACC0223"
+    },
+    {
+      "source": "ACC0280",
+      "target": "ACC0477"
+    },
+    {
+      "source": "ACC0487",
+      "target": "ACC0204"
+    },
+    {
+      "source": "ACC0278",
+      "target": "ACC0390"
+    },
+    {
+      "source": "ACC0072",
+      "target": "ACC0390"
+    },
+    {
+      "source": "ACC0257",
+      "target": "ACC0054"
+    },
+    {
+      "source": "ACC0089",
+      "target": "ACC0252"
+    },
+    {
+      "source": "ACC0061",
+      "target": "ACC0019"
+    },
+    {
+      "source": "ACC0481",
+      "target": "ACC0099"
+    },
+    {
+      "source": "ACC0350",
+      "target": "ACC0277"
+    },
+    {
+      "source": "ACC0459",
+      "target": "ACC0461"
+    },
+    {
+      "source": "ACC0241",
+      "target": "ACC0490"
+    },
+    {
+      "source": "ACC0184",
+      "target": "ACC0315"
+    },
+    {
+      "source": "ACC0442",
+      "target": "ACC0163"
+    },
+    {
+      "source": "ACC0483",
+      "target": "ACC0362"
+    },
+    {
+      "source": "ACC0174",
+      "target": "ACC0266"
+    },
+    {
+      "source": "ACC0107",
+      "target": "ACC0372"
+    },
+    {
+      "source": "ACC0337",
+      "target": "ACC0076"
+    },
+    {
+      "source": "ACC0380",
+      "target": "ACC0430"
+    },
+    {
+      "source": "ACC0068",
+      "target": "ACC0301"
+    },
+    {
+      "source": "ACC0037",
+      "target": "ACC0259"
+    },
+    {
+      "source": "ACC0348",
+      "target": "ACC0301"
+    },
+    {
+      "source": "ACC0086",
+      "target": "ACC0243"
+    },
+    {
+      "source": "ACC0257",
+      "target": "ACC0050"
+    },
+    {
+      "source": "ACC0192",
+      "target": "ACC0109"
+    },
+    {
+      "source": "ACC0366",
+      "target": "ACC0479"
+    },
+    {
+      "source": "ACC0177",
+      "target": "ACC0484"
+    },
+    {
+      "source": "ACC0486",
+      "target": "ACC0472"
+    },
+    {
+      "source": "ACC0327",
+      "target": "ACC0113"
+    },
+    {
+      "source": "ACC0036",
+      "target": "ACC0018"
+    },
+    {
+      "source": "ACC0184",
+      "target": "ACC0197"
+    },
+    {
+      "source": "ACC0190",
+      "target": "ACC0071"
+    },
+    {
+      "source": "ACC0052",
+      "target": "ACC0469"
+    },
+    {
+      "source": "ACC0199",
+      "target": "ACC0371"
+    },
+    {
+      "source": "ACC0123",
+      "target": "ACC0330"
+    },
+    {
+      "source": "ACC0494",
+      "target": "ACC0083"
+    },
+    {
+      "source": "ACC0062",
+      "target": "ACC0327"
+    },
+    {
+      "source": "ACC0243",
+      "target": "ACC0121"
+    },
+    {
+      "source": "ACC0455",
+      "target": "ACC0156"
+    },
+    {
+      "source": "ACC0328",
+      "target": "ACC0244"
+    },
+    {
+      "source": "ACC0008",
+      "target": "ACC0396"
+    },
+    {
+      "source": "ACC0084",
+      "target": "ACC0200"
+    },
+    {
+      "source": "ACC0223",
+      "target": "ACC0374"
+    },
+    {
+      "source": "ACC0215",
+      "target": "ACC0267"
+    },
+    {
+      "source": "ACC0203",
+      "target": "ACC0194"
+    },
+    {
+      "source": "ACC0271",
+      "target": "ACC0046"
+    },
+    {
+      "source": "ACC0029",
+      "target": "ACC0422"
+    },
+    {
+      "source": "ACC0289",
+      "target": "ACC0114"
+    },
+    {
+      "source": "ACC0370",
+      "target": "ACC0180"
+    },
+    {
+      "source": "ACC0166",
+      "target": "ACC0136"
+    },
+    {
+      "source": "ACC0466",
+      "target": "ACC0298"
+    },
+    {
+      "source": "ACC0380",
+      "target": "ACC0052"
+    },
+    {
+      "source": "ACC0085",
+      "target": "ACC0221"
+    },
+    {
+      "source": "ACC0334",
+      "target": "ACC0367"
+    },
+    {
+      "source": "ACC0330",
+      "target": "ACC0063"
+    },
+    {
+      "source": "ACC0499",
+      "target": "ACC0427"
+    },
+    {
+      "source": "ACC0086",
+      "target": "ACC0393"
+    },
+    {
+      "source": "ACC0330",
+      "target": "ACC0243"
+    },
+    {
+      "source": "ACC0407",
+      "target": "ACC0159"
+    },
+    {
+      "source": "ACC0050",
+      "target": "ACC0244"
+    },
+    {
+      "source": "ACC0474",
+      "target": "ACC0302"
+    },
+    {
+      "source": "ACC0365",
+      "target": "ACC0435"
+    },
+    {
+      "source": "ACC0143",
+      "target": "ACC0173"
+    },
+    {
+      "source": "ACC0388",
+      "target": "ACC0465"
+    },
+    {
+      "source": "ACC0284",
+      "target": "ACC0068"
+    },
+    {
+      "source": "ACC0433",
+      "target": "ACC0018"
+    },
+    {
+      "source": "ACC0032",
+      "target": "ACC0141"
+    },
+    {
+      "source": "ACC0373",
+      "target": "ACC0276"
+    },
+    {
+      "source": "ACC0054",
+      "target": "ACC0295"
+    },
+    {
+      "source": "ACC0134",
+      "target": "ACC0187"
+    },
+    {
+      "source": "ACC0464",
+      "target": "ACC0170"
+    },
+    {
+      "source": "ACC0312",
+      "target": "ACC0298"
+    },
+    {
+      "source": "ACC0462",
+      "target": "ACC0438"
+    },
+    {
+      "source": "ACC0399",
+      "target": "ACC0432"
+    },
+    {
+      "source": "ACC0206",
+      "target": "ACC0171"
+    },
+    {
+      "source": "ACC0109",
+      "target": "ACC0076"
+    },
+    {
+      "source": "ACC0084",
+      "target": "ACC0218"
+    },
+    {
+      "source": "ACC0257",
+      "target": "ACC0154"
+    },
+    {
+      "source": "ACC0002",
+      "target": "ACC0395"
+    },
+    {
+      "source": "ACC0036",
+      "target": "ACC0234"
+    },
+    {
+      "source": "ACC0433",
+      "target": "ACC0019"
+    },
+    {
+      "source": "ACC0112",
+      "target": "ACC0273"
+    },
+    {
+      "source": "ACC0178",
+      "target": "ACC0382"
+    },
+    {
+      "source": "ACC0070",
+      "target": "ACC0005"
+    },
+    {
+      "source": "ACC0454",
+      "target": "ACC0119"
+    },
+    {
+      "source": "ACC0229",
+      "target": "ACC0499"
+    },
+    {
+      "source": "ACC0180",
+      "target": "ACC0230"
+    },
+    {
+      "source": "ACC0204",
+      "target": "ACC0455"
+    },
+    {
+      "source": "ACC0312",
+      "target": "ACC0375"
+    },
+    {
+      "source": "ACC0436",
+      "target": "ACC0048"
+    },
+    {
+      "source": "ACC0442",
+      "target": "ACC0406"
+    },
+    {
+      "source": "ACC0005",
+      "target": "ACC0253"
+    },
+    {
+      "source": "ACC0136",
+      "target": "ACC0111"
+    },
+    {
+      "source": "ACC0161",
+      "target": "ACC0241"
+    },
+    {
+      "source": "ACC0419",
+      "target": "ACC0126"
+    },
+    {
+      "source": "ACC0086",
+      "target": "ACC0344"
+    },
+    {
+      "source": "ACC0007",
+      "target": "ACC0190"
+    },
+    {
+      "source": "ACC0143",
+      "target": "ACC0465"
+    },
+    {
+      "source": "ACC0362",
+      "target": "ACC0201"
+    },
+    {
+      "source": "ACC0440",
+      "target": "ACC0424"
+    },
+    {
+      "source": "ACC0398",
+      "target": "ACC0124"
+    },
+    {
+      "source": "ACC0444",
+      "target": "ACC0338"
+    },
+    {
+      "source": "ACC0326",
+      "target": "ACC0084"
+    },
+    {
+      "source": "ACC0159",
+      "target": "ACC0263"
+    },
+    {
+      "source": "ACC0251",
+      "target": "ACC0426"
+    },
+    {
+      "source": "ACC0035",
+      "target": "ACC0230"
+    },
+    {
+      "source": "ACC0350",
+      "target": "ACC0141"
+    },
+    {
+      "source": "ACC0141",
+      "target": "ACC0351"
+    },
+    {
+      "source": "ACC0101",
+      "target": "ACC0418"
+    },
+    {
+      "source": "ACC0019",
+      "target": "ACC0037"
+    },
+    {
+      "source": "ACC0015",
+      "target": "ACC0272"
+    },
+    {
+      "source": "ACC0306",
+      "target": "ACC0042"
+    },
+    {
+      "source": "ACC0240",
+      "target": "ACC0231"
+    },
+    {
+      "source": "ACC0208",
+      "target": "ACC0406"
+    },
+    {
+      "source": "ACC0310",
+      "target": "ACC0447"
+    },
+    {
+      "source": "ACC0427",
+      "target": "ACC0282"
+    },
+    {
+      "source": "ACC0260",
+      "target": "ACC0183"
+    },
+    {
+      "source": "ACC0254",
+      "target": "ACC0381"
+    },
+    {
+      "source": "ACC0012",
+      "target": "ACC0375"
+    },
+    {
+      "source": "ACC0226",
+      "target": "ACC0047"
+    },
+    {
+      "source": "ACC0285",
+      "target": "ACC0460"
+    },
+    {
+      "source": "ACC0299",
+      "target": "ACC0276"
+    },
+    {
+      "source": "ACC0318",
+      "target": "ACC0368"
+    },
+    {
+      "source": "ACC0404",
+      "target": "ACC0191"
+    },
+    {
+      "source": "ACC0392",
+      "target": "ACC0078"
+    },
+    {
+      "source": "ACC0162",
+      "target": "ACC0458"
+    },
+    {
+      "source": "ACC0295",
+      "target": "ACC0083"
+    },
+    {
+      "source": "ACC0023",
+      "target": "ACC0489"
+    },
+    {
+      "source": "ACC0260",
+      "target": "ACC0249"
+    },
+    {
+      "source": "ACC0342",
+      "target": "ACC0368"
+    },
+    {
+      "source": "ACC0446",
+      "target": "ACC0289"
+    },
+    {
+      "source": "ACC0435",
+      "target": "ACC0300"
+    },
+    {
+      "source": "ACC0222",
+      "target": "ACC0013"
+    },
+    {
+      "source": "ACC0293",
+      "target": "ACC0262"
+    },
+    {
+      "source": "ACC0188",
+      "target": "ACC0092"
+    },
+    {
+      "source": "ACC0234",
+      "target": "ACC0050"
+    },
+    {
+      "source": "ACC0105",
+      "target": "ACC0019"
+    },
+    {
+      "source": "ACC0225",
+      "target": "ACC0052"
+    },
+    {
+      "source": "ACC0041",
+      "target": "ACC0125"
+    },
+    {
+      "source": "ACC0211",
+      "target": "ACC0406"
+    },
+    {
+      "source": "ACC0278",
+      "target": "ACC0156"
+    },
+    {
+      "source": "ACC0050",
+      "target": "ACC0330"
+    },
+    {
+      "source": "ACC0347",
+      "target": "ACC0176"
+    },
+    {
+      "source": "ACC0135",
+      "target": "ACC0384"
+    },
+    {
+      "source": "ACC0274",
+      "target": "ACC0008"
+    },
+    {
+      "source": "ACC0395",
+      "target": "ACC0368"
+    },
+    {
+      "source": "ACC0307",
+      "target": "ACC0184"
+    },
+    {
+      "source": "ACC0233",
+      "target": "ACC0268"
+    },
+    {
+      "source": "ACC0499",
+      "target": "ACC0026"
+    },
+    {
+      "source": "ACC0066",
+      "target": "ACC0488"
+    },
+    {
+      "source": "ACC0336",
+      "target": "ACC0246"
+    },
+    {
+      "source": "ACC0145",
+      "target": "ACC0182"
+    },
+    {
+      "source": "ACC0397",
+      "target": "ACC0111"
+    },
+    {
+      "source": "ACC0100",
+      "target": "ACC0179"
+    },
+    {
+      "source": "ACC0374",
+      "target": "ACC0017"
+    },
+    {
+      "source": "ACC0055",
+      "target": "ACC0021"
+    },
+    {
+      "source": "ACC0180",
+      "target": "ACC0194"
+    },
+    {
+      "source": "ACC0401",
+      "target": "ACC0130"
+    },
+    {
+      "source": "ACC0264",
+      "target": "ACC0203"
+    },
+    {
+      "source": "ACC0425",
+      "target": "ACC0328"
+    },
+    {
+      "source": "ACC0175",
+      "target": "ACC0091"
+    },
+    {
+      "source": "ACC0177",
+      "target": "ACC0008"
+    },
+    {
+      "source": "ACC0478",
+      "target": "ACC0244"
+    },
+    {
+      "source": "ACC0294",
+      "target": "ACC0033"
+    },
+    {
+      "source": "ACC0086",
+      "target": "ACC0060"
+    },
+    {
+      "source": "ACC0110",
+      "target": "ACC0319"
+    },
+    {
+      "source": "ACC0002",
+      "target": "ACC0294"
+    },
+    {
+      "source": "ACC0387",
+      "target": "ACC0383"
+    },
+    {
+      "source": "ACC0100",
+      "target": "ACC0246"
+    },
+    {
+      "source": "ACC0144",
+      "target": "ACC0299"
+    },
+    {
+      "source": "ACC0341",
+      "target": "ACC0037"
+    },
+    {
+      "source": "ACC0262",
+      "target": "ACC0419"
+    },
+    {
+      "source": "ACC0414",
+      "target": "ACC0174"
+    },
+    {
+      "source": "ACC0410",
+      "target": "ACC0025"
+    },
+    {
+      "source": "ACC0099",
+      "target": "ACC0135"
+    },
+    {
+      "source": "ACC0408",
+      "target": "ACC0382"
+    },
+    {
+      "source": "ACC0247",
+      "target": "ACC0426"
+    },
+    {
+      "source": "ACC0230",
+      "target": "ACC0090"
+    },
+    {
+      "source": "ACC0008",
+      "target": "ACC0489"
+    },
+    {
+      "source": "ACC0333",
+      "target": "ACC0457"
+    },
+    {
+      "source": "ACC0016",
+      "target": "ACC0422"
+    },
+    {
+      "source": "ACC0183",
+      "target": "ACC0463"
+    },
+    {
+      "source": "ACC0276",
+      "target": "ACC0292"
+    },
+    {
+      "source": "ACC0210",
+      "target": "ACC0291"
+    },
+    {
+      "source": "ACC0035",
+      "target": "ACC0181"
+    },
+    {
+      "source": "ACC0153",
+      "target": "ACC0381"
+    },
+    {
+      "source": "ACC0303",
+      "target": "ACC0137"
+    },
+    {
+      "source": "ACC0359",
+      "target": "ACC0217"
+    },
+    {
+      "source": "ACC0353",
+      "target": "ACC0474"
+    },
+    {
+      "source": "ACC0475",
+      "target": "ACC0249"
+    },
+    {
+      "source": "ACC0046",
+      "target": "ACC0256"
+    },
+    {
+      "source": "ACC0229",
+      "target": "ACC0324"
+    },
+    {
+      "source": "ACC0087",
+      "target": "ACC0171"
+    },
+    {
+      "source": "ACC0162",
+      "target": "ACC0393"
+    },
+    {
+      "source": "ACC0029",
+      "target": "ACC0053"
+    },
+    {
+      "source": "ACC0271",
+      "target": "ACC0431"
+    },
+    {
+      "source": "ACC0421",
+      "target": "ACC0438"
+    },
+    {
+      "source": "ACC0207",
+      "target": "ACC0411"
+    },
+    {
+      "source": "ACC0216",
+      "target": "ACC0393"
+    },
+    {
+      "source": "ACC0455",
+      "target": "ACC0168"
+    },
+    {
+      "source": "ACC0036",
+      "target": "ACC0178"
+    },
+    {
+      "source": "ACC0296",
+      "target": "ACC0100"
+    },
+    {
+      "source": "ACC0126",
+      "target": "ACC0093"
+    },
+    {
+      "source": "ACC0308",
+      "target": "ACC0370"
+    },
+    {
+      "source": "ACC0240",
+      "target": "ACC0002"
+    },
+    {
+      "source": "ACC0266",
+      "target": "ACC0226"
+    },
+    {
+      "source": "ACC0410",
+      "target": "ACC0340"
+    },
+    {
+      "source": "ACC0193",
+      "target": "ACC0482"
+    },
+    {
+      "source": "ACC0396",
+      "target": "ACC0381"
+    },
+    {
+      "source": "ACC0036",
+      "target": "ACC0466"
+    },
+    {
+      "source": "ACC0328",
+      "target": "ACC0429"
+    },
+    {
+      "source": "ACC0302",
+      "target": "ACC0277"
+    },
+    {
+      "source": "ACC0265",
+      "target": "ACC0255"
+    },
+    {
+      "source": "ACC0006",
+      "target": "ACC0170"
+    },
+    {
+      "source": "ACC0169",
+      "target": "ACC0364"
+    },
+    {
+      "source": "ACC0214",
+      "target": "ACC0052"
+    },
+    {
+      "source": "ACC0024",
+      "target": "ACC0144"
+    },
+    {
+      "source": "ACC0415",
+      "target": "ACC0296"
+    },
+    {
+      "source": "ACC0196",
+      "target": "ACC0468"
+    },
+    {
+      "source": "ACC0470",
+      "target": "ACC0393"
+    },
+    {
+      "source": "ACC0009",
+      "target": "ACC0447"
+    },
+    {
+      "source": "ACC0390",
+      "target": "ACC0403"
+    },
+    {
+      "source": "ACC0269",
+      "target": "ACC0346"
+    },
+    {
+      "source": "ACC0381",
+      "target": "ACC0089"
+    },
+    {
+      "source": "ACC0108",
+      "target": "ACC0310"
+    },
+    {
+      "source": "ACC0424",
+      "target": "ACC0224"
+    },
+    {
+      "source": "ACC0237",
+      "target": "ACC0458"
+    },
+    {
+      "source": "ACC0242",
+      "target": "ACC0323"
+    },
+    {
+      "source": "ACC0476",
+      "target": "ACC0221"
+    },
+    {
+      "source": "ACC0416",
+      "target": "ACC0436"
+    },
+    {
+      "source": "ACC0197",
+      "target": "ACC0019"
+    },
+    {
+      "source": "ACC0265",
+      "target": "ACC0409"
+    },
+    {
+      "source": "ACC0262",
+      "target": "ACC0093"
+    },
+    {
+      "source": "ACC0098",
+      "target": "ACC0401"
+    },
+    {
+      "source": "ACC0023",
+      "target": "ACC0443"
+    },
+    {
+      "source": "ACC0201",
+      "target": "ACC0028"
+    },
+    {
+      "source": "ACC0218",
+      "target": "ACC0361"
+    },
+    {
+      "source": "ACC0076",
+      "target": "ACC0124"
+    },
+    {
+      "source": "ACC0439",
+      "target": "ACC0324"
+    },
+    {
+      "source": "ACC0413",
+      "target": "ACC0438"
+    },
+    {
+      "source": "ACC0458",
+      "target": "ACC0359"
+    },
+    {
+      "source": "ACC0069",
+      "target": "ACC0408"
+    },
+    {
+      "source": "ACC0101",
+      "target": "ACC0496"
+    },
+    {
+      "source": "ACC0358",
+      "target": "ACC0413"
+    },
+    {
+      "source": "ACC0132",
+      "target": "ACC0234"
+    },
+    {
+      "source": "ACC0462",
+      "target": "ACC0075"
+    },
+    {
+      "source": "ACC0071",
+      "target": "ACC0241"
+    },
+    {
+      "source": "ACC0242",
+      "target": "ACC0103"
+    }
+  ]
+}

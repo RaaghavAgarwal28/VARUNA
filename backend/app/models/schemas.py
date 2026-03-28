@@ -115,3 +115,9 @@ class TransactionIngestRequest(BaseModel):
 class FreezeRequest(BaseModel):
     account_id: str
 
+class SimulateTransactionRequest(BaseModel):
+    transactionId: str
+    sourceAccount: str
+    targetAccount: str
+    amount: float
+    timestamp: str

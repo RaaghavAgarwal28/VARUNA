@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useCallback } from "react";
-import { AlertTriangle, ShieldCheck, Sparkles, TimerReset, Siren, Brain } from "lucide-react";
+import { AlertTriangle, ShieldCheck, Sparkles, TimerReset, Siren, Brain, Globe, Shield, Zap } from "lucide-react";
+import { FraudGraph3D } from "./components/graph/FraudGraph3D";
+import { MuleHunter3DEngine } from "./components/graph/MuleHunter3DEngine";
 import { Shell } from "./components/layout/Shell";
 import { ThreatGraph } from "./components/graph/ThreatGraph";
 import { BriefPanel } from "./components/panels/BriefPanel";
@@ -14,6 +16,7 @@ import { NodeDetailPanel } from "./components/panels/NodeDetailPanel";
 import { SentinelPanel } from "./components/panels/SentinelPanel";
 import { StatesSection } from "./components/panels/StatesSection";
 import { TimelinePanel } from "./components/panels/TimelinePanel";
+import { FraudSimulator } from "./components/panels/FraudSimulator";
 import { useDashboardData } from "./hooks/useDashboardData";
 import { buildBankIntel, buildStateIntel } from "./lib/bankIntel";
 import { formatCurrency, formatSeconds } from "./lib/format";
@@ -132,6 +135,9 @@ export default function App() {
         <div className="flex flex-wrap gap-3">
           {[
             { id: "command", label: "Command Center" },
+            { id: "simulator", label: "Fraud Simulator", icon: Zap },
+            { id: "3d", label: "3D Network", icon: Globe },
+            { id: "muleHunter3d", label: "Mule Hunter 3D", icon: Shield },
             { id: "ml", label: "ML Models", icon: Brain },
             { id: "states", label: "States" },
             { id: "banks", label: "Banks" },
@@ -217,6 +223,37 @@ export default function App() {
             <BriefPanel brief={data.brief} caseItem={activeCase} />
           </section>
         </>
+      )}
+
+      {activeDashboard === "3d" && (
+        <section className="grid gap-6">
+          <FraudGraph3D graph={data.graph} onNodeClick={handleSelectAccount} />
+          <AnimatePresence>
+            {selectedNode && (
+              <NodeDetailPanel
+                node={selectedNode}
+                score={scoreByAccount[selectedNodeId]}
+                onClose={() => setSelectedNodeId(null)}
+              />
+            )}
+          </AnimatePresence>
+        </section>
+      )}
+
+      {activeDashboard === "muleHunter3d" && (
+        <section className="grid gap-6">
+          <MuleHunter3DEngine
+            graph={data.graph}
+            onNodeClick={handleSelectAccount}
+            sentinelScores={data.sentinel_scores}
+          />
+        </section>
+      )}
+
+      {activeDashboard === "simulator" && (
+        <section className="grid gap-6">
+          <FraudSimulator />
+        </section>
       )}
 
       {activeDashboard === "ml" && (
