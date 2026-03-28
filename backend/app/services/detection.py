@@ -21,7 +21,7 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from datetime import datetime
 
-from app.models.schemas import GraphNode, RiskScore, Transaction
+from app.models.schemas import GraphNode, RiskScore, Transaction, SimulateTransactionRequest
 from app.services.ml_models import gat_score, lstm_temporal_score, eif_anomaly_score
 from app.services.graph_analysis import analyze_graph, get_node_role
 
@@ -408,3 +408,86 @@ def compute_scores(
 
     results.sort(key=lambda item: item.risk_score, reverse=True)
     return results
+
+def simulate_comprehensive_scores(payload: SimulateTransactionRequest) -> dict:
+    import random
+    
+    # Mock some basic values based on the input amount/accounts
+    base_risk = 0.3 + (random.random() * 0.4)
+    if payload.amount > 10000:
+        base_risk += 0.2
+    
+    gnn_prob = min(base_risk * 1.2, 0.99)
+    lstm_coord = min(base_risk * 1.1, 0.99)
+    eif_anom = min(base_risk * 1.05, 0.99)
+    flag_score = min(base_risk * 1.3, 0.99)
+    
+    raw_combined = gnn_prob * 0.35 + lstm_coord * 0.25 + eif_anom * 0.20 + flag_score * 0.20
+    final_risk = min(raw_combined * 1.15, 0.99) # Add role multiplier mock
+    
+    if final_risk >= 0.75:
+        decision = "BLOCK"
+        risk_level = "HIGH"
+    elif final_risk >= 0.45:
+        decision = "REVIEW"
+        risk_level = "MEDIUM"
+    else:
+        decision = "APPROVE"
+        risk_level = "LOW"
+        
+    is_mule = final_risk > 0.6
+    
+    return {
+        "decision": decision,
+        "riskScore": final_risk,
+        "riskLevel": risk_level,
+        "suspectedFraud": final_risk >= 0.75,
+        "modelScores": {
+            "gnn": gnn_prob,
+            "eif": eif_anom,
+            "eifConfidence": 0.85 + (random.random() * 0.1),
+            "confidence": 0.8 + (random.random() * 0.15),
+            "behavior": lstm_coord,
+            "graph": flag_score,
+            "eifExplanation": f"Path length significantly shorter than average. High deviation observed on velocity_burst and ja3_weighted cross-products in isolating region.",
+            "eifTopFactors": {
+                "velocity_burst": 0.35,
+                "ja3_weighted": -0.21,
+                "susp_neighbors": 0.15,
+                "device_ip_cross": -0.10,
+                "amount_deviation": 0.08
+            }
+        },
+        "fraudCluster": {
+            "clusterId": random.randint(10, 99),
+            "clusterSize": random.randint(3, 12),
+            "clusterRiskScore": min(final_risk + 0.1, 0.99)
+        },
+        "embeddingNorm": 2.5 + (random.random() * 2),
+        "networkMetrics": {
+            "suspiciousNeighbors": random.randint(0, 5) if is_mule else 0,
+            "centralityScore": 0.05 + random.random() * 0.2,
+            "transactionLoops": is_mule and random.random() > 0.5,
+            "sharedDevices": random.randint(0, 3),
+            "sharedIPs": random.randint(0, 2)
+        },
+        "muleRingDetection": {
+            "isMuleRingMember": is_mule,
+            "ringShape": random.choice(["STAR", "CHAIN", "CYCLE", "DENSE"]) if is_mule else None,
+            "ringSize": random.randint(3, 8) if is_mule else None,
+            "role": random.choice(["HUB", "BRIDGE", "MULE"]) if is_mule else None,
+            "hubAccount": str(random.randint(1000, 9999)) if is_mule else None,
+            "ringAccounts": [payload.sourceAccount, payload.targetAccount, str(random.randint(1000, 9999))] if is_mule else []
+        },
+        "riskFactors": [
+            "Embedded in a high-risk fraud community",
+            "member_of_star_mule_ring"
+        ] if is_mule else [],
+        "ja3Security": {
+            "isNewDevice": random.random() > 0.7,
+            "isNewJa3": random.random() > 0.8,
+            "velocity": random.randint(1, 15),
+            "fanout": random.randint(1, 10),
+            "ja3Risk": random.random() * 0.8
+        }
+    }

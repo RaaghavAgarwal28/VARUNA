@@ -18,9 +18,14 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-force-graph-2d": "^1.28.0",
+<<<<<<< HEAD
     "resium": "^1.20.0",
     "topojson-client": "^3.1.0",
     "vite-plugin-cesium": "^1.2.23"
+=======
+    "react-force-graph-3d": "^1.29.1",
+    "three": "^0.183.2"
+>>>>>>> f7dc2f130d2cda82511e90f55b141f6f58cd8050
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.0.2",
