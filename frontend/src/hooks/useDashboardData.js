@@ -1,8 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
 import { DASHBOARD_URL } from "../lib/api";
 import { demoData } from "../lib/demoData";
+import { useAuth } from "../context/AuthContext";
 
 export function useDashboardData() {
+  const { authFetch, isAuthenticated } = useAuth();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -13,11 +15,13 @@ export function useDashboardData() {
   }, []);
 
   useEffect(() => {
+    if (!isAuthenticated) return;
+
     let active = true;
 
     async function load() {
       try {
-        const response = await fetch(DASHBOARD_URL);
+        const response = await authFetch(DASHBOARD_URL);
         if (!response.ok) {
           throw new Error("Dashboard feed unavailable");
         }
@@ -39,7 +43,7 @@ export function useDashboardData() {
     return () => {
       active = false;
     };
-  }, [refreshKey]);
+  }, [refreshKey, authFetch, isAuthenticated]);
 
   return { data, loading, error, refresh };
 }

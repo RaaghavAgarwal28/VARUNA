@@ -5,3 +5,11 @@ dist/
 .venv/
 backend/reports/
 pyrightconfig.json
+
+# Security — NEVER commit secrets
+.env
+.env.local
+.env.production
+*.pem
+*.key
+*.crt

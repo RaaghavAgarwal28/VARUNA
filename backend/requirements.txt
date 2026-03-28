@@ -1,6 +1,7 @@
 fastapi==0.116.1
 uvicorn[standard]==0.35.0
 pydantic==2.11.7
+pydantic-settings==2.9.1
 torch
 torch-geometric
 networkx
@@ -9,3 +10,8 @@ numpy
 scikit-learn
 reportlab
 openpyxl
+python-jose[cryptography]==3.4.0
+bcrypt>=4.0.0
+python-dotenv==1.1.0
+slowapi==0.1.9
+cryptography==44.0.3

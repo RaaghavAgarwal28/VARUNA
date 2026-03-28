@@ -1,6 +1,17 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useCallback } from "react";
-import { AlertTriangle, ShieldCheck, Sparkles, TimerReset, Siren, Brain } from "lucide-react";
+import {
+  AlertTriangle,
+  ShieldCheck,
+  Sparkles,
+  TimerReset,
+  Siren,
+  Brain,
+  Shield,
+  LogOut,
+  User,
+  Database,
+} from "lucide-react";
 import { Shell } from "./components/layout/Shell";
 import { ThreatGraph } from "./components/graph/ThreatGraph";
 import { BriefPanel } from "./components/panels/BriefPanel";
@@ -11,15 +22,30 @@ import { InterceptPanel } from "./components/panels/InterceptPanel";
 import { MetricCard } from "./components/panels/MetricCard";
 import { ModelMetricsPanel } from "./components/panels/ModelMetricsPanel";
 import { NodeDetailPanel } from "./components/panels/NodeDetailPanel";
+import { SecurityDashboard } from "./components/panels/SecurityDashboard";
 import { SentinelPanel } from "./components/panels/SentinelPanel";
 import { StatesSection } from "./components/panels/StatesSection";
 import { TimelinePanel } from "./components/panels/TimelinePanel";
+import { AuditLedgerPanel } from "./components/panels/AuditLedgerPanel";
+import { LoginScreen } from "./components/auth/LoginScreen";
+import { useAuth } from "./context/AuthContext";
 import { useDashboardData } from "./hooks/useDashboardData";
 import { buildBankIntel, buildStateIntel } from "./lib/bankIntel";
 import { formatCurrency, formatSeconds } from "./lib/format";
 import { getApiBase } from "./lib/api";
 
 export default function App() {
+  const { isAuthenticated, user, logout, authFetch, isAdmin } = useAuth();
+
+  // ── Auth Gate ──
+  if (!isAuthenticated) {
+    return <LoginScreen />;
+  }
+
+  return <AuthenticatedApp user={user} logout={logout} authFetch={authFetch} isAdmin={isAdmin} />;
+}
+
+function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
   const { data, loading, error, refresh } = useDashboardData();
   const [activeDashboard, setActiveDashboard] = useState("command");
   const [selectedNodeId, setSelectedNodeId] = useState(null);
@@ -28,7 +54,7 @@ export default function App() {
   const handleInjectFraud = useCallback(async () => {
     setInjecting(true);
     try {
-      const res = await fetch(`${getApiBase()}/inject-fraud`, { method: "POST" });
+      const res = await authFetch(`${getApiBase()}/inject-fraud`, { method: "POST" });
       if (res.ok) {
         setTimeout(() => refresh?.(), 500);
       }
@@ -37,7 +63,7 @@ export default function App() {
     } finally {
       setTimeout(() => setInjecting(false), 2000);
     }
-  }, [refresh]);
+  }, [refresh, authFetch]);
 
   const handleSelectAccount = useCallback((accountId) => {
     setSelectedNodeId(accountId);
@@ -86,6 +112,12 @@ export default function App() {
     ? data.graph.nodes.find((n) => n.id === selectedNodeId)
     : null;
 
+  const roleBadgeStyle = {
+    admin: "border-red/30 bg-red/10 text-red",
+    analyst: "border-orange/30 bg-orange/10 text-orange",
+    viewer: "border-cyan/30 bg-cyan/10 text-cyan",
+  };
+
   return (
     <Shell>
       <header className="mb-6 flex flex-col gap-6 rounded-[32px] border border-line/70 bg-black/20 p-6 backdrop-blur-xl xl:flex-row xl:items-end xl:justify-between">
@@ -103,28 +135,56 @@ export default function App() {
           </p>
         </div>
         <div className="flex flex-col gap-3">
+          {/* User badge + logout */}
+          <div className="flex items-center gap-3">
+            <div className="flex flex-1 items-center gap-2.5 rounded-2xl border border-line/50 bg-white/[0.03] px-4 py-3">
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan/10">
+                <User size={16} className="text-cyan" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="truncate text-sm font-medium text-white">{user?.username}</div>
+                <div className={`inline-flex items-center gap-1 rounded-md border px-1.5 py-0.5 text-[10px] uppercase tracking-wider ${roleBadgeStyle[user?.role] || roleBadgeStyle.viewer}`}>
+                  <Shield size={8} />
+                  {user?.role}
+                </div>
+              </div>
+            </div>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={logout}
+              className="flex h-[52px] w-[52px] flex-shrink-0 items-center justify-center rounded-2xl border border-line/50 bg-white/[0.03] text-slate-400 transition hover:border-red/30 hover:bg-red/10 hover:text-red"
+              title="Logout"
+            >
+              <LogOut size={18} />
+            </motion.button>
+          </div>
+
           <div className="grid gap-3 sm:grid-cols-3">
             <StatusPill icon={AlertTriangle} label="Threat Index" value={`${overview.threat_index}/100`} tone="red" />
             <StatusPill icon={TimerReset} label="Intercept Window" value={formatSeconds(overview.average_intercept_time_seconds)} tone="orange" />
             <StatusPill icon={ShieldCheck} label="Case Mode" value={activeCase.threat_level} tone="cyan" />
           </div>
-          {/* Inject Fraud Button */}
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={handleInjectFraud}
-            disabled={injecting}
-            className={`w-full rounded-2xl border px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] transition ${
-              injecting
-                ? "border-red/50 bg-red/20 text-red cursor-wait"
-                : "border-red/30 bg-red/10 text-red hover:bg-red/20 hover:border-red/50"
-            }`}
-          >
-            <span className="flex items-center justify-center gap-2">
-              <Siren size={16} className={injecting ? "animate-spin" : ""} />
-              {injecting ? "Injecting Fraud Sequence…" : "Inject Fraud Sequence"}
-            </span>
-          </motion.button>
+
+          {/* Inject Fraud Button — Admin only */}
+          {isAdmin && (
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={handleInjectFraud}
+              disabled={injecting}
+              className={`w-full rounded-2xl border px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] transition ${
+                injecting
+                  ? "border-red/50 bg-red/20 text-red cursor-wait"
+                  : "border-red/30 bg-red/10 text-red hover:bg-red/20 hover:border-red/50"
+              }`}
+            >
+              <span className="flex items-center justify-center gap-2">
+                <Siren size={16} className={injecting ? "animate-spin" : ""} />
+                {injecting ? "Injecting Fraud Sequence…" : "Inject Fraud Sequence"}
+              </span>
+            </motion.button>
+          )}
         </div>
       </header>
 
@@ -133,6 +193,8 @@ export default function App() {
           {[
             { id: "command", label: "Command Center" },
             { id: "ml", label: "ML Models", icon: Brain },
+            { id: "security", label: "Security", icon: Shield },
+            { id: "audit", label: "Audit Ledger", icon: Database },
             { id: "states", label: "States" },
             { id: "banks", label: "Banks" },
           ].map((item) => (
@@ -222,6 +284,18 @@ export default function App() {
       {activeDashboard === "ml" && (
         <section className="grid gap-6">
           <ModelMetricsPanel metrics={data.model_metrics} />
+        </section>
+      )}
+
+      {activeDashboard === "security" && (
+        <section className="grid gap-6">
+          <SecurityDashboard />
+        </section>
+      )}
+
+      {activeDashboard === "audit" && (
+        <section className="grid gap-6">
+          <AuditLedgerPanel />
         </section>
       )}
 
