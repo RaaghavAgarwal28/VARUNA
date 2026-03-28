@@ -1,59 +1,18 @@
-import { useState, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { geoMercator, geoPath } from "d3-geo";
 import { formatCurrency } from "../../lib/format";
 
-/* ── SVG paths for major Indian states (simplified outlines) ── */
-const STATE_PATHS = {
-  "Maharashtra": "M105 240 L140 225 L165 235 L175 260 L170 290 L150 310 L120 300 L100 275 Z",
-  "Telangana": "M155 275 L185 265 L200 280 L195 300 L170 305 L155 295 Z",
-  "Karnataka": "M110 300 L155 295 L170 305 L175 340 L150 360 L115 345 L105 315 Z",
-  "Tamil Nadu": "M150 360 L175 340 L200 350 L195 385 L170 400 L145 385 Z",
-  "Kerala": "M120 360 L145 385 L140 410 L125 415 L115 390 Z",
-  "Andhra Pradesh": "M170 305 L195 300 L215 280 L230 295 L220 330 L195 350 L175 340 Z",
-  "West Bengal": "M235 190 L255 170 L270 185 L265 225 L245 240 L230 220 Z",
-  "Delhi": "M155 140 L170 135 L175 150 L165 155 Z",
-  "Haryana": "M140 120 L170 115 L175 135 L155 145 L135 140 Z",
-  "Rajasthan": "M80 130 L140 120 L145 170 L120 200 L80 190 L65 160 Z",
-  "Uttar Pradesh": "M170 135 L235 130 L250 155 L235 185 L190 190 L170 170 Z",
-  "Gujarat": "M55 185 L80 190 L100 215 L105 240 L85 255 L55 235 L45 210 Z",
-  "Madhya Pradesh": "M105 200 L170 190 L190 195 L185 230 L165 235 L120 225 Z",
-  "Bihar": "M230 170 L265 165 L270 185 L255 190 L235 185 Z",
-  "Odisha": "M210 250 L240 240 L255 260 L245 290 L220 285 L210 265 Z",
-  "Punjab": "M125 95 L150 90 L155 115 L140 120 L120 110 Z",
-  "Assam": "M290 155 L320 145 L330 165 L315 175 L290 170 Z",
-  "Jharkhand": "M235 210 L265 200 L270 225 L250 235 L235 225 Z",
-  "Chhattisgarh": "M185 230 L210 225 L220 250 L210 280 L190 270 Z",
-  "Goa": "M110 315 L125 310 L125 330 L115 335 Z",
-  "Uttarakhand": "M175 90 L205 85 L210 110 L190 115 L175 105 Z",
+/* ── Threat color mapping ── */
+const threatColor = {
+  Severe: { fill: "rgba(255,95,121,0.35)", stroke: "#ff5f79", text: "#ff5f79", glow: "rgba(255,95,121,0.5)" },
+  High: { fill: "rgba(255,157,67,0.25)", stroke: "#ff9d43", text: "#ff9d43", glow: "rgba(255,157,67,0.4)" },
+  Elevated: { fill: "rgba(125,226,209,0.15)", stroke: "rgba(125,226,209,0.5)", text: "#7de2d1", glow: "rgba(125,226,209,0.3)" },
+  none: { fill: "rgba(125,226,209,0.06)", stroke: "rgba(125,226,209,0.18)", text: "#475569", glow: "transparent" },
 };
 
-/* ── State center positions for labels ── */
-const STATE_CENTERS = {
-  "Maharashtra": { x: 140, y: 265 },
-  "Telangana": { x: 175, y: 285 },
-  "Karnataka": { x: 140, y: 325 },
-  "Tamil Nadu": { x: 172, y: 370 },
-  "Kerala": { x: 128, y: 390 },
-  "Andhra Pradesh": { x: 200, y: 315 },
-  "West Bengal": { x: 250, y: 205 },
-  "Delhi": { x: 165, y: 145 },
-  "Haryana": { x: 152, y: 130 },
-  "Rajasthan": { x: 100, y: 160 },
-  "Uttar Pradesh": { x: 205, y: 160 },
-  "Gujarat": { x: 72, y: 220 },
-  "Madhya Pradesh": { x: 150, y: 215 },
-  "Bihar": { x: 248, y: 178 },
-  "Odisha": { x: 232, y: 265 },
-  "Punjab": { x: 138, y: 105 },
-  "Assam": { x: 308, y: 160 },
-  "Jharkhand": { x: 250, y: 218 },
-  "Chhattisgarh": { x: 200, y: 255 },
-  "Goa": { x: 117, y: 322 },
-  "Uttarakhand": { x: 192, y: 100 },
-};
-
-/* ── Simulated district data ── */
-const DISTRICT_DATA = {
+/* ── District intel (simulated per-district data) ── */
+const DISTRICT_INTEL = {
   "Maharashtra": [
     { name: "Mumbai", branches: 847, suspicious: 12, frozen: 3, exposure: 125000, banks: ["SBI", "HDFC", "Axis"] },
     { name: "Pune", branches: 342, suspicious: 8, frozen: 2, exposure: 89000, banks: ["Kotak", "SBI", "ICICI"] },
@@ -75,10 +34,10 @@ const DISTRICT_DATA = {
     { name: "Howrah", branches: 156, suspicious: 4, frozen: 1, exposure: 35000, banks: ["SBI", "PNB"] },
     { name: "Siliguri", branches: 78, suspicious: 1, frozen: 0, exposure: 9000, banks: ["SBI"] },
   ],
-  "Delhi": [
+  "NCT of Delhi": [
     { name: "Central Delhi", branches: 312, suspicious: 6, frozen: 2, exposure: 78000, banks: ["SBI", "BOB", "PNB"] },
     { name: "South Delhi", branches: 287, suspicious: 4, frozen: 1, exposure: 56000, banks: ["HDFC", "Axis"] },
-    { name: "NCR (Noida/Gurgaon)", branches: 445, suspicious: 8, frozen: 3, exposure: 92000, banks: ["IndusInd", "HDFC", "Yes"] },
+    { name: "New Delhi", branches: 445, suspicious: 8, frozen: 3, exposure: 92000, banks: ["IndusInd", "HDFC", "Yes"] },
   ],
   "Haryana": [
     { name: "Gurugram", branches: 234, suspicious: 7, frozen: 2, exposure: 85000, banks: ["Yes Bank", "HDFC"] },
@@ -89,184 +48,373 @@ const DISTRICT_DATA = {
     { name: "Udaipur", branches: 89, suspicious: 1, frozen: 0, exposure: 8000, banks: ["SBI"] },
     { name: "Jodhpur", branches: 76, suspicious: 1, frozen: 0, exposure: 6000, banks: ["SBI", "PNB"] },
   ],
+  "Tamil Nadu": [
+    { name: "Chennai", branches: 534, suspicious: 7, frozen: 2, exposure: 88000, banks: ["IOB", "SBI", "ICICI"] },
+    { name: "Coimbatore", branches: 178, suspicious: 3, frozen: 1, exposure: 32000, banks: ["SBI", "Canara"] },
+  ],
+  "Uttar Pradesh": [
+    { name: "Lucknow", branches: 289, suspicious: 6, frozen: 2, exposure: 67000, banks: ["SBI", "PNB", "BOB"] },
+    { name: "Noida", branches: 312, suspicious: 9, frozen: 3, exposure: 95000, banks: ["HDFC", "Axis", "IndusInd"] },
+    { name: "Varanasi", branches: 134, suspicious: 2, frozen: 0, exposure: 18000, banks: ["SBI", "PNB"] },
+  ],
+  "Gujarat": [
+    { name: "Ahmedabad", branches: 423, suspicious: 6, frozen: 2, exposure: 72000, banks: ["SBI", "BOB", "HDFC"] },
+    { name: "Surat", branches: 267, suspicious: 4, frozen: 1, exposure: 45000, banks: ["SBI", "Axis"] },
+  ],
 };
 
-// Fill in missing states with generic data
-Object.keys(STATE_PATHS).forEach((s) => {
-  if (!DISTRICT_DATA[s]) {
-    DISTRICT_DATA[s] = [
-      { name: `${s} Urban`, branches: 45 + Math.floor(Math.random() * 200), suspicious: Math.floor(Math.random() * 3), frozen: 0, exposure: 5000 + Math.floor(Math.random() * 20000), banks: ["SBI"] },
-    ];
-  }
-});
+/* ── Helpers ── */
+function getStateName(feature) {
+  const p = feature.properties;
+  return p.NAME_1 || p.st_nm || p.name || p.NAME || "";
+}
 
-const threatColor = {
-  Severe: { fill: "rgba(255,95,121,0.25)", stroke: "#ff5f79", text: "#ff5f79" },
-  High: { fill: "rgba(255,157,67,0.2)", stroke: "#ff9d43", text: "#ff9d43" },
-  Elevated: { fill: "rgba(125,226,209,0.12)", stroke: "rgba(125,226,209,0.4)", text: "#7de2d1" },
-  none: { fill: "rgba(125,226,209,0.05)", stroke: "rgba(125,226,209,0.15)", text: "#475569" },
+function getDistrictName(feature) {
+  const p = feature.properties;
+  return p.NAME_2 || p.dtname || p.district || p.NAME || "";
+}
+
+/* ── Normalize state names for matching ── */
+const STATE_NAME_MAP = {
+  "delhi": "NCT of Delhi",
+  "nct of delhi": "NCT of Delhi",
+  "andhra pradesh": "Andhra Pradesh",
+  "arunachal pradesh": "Arunachal Pradesh",
 };
+
+function normalizeStateName(name) {
+  const lower = (name || "").toLowerCase().trim();
+  return STATE_NAME_MAP[lower] || name;
+}
 
 export function IndiaNetworkMap({ stateIntel }) {
+  const [statesGeo, setStatesGeo] = useState(null);
+  const [districtsGeo, setDistrictsGeo] = useState(null);
   const [selectedState, setSelectedState] = useState(null);
   const [selectedDistrict, setSelectedDistrict] = useState(null);
-  const [hoveredState, setHoveredState] = useState(null);
+  const [hoveredFeature, setHoveredFeature] = useState(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const svgRef = useRef(null);
 
+  /* ── Load GeoJSON data ── */
+  useEffect(() => {
+    fetch("/data/india_states.geojson")
+      .then((r) => r.json())
+      .then(setStatesGeo)
+      .catch(() => console.warn("Could not load states GeoJSON"));
+  }, []);
+
+  useEffect(() => {
+    if (selectedState) {
+      fetch("/data/india_districts.geojson")
+        .then((r) => r.json())
+        .then(setDistrictsGeo)
+        .catch(() => console.warn("Could not load districts GeoJSON"));
+    }
+  }, [selectedState]);
+
+  /* ── State intel map (name → data) ── */
   const stateDataMap = useMemo(() => {
     const map = {};
     (stateIntel || []).forEach((s) => {
-      map[s.state] = s;
+      if (s && s.state) {
+        map[s.state] = s;
+        map[s.state.toLowerCase()] = s;
+      }
     });
     return map;
   }, [stateIntel]);
 
-  const getThreatLevel = (stateName) => {
-    const data = stateDataMap[stateName];
-    return data?.threatLevel || "none";
-  };
+  /* ── D3 Projection for all of India ── */
+  const indiaProjection = useMemo(() => {
+    return geoMercator()
+      .center([82, 22])
+      .scale(900)
+      .translate([300, 300]);
+  }, []);
+
+  const pathGenerator = useMemo(() => geoPath().projection(indiaProjection), [indiaProjection]);
+
+  /* ── Zoomed projection for a selected state ── */
+  const stateProjection = useMemo(() => {
+    if (!selectedState || !statesGeo) return null;
+    const feature = statesGeo.features.find(
+      (f) => getStateName(f).toLowerCase() === selectedState.toLowerCase()
+    );
+    if (!feature) return null;
+
+    const bounds = geoPath().projection(indiaProjection).bounds(feature);
+    const dx = bounds[1][0] - bounds[0][0];
+    const dy = bounds[1][1] - bounds[0][1];
+    const cx = (bounds[0][0] + bounds[1][0]) / 2;
+    const cy = (bounds[0][1] + bounds[1][1]) / 2;
+    const scale = Math.min(560 / dx, 520 / dy) * 0.85;
+    const translate = [300 - cx * scale, 280 - cy * scale];
+
+    return { scale, translate };
+  }, [selectedState, statesGeo, indiaProjection]);
+
+  /* ── Filter districts for the selected state ── */
+  const filteredDistricts = useMemo(() => {
+    if (!selectedState || !districtsGeo) return [];
+    return districtsGeo.features.filter((f) => {
+      const stateProp = f.properties.NAME_1 || f.properties.st_nm || "";
+      return stateProp.toLowerCase() === selectedState.toLowerCase();
+    });
+  }, [selectedState, districtsGeo]);
+
+  /* ── Get threat level for a state ── */
+  const getThreat = useCallback(
+    (stateName) => {
+      const data = stateDataMap[stateName] || stateDataMap[stateName?.toLowerCase()];
+      return data?.threatLevel || "none";
+    },
+    [stateDataMap]
+  );
 
   const handleStateClick = (stateName) => {
     setSelectedState(stateName);
     setSelectedDistrict(null);
+    setHoveredFeature(null);
   };
 
-  const handleDistrictClick = (district) => {
-    setSelectedDistrict(district);
+  const handleBack = () => {
+    setSelectedState(null);
+    setSelectedDistrict(null);
+    setHoveredFeature(null);
   };
 
-  const stateData = selectedState ? stateDataMap[selectedState] : null;
-  const districts = selectedState ? (DISTRICT_DATA[selectedState] || []) : [];
+  const handleMouseMove = (e) => {
+    if (!svgRef.current) return;
+    const rect = svgRef.current.getBoundingClientRect();
+    setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  const stateData = selectedState ? (stateDataMap[selectedState] || stateDataMap[selectedState?.toLowerCase()]) : null;
+  const districtIntel = selectedState ? (DISTRICT_INTEL[selectedState] || []) : [];
 
   return (
     <div className="panel p-5">
       <div className="mb-4 flex items-center justify-between">
         <div>
-          <div className="panel-heading">India Banking Network Intelligence</div>
+          <div className="panel-heading">
+            {selectedState
+              ? `${selectedState} — District Intelligence`
+              : "India Banking Network Intelligence"}
+          </div>
           <div className="text-sm text-slate-400">
-            Click any state to see banking details · Click district to drill down further
+            {selectedState
+              ? `${filteredDistricts.length} districts mapped · Click to see banking details`
+              : "Real GeoJSON boundaries · Click any state to drill down into districts"}
           </div>
         </div>
         {selectedState && (
           <button
-            onClick={() => { setSelectedState(null); setSelectedDistrict(null); }}
+            onClick={handleBack}
             className="rounded-full border border-cyan/30 bg-cyan/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-cyan transition-colors hover:bg-cyan/20"
           >
-            ← Back to Map
+            ← Back to India
           </button>
         )}
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1fr_1fr]">
-        {/* ── SVG Map ── */}
-        <div className="relative overflow-hidden rounded-[28px] border border-line/70 bg-[radial-gradient(circle_at_center,rgba(89,167,255,0.08),transparent_60%),linear-gradient(180deg,rgba(3,11,25,0.6),rgba(3,11,25,0.95))] p-4">
-          <svg viewBox="30 60 320 380" className="mx-auto h-[480px] w-full">
-            {/* State polygons */}
-            {Object.entries(STATE_PATHS).map(([stateName, path]) => {
-              const level = getThreatLevel(stateName);
-              const colors = threatColor[level];
-              const isSelected = selectedState === stateName;
-              const isHovered = hoveredState === stateName;
+      <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+        {/* ── Real GeoJSON Map ── */}
+        <div
+          className="relative overflow-hidden rounded-[28px] border border-line/70 bg-[radial-gradient(circle_at_center,rgba(89,167,255,0.06),transparent_60%),linear-gradient(180deg,rgba(3,11,25,0.7),rgba(3,11,25,0.95))]"
+          style={{ minHeight: 540 }}
+        >
+          <svg
+            ref={svgRef}
+            viewBox="0 0 600 580"
+            className="mx-auto h-full w-full"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={() => setHoveredFeature(null)}
+          >
+            <defs>
+              {/* Glow filter */}
+              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <filter id="glowStrong" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
 
-              return (
-                <g key={stateName}>
-                  <path
-                    d={path}
-                    fill={isSelected ? colors.stroke + "55" : isHovered ? colors.fill.replace("0.", "0.4") : colors.fill}
-                    stroke={isSelected ? "#ffffff" : colors.stroke}
-                    strokeWidth={isSelected ? 2.5 : isHovered ? 2 : 1}
-                    className="cursor-pointer transition-all duration-200"
-                    onClick={() => handleStateClick(stateName)}
-                    onMouseEnter={() => setHoveredState(stateName)}
-                    onMouseLeave={() => setHoveredState(null)}
-                  />
-                  {/* State label */}
-                  {STATE_CENTERS[stateName] && (
-                    <text
-                      x={STATE_CENTERS[stateName].x}
-                      y={STATE_CENTERS[stateName].y}
-                      textAnchor="middle"
-                      fontSize={stateName.length > 10 ? 6 : 7}
-                      fill={isSelected || isHovered ? "#ffffff" : colors.text}
-                      fontFamily="Space Grotesk"
-                      fontWeight={isSelected ? "700" : "500"}
-                      className="pointer-events-none select-none"
-                    >
-                      {stateName.length > 14 ? stateName.substring(0, 12) + ".." : stateName}
-                    </text>
-                  )}
-                  {/* Threat dot indicator */}
-                  {stateDataMap[stateName] && STATE_CENTERS[stateName] && (
-                    <circle
-                      cx={STATE_CENTERS[stateName].x}
-                      cy={STATE_CENTERS[stateName].y - 12}
-                      r={level === "Severe" ? 4 : level === "High" ? 3 : 2}
-                      fill={colors.stroke}
-                      className="pointer-events-none"
-                    >
-                      {level === "Severe" && (
-                        <animate attributeName="r" values="3;5;3" dur="1.5s" repeatCount="indefinite" />
-                      )}
-                    </circle>
-                  )}
-                </g>
-              );
-            })}
+            {/* ── Render States (overview mode) ── */}
+            {!selectedState &&
+              statesGeo &&
+              statesGeo.features.map((feature, i) => {
+                const stateName = getStateName(feature);
+                const d = pathGenerator(feature);
+                if (!d) return null;
 
-            {/* Connection lines between affected states */}
-            {stateIntel && stateIntel.length > 1 && stateIntel.map((state, i) => {
-              const nextState = stateIntel[(i + 1) % stateIntel.length];
-              const from = STATE_CENTERS[state.state];
-              const to = STATE_CENTERS[nextState?.state];
-              if (!from || !to) return null;
-              return (
-                <line
-                  key={`conn-${i}`}
-                  x1={from.x} y1={from.y - 15}
-                  x2={to.x} y2={to.y - 15}
-                  stroke="rgba(255, 95, 121, 0.2)"
-                  strokeWidth={1}
-                  strokeDasharray="4,4"
-                  className="pointer-events-none"
-                />
-              );
-            })}
+                const level = getThreat(stateName);
+                const colors = threatColor[level];
+                const isHovered = hoveredFeature === stateName;
+
+                return (
+                  <g key={`state-${i}`}>
+                    {/* Glow behind severe/high states */}
+                    {(level === "Severe" || level === "High") && (
+                      <path
+                        d={d}
+                        fill={colors.glow}
+                        stroke="none"
+                        filter="url(#glowStrong)"
+                        className="pointer-events-none"
+                        opacity={0.4}
+                      />
+                    )}
+                    <path
+                      d={d}
+                      fill={isHovered ? colors.fill.replace(/[\d.]+\)$/, "0.5)") : colors.fill}
+                      stroke={isHovered ? "#ffffff" : colors.stroke}
+                      strokeWidth={isHovered ? 1.8 : 0.7}
+                      className="cursor-pointer transition-all duration-150"
+                      onClick={() => handleStateClick(stateName)}
+                      onMouseEnter={() => setHoveredFeature(stateName)}
+                      onMouseLeave={() => setHoveredFeature(null)}
+                    />
+                  </g>
+                );
+              })}
+
+            {/* ── Render Districts (drill-down mode) ── */}
+            {selectedState &&
+              stateProjection &&
+              filteredDistricts.map((feature, i) => {
+                const distName = getDistrictName(feature);
+                const d = pathGenerator(feature);
+                if (!d) return null;
+
+                const isHovered = hoveredFeature === distName;
+                const isSelected = selectedDistrict?.name === distName;
+
+                // Apply zoom transform
+                const transform = `translate(${stateProjection.translate[0]}, ${stateProjection.translate[1]}) scale(${stateProjection.scale})`;
+
+                return (
+                  <g
+                    key={`dist-${i}`}
+                    style={{
+                      transform: `translate(${stateProjection.translate[0]}px, ${stateProjection.translate[1]}px) scale(${stateProjection.scale})`,
+                      transformOrigin: "0 0",
+                    }}
+                  >
+                    <path
+                      d={d}
+                      fill={
+                        isSelected
+                          ? "rgba(89,167,255,0.3)"
+                          : isHovered
+                          ? "rgba(125,226,209,0.25)"
+                          : "rgba(125,226,209,0.08)"
+                      }
+                      stroke={
+                        isSelected
+                          ? "#59a7ff"
+                          : isHovered
+                          ? "rgba(125,226,209,0.7)"
+                          : "rgba(125,226,209,0.25)"
+                      }
+                      strokeWidth={isSelected ? 2 / stateProjection.scale : isHovered ? 1.2 / stateProjection.scale : 0.5 / stateProjection.scale}
+                      className="cursor-pointer transition-colors duration-150"
+                      onClick={() => {
+                        const intel = districtIntel.find((d) =>
+                          distName.toLowerCase().includes(d.name.toLowerCase()) ||
+                          d.name.toLowerCase().includes(distName.toLowerCase())
+                        );
+                        setSelectedDistrict(
+                          intel || { name: distName, branches: Math.floor(Math.random() * 200) + 30, suspicious: Math.floor(Math.random() * 5), frozen: Math.floor(Math.random() * 2), exposure: Math.floor(Math.random() * 50000) + 5000, banks: ["SBI"] }
+                        );
+                      }}
+                      onMouseEnter={() => setHoveredFeature(distName)}
+                      onMouseLeave={() => setHoveredFeature(null)}
+                    />
+                  </g>
+                );
+              })}
+
+            {/* ── State Labels (overview mode) ── */}
+            {!selectedState &&
+              statesGeo &&
+              statesGeo.features.map((feature, i) => {
+                const stateName = getStateName(feature);
+                const centroid = pathGenerator.centroid(feature);
+                if (!centroid || isNaN(centroid[0])) return null;
+
+                const level = getThreat(stateName);
+                if (level === "none") return null; // Only label states with data
+
+                return (
+                  <text
+                    key={`label-${i}`}
+                    x={centroid[0]}
+                    y={centroid[1]}
+                    textAnchor="middle"
+                    fontSize={7}
+                    fill={threatColor[level].text}
+                    fontFamily="Space Grotesk"
+                    fontWeight="600"
+                    className="pointer-events-none select-none"
+                    style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}
+                  >
+                    {stateName.length > 15 ? stateName.substring(0, 13) + ".." : stateName}
+                  </text>
+                );
+              })}
           </svg>
 
-          {/* Hovered state tooltip */}
+          {/* ── Hover Tooltip ── */}
           <AnimatePresence>
-            {hoveredState && stateDataMap[hoveredState] && !selectedState && (
+            {hoveredFeature && (
               <motion.div
-                initial={{ opacity: 0, y: 5 }}
+                initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                className="absolute left-4 bottom-4 rounded-2xl border border-line/70 bg-black/90 px-4 py-3 text-sm backdrop-blur-xl"
+                className="absolute bottom-4 left-4 right-4 rounded-2xl border border-line/70 bg-black/90 px-4 py-3 text-sm backdrop-blur-xl"
               >
-                <div className="font-display text-lg text-white">{hoveredState}</div>
-                <div className="mt-1 text-slate-400">
-                  Exposure: {formatCurrency(stateDataMap[hoveredState].totalExposure)} · 
-                  {stateDataMap[hoveredState].suspiciousAccounts} suspicious · 
-                  {stateDataMap[hoveredState].frozenAccounts} frozen
-                </div>
+                <div className="font-display text-base text-white">{hoveredFeature}</div>
+                {!selectedState && stateDataMap[hoveredFeature] && (
+                  <div className="mt-1 text-slate-400">
+                    Exposure: {formatCurrency(stateDataMap[hoveredFeature].totalExposure)} ·{" "}
+                    {stateDataMap[hoveredFeature].suspiciousAccounts} suspicious ·{" "}
+                    {stateDataMap[hoveredFeature].frozenAccounts} frozen
+                  </div>
+                )}
+                {selectedState && (
+                  <div className="mt-1 text-xs text-slate-500">Click to see district details</div>
+                )}
               </motion.div>
             )}
           </AnimatePresence>
 
           {/* Legend */}
-          <div className="mt-3 flex flex-wrap gap-2 text-[10px] uppercase tracking-[0.18em] text-slate-400">
-            <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-[#ff5f79]" />Severe</span>
-            <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-[#ff9d43]" />High</span>
-            <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-[#7de2d1]" />Elevated</span>
-            <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-[#475569]" />Normal</span>
+          <div className="absolute top-4 left-4 flex flex-col gap-1.5 text-[10px] uppercase tracking-[0.15em] text-slate-400">
+            <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#ff5f79] shadow-[0_0_6px_rgba(255,95,121,0.6)]" />Severe</span>
+            <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#ff9d43]" />High</span>
+            <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#7de2d1]" />Elevated</span>
+            <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#475569]" />Normal</span>
           </div>
         </div>
 
         {/* ── Detail Panel ── */}
-        <div className="space-y-4">
+        <div className="space-y-4 max-h-[580px] overflow-y-auto custom-scrollbar">
           {!selectedState ? (
-            /* Summary view when no state selected */
             <div className="space-y-3">
               <div className="rounded-[20px] border border-line/70 bg-white/[0.02] p-4">
-                <div className="text-xs uppercase tracking-[0.2em] text-slate-500 mb-3">Affected States Overview</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-slate-500 mb-3">
+                  Affected States Overview
+                </div>
                 {(stateIntel || []).map((state) => {
                   const colors = threatColor[state.threatLevel];
                   return (
@@ -277,11 +425,20 @@ export function IndiaNetworkMap({ stateIntel }) {
                     >
                       <div>
                         <div className="font-semibold text-white">{state.state}</div>
-                        <div className="text-xs text-slate-400">{state.banks.length} banks · {state.suspiciousAccounts} suspicious</div>
+                        <div className="text-xs text-slate-400">
+                          {state.banks?.length || 0} banks · {state.suspiciousAccounts} suspicious
+                        </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className="text-sm font-semibold text-white">{formatCurrency(state.totalExposure)}</div>
-                        <span className={`rounded-full border px-2 py-0.5 text-[10px] uppercase tracking-widest`} style={{ borderColor: colors.stroke + "50", color: colors.text }}>{state.threatLevel}</span>
+                        <div className="text-sm font-semibold text-white">
+                          {formatCurrency(state.totalExposure)}
+                        </div>
+                        <span
+                          className="rounded-full border px-2 py-0.5 text-[10px] uppercase tracking-widest"
+                          style={{ borderColor: colors.stroke + "50", color: colors.text }}
+                        >
+                          {state.threatLevel}
+                        </span>
                       </div>
                     </div>
                   );
@@ -289,7 +446,6 @@ export function IndiaNetworkMap({ stateIntel }) {
               </div>
             </div>
           ) : (
-            /* State detail view */
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedState}
@@ -304,15 +460,17 @@ export function IndiaNetworkMap({ stateIntel }) {
                     <div>
                       <div className="font-display text-2xl text-white">{selectedState}</div>
                       <div className="mt-1 text-sm text-slate-400">
-                        {stateData?.banks.length || 0} linked banks · {districts.length} districts monitored
+                        {stateData?.banks?.length || 0} linked banks · {districtIntel.length} key districts
                       </div>
                     </div>
-                    <span className={`rounded-full border px-3 py-1 text-xs uppercase tracking-[0.2em]`}
+                    <span
+                      className="rounded-full border px-3 py-1 text-xs uppercase tracking-[0.2em]"
                       style={{
                         borderColor: threatColor[stateData?.threatLevel || "none"].stroke + "50",
                         color: threatColor[stateData?.threatLevel || "none"].text,
                         background: threatColor[stateData?.threatLevel || "none"].fill,
-                      }}>
+                      }}
+                    >
                       {stateData?.threatLevel || "Normal"}
                     </span>
                   </div>
@@ -348,12 +506,14 @@ export function IndiaNetworkMap({ stateIntel }) {
 
                 {/* District breakdown */}
                 <div className="rounded-[20px] border border-line/70 bg-white/[0.02] p-5">
-                  <div className="text-xs uppercase tracking-[0.2em] text-slate-500 mb-3">District-Level Breakdown</div>
+                  <div className="text-xs uppercase tracking-[0.2em] text-slate-500 mb-3">
+                    District-Level Breakdown
+                  </div>
                   <div className="space-y-2">
-                    {districts.map((district) => (
+                    {districtIntel.map((district) => (
                       <div
                         key={district.name}
-                        onClick={() => handleDistrictClick(district)}
+                        onClick={() => setSelectedDistrict(district)}
                         className={`rounded-xl border p-3 cursor-pointer transition-all ${
                           selectedDistrict?.name === district.name
                             ? "border-cyan/50 bg-cyan/5"
@@ -366,11 +526,14 @@ export function IndiaNetworkMap({ stateIntel }) {
                         </div>
                         <div className="flex items-center gap-4 text-xs text-slate-400">
                           <span>🏦 {district.branches} branches</span>
-                          <span className={district.suspicious > 0 ? "text-orange" : ""}>⚠ {district.suspicious} suspicious</span>
-                          <span className={district.frozen > 0 ? "text-red" : ""}>🔒 {district.frozen} frozen</span>
+                          <span className={district.suspicious > 0 ? "text-orange" : ""}>
+                            ⚠ {district.suspicious} suspicious
+                          </span>
+                          <span className={district.frozen > 0 ? "text-red" : ""}>
+                            🔒 {district.frozen} frozen
+                          </span>
                         </div>
 
-                        {/* Expanded district details */}
                         <AnimatePresence>
                           {selectedDistrict?.name === district.name && (
                             <motion.div
@@ -390,9 +553,7 @@ export function IndiaNetworkMap({ stateIntel }) {
                                   <div className="rounded-lg border border-line/40 bg-slate-950/30 p-2">
                                     <div className="text-[9px] uppercase tracking-widest text-slate-500">Risk Density</div>
                                     <div className="mt-1 font-display text-lg text-white">
-                                      {district.branches > 0
-                                        ? ((district.suspicious / district.branches) * 100).toFixed(1)
-                                        : 0}%
+                                      {district.branches > 0 ? ((district.suspicious / district.branches) * 100).toFixed(1) : 0}%
                                     </div>
                                   </div>
                                   <div className="rounded-lg border border-line/40 bg-slate-950/30 p-2">
