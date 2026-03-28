@@ -1,0 +1,50 @@
+{
+  "model_used": "GAT (EWC fine-tuned)",
+  "test_nodes": 2000,
+  "test_edges": 12733,
+  "predicted_suspicious": 0,
+  "accuracy": 0.237,
+  "f1_suspicious": 0.0,
+  "top_suspicious": [
+    {
+      "account": "ACC_2055",
+      "probability": 0.4569444954395294
+    },
+    {
+      "account": "ACC_2972",
+      "probability": 0.4542499780654907
+    },
+    {
+      "account": "ACC_2367",
+      "probability": 0.45091307163238525
+    },
+    {
+      "account": "ACC_1770",
+      "probability": 0.44900500774383545
+    },
+    {
+      "account": "ACC_2452",
+      "probability": 0.4450755715370178
+    },
+    {
+      "account": "ACC_2243",
+      "probability": 0.4448511302471161
+    },
+    {
+      "account": "ACC_1090",
+      "probability": 0.44470733404159546
+    },
+    {
+      "account": "ACC_2390",
+      "probability": 0.4442477524280548
+    },
+    {
+      "account": "ACC_2789",
+      "probability": 0.4440368115901947
+    },
+    {
+      "account": "ACC_1612",
+      "probability": 0.44396597146987915
+    }
+  ]
+}

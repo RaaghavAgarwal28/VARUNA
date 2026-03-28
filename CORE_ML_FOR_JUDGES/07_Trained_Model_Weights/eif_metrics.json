@@ -1,0 +1,25 @@
+{
+  "model": "IsolationForest",
+  "n_estimators": 200,
+  "contamination": 0.05,
+  "n_features_raw": 6,
+  "n_features_expanded": 12,
+  "training_samples": 4200,
+  "anomalies_detected": 210,
+  "anomaly_rate": 0.05,
+  "score_threshold_5pct": 0.0,
+  "feature_names": [
+    "velocity_score",
+    "burst_score",
+    "unique_counterparties",
+    "cross_bank_ratio",
+    "amount_entropy",
+    "time_regularity",
+    "velocity_burst",
+    "velocity_counterparties",
+    "burst_counterparties",
+    "cross_amount",
+    "velocity_cross",
+    "burst_regularity"
+  ]
+}

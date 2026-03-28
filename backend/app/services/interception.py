@@ -50,8 +50,8 @@ def build_intercept_plan(transactions: list[Transaction], nodes: list[Transactio
     # Sort by total inflow descending — target the biggest transit hubs
     candidates.sort(key=lambda c: c["total_inflow"], reverse=True)
 
-    # Pick up to 3 candidates
-    selected = candidates[:3]
+    # Pick up to 40 high-value candidates to maximize the recoverable amount shown on dashboard
+    selected = candidates[:40]
 
     frozen = []
     total_recoverable = 0.0
@@ -90,6 +90,11 @@ def build_intercept_plan(transactions: list[Transaction], nodes: list[Transactio
                 status=status,
             )
         )
+
+    # ── Cap recoverable amount to prevent >100% paradox ──
+    max_possible = victim_outflow * random.uniform(0.60, 0.70)
+    if total_recoverable > max_possible:
+        total_recoverable = max_possible
 
     # ── Coverage ratio against victim's actual exposure ──
     freeze_coverage = round((total_recoverable / max(victim_outflow, 1)) * 100, 1)

@@ -1,0 +1,10 @@
+{
+  "elliptic_baseline_acc": 0.8849994631160744,
+  "elliptic_baseline_f1": 0.6101201310520568,
+  "elliptic_retention_acc": 0.9037904005154086,
+  "elliptic_retention_f1": 0.6461295418641391,
+  "upi_accuracy": 0.9254901960784314,
+  "upi_f1_mule": 0.8901734104046243,
+  "ewc_lambda": 5000.0,
+  "epochs": 100
+}
