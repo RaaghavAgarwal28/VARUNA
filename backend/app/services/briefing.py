@@ -33,10 +33,6 @@ def generate_brief(payload: dict) -> dict:
         f"<li><strong>{event['time']}</strong> - {event['title']} ({event['amount']})</li>"
         for event in payload["timeline"]
     )
-    hash_rows = "".join(
-        f"<li>{tx['tx_id']} / {tx.get('tx_hash', 'N/A')} / {tx['from_account']} -> {tx['to_account']} / INR {tx['amount']:,}</li>"
-        for tx in payload.get("chain_transactions", [])
-    )
     freeze_rows = "".join(
         f"<li>{action['account_id']} at {action['bank']} - INR {action['amount_frozen']:,} ({action['status']})</li>"
         for action in payload["intercept"]["frozen_accounts"]
@@ -75,10 +71,6 @@ def generate_brief(payload: dict) -> dict:
         <ul>{freeze_rows}</ul>
       </div>
       <div class="card">
-        <h3>Transaction Hashes</h3>
-        <ul>{hash_rows}</ul>
-      </div>
-      <div class="card">
         <h3>Risk Table</h3>
         <table>
           <thead>
@@ -93,10 +85,6 @@ def generate_brief(payload: dict) -> dict:
           </thead>
           <tbody>{risk_rows}</tbody>
         </table>
-      </div>
-      <div class="card">
-        <h3>Suspicious Chain Diagram</h3>
-        <p class="warn">{"" if not payload.get("chain_transactions") else " -> ".join(dict.fromkeys([tx["from_account"] for tx in payload["chain_transactions"]] + [payload["chain_transactions"][-1]["to_account"]]))} -> predicted next-hop rails.</p>
       </div>
     </body>
     </html>

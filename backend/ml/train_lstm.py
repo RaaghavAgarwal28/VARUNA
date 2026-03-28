@@ -89,8 +89,11 @@ class TemporalSequenceDataset(Dataset):
         seq_len = random.randint(3, self.max_seq_len)
         seq = []
         for hop in range(seq_len):
-            amount_norm = random.uniform(0.7, 1.0)          # consistent high amounts
-            time_delta = random.uniform(0.0, 0.5)            # <90s normalized (0-180s → 0-1)
+            amount_norm = random.uniform(0.05, 1.0)          # broad amounts to avoid learning amount as primary signal
+            if hop == 0:
+                time_delta = 0.5                             # Matches the 0.5 baseline used in inference
+            else:
+                time_delta = random.uniform(0.0, 0.4)        # tight bursts (< 180s * 0.4 = 72s)
             hop_norm = hop / self.max_seq_len
             is_cross = random.choice([0.0, 1.0, 1.0])        # mostly cross-bank
             seq.append([amount_norm, time_delta, hop_norm, is_cross])
@@ -104,8 +107,11 @@ class TemporalSequenceDataset(Dataset):
         seq_len = random.randint(2, self.max_seq_len)
         seq = []
         for hop in range(seq_len):
-            amount_norm = random.uniform(0.01, 0.8)          # varied amounts
-            time_delta = random.uniform(0.5, 1.0)            # slow (hours/days)
+            amount_norm = random.uniform(0.01, 1.0)          # broad amounts
+            if hop == 0:
+                time_delta = 0.5                             # Initial tx baseline
+            else:
+                time_delta = random.uniform(0.6, 1.0)        # slow (hours/days)
             hop_norm = hop / self.max_seq_len
             is_cross = random.choice([0.0, 0.0, 1.0])        # mostly same-bank
             seq.append([amount_norm, time_delta, hop_norm, is_cross])

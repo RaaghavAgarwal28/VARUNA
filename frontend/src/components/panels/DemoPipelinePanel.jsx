@@ -86,6 +86,45 @@ export function DemoPipelinePanel() {
     setChainData(null);
   };
 
+  const getCurrentPayload = () => {
+    if (loading) return { status: "Querying VARUNA backend..." };
+    switch(currentStep) {
+      case 0: return dashboardData || { status: "Awaiting national UPI telemetry..." };
+      case 1: return { chain: chainData, explain: deepExplainData } || { status: "Extracting Graph & Running ML inference..." };
+      case 2: return deepExplainData ? {
+        brain_1_gat: deepExplainData.brain_1_gat,
+        brain_2_lstm: deepExplainData.brain_2_lstm,
+        brain_3_eif: deepExplainData.brain_3_eif,
+        brain_4_rules: deepExplainData.brain_4_rules,
+        graph_role: deepExplainData.graph_role
+      } : {};
+      case 3: return deepExplainData?.final_calculation || {};
+      case 4: return { verdict: deepExplainData?.final_calculation, target: targetAccount };
+      default: return {};
+    }
+  };
+
+  const getExecutionTrace = () => {
+    if (loading) return "[SYSTEM] Waiting for API response...\n";
+    let trace = "";
+    switch(currentStep) {
+      case 0: 
+        trace = "➤ CALL: GET /api/dashboard\n➤ FILE: backend/app/services/dashboard.py\n➤ ACTION: Fetching national UPI memory graph...\n";
+        break;
+      case 1:
+        trace = `➤ CALL: GET /api/chain/${targetAccount || '{target}'}\n➤ FILE: backend/app/services/detection.py\n➤ ACTION: Extracting 3-hop mule chain topography limit 50...\n`;
+        break;
+      case 2:
+        trace = `➤ CALL: GET /api/deep-explain/${targetAccount || '{target}'}\n➤ SCRIPT: \`backend/app/services/ml_models.py\`\n➤ MODELS ENGAGED:\n   - backend/ml/models/gat_finetuned.pt (Shape)\n   - backend/ml/models/lstm_temporal.pt (Timing)\n   - Extended Isolation Forest (scikit-learn)\n   - RBI 10-Flag Rule Heuristics\n`;
+        break;
+      case 3:
+      case 4:
+        trace = `➤ CALL: GET /api/deep-explain/${targetAccount || '{target}'}\n➤ FILE: backend/app/services/detection.py\n➤ ACTION: Executing cross-pillar fusion algorithm (Weights: 0.35, 0.25, 0.20, 0.20)\n`;
+        break;
+    }
+    return "[EXECUTION TRACE — FILE PROVENANCE]\n" + trace + "┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈\n[RAW JSON PAYLOAD FROM SCRIPT]\n";
+  };
+
   return (
     <div className="space-y-6">
       <div className="panel p-6">
@@ -234,6 +273,30 @@ export function DemoPipelinePanel() {
         >
           Next Step <ArrowRight size={14} />
         </button>
+      </div>
+
+      {/* Live Backend API Response Log */}
+      <div className="mt-8 panel p-0 overflow-hidden border-slate-700/50 shadow-2xl">
+        <div className="bg-slate-900 border-b border-slate-800 p-3 flex items-center justify-between">
+          <div className="flex items-center gap-2 drop-shadow-[0_0_5px_rgba(16,185,129,0.5)]">
+            <Server size={14} className="text-emerald-500" />
+            <span className="font-mono text-[10px] text-emerald-500 uppercase tracking-widest font-bold">Live Backend API Payload (Raw JSON)</span>
+          </div>
+          <div className="flex flex-col items-center">
+             <span className="text-[9px] text-slate-500 uppercase opacity-60">Demonstration Trace Evidence</span>
+          </div>
+          <div className="flex gap-1.5 opacity-60">
+            <div className="w-2.5 h-2.5 rounded-full bg-red"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-orange"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+          </div>
+        </div>
+        <div className="p-4 bg-[rgb(5,5,5)] font-mono text-[11px] overflow-y-auto max-h-[400px] custom-scrollbar text-emerald-400">
+          <pre className="whitespace-pre-wrap word-break">
+<span className="text-slate-400">{getExecutionTrace()}</span>
+{JSON.stringify(getCurrentPayload(), null, 2)}
+          </pre>
+        </div>
       </div>
     </div>
   );
