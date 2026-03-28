@@ -24,14 +24,16 @@ MODEL_DIR = os.path.join(ML_DIR, "models")
 
 
 # ── Lazy-loaded model singletons ──
+# Reset on every module (re)load to avoid stale state during --reload
 _gat_model = None
 _lstm_model = None
-_model_metrics = {}
+_gat_in_channels: int = 166  # read from checkpoint at load time
+_model_metrics: dict = {}
 
 
 def _load_gat():
     """Load the best available GAT model (finetuned > elliptic-only)."""
-    global _gat_model, _model_metrics
+    global _gat_model, _gat_in_channels, _model_metrics
     if _gat_model is not None:
         return _gat_model
 
@@ -46,12 +48,33 @@ def _load_gat():
         return None
 
     checkpoint = torch.load(model_path, map_location="cpu", weights_only=False)
-    model = VarunaGAT(in_channels=checkpoint["in_channels"])
+    _gat_in_channels = checkpoint.get("in_channels", 166)
+    model = VarunaGAT(in_channels=_gat_in_channels)
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
     _gat_model = model
+
+    # ── Merge metrics from checkpoint + JSON metric files ──
     _model_metrics["gat"] = checkpoint.get("metrics", {})
-    print(f"[ML] Loaded GAT model from {os.path.basename(model_path)}")
+
+    # Base training metrics (Elliptic)
+    base_metrics_path = os.path.join(MODEL_DIR, "gat_elliptic_metrics.json")
+    if os.path.exists(base_metrics_path):
+        with open(base_metrics_path) as f:
+            _model_metrics["gat"].update(json.load(f))
+
+    # EWC finetuning metrics (if using finetuned model)
+    if "finetuned" in os.path.basename(model_path):
+        cl_path = os.path.join(MODEL_DIR, "continual_learning_metrics.json")
+        if os.path.exists(cl_path):
+            with open(cl_path) as f:
+                cl = json.load(f)
+            _model_metrics["gat"]["upi_f1_mule"] = cl.get("upi_f1_mule")
+            _model_metrics["gat"]["elliptic_retention_acc"] = cl.get("elliptic_retention_acc")
+            _model_metrics["gat"]["ewc_lambda"] = cl.get("ewc_lambda")
+
+    print(f"[ML] Loaded GAT model from {os.path.basename(model_path)} "
+          f"(accuracy={_model_metrics['gat'].get('accuracy', '?')})")
     return model
 
 
@@ -73,8 +96,15 @@ def _load_lstm():
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
     _lstm_model = model
+
+    # ── Merge metrics from checkpoint + JSON metric file ──
     _model_metrics["lstm"] = checkpoint.get("metrics", {})
-    print(f"[ML] Loaded LSTM model from lstm_temporal.pt")
+    lstm_metrics_path = os.path.join(MODEL_DIR, "lstm_metrics.json")
+    if os.path.exists(lstm_metrics_path):
+        with open(lstm_metrics_path) as f:
+            _model_metrics["lstm"].update(json.load(f))
+
+    print(f"[ML] Loaded LSTM model (accuracy={_model_metrics['lstm'].get('accuracy', '?')})")
     return model
 
 
@@ -123,16 +153,7 @@ def gat_score(account_id: str, transactions: list[Transaction]) -> dict:
             cross_bank[tx.to_account] += 1
 
     n = len(acc_list)
-    in_channels = 166  # match Elliptic feature dimension
-    if model is not None:
-        # Check actual model input size
-        try:
-            first_param = next(model.parameters())
-            # GATConv stores weight with shape (in_channels * heads, ...)
-            # We'll use the model's expected in_channels from the checkpoint
-            pass
-        except StopIteration:
-            pass
+    in_channels = _gat_in_channels  # read from checkpoint at load time
 
     features = []
     for acc in acc_list:
@@ -440,9 +461,9 @@ def get_model_metrics() -> dict:
     _load_eif()
 
     result = {
-        "gat": _model_metrics.get("gat", {}),
-        "lstm": _model_metrics.get("lstm", {}),
-        "eif": _model_metrics.get("eif", {}),
+        "gat": _model_metrics.get("gat") or {"status": "no_model_file"},
+        "lstm": _model_metrics.get("lstm") or {"status": "no_model_file"},
+        "eif": _model_metrics.get("eif") or {"status": "no_model_file"},
     }
 
     # Load continual learning metrics if available

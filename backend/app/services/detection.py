@@ -14,7 +14,7 @@ Full implementation of all 10 RBI/NPCI/DPIP mule detection flags:
     F10: Circular Flow (Round-Tripping) — funds return via ≥3 intermediaries
 
 Combined scoring formula:
-    final_score = GAT_score × 0.45 + LSTM_coordination × 0.35 + rule_flag_score × 0.20
+    final_score = GAT_score × 0.35 + LSTM_coordination × 0.25 + EIF_anomaly × 0.20 + rule_flag_score × 0.20
 """
 from __future__ import annotations
 
