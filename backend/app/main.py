@@ -16,7 +16,6 @@ app = FastAPI(
         "Real-time mule-chain interception command center API.\n\n"
         "## Authentication\n"
         "- **JWT Bearer Token**: POST `/api/auth/login` to get a token\n"
-        "- **API Key**: Pass `X-API-Key` header for service-to-service calls\n"
         "- **Dev Mode**: Auto-authenticated in development environment\n\n"
         "## Demo Credentials\n"
         "- Admin: `varuna_admin` / `DevHouse2026$ecure`\n"
