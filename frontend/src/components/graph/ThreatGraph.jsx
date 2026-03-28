@@ -1,5 +1,7 @@
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import ForceGraph2D from "react-force-graph-2d";
+import { Search, X } from "lucide-react";
+import { extractSubgraph } from "../../lib/graphUtils";
 
 /* ── Refined colour palette ── */
 const nodePalette = {
@@ -54,22 +56,37 @@ function computeDepths(nodes, links) {
   return depths;
 }
 
-export function ThreatGraph({ graph, selectedCase, onNodeClick, selectedAccount }) {
+export function ThreatGraph({ graph, selectedCase, onNodeClick, selectedAccount, filterAccountId, setFilterAccountId }) {
   const graphRef = useRef(null);
   const fittedRef = useRef(false);
+  const [localSearch, setLocalSearch] = useState(filterAccountId || "");
+
+  useEffect(() => {
+    setLocalSearch(filterAccountId || "");
+  }, [filterAccountId]);
+
+  const handleSearch = () => {
+    if (setFilterAccountId) setFilterAccountId(localSearch);
+  };
+
+  const handleClear = () => {
+    setLocalSearch("");
+    if (setFilterAccountId) setFilterAccountId("");
+  };
 
   /* ── Build enriched graph data ── */
   const data = useMemo(() => {
-    const depths = computeDepths(graph.nodes, graph.links);
+    const visibleGraph = extractSubgraph(graph, filterAccountId);
+    const depths = computeDepths(visibleGraph.nodes, visibleGraph.links);
     const depthCounts = {};
-    graph.nodes.forEach((n) => {
+    visibleGraph.nodes.forEach((n) => {
       const d = depths[n.id] || 0;
       depthCounts[d] = (depthCounts[d] || 0) + 1;
     });
     const depthIdx = {};
 
     return {
-      nodes: graph.nodes.map((node) => {
+      nodes: visibleGraph.nodes.map((node) => {
         const depth = depths[node.id] || 0;
         if (!depthIdx[depth]) depthIdx[depth] = 0;
         const idx = depthIdx[depth]++;
@@ -93,12 +110,12 @@ export function ThreatGraph({ graph, selectedCase, onNodeClick, selectedAccount 
           y: yOff,
         };
       }),
-      links: graph.links.map((link) => ({
+      links: visibleGraph.links.map((link) => ({
         ...link,
         color: linkPalette[link.status] || linkPalette.observed,
       })),
     };
-  }, [graph]);
+  }, [graph, filterAccountId]);
 
   /* ── Configure d3 forces for balanced spacing ── */
   useEffect(() => {
@@ -128,8 +145,31 @@ export function ThreatGraph({ graph, selectedCase, onNodeClick, selectedAccount 
             Multi-bank mule chain expansion · Click any node to investigate
           </div>
         </div>
-        <div className="rounded-full border border-orange/30 bg-orange/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-orange">
-          {selectedCase.predicted_next_hops.length} future hops projected
+        
+        <div className="flex items-center gap-4">
+          <div className="flex border border-line/70 rounded-full bg-black/40 overflow-hidden px-2 py-1 items-center max-w-xs">
+            <Search size={14} className="text-slate-500 mx-2" />
+            <input 
+              type="text" 
+              placeholder="Filter Chain by Account..."
+              value={localSearch}
+              onChange={(e) => setLocalSearch(e.target.value)}
+              onKeyDown={(e) => { if (e.key === 'Enter') handleSearch(); }}
+              className="bg-transparent text-xs text-white placeholder-slate-500 focus:outline-none w-40"
+            />
+            {filterAccountId && (
+              <button onClick={handleClear} className="text-slate-400 hover:text-white mx-1">
+                <X size={12} />
+              </button>
+            )}
+            <button onClick={handleSearch} className="text-xs bg-cyan/10 text-cyan px-2 py-1 rounded-full hover:bg-cyan/20 ml-1">
+              Isolate
+            </button>
+          </div>
+
+          <div className="rounded-full border border-orange/30 bg-orange/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-orange whitespace-nowrap">
+            {selectedCase.predicted_next_hops.length} future hops
+          </div>
         </div>
       </div>
 

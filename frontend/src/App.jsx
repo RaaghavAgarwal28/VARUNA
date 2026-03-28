@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useCallback } from "react";
-import { AlertTriangle, ShieldCheck, Sparkles, TimerReset, Siren, Brain, Globe, Shield, Zap } from "lucide-react";
+import { AlertTriangle, ShieldCheck, Sparkles, TimerReset, Siren, Brain, Globe, Shield, Zap, ShieldAlert } from "lucide-react";
 import { FraudGraph3D } from "./components/graph/FraudGraph3D";
 import { MuleHunter3DEngine } from "./components/graph/MuleHunter3DEngine";
 import { Shell } from "./components/layout/Shell";
@@ -17,6 +17,7 @@ import { SentinelPanel } from "./components/panels/SentinelPanel";
 import { StatesSection } from "./components/panels/StatesSection";
 import { TimelinePanel } from "./components/panels/TimelinePanel";
 import { FraudSimulator } from "./components/panels/FraudSimulator";
+import { ReportFraudPanel } from "./components/panels/ReportFraudPanel";
 import { useDashboardData } from "./hooks/useDashboardData";
 import { buildBankIntel, buildStateIntel } from "./lib/bankIntel";
 import { formatCurrency, formatSeconds } from "./lib/format";
@@ -26,6 +27,7 @@ export default function App() {
   const { data, loading, error, refresh } = useDashboardData();
   const [activeDashboard, setActiveDashboard] = useState("command");
   const [selectedNodeId, setSelectedNodeId] = useState(null);
+  const [reportedAccountId, setReportedAccountId] = useState("");
   const [injecting, setInjecting] = useState(false);
 
   const handleInjectFraud = useCallback(async () => {
@@ -135,6 +137,7 @@ export default function App() {
         <div className="flex flex-wrap gap-3">
           {[
             { id: "command", label: "Command Center" },
+            { id: "reportFraud", label: "Report Fraud", icon: ShieldAlert },
             { id: "simulator", label: "Fraud Simulator", icon: Zap },
             { id: "3d", label: "3D Network", icon: Globe },
             { id: "muleHunter3d", label: "Mule Hunter 3D", icon: Shield },
@@ -191,7 +194,13 @@ export default function App() {
       {activeDashboard === "command" && (
         <>
           <section className="mb-6 grid gap-6 xl:grid-cols-[1.4fr_0.8fr]">
-            <ThreatGraph graph={data.graph} selectedCase={activeCase} onNodeClick={handleSelectAccount} />
+            <ThreatGraph 
+              graph={data.graph} 
+              selectedCase={activeCase} 
+              onNodeClick={handleSelectAccount} 
+              filterAccountId={reportedAccountId} 
+              setFilterAccountId={setReportedAccountId} 
+            />
             <div className="space-y-6">
               <EventFeed events={data.event_feed} />
               <AnimatePresence>
@@ -246,6 +255,19 @@ export default function App() {
             graph={data.graph}
             onNodeClick={handleSelectAccount}
             sentinelScores={data.sentinel_scores}
+            filterAccountId={reportedAccountId}
+            setFilterAccountId={setReportedAccountId}
+          />
+        </section>
+      )}
+
+      {activeDashboard === "reportFraud" && (
+        <section className="grid gap-6">
+          <ReportFraudPanel 
+            onSubmitReport={(id) => {
+              setReportedAccountId(id);
+              setActiveDashboard("command");
+            }} 
           />
         </section>
       )}
