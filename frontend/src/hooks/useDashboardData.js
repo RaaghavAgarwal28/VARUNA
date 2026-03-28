@@ -36,10 +36,8 @@ export function useDashboardData() {
     }
 
     load();
-    const interval = setInterval(load, 12000);
     return () => {
       active = false;
-      clearInterval(interval);
     };
   }, [refreshKey]);
 

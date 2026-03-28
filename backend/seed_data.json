@@ -1,21 +1,21 @@
 {
-  "scenario": "CASE-VARUNA-042",
-  "description": "Deterministic multi-bank mule-chain flow for demo playback",
-  "banks": [
-    "State Bank of India",
-    "Axis Bank",
-    "HDFC Bank",
-    "ICICI Bank",
-    "Kotak Mahindra Bank",
-    "Yes Bank",
-    "Punjab National Bank",
-    "Bank of Baroda",
-    "Canara Bank"
+  "scenario": "VARUNA-DYNAMIC",
+  "description": "Randomized multi-bank mule-chain fraud scenario generated on each reset/inject. Account IDs, amounts, timestamps, bank assignments, and device clustering all vary per execution. The graph topology (victim → primary mule → branches → layers → predicted hops) is preserved to ensure ML models and the 10-flag rule engine receive realistic, structurally valid inputs.",
+  "topology": "VICTIM → PRIMARY_MULE → BRANCH_A + BRANCH_B → LAYER_A1 + LAYER_A2 + LAYER_B1 + LAYER_B2 → TAIL → SINK + PREDICTED_HOPS",
+  "available_banks": [
+    "State Bank of India", "Axis Bank", "HDFC Bank", "ICICI Bank",
+    "Kotak Mahindra Bank", "Yes Bank", "Punjab National Bank",
+    "Bank of Baroda", "Canara Bank", "IndusInd Bank",
+    "Union Bank of India", "Bank of India", "Federal Bank",
+    "IDBI Bank", "South Indian Bank"
   ],
-  "flagged_source_account": "VICTIM-A1",
-  "predicted_next_hops": [
-    "PRED-NCR-88",
-    "PRED-WALLET-04"
-  ]
+  "city_codes": [
+    "HYD", "BLR", "KOL", "PUNE", "GGN", "DEL", "CCU", "JPR",
+    "CHN", "MUM", "LKO", "NAG", "BHO", "PAT", "RNC", "JDH",
+    "VIZ", "COI", "KOC", "AHM"
+  ],
+  "amount_range": {
+    "initial_min": 80000,
+    "initial_max": 250000
+  }
 }
-

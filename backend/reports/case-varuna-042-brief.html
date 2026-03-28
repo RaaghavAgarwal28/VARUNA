@@ -19,7 +19,7 @@
         <h2>UPI Mule Chain Interception - Multi-bank Dissipation Attempt</h2>
         <p><span class="accent">Threat Level:</span> Severe</p>
         <p><span class="accent">Flagged Source Account:</span> VICTIM-A1</p>
-        <p><span class="accent">Estimated Recoverable Amount:</span> INR 47,000.0</p>
+        <p><span class="accent">Estimated Recoverable Amount:</span> INR 0.0</p>
         <p><span class="accent">Why flagged:</span> Velocity burst, fan-out layering, 3-hop cross-bank spread, and predicted downstream dissipation.</p>
       </div>
       <div class="card">
@@ -28,11 +28,11 @@
       </div>
       <div class="card">
         <h3>Freeze Actions</h3>
-        <ul><li>MULE-BLR-07 at HDFC Bank - INR 9,000.0 (executed)</li><li>MULE-PUNE-11 at Kotak Mahindra Bank - INR 31,000.0 (recommended)</li><li>MULE-GGN-14 at Yes Bank - INR 7,000.0 (executed)</li></ul>
+        <ul></ul>
       </div>
       <div class="card">
         <h3>Transaction Hashes</h3>
-        <ul><li>TX-1002 / HASH-TX-1002 / MULE-HYD-01 -> MULE-BLR-07 / INR 90,000.0</li><li>TX-1003 / HASH-TX-1003 / MULE-HYD-01 -> MULE-KOL-02 / INR 28,000.0</li><li>TX-1004 / HASH-TX-1004 / MULE-BLR-07 -> MULE-PUNE-11 / INR 50,000.0</li><li>TX-1005 / HASH-TX-1005 / MULE-BLR-07 -> MULE-GGN-14 / INR 31,000.0</li><li>TX-1006 / HASH-TX-1006 / MULE-KOL-02 -> CRYPTO-RAMP-09 / INR 22,000.0</li><li>TX-1007 / HASH-TX-1007 / MULE-PUNE-11 -> MULE-CCU-55 / INR 19,000.0</li><li>TX-1008 / HASH-TX-1008 / MULE-GGN-14 -> MULE-DEL-21 / INR 15,000.0</li><li>TX-1009 / HASH-TX-1009 / MULE-GGN-14 -> MULE-JPR-06 / INR 9,000.0</li></ul>
+        <ul></ul>
       </div>
       <div class="card">
         <h3>Risk Table</h3>
@@ -49,7 +49,7 @@
           </thead>
           <tbody>
         <tr>
-          <td>CRYPTO-RAMP-09</td>
+          <td>ATM-OFF-08</td>
           <td>95.0</td>
           <td>93.7</td>
           <td>89.0</td>
@@ -58,66 +58,66 @@
         </tr>
         
         <tr>
-          <td>PRED-NCR-88</td>
+          <td>PRED-KOC-58</td>
           <td>50.2</td>
           <td>49.8</td>
           <td>52.0</td>
           <td>45.2</td>
-          <td>F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-01 shared with 5 other accounts, F9 Rapid Account Opening: Account only 5 days old — new account risk</td>
+          <td>F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-DB92 shared with 5 other accounts, F9 Rapid Account Opening: Account only 1 days old — new account risk</td>
         </tr>
         
         <tr>
-          <td>PRED-WALLET-04</td>
+          <td>PRED-PUNE-75</td>
           <td>48.6</td>
           <td>48.5</td>
           <td>52.0</td>
           <td>42.0</td>
-          <td>F9 Rapid Account Opening: Account only 2 days old — new account risk</td>
+          <td>F9 Rapid Account Opening: Account only 1 days old — new account risk</td>
         </tr>
         
         <tr>
-          <td>MULE-HYD-01</td>
-          <td>46.7</td>
-          <td>34.4</td>
+          <td>MULE-PAT-01</td>
+          <td>46.6</td>
+          <td>34.3</td>
           <td>0.0</td>
-          <td>66.8</td>
-          <td>F1 Zero-Washout (FIFO): ₹118,000 outflow (94% of ₹125,000 inflow) within 2 hours, F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window, F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-01 shared with 5 other accounts, F9 Rapid Account Opening: Account only 9 days old — new account risk</td>
+          <td>66.7</td>
+          <td>F1 Zero-Washout (FIFO): ₹124,368 outflow (99% of ₹126,136 inflow) within 2 hours, F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window, F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-DB92 shared with 5 other accounts, F9 Rapid Account Opening: Account only 6 days old — new account risk</td>
         </tr>
         
         <tr>
-          <td>MULE-BLR-07</td>
-          <td>46.3</td>
-          <td>34.2</td>
+          <td>MULE-GGN-07</td>
+          <td>45.9</td>
+          <td>34.0</td>
           <td>0.0</td>
-          <td>66.8</td>
-          <td>F1 Zero-Washout (FIFO): ₹81,000 outflow (90% of ₹90,000 inflow) within 2 hours, F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window, F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-01 shared with 5 other accounts, F9 Rapid Account Opening: Account only 14 days old — new account risk</td>
+          <td>66.6</td>
+          <td>F1 Zero-Washout (FIFO): ₹68,878 outflow (99% of ₹69,441 inflow) within 2 hours, F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window, F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-DB92 shared with 5 other accounts, F9 Rapid Account Opening: Account only 19 days old — new account risk</td>
         </tr>
         
         <tr>
-          <td>MULE-GGN-14</td>
-          <td>39.1</td>
-          <td>28.5</td>
+          <td>MULE-HYD-14</td>
+          <td>39.0</td>
+          <td>28.4</td>
           <td>0.0</td>
-          <td>54.5</td>
-          <td>F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window, F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-01 shared with 5 other accounts, F9 Rapid Account Opening: Account only 4 days old — new account risk</td>
+          <td>54.0</td>
+          <td>F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window, F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-DB92 shared with 5 other accounts, F9 Rapid Account Opening: Account only 3 days old — new account risk</td>
         </tr>
         
         <tr>
-          <td>MULE-DEL-21</td>
-          <td>39.1</td>
-          <td>40.9</td>
+          <td>MULE-RNC-21</td>
+          <td>38.9</td>
+          <td>40.7</td>
           <td>42.0</td>
-          <td>42.9</td>
-          <td>F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-01 shared with 5 other accounts, F9 Rapid Account Opening: Account only 12 days old — new account risk</td>
+          <td>42.5</td>
+          <td>F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-DB92 shared with 5 other accounts, F9 Rapid Account Opening: Account only 6 days old — new account risk</td>
         </tr>
         
         <tr>
-          <td>MULE-CCU-55</td>
-          <td>38.4</td>
-          <td>40.3</td>
+          <td>MULE-COI-55</td>
+          <td>38.1</td>
+          <td>39.9</td>
           <td>42.0</td>
-          <td>41.3</td>
-          <td>F9 Rapid Account Opening: Account only 7 days old — new account risk</td>
+          <td>40.6</td>
+          <td>F9 Rapid Account Opening: Account only 4 days old — new account risk</td>
         </tr>
         </tbody>
         </table>

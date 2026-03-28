@@ -7,6 +7,16 @@ from app.services.scenario_data import build_scenario
 
 
 class DemoState:
+    transactions: list
+    nodes: list
+    links: list
+    account_profiles: dict
+    _predicted_next_hops: list
+    _frozen_accounts: set
+    _victim_id: str
+    _primary_mule: str
+    _sink_id: str
+
     def __init__(self) -> None:
         self.reset()
 
@@ -16,6 +26,12 @@ class DemoState:
         self.nodes = deepcopy(scenario["nodes"])
         self.links = deepcopy(scenario["links"])
         self.account_profiles = deepcopy(scenario["account_profiles"])
+        # Preserve scenario metadata for downstream use
+        self._predicted_next_hops = list(scenario.get("predicted_next_hops", []))
+        self._frozen_accounts = set(scenario.get("frozen_accounts", set()))
+        self._victim_id = scenario.get("victim_id", "")
+        self._primary_mule = scenario.get("primary_mule", "")
+        self._sink_id = scenario.get("sink_id", "")
 
     def inject_scenario(self) -> dict:
         self.reset()
@@ -44,4 +60,3 @@ class DemoState:
 
 
 demo_state = DemoState()
-

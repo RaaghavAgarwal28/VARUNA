@@ -1,8 +1,8 @@
 {
   "national_overview": {
     "active_suspicious_chains": 4,
-    "recoverable_amount": 47000.0,
-    "funds_already_dissipated": 22000.0,
+    "recoverable_amount": 0.0,
+    "funds_already_dissipated": 33219.0,
     "banks_affected": 10,
     "average_intercept_time_seconds": 81,
     "threat_index": 92,
@@ -65,8 +65,8 @@
       "title": "UPI Mule Chain Interception - Multi-bank Dissipation Attempt",
       "threat_level": "Severe",
       "suspicious_chains": 4,
-      "recoverable_amount": 47000.0,
-      "dissipated_amount": 22000.0,
+      "recoverable_amount": 0.0,
+      "dissipated_amount": 33219.0,
       "banks_affected": 10,
       "average_intercept_time_seconds": 81,
       "predicted_next_hops": [
@@ -84,117 +84,117 @@
       {
         "id": "VICTIM-A1",
         "label": "VICTIM-A1",
-        "bank": "State Bank of India",
+        "bank": "Federal Bank",
         "node_type": "victim",
-        "balance": -125000.0,
+        "balance": -126136.0,
         "risk_score": 38,
         "human_coordination_score": 15,
         "dissipation_risk": 41,
         "status": "active"
       },
       {
-        "id": "MULE-HYD-01",
-        "label": "MULE-HYD-01",
-        "bank": "Axis Bank",
+        "id": "MULE-PAT-01",
+        "label": "MULE-PAT-01",
+        "bank": "South Indian Bank",
         "node_type": "mule",
-        "balance": 7000.0,
-        "risk_score": 46.7,
+        "balance": 1768.0,
+        "risk_score": 46.6,
         "human_coordination_score": 0.0,
-        "dissipation_risk": 66.8,
+        "dissipation_risk": 66.7,
         "status": "active"
       },
       {
-        "id": "MULE-BLR-07",
-        "label": "MULE-BLR-07",
-        "bank": "HDFC Bank",
-        "node_type": "mule",
-        "balance": 9000.0,
-        "risk_score": 46.3,
-        "human_coordination_score": 0.0,
-        "dissipation_risk": 66.8,
-        "status": "frozen"
-      },
-      {
-        "id": "MULE-KOL-02",
-        "label": "MULE-KOL-02",
+        "id": "MULE-GGN-07",
+        "label": "MULE-GGN-07",
         "bank": "ICICI Bank",
         "node_type": "mule",
-        "balance": 6000.0,
-        "risk_score": 29.4,
+        "balance": 563.0,
+        "risk_score": 45.9,
         "human_coordination_score": 0.0,
-        "dissipation_risk": 39.6,
-        "status": "active"
-      },
-      {
-        "id": "MULE-PUNE-11",
-        "label": "MULE-PUNE-11",
-        "bank": "Kotak Mahindra Bank",
-        "node_type": "mule",
-        "balance": 31000.0,
-        "risk_score": 31.4,
-        "human_coordination_score": 0.0,
-        "dissipation_risk": 43.0,
-        "status": "active"
-      },
-      {
-        "id": "MULE-GGN-14",
-        "label": "MULE-GGN-14",
-        "bank": "Yes Bank",
-        "node_type": "mule",
-        "balance": 7000.0,
-        "risk_score": 39.1,
-        "human_coordination_score": 0.0,
-        "dissipation_risk": 54.5,
+        "dissipation_risk": 66.6,
         "status": "frozen"
       },
       {
-        "id": "CRYPTO-RAMP-09",
-        "label": "CRYPTO-RAMP-09",
+        "id": "MULE-CHN-02",
+        "label": "MULE-CHN-02",
+        "bank": "State Bank of India",
+        "node_type": "mule",
+        "balance": 21708.0,
+        "risk_score": 29.6,
+        "human_coordination_score": 0.0,
+        "dissipation_risk": 39.8,
+        "status": "active"
+      },
+      {
+        "id": "MULE-BHO-11",
+        "label": "MULE-BHO-11",
+        "bank": "Kotak Mahindra Bank",
+        "node_type": "mule",
+        "balance": 21905.0,
+        "risk_score": 31.1,
+        "human_coordination_score": 0.0,
+        "dissipation_risk": 42.5,
+        "status": "active"
+      },
+      {
+        "id": "MULE-HYD-14",
+        "label": "MULE-HYD-14",
+        "bank": "IndusInd Bank",
+        "node_type": "mule",
+        "balance": 7422.0,
+        "risk_score": 39.0,
+        "human_coordination_score": 0.0,
+        "dissipation_risk": 54.0,
+        "status": "frozen"
+      },
+      {
+        "id": "ATM-OFF-08",
+        "label": "ATM-OFF-08",
         "bank": "Fintech Settlement",
         "node_type": "sink",
-        "balance": 30900.0,
+        "balance": 41948.0,
         "risk_score": 95,
         "human_coordination_score": 89,
         "dissipation_risk": 99,
         "status": "active"
       },
       {
-        "id": "MULE-CCU-55",
-        "label": "MULE-CCU-55",
-        "bank": "Punjab National Bank",
+        "id": "MULE-COI-55",
+        "label": "MULE-COI-55",
+        "bank": "IDBI Bank",
         "node_type": "mule",
-        "balance": 19000.0,
-        "risk_score": 38.4,
+        "balance": 16961.0,
+        "risk_score": 38.1,
         "human_coordination_score": 42.0,
-        "dissipation_risk": 41.3,
+        "dissipation_risk": 40.6,
         "status": "active"
       },
       {
-        "id": "MULE-DEL-21",
-        "label": "MULE-DEL-21",
-        "bank": "Bank of Baroda",
+        "id": "MULE-RNC-21",
+        "label": "MULE-RNC-21",
+        "bank": "Yes Bank",
         "node_type": "mule",
-        "balance": 15000.0,
-        "risk_score": 39.1,
+        "balance": 13722.0,
+        "risk_score": 38.9,
         "human_coordination_score": 42.0,
-        "dissipation_risk": 42.9,
+        "dissipation_risk": 42.5,
         "status": "active"
       },
       {
-        "id": "MULE-JPR-06",
-        "label": "MULE-JPR-06",
+        "id": "MULE-KOL-06",
+        "label": "MULE-KOL-06",
         "bank": "Canara Bank",
         "node_type": "mule",
-        "balance": 100.0,
-        "risk_score": 35.5,
+        "balance": 139.0,
+        "risk_score": 35.3,
         "human_coordination_score": 0.0,
-        "dissipation_risk": 50.7,
+        "dissipation_risk": 50.3,
         "status": "active"
       },
       {
-        "id": "PRED-NCR-88",
-        "label": "PRED-NCR-88",
-        "bank": "IndusInd Bank",
+        "id": "PRED-KOC-58",
+        "label": "PRED-KOC-58",
+        "bank": "ICICI Bank",
         "node_type": "predicted",
         "balance": 0.0,
         "risk_score": 50.2,
@@ -203,8 +203,8 @@
         "status": "predicted"
       },
       {
-        "id": "PRED-WALLET-04",
-        "label": "PRED-WALLET-04",
+        "id": "PRED-PUNE-75",
+        "label": "PRED-PUNE-75",
         "bank": "Wallet Exit Rail",
         "node_type": "predicted",
         "balance": 0.0,
@@ -217,105 +217,105 @@
     "links": [
       {
         "source": "VICTIM-A1",
-        "target": "MULE-HYD-01",
-        "amount": 125000.0,
-        "timestamp": "2026-03-27T10:00:05Z",
+        "target": "MULE-PAT-01",
+        "amount": 126136.0,
+        "timestamp": "2026-03-27T23:52:15Z",
         "hop": 1,
         "status": "observed"
       },
       {
-        "source": "MULE-HYD-01",
-        "target": "MULE-BLR-07",
-        "amount": 90000.0,
-        "timestamp": "2026-03-27T10:00:31Z",
+        "source": "MULE-PAT-01",
+        "target": "MULE-GGN-07",
+        "amount": 69441.0,
+        "timestamp": "2026-03-27T23:52:45Z",
         "hop": 1,
         "status": "frozen"
       },
       {
-        "source": "MULE-HYD-01",
-        "target": "MULE-KOL-02",
-        "amount": 28000.0,
-        "timestamp": "2026-03-27T10:00:48Z",
+        "source": "MULE-PAT-01",
+        "target": "MULE-CHN-02",
+        "amount": 54927.0,
+        "timestamp": "2026-03-27T23:53:00Z",
         "hop": 1,
         "status": "observed"
       },
       {
-        "source": "MULE-BLR-07",
-        "target": "MULE-PUNE-11",
-        "amount": 50000.0,
-        "timestamp": "2026-03-27T10:01:06Z",
+        "source": "MULE-GGN-07",
+        "target": "MULE-BHO-11",
+        "amount": 38866.0,
+        "timestamp": "2026-03-27T23:53:17Z",
         "hop": 2,
         "status": "observed"
       },
       {
-        "source": "MULE-BLR-07",
-        "target": "MULE-GGN-14",
-        "amount": 31000.0,
-        "timestamp": "2026-03-27T10:01:18Z",
+        "source": "MULE-GGN-07",
+        "target": "MULE-HYD-14",
+        "amount": 30012.0,
+        "timestamp": "2026-03-27T23:53:40Z",
         "hop": 2,
         "status": "frozen"
       },
       {
-        "source": "MULE-KOL-02",
-        "target": "CRYPTO-RAMP-09",
-        "amount": 22000.0,
-        "timestamp": "2026-03-27T10:01:42Z",
+        "source": "MULE-CHN-02",
+        "target": "ATM-OFF-08",
+        "amount": 33219.0,
+        "timestamp": "2026-03-27T23:53:47Z",
         "hop": 2,
         "status": "observed"
       },
       {
-        "source": "MULE-PUNE-11",
-        "target": "MULE-CCU-55",
-        "amount": 19000.0,
-        "timestamp": "2026-03-27T10:01:59Z",
+        "source": "MULE-BHO-11",
+        "target": "MULE-COI-55",
+        "amount": 16961.0,
+        "timestamp": "2026-03-27T23:54:13Z",
         "hop": 3,
         "status": "observed"
       },
       {
-        "source": "MULE-GGN-14",
-        "target": "MULE-DEL-21",
-        "amount": 15000.0,
-        "timestamp": "2026-03-27T10:02:10Z",
+        "source": "MULE-HYD-14",
+        "target": "MULE-RNC-21",
+        "amount": 13722.0,
+        "timestamp": "2026-03-27T23:54:25Z",
         "hop": 3,
         "status": "observed"
       },
       {
-        "source": "MULE-GGN-14",
-        "target": "MULE-JPR-06",
-        "amount": 9000.0,
-        "timestamp": "2026-03-27T10:02:24Z",
+        "source": "MULE-HYD-14",
+        "target": "MULE-KOL-06",
+        "amount": 8868.0,
+        "timestamp": "2026-03-27T23:54:51Z",
         "hop": 3,
         "status": "observed"
       },
       {
-        "source": "MULE-JPR-06",
-        "target": "CRYPTO-RAMP-09",
-        "amount": 8900.0,
-        "timestamp": "2026-03-27T10:02:45Z",
+        "source": "MULE-KOL-06",
+        "target": "ATM-OFF-08",
+        "amount": 8729.0,
+        "timestamp": "2026-03-27T23:55:01Z",
         "hop": 4,
         "status": "observed"
       },
       {
-        "source": "MULE-DEL-21",
-        "target": "PRED-NCR-88",
-        "amount": 13000.0,
-        "timestamp": "2026-03-27T10:03:05Z",
-        "hop": 4,
+        "source": "MULE-RNC-21",
+        "target": "PRED-KOC-58",
+        "amount": 9795.0,
+        "timestamp": "2026-03-27T23:55:19Z",
+        "hop": 5,
         "status": "predicted"
       },
       {
-        "source": "MULE-CCU-55",
-        "target": "PRED-WALLET-04",
-        "amount": 17000.0,
-        "timestamp": "2026-03-27T10:03:11Z",
-        "hop": 4,
+        "source": "MULE-COI-55",
+        "target": "PRED-PUNE-75",
+        "amount": 12481.0,
+        "timestamp": "2026-03-27T23:55:39Z",
+        "hop": 5,
         "status": "predicted"
       }
     ],
     "stats": {
       "total_accounts": 12,
       "cross_bank_edges": 10,
-      "total_suspicious_flow": 397900.0
+      "total_suspicious_flow": 400881.0
     }
   },
   "timeline": [
@@ -347,7 +347,7 @@
   ],
   "sentinel_scores": [
     {
-      "account_id": "CRYPTO-RAMP-09",
+      "account_id": "ATM-OFF-08",
       "risk_score": 95.0,
       "chain_confidence": 93.7,
       "human_coordination_score": 89.0,
@@ -355,19 +355,19 @@
       "indicators": [
         "no significant risk indicators detected"
       ],
-      "gat_score": 0.4316,
+      "gat_score": 0.4351,
       "lstm_score": 0.0,
       "flag_hits": []
     },
     {
-      "account_id": "PRED-NCR-88",
+      "account_id": "PRED-KOC-58",
       "risk_score": 50.2,
       "chain_confidence": 49.8,
       "human_coordination_score": 52.0,
       "dissipation_risk": 45.2,
       "indicators": [
-        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-01 shared with 5 other accounts",
-        "F9 Rapid Account Opening: Account only 5 days old \u2014 new account risk"
+        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-DB92 shared with 5 other accounts",
+        "F9 Rapid Account Opening: Account only 1 days old \u2014 new account risk"
       ],
       "gat_score": 0.48,
       "lstm_score": 0.42,
@@ -377,13 +377,13 @@
       ]
     },
     {
-      "account_id": "PRED-WALLET-04",
+      "account_id": "PRED-PUNE-75",
       "risk_score": 48.6,
       "chain_confidence": 48.5,
       "human_coordination_score": 52.0,
       "dissipation_risk": 42.0,
       "indicators": [
-        "F9 Rapid Account Opening: Account only 2 days old \u2014 new account risk"
+        "F9 Rapid Account Opening: Account only 1 days old \u2014 new account risk"
       ],
       "gat_score": 0.48,
       "lstm_score": 0.42,
@@ -392,18 +392,18 @@
       ]
     },
     {
-      "account_id": "MULE-HYD-01",
-      "risk_score": 46.7,
-      "chain_confidence": 34.4,
+      "account_id": "MULE-PAT-01",
+      "risk_score": 46.6,
+      "chain_confidence": 34.3,
       "human_coordination_score": 0.0,
-      "dissipation_risk": 66.8,
+      "dissipation_risk": 66.7,
       "indicators": [
-        "F1 Zero-Washout (FIFO): \u20b9118,000 outflow (94% of \u20b9125,000 inflow) within 2 hours",
+        "F1 Zero-Washout (FIFO): \u20b9124,368 outflow (99% of \u20b9126,136 inflow) within 2 hours",
         "F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window",
-        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-01 shared with 5 other accounts",
-        "F9 Rapid Account Opening: Account only 9 days old \u2014 new account risk"
+        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-DB92 shared with 5 other accounts",
+        "F9 Rapid Account Opening: Account only 6 days old \u2014 new account risk"
       ],
-      "gat_score": 0.4395,
+      "gat_score": 0.4391,
       "lstm_score": 0.0001,
       "flag_hits": [
         "F1",
@@ -413,18 +413,18 @@
       ]
     },
     {
-      "account_id": "MULE-BLR-07",
-      "risk_score": 46.3,
-      "chain_confidence": 34.2,
+      "account_id": "MULE-GGN-07",
+      "risk_score": 45.9,
+      "chain_confidence": 34.0,
       "human_coordination_score": 0.0,
-      "dissipation_risk": 66.8,
+      "dissipation_risk": 66.6,
       "indicators": [
-        "F1 Zero-Washout (FIFO): \u20b981,000 outflow (90% of \u20b990,000 inflow) within 2 hours",
+        "F1 Zero-Washout (FIFO): \u20b968,878 outflow (99% of \u20b969,441 inflow) within 2 hours",
         "F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window",
-        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-01 shared with 5 other accounts",
-        "F9 Rapid Account Opening: Account only 14 days old \u2014 new account risk"
+        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-DB92 shared with 5 other accounts",
+        "F9 Rapid Account Opening: Account only 19 days old \u2014 new account risk"
       ],
-      "gat_score": 0.4393,
+      "gat_score": 0.436,
       "lstm_score": 0.0001,
       "flag_hits": [
         "F1",
@@ -434,17 +434,17 @@
       ]
     },
     {
-      "account_id": "MULE-GGN-14",
-      "risk_score": 39.1,
-      "chain_confidence": 28.5,
+      "account_id": "MULE-HYD-14",
+      "risk_score": 39.0,
+      "chain_confidence": 28.4,
       "human_coordination_score": 0.0,
-      "dissipation_risk": 54.5,
+      "dissipation_risk": 54.0,
       "indicators": [
         "F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window",
-        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-01 shared with 5 other accounts",
-        "F9 Rapid Account Opening: Account only 4 days old \u2014 new account risk"
+        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-DB92 shared with 5 other accounts",
+        "F9 Rapid Account Opening: Account only 3 days old \u2014 new account risk"
       ],
-      "gat_score": 0.4347,
+      "gat_score": 0.4274,
       "lstm_score": 0.0,
       "flag_hits": [
         "F5",
@@ -453,16 +453,16 @@
       ]
     },
     {
-      "account_id": "MULE-DEL-21",
-      "risk_score": 39.1,
-      "chain_confidence": 40.9,
+      "account_id": "MULE-RNC-21",
+      "risk_score": 38.9,
+      "chain_confidence": 40.7,
       "human_coordination_score": 42.0,
-      "dissipation_risk": 42.9,
+      "dissipation_risk": 42.5,
       "indicators": [
-        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-01 shared with 5 other accounts",
-        "F9 Rapid Account Opening: Account only 12 days old \u2014 new account risk"
+        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-DB92 shared with 5 other accounts",
+        "F9 Rapid Account Opening: Account only 6 days old \u2014 new account risk"
       ],
-      "gat_score": 0.441,
+      "gat_score": 0.4348,
       "lstm_score": 0.42,
       "flag_hits": [
         "F6",
@@ -470,15 +470,15 @@
       ]
     },
     {
-      "account_id": "MULE-CCU-55",
-      "risk_score": 38.4,
-      "chain_confidence": 40.3,
+      "account_id": "MULE-COI-55",
+      "risk_score": 38.1,
+      "chain_confidence": 39.9,
       "human_coordination_score": 42.0,
-      "dissipation_risk": 41.3,
+      "dissipation_risk": 40.6,
       "indicators": [
-        "F9 Rapid Account Opening: Account only 7 days old \u2014 new account risk"
+        "F9 Rapid Account Opening: Account only 4 days old \u2014 new account risk"
       ],
-      "gat_score": 0.4678,
+      "gat_score": 0.4568,
       "lstm_score": 0.42,
       "flag_hits": [
         "F9"
@@ -493,21 +493,21 @@
       "indicators": [
         "no significant risk indicators detected"
       ],
-      "gat_score": 0.439,
+      "gat_score": 0.4391,
       "lstm_score": 0.42,
       "flag_hits": []
     },
     {
-      "account_id": "MULE-JPR-06",
-      "risk_score": 35.5,
-      "chain_confidence": 26.1,
+      "account_id": "MULE-KOL-06",
+      "risk_score": 35.3,
+      "chain_confidence": 26.0,
       "human_coordination_score": 0.0,
-      "dissipation_risk": 50.7,
+      "dissipation_risk": 50.3,
       "indicators": [
-        "F1 Zero-Washout (FIFO): \u20b98,900 outflow (99% of \u20b99,000 inflow) within 2 hours",
-        "F9 Rapid Account Opening: Account only 18 days old \u2014 new account risk"
+        "F1 Zero-Washout (FIFO): \u20b98,729 outflow (98% of \u20b98,868 inflow) within 2 hours",
+        "F9 Rapid Account Opening: Account only 15 days old \u2014 new account risk"
       ],
-      "gat_score": 0.4251,
+      "gat_score": 0.4191,
       "lstm_score": 0.0001,
       "flag_hits": [
         "F1",
@@ -515,16 +515,16 @@
       ]
     },
     {
-      "account_id": "MULE-PUNE-11",
-      "risk_score": 31.4,
-      "chain_confidence": 22.7,
+      "account_id": "MULE-BHO-11",
+      "risk_score": 31.1,
+      "chain_confidence": 22.5,
       "human_coordination_score": 0.0,
-      "dissipation_risk": 43.0,
+      "dissipation_risk": 42.5,
       "indicators": [
-        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-01 shared with 5 other accounts",
-        "F9 Rapid Account Opening: Account only 6 days old \u2014 new account risk"
+        "F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-DB92 shared with 5 other accounts",
+        "F9 Rapid Account Opening: Account only 7 days old \u2014 new account risk"
       ],
-      "gat_score": 0.4433,
+      "gat_score": 0.4343,
       "lstm_score": 0.0,
       "flag_hits": [
         "F6",
@@ -532,160 +532,33 @@
       ]
     },
     {
-      "account_id": "MULE-KOL-02",
-      "risk_score": 29.4,
-      "chain_confidence": 21.2,
+      "account_id": "MULE-CHN-02",
+      "risk_score": 29.6,
+      "chain_confidence": 21.3,
       "human_coordination_score": 0.0,
-      "dissipation_risk": 39.6,
+      "dissipation_risk": 39.8,
       "indicators": [
-        "F9 Rapid Account Opening: Account only 11 days old \u2014 new account risk"
+        "F9 Rapid Account Opening: Account only 10 days old \u2014 new account risk"
       ],
-      "gat_score": 0.44,
-      "lstm_score": 0.0,
+      "gat_score": 0.4426,
+      "lstm_score": 0.0001,
       "flag_hits": [
         "F9"
       ]
     }
   ],
   "intercept": {
-    "frozen_accounts": [
-      {
-        "account_id": "MULE-BLR-07",
-        "bank": "HDFC Bank",
-        "amount_frozen": 9000.0,
-        "eta_seconds": 42,
-        "status": "executed"
-      },
-      {
-        "account_id": "MULE-PUNE-11",
-        "bank": "Kotak Mahindra Bank",
-        "amount_frozen": 31000.0,
-        "eta_seconds": 95,
-        "status": "recommended"
-      },
-      {
-        "account_id": "MULE-GGN-14",
-        "bank": "Yes Bank",
-        "amount_frozen": 7000.0,
-        "eta_seconds": 67,
-        "status": "executed"
-      }
-    ],
-    "projected_recoverable_amount": 47000.0,
-    "funds_already_dissipated": 22000.0,
-    "freeze_coverage_ratio": 11.8,
+    "frozen_accounts": [],
+    "projected_recoverable_amount": 0.0,
+    "funds_already_dissipated": 33219.0,
+    "freeze_coverage_ratio": 0.0,
     "simulate_3_minute_delay": {
       "additional_loss": 68000,
       "recoverable_after_delay": 0,
       "narrative": "A 3-minute response delay allows the chain to reach wallet and cash-out rails before bank acknowledgements complete."
     }
   },
-  "chain_transactions": [
-    {
-      "tx_id": "TX-1002",
-      "timestamp": "2026-03-27T10:00:31Z",
-      "from_account": "MULE-HYD-01",
-      "to_account": "MULE-BLR-07",
-      "amount": 90000.0,
-      "bank_from": "Axis Bank",
-      "bank_to": "HDFC Bank",
-      "channel": "IMPS",
-      "status": "flagged",
-      "is_suspicious": true,
-      "tx_hash": "HASH-TX-1002"
-    },
-    {
-      "tx_id": "TX-1003",
-      "timestamp": "2026-03-27T10:00:48Z",
-      "from_account": "MULE-HYD-01",
-      "to_account": "MULE-KOL-02",
-      "amount": 28000.0,
-      "bank_from": "Axis Bank",
-      "bank_to": "ICICI Bank",
-      "channel": "UPI",
-      "status": "flagged",
-      "is_suspicious": true,
-      "tx_hash": "HASH-TX-1003"
-    },
-    {
-      "tx_id": "TX-1004",
-      "timestamp": "2026-03-27T10:01:06Z",
-      "from_account": "MULE-BLR-07",
-      "to_account": "MULE-PUNE-11",
-      "amount": 50000.0,
-      "bank_from": "HDFC Bank",
-      "bank_to": "Kotak Mahindra Bank",
-      "channel": "IMPS",
-      "status": "flagged",
-      "is_suspicious": true,
-      "tx_hash": "HASH-TX-1004"
-    },
-    {
-      "tx_id": "TX-1005",
-      "timestamp": "2026-03-27T10:01:18Z",
-      "from_account": "MULE-BLR-07",
-      "to_account": "MULE-GGN-14",
-      "amount": 31000.0,
-      "bank_from": "HDFC Bank",
-      "bank_to": "Yes Bank",
-      "channel": "UPI",
-      "status": "flagged",
-      "is_suspicious": true,
-      "tx_hash": "HASH-TX-1005"
-    },
-    {
-      "tx_id": "TX-1006",
-      "timestamp": "2026-03-27T10:01:42Z",
-      "from_account": "MULE-KOL-02",
-      "to_account": "CRYPTO-RAMP-09",
-      "amount": 22000.0,
-      "bank_from": "ICICI Bank",
-      "bank_to": "Fintech Settlement",
-      "channel": "Wallet Transfer",
-      "status": "dissipated",
-      "is_suspicious": true,
-      "tx_hash": "HASH-TX-1006"
-    },
-    {
-      "tx_id": "TX-1007",
-      "timestamp": "2026-03-27T10:01:59Z",
-      "from_account": "MULE-PUNE-11",
-      "to_account": "MULE-CCU-55",
-      "amount": 19000.0,
-      "bank_from": "Kotak Mahindra Bank",
-      "bank_to": "Punjab National Bank",
-      "channel": "UPI",
-      "status": "processing",
-      "is_suspicious": true,
-      "tx_hash": "HASH-TX-1007"
-    },
-    {
-      "tx_id": "TX-1008",
-      "timestamp": "2026-03-27T10:02:10Z",
-      "from_account": "MULE-GGN-14",
-      "to_account": "MULE-DEL-21",
-      "amount": 15000.0,
-      "bank_from": "Yes Bank",
-      "bank_to": "Bank of Baroda",
-      "channel": "NEFT",
-      "status": "processing",
-      "is_suspicious": true,
-      "tx_hash": "HASH-TX-1008"
-    },
-    {
-      "tx_id": "TX-1009",
-      "timestamp": "2026-03-27T10:02:24Z",
-      "from_account": "MULE-GGN-14",
-      "to_account": "MULE-JPR-06",
-      "amount": 9000.0,
-      "bank_from": "Yes Bank",
-      "bank_to": "Canara Bank",
-      "channel": "UPI",
-      "status": "processing",
-      "is_suspicious": true,
-      "tx_hash": "HASH-TX-1009"
-    }
-  ],
+  "chain_transactions": [],
   "model_metrics": {
     "gat": {
       "elliptic_baseline_acc": 0.8849994631160744,

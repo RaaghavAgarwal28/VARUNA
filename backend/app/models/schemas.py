@@ -89,11 +89,13 @@ class DashboardResponse(BaseModel):
     timeline: list[dict]
     sentinel_scores: list[RiskScore]
     intercept: dict
+    chain_transactions: list[dict] = []
     brief: BriefArtifact
     model_metrics: dict = {}
     architecture_note: str = Field(
         default="Scoring powered by VarunaGAT (EWC fine-tuned) + VarunaLSTM + 10-flag RBI rule engine."
     )
+
 
 
 class TransactionIngestRequest(BaseModel):

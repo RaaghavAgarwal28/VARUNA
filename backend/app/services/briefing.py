@@ -96,7 +96,7 @@ def generate_brief(payload: dict) -> dict:
       </div>
       <div class="card">
         <h3>Suspicious Chain Diagram</h3>
-        <p class="warn">VICTIM-A1 -> MULE-HYD-01 -> MULE-BLR-07 / MULE-KOL-02 -> MULE-PUNE-11 / MULE-GGN-14 -> predicted next-hop rails.</p>
+        <p class="warn">{"" if not payload.get("chain_transactions") else " -> ".join(dict.fromkeys([tx["from_account"] for tx in payload["chain_transactions"]] + [payload["chain_transactions"][-1]["to_account"]]))} -> predicted next-hop rails.</p>
       </div>
     </body>
     </html>

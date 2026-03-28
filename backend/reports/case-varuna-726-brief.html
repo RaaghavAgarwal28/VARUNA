@@ -1,0 +1,131 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>CASE-VARUNA-726 Action Brief</title>
+      <style>
+        body { font-family: Arial, sans-serif; background: #08111f; color: #ecf6ff; padding: 32px; }
+        .card { background: #101d31; border: 1px solid #234166; border-radius: 18px; padding: 20px; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border-bottom: 1px solid #234166; padding: 12px; text-align: left; vertical-align: top; }
+        .accent { color: #7de2d1; }
+        .warn { color: #ffb85c; }
+      </style>
+    </head>
+    <body>
+      <h1>VARUNA Enforcement Action Brief</h1>
+      <div class="card">
+        <h2>UPI Mule Chain Interception — Multi-bank Dissipation Attempt</h2>
+        <p><span class="accent">Threat Level:</span> Elevated</p>
+        <p><span class="accent">Flagged Source Account:</span> VICTIM-A1</p>
+        <p><span class="accent">Estimated Recoverable Amount:</span> INR 99,139.0</p>
+        <p><span class="accent">Why flagged:</span> Velocity burst, fan-out layering, 3-hop cross-bank spread, and predicted downstream dissipation.</p>
+      </div>
+      <div class="card">
+        <h3>Timeline</h3>
+        <ul><li><strong>23:38:33</strong> - Fraud entry (INR 1.88L)</li><li><strong>23:38:58</strong> - Hop 1 expansion (INR 1.83L)</li><li><strong>23:39:36</strong> - Layering split (INR 1.32L)</li><li><strong>23:40:11</strong> - Deep-hop coordination (INR 90.3K)</li><li><strong>23:40:51</strong> - Tail / sink activity (INR 39.1K)</li></ul>
+      </div>
+      <div class="card">
+        <h3>Freeze Actions</h3>
+        <ul><li>MULE-PUNE-11 at HDFC Bank - INR 43,244.0 (executed)</li><li>MULE-RNC-55 at Yes Bank - INR 36,464.0 (executed)</li><li>MULE-NAG-21 at Bank of India - INR 19,431.0 (recommended)</li></ul>
+      </div>
+      <div class="card">
+        <h3>Transaction Hashes</h3>
+        <ul><li>TX-4166 / SHA256-1149EEAC88E7527D / MULE-PAT-01 -> MULE-COI-07 / INR 133,512.0</li><li>TX-4167 / SHA256-EDC582E6557A37D4 / MULE-PAT-01 -> MULE-HYD-02 / INR 49,877.0</li><li>TX-4168 / SHA256-519436DB2E6D4969 / MULE-COI-07 -> MULE-PUNE-11 / INR 79,708.0</li><li>TX-4169 / SHA256-C76F38C6564CFF79 / MULE-COI-07 -> MULE-KOL-14 / INR 52,288.0</li><li>TX-4170 / SHA256-CA6E073004E6ECAE / MULE-HYD-02 -> WALLET-EXIT-44 / INR 33,918.0</li><li>TX-4171 / SHA256-156B7A8E6F1300EF / MULE-PUNE-11 -> MULE-RNC-55 / INR 36,464.0</li><li>TX-4173 / SHA256-CF90D91B564AE7C9 / MULE-KOL-14 -> MULE-JDH-06 / INR 19,912.0</li><li>TX-4172 / SHA256-2634442C81AE6DBD / MULE-KOL-14 -> MULE-NAG-21 / INR 19,431.0</li></ul>
+      </div>
+      <div class="card">
+        <h3>Risk Table</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Account</th>
+              <th>Risk</th>
+              <th>Chain Confidence</th>
+              <th>Human Coordination</th>
+              <th>Dissipation Risk</th>
+              <th>Indicators</th>
+            </tr>
+          </thead>
+          <tbody>
+        <tr>
+          <td>WALLET-EXIT-44</td>
+          <td>95.0</td>
+          <td>93.7</td>
+          <td>89.0</td>
+          <td>99.0</td>
+          <td>no significant risk indicators detected</td>
+        </tr>
+        
+        <tr>
+          <td>MULE-PAT-01</td>
+          <td>74.3</td>
+          <td>81.5</td>
+          <td>98.8</td>
+          <td>67.3</td>
+          <td>F1 Zero-Washout (FIFO): ₹183,389 outflow (98% of ₹187,928 inflow) within 2 hours, F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window, F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-257F shared with 5 other accounts, F9 Rapid Account Opening: Account only 15 days old — new account risk, LSTM: coordinated burst pattern (98.8%)</td>
+        </tr>
+        
+        <tr>
+          <td>PRED-CHN-65</td>
+          <td>50.2</td>
+          <td>49.8</td>
+          <td>52.0</td>
+          <td>45.2</td>
+          <td>F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-257F shared with 5 other accounts, F9 Rapid Account Opening: Account only 3 days old — new account risk</td>
+        </tr>
+        
+        <tr>
+          <td>PRED-KOC-92</td>
+          <td>48.6</td>
+          <td>48.5</td>
+          <td>52.0</td>
+          <td>42.0</td>
+          <td>F9 Rapid Account Opening: Account only 3 days old — new account risk</td>
+        </tr>
+        
+        <tr>
+          <td>MULE-COI-07</td>
+          <td>47.2</td>
+          <td>34.7</td>
+          <td>0.0</td>
+          <td>67.6</td>
+          <td>F1 Zero-Washout (FIFO): ₹131,996 outflow (99% of ₹133,512 inflow) within 2 hours, F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window, F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-257F shared with 5 other accounts, F9 Rapid Account Opening: Account only 18 days old — new account risk</td>
+        </tr>
+        
+        <tr>
+          <td>MULE-KOL-14</td>
+          <td>39.6</td>
+          <td>28.9</td>
+          <td>0.0</td>
+          <td>55.4</td>
+          <td>F5 Cross-Bank Layering Chain: 4 banks across 4 accounts in 60-minute window, F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-257F shared with 5 other accounts, F9 Rapid Account Opening: Account only 3 days old — new account risk</td>
+        </tr>
+        
+        <tr>
+          <td>MULE-NAG-21</td>
+          <td>39.5</td>
+          <td>41.2</td>
+          <td>42.0</td>
+          <td>43.5</td>
+          <td>F6 Device/Geo Clustering: Device DEV-FRAUD-CORE-257F shared with 5 other accounts, F9 Rapid Account Opening: Account only 17 days old — new account risk</td>
+        </tr>
+        
+        <tr>
+          <td>MULE-RNC-55</td>
+          <td>38.8</td>
+          <td>40.5</td>
+          <td>42.0</td>
+          <td>41.8</td>
+          <td>F9 Rapid Account Opening: Account only 5 days old — new account risk</td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Suspicious Chain Diagram</h3>
+        <p class="warn">MULE-PAT-01 -> MULE-COI-07 -> MULE-HYD-02 -> MULE-PUNE-11 -> MULE-KOL-14 -> MULE-NAG-21 -> predicted next-hop rails.</p>
+      </div>
+    </body>
+    </html>
+    
