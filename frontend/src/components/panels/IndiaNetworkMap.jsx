@@ -7,8 +7,8 @@ import { formatCurrency } from "../../lib/format";
 const threatColor = {
   Severe: { fill: "rgba(255,95,121,0.35)", stroke: "#ff5f79", text: "#ff5f79", glow: "rgba(255,95,121,0.5)" },
   High: { fill: "rgba(255,157,67,0.25)", stroke: "#ff9d43", text: "#ff9d43", glow: "rgba(255,157,67,0.4)" },
-  Elevated: { fill: "rgba(125,226,209,0.15)", stroke: "rgba(125,226,209,0.5)", text: "#7de2d1", glow: "rgba(125,226,209,0.3)" },
-  none: { fill: "rgba(125,226,209,0.06)", stroke: "rgba(125,226,209,0.18)", text: "#475569", glow: "transparent" },
+  Elevated: { fill: "rgba(255,69,0,0.15)", stroke: "rgba(255,69,0,0.5)", text: "#FF4500", glow: "rgba(255,69,0,0.3)" },
+  none: { fill: "rgba(255,69,0,0.06)", stroke: "rgba(255,69,0,0.18)", text: "#475569", glow: "transparent" },
 };
 
 /* ── District intel (simulated per-district data) ── */
@@ -202,7 +202,7 @@ export function IndiaNetworkMap({ stateIntel }) {
               ? `${selectedState} — District Intelligence`
               : "India Banking Network Intelligence"}
           </div>
-          <div className="text-sm text-slate-400">
+          <div className="text-sm text-white/40">
             {selectedState
               ? `${filteredDistricts.length} districts mapped · Click to see banking details`
               : "Real GeoJSON boundaries · Click any state to drill down into districts"}
@@ -211,7 +211,7 @@ export function IndiaNetworkMap({ stateIntel }) {
         {selectedState && (
           <button
             onClick={handleBack}
-            className="rounded-full border border-cyan/30 bg-cyan/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-cyan transition-colors hover:bg-cyan/20"
+            className="rounded-full border border-[#FF4500]/30 bg-[#FF4500]/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-[#FF4500] transition-colors hover:bg-[#FF4500]/20"
           >
             ← Back to India
           </button>
@@ -221,7 +221,7 @@ export function IndiaNetworkMap({ stateIntel }) {
       <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
         {/* ── Real GeoJSON Map ── */}
         <div
-          className="relative overflow-hidden rounded-[28px] border border-line/70 bg-[radial-gradient(circle_at_center,rgba(89,167,255,0.06),transparent_60%),linear-gradient(180deg,rgba(3,11,25,0.7),rgba(3,11,25,0.95))]"
+          className="relative overflow-hidden rounded-[28px] border border-white/[0.07] bg-[radial-gradient(circle_at_center,rgba(255,69,0,0.06),transparent_60%),linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.95))]"
           style={{ minHeight: 540 }}
         >
           <svg
@@ -314,17 +314,17 @@ export function IndiaNetworkMap({ stateIntel }) {
                       d={d}
                       fill={
                         isSelected
-                          ? "rgba(89,167,255,0.3)"
+                          ? "rgba(255,69,0,0.3)"
                           : isHovered
-                          ? "rgba(125,226,209,0.25)"
-                          : "rgba(125,226,209,0.08)"
+                          ? "rgba(255,69,0,0.25)"
+                          : "rgba(255,69,0,0.08)"
                       }
                       stroke={
                         isSelected
                           ? "#59a7ff"
                           : isHovered
-                          ? "rgba(125,226,209,0.7)"
-                          : "rgba(125,226,209,0.25)"
+                          ? "rgba(255,69,0,0.7)"
+                          : "rgba(255,69,0,0.25)"
                       }
                       strokeWidth={isSelected ? 2 / stateProjection.scale : isHovered ? 1.2 / stateProjection.scale : 0.5 / stateProjection.scale}
                       className="cursor-pointer transition-colors duration-150"
@@ -381,28 +381,28 @@ export function IndiaNetworkMap({ stateIntel }) {
                 initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                className="absolute bottom-4 left-4 right-4 rounded-2xl border border-line/70 bg-black/90 px-4 py-3 text-sm backdrop-blur-xl"
+                className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/[0.07] bg-black/90 px-4 py-3 text-sm backdrop-blur-xl"
               >
                 <div className="font-display text-base text-white">{hoveredFeature}</div>
                 {!selectedState && stateDataMap[hoveredFeature] && (
-                  <div className="mt-1 text-slate-400">
+                  <div className="mt-1 text-white/40">
                     Exposure: {formatCurrency(stateDataMap[hoveredFeature].totalExposure)} ·{" "}
                     {stateDataMap[hoveredFeature].suspiciousAccounts} suspicious ·{" "}
                     {stateDataMap[hoveredFeature].frozenAccounts} frozen
                   </div>
                 )}
                 {selectedState && (
-                  <div className="mt-1 text-xs text-slate-500">Click to see district details</div>
+                  <div className="mt-1 text-xs text-white/30">Click to see district details</div>
                 )}
               </motion.div>
             )}
           </AnimatePresence>
 
           {/* Legend */}
-          <div className="absolute top-4 left-4 flex flex-col gap-1.5 text-[10px] uppercase tracking-[0.15em] text-slate-400">
+          <div className="absolute top-4 left-4 flex flex-col gap-1.5 text-[10px] uppercase tracking-[0.15em] text-white/40">
             <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#ff5f79] shadow-[0_0_6px_rgba(255,95,121,0.6)]" />Severe</span>
             <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#ff9d43]" />High</span>
-            <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#7de2d1]" />Elevated</span>
+            <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#FF4500]" />Elevated</span>
             <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-[#475569]" />Normal</span>
           </div>
         </div>
@@ -411,8 +411,8 @@ export function IndiaNetworkMap({ stateIntel }) {
         <div className="space-y-4 max-h-[580px] overflow-y-auto custom-scrollbar">
           {!selectedState ? (
             <div className="space-y-3">
-              <div className="rounded-[20px] border border-line/70 bg-white/[0.02] p-4">
-                <div className="text-xs uppercase tracking-[0.2em] text-slate-500 mb-3">
+              <div className="rounded-[20px] border border-white/[0.07] bg-white/[0.02] p-4">
+                <div className="text-xs uppercase tracking-[0.2em] text-white/30 mb-3">
                   Affected States Overview
                 </div>
                 {(stateIntel || []).map((state) => {
@@ -421,11 +421,11 @@ export function IndiaNetworkMap({ stateIntel }) {
                     <div
                       key={state.state}
                       onClick={() => handleStateClick(state.state)}
-                      className="flex items-center justify-between rounded-xl border border-line/50 bg-white/[0.01] p-3 mb-2 cursor-pointer transition-colors hover:bg-white/[0.04] hover:border-cyan/30"
+                      className="flex items-center justify-between rounded-xl border border-white/[0.05] bg-white/[0.01] p-3 mb-2 cursor-pointer transition-colors hover:bg-white/[0.04] hover:border-[#FF4500]/30"
                     >
                       <div>
                         <div className="font-semibold text-white">{state.state}</div>
-                        <div className="text-xs text-slate-400">
+                        <div className="text-xs text-white/40">
                           {state.banks?.length || 0} banks · {state.suspiciousAccounts} suspicious
                         </div>
                       </div>
@@ -455,11 +455,11 @@ export function IndiaNetworkMap({ stateIntel }) {
                 className="space-y-4"
               >
                 {/* State header */}
-                <div className="rounded-[20px] border border-line/70 bg-white/[0.02] p-5">
+                <div className="rounded-[20px] border border-white/[0.07] bg-white/[0.02] p-5">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <div className="font-display text-2xl text-white">{selectedState}</div>
-                      <div className="mt-1 text-sm text-slate-400">
+                      <div className="mt-1 text-sm text-white/40">
                         {stateData?.banks?.length || 0} linked banks · {districtIntel.length} key districts
                       </div>
                     </div>
@@ -483,10 +483,10 @@ export function IndiaNetworkMap({ stateIntel }) {
 
                   {stateData?.banks && (
                     <div className="mt-4">
-                      <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2">Linked Banks</div>
+                      <div className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-2">Linked Banks</div>
                       <div className="flex flex-wrap gap-2">
                         {stateData.banks.map((bank) => (
-                          <span key={bank} className="rounded-full border border-line bg-white/[0.03] px-3 py-1 text-xs text-slate-300">{bank}</span>
+                          <span key={bank} className="rounded-full border border-white/[0.07] bg-white/[0.03] px-3 py-1 text-xs text-white/50">{bank}</span>
                         ))}
                       </div>
                     </div>
@@ -494,7 +494,7 @@ export function IndiaNetworkMap({ stateIntel }) {
 
                   {stateData?.anomalies && stateData.anomalies.length > 0 && (
                     <div className="mt-4">
-                      <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2">Anomaly Signatures</div>
+                      <div className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-2">Anomaly Signatures</div>
                       <div className="space-y-1">
                         {stateData.anomalies.map((a) => (
                           <div key={a} className="rounded-lg border border-red/20 bg-red/5 px-3 py-1.5 text-xs text-red">⚠ {a}</div>
@@ -505,8 +505,8 @@ export function IndiaNetworkMap({ stateIntel }) {
                 </div>
 
                 {/* District breakdown */}
-                <div className="rounded-[20px] border border-line/70 bg-white/[0.02] p-5">
-                  <div className="text-xs uppercase tracking-[0.2em] text-slate-500 mb-3">
+                <div className="rounded-[20px] border border-white/[0.07] bg-white/[0.02] p-5">
+                  <div className="text-xs uppercase tracking-[0.2em] text-white/30 mb-3">
                     District-Level Breakdown
                   </div>
                   <div className="space-y-2">
@@ -516,15 +516,15 @@ export function IndiaNetworkMap({ stateIntel }) {
                         onClick={() => setSelectedDistrict(district)}
                         className={`rounded-xl border p-3 cursor-pointer transition-all ${
                           selectedDistrict?.name === district.name
-                            ? "border-cyan/50 bg-cyan/5"
-                            : "border-line/50 bg-white/[0.01] hover:bg-white/[0.04] hover:border-cyan/30"
+                            ? "border-[#FF4500]/50 bg-[#FF4500]/5"
+                            : "border-white/[0.05] bg-white/[0.01] hover:bg-white/[0.04] hover:border-[#FF4500]/30"
                         }`}
                       >
                         <div className="flex items-center justify-between mb-2">
                           <div className="font-semibold text-white">{district.name}</div>
-                          <div className="text-sm text-slate-300">{formatCurrency(district.exposure)}</div>
+                          <div className="text-sm text-white/50">{formatCurrency(district.exposure)}</div>
                         </div>
-                        <div className="flex items-center gap-4 text-xs text-slate-400">
+                        <div className="flex items-center gap-4 text-xs text-white/40">
                           <span>🏦 {district.branches} branches</span>
                           <span className={district.suspicious > 0 ? "text-orange" : ""}>
                             ⚠ {district.suspicious} suspicious
@@ -542,22 +542,22 @@ export function IndiaNetworkMap({ stateIntel }) {
                               exit={{ height: 0, opacity: 0 }}
                               className="mt-3 overflow-hidden"
                             >
-                              <div className="rounded-lg border border-line/50 bg-black/30 p-3">
-                                <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2">Banks Operating</div>
+                              <div className="rounded-lg border border-white/[0.05] bg-black/30 p-3">
+                                <div className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-2">Banks Operating</div>
                                 <div className="flex flex-wrap gap-2 mb-3">
                                   {district.banks.map((b) => (
-                                    <span key={b} className="rounded-full border border-cyan/20 bg-cyan/5 px-2 py-0.5 text-[11px] text-cyan">{b}</span>
+                                    <span key={b} className="rounded-full border border-[#FF4500]/20 bg-[#FF4500]/5 px-2 py-0.5 text-[11px] text-[#FF4500]">{b}</span>
                                   ))}
                                 </div>
                                 <div className="grid grid-cols-2 gap-2">
-                                  <div className="rounded-lg border border-line/40 bg-slate-950/30 p-2">
-                                    <div className="text-[9px] uppercase tracking-widest text-slate-500">Risk Density</div>
+                                  <div className="rounded-lg border border-white/[0.04] bg-white/[0.03] p-2">
+                                    <div className="text-[9px] uppercase tracking-widest text-white/30">Risk Density</div>
                                     <div className="mt-1 font-display text-lg text-white">
                                       {district.branches > 0 ? ((district.suspicious / district.branches) * 100).toFixed(1) : 0}%
                                     </div>
                                   </div>
-                                  <div className="rounded-lg border border-line/40 bg-slate-950/30 p-2">
-                                    <div className="text-[9px] uppercase tracking-widest text-slate-500">Avg Exposure/Branch</div>
+                                  <div className="rounded-lg border border-white/[0.04] bg-white/[0.03] p-2">
+                                    <div className="text-[9px] uppercase tracking-widest text-white/30">Avg Exposure/Branch</div>
                                     <div className="mt-1 font-display text-lg text-white">
                                       {formatCurrency(district.branches > 0 ? Math.round(district.exposure / district.branches) : 0)}
                                     </div>
@@ -582,8 +582,8 @@ export function IndiaNetworkMap({ stateIntel }) {
 
 function StatMetric({ label, value }) {
   return (
-    <div className="rounded-xl border border-line/60 bg-slate-950/30 p-3">
-      <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500">{label}</div>
+    <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] p-3">
+      <div className="text-[10px] uppercase tracking-[0.2em] text-white/30">{label}</div>
       <div className="mt-1 font-display text-lg text-white">{value}</div>
     </div>
   );

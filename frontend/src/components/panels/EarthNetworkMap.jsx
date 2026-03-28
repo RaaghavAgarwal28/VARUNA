@@ -7,8 +7,8 @@ import { formatCurrency } from "../../lib/format";
 const threatColor = {
   Severe: { fill: Color.fromCssColorString("rgba(255,95,121,0.6)"), outline: Color.fromCssColorString("#ff5f79") },
   High: { fill: Color.fromCssColorString("rgba(255,157,67,0.5)"), outline: Color.fromCssColorString("#ff9d43") },
-  Elevated: { fill: Color.fromCssColorString("rgba(125,226,209,0.3)"), outline: Color.fromCssColorString("rgba(125,226,209,0.8)") },
-  none: { fill: Color.fromCssColorString("rgba(125,226,209,0.05)"), outline: Color.fromCssColorString("rgba(125,226,209,0.15)") },
+  Elevated: { fill: Color.fromCssColorString("rgba(255,69,0,0.3)"), outline: Color.fromCssColorString("rgba(255,69,0,0.8)") },
+  none: { fill: Color.fromCssColorString("rgba(255,69,0,0.05)"), outline: Color.fromCssColorString("rgba(255,69,0,0.15)") },
 };
 
 export function EarthNetworkMap({ stateIntel }) {
@@ -60,9 +60,9 @@ export function EarthNetworkMap({ stateIntel }) {
       for (let i = 0; i < entities.length; i++) {
         const entity = entities[i];
         if (entity.polygon) {
-            entity.polygon.material = new ColorMaterialProperty(Color.fromCssColorString("rgba(125,226,209,0.1)"));
+            entity.polygon.material = new ColorMaterialProperty(Color.fromCssColorString("rgba(255,69,0,0.1)"));
             entity.polygon.outline = true;
-            entity.polygon.outlineColor = Color.fromCssColorString("rgba(125,226,209,0.4)");
+            entity.polygon.outlineColor = Color.fromCssColorString("rgba(255,69,0,0.4)");
         }
       }
   };
@@ -84,21 +84,21 @@ export function EarthNetworkMap({ stateIntel }) {
       <div className="mb-4 flex items-center justify-between">
         <div>
           <div className="panel-heading">India Banking Network Intelligence (3D Globe)</div>
-          <div className="text-sm text-slate-400">
+          <div className="text-sm text-white/40">
             Click any state to fly to it and reveal district-level anomalies
           </div>
         </div>
         {selectedState && (
           <button
             onClick={() => setSelectedState(null)}
-            className="rounded-full border border-cyan/30 bg-cyan/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-cyan transition-colors hover:bg-cyan/20"
+            className="rounded-full border border-[#FF4500]/30 bg-[#FF4500]/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-[#FF4500] transition-colors hover:bg-[#FF4500]/20"
           >
             ← Global View
           </button>
         )}
       </div>
 
-      <div className="h-[600px] w-full rounded-[28px] overflow-hidden relative border border-line/70">
+      <div className="h-[600px] w-full rounded-[28px] overflow-hidden relative border border-white/[0.07]">
         <Viewer 
           ref={viewerRef}
           full 

@@ -5,7 +5,7 @@ export function AlertPanel({ analysis, onFreeze, backendLive }) {
     return (
       <div className="panel p-5">
         <div className="panel-heading">Alert Panel</div>
-        <div className="mt-3 text-sm text-slate-400">Select an account in the graph to inspect its chain.</div>
+        <div className="mt-3 text-sm text-white/40">Select an account in the graph to inspect its chain.</div>
       </div>
     );
   }
@@ -18,15 +18,15 @@ export function AlertPanel({ analysis, onFreeze, backendLive }) {
       <div className="mb-4 flex items-center justify-between">
         <div>
           <div className="panel-heading">Alert Panel</div>
-          <div className="text-sm text-slate-400">Live account investigation and freeze action</div>
+          <div className="text-sm text-white/40">Live account investigation and freeze action</div>
         </div>
         <div className="rounded-full border border-red/30 bg-red/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-red">
           {backendLive ? "Live API" : "Demo Mode"}
         </div>
       </div>
 
-      <div className="rounded-3xl border border-line/70 bg-white/[0.02] p-4">
-        <div className="text-xs uppercase tracking-[0.2em] text-slate-500">Flagged Account</div>
+      <div className="rounded-3xl border border-white/[0.07] bg-white/[0.02] p-4">
+        <div className="text-xs uppercase tracking-[0.2em] text-white/30">Flagged Account</div>
         <div className="mt-2 font-display text-2xl text-white">{analysis.account_id}</div>
         <div className="mt-3 grid gap-3 md:grid-cols-3">
           <Metric label="Risk Score" value={risk.risk_score || "-"} />
@@ -35,8 +35,8 @@ export function AlertPanel({ analysis, onFreeze, backendLive }) {
         </div>
       </div>
 
-      <div className="mt-4 rounded-3xl border border-line/70 bg-white/[0.02] p-4">
-        <div className="text-xs uppercase tracking-[0.2em] text-slate-500">Why Triggered</div>
+      <div className="mt-4 rounded-3xl border border-white/[0.07] bg-white/[0.02] p-4">
+        <div className="text-xs uppercase tracking-[0.2em] text-white/30">Why Triggered</div>
         <div className="mt-3 flex flex-wrap gap-2">
           {(analysis.velocity_rule_hits || []).map((item) => (
             <span key={item} className="rounded-full border border-orange/30 bg-orange/10 px-3 py-1 text-xs text-orange">
@@ -46,12 +46,12 @@ export function AlertPanel({ analysis, onFreeze, backendLive }) {
         </div>
       </div>
 
-      <div className="mt-4 rounded-3xl border border-line/70 bg-white/[0.02] p-4">
-        <div className="text-xs uppercase tracking-[0.2em] text-slate-500">Chain Path</div>
-        <div className="mt-2 text-sm leading-7 text-slate-300">
+      <div className="mt-4 rounded-3xl border border-white/[0.07] bg-white/[0.02] p-4">
+        <div className="text-xs uppercase tracking-[0.2em] text-white/30">Chain Path</div>
+        <div className="mt-2 text-sm leading-7 text-white/50">
           {(analysis.chain?.accounts || []).join(" -> ")}
         </div>
-        <div className="mt-3 text-sm text-slate-400">
+        <div className="mt-3 text-sm text-white/40">
           {txCount} suspicious transfers in extracted 3-hop subgraph
         </div>
       </div>
@@ -63,13 +63,13 @@ export function AlertPanel({ analysis, onFreeze, backendLive }) {
 
       <button
         onClick={() => onFreeze(analysis.account_id)}
-        className="mt-4 w-full rounded-full border border-cyan/30 bg-cyan/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan transition hover:bg-cyan/20"
+        className="mt-4 w-full rounded-full border border-[#FF4500]/30 bg-[#FF4500]/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#FF4500] transition hover:bg-[#FF4500]/20"
       >
         Freeze Selected Account
       </button>
 
-      <div className="mt-4 text-xs uppercase tracking-[0.2em] text-slate-500">Intercept Preview</div>
-      <div className="mt-2 text-sm text-slate-300">
+      <div className="mt-4 text-xs uppercase tracking-[0.2em] text-white/30">Intercept Preview</div>
+      <div className="mt-2 text-sm text-white/50">
         Projected recoverable amount: {formatCurrency(analysis.intercept_preview?.projected_recoverable_amount || 0)}
       </div>
     </div>
@@ -78,8 +78,8 @@ export function AlertPanel({ analysis, onFreeze, backendLive }) {
 
 function Metric({ label, value }) {
   return (
-    <div className="rounded-2xl border border-line/60 bg-slate-950/30 p-3">
-      <div className="text-[11px] uppercase tracking-[0.2em] text-slate-500">{label}</div>
+    <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-3">
+      <div className="text-[11px] uppercase tracking-[0.2em] text-white/30">{label}</div>
       <div className="mt-2 font-display text-xl text-white">{value}</div>
     </div>
   );

@@ -134,7 +134,7 @@ export function DemoPipelinePanel() {
             How VARUNA Catches Criminals — Step by Step
           </div>
         </div>
-        <p className="max-w-3xl text-slate-300">
+        <p className="max-w-3xl text-white/50">
           This is a live, transparent walkthrough. Every number you see below is
           calculated in real-time by our backend AI models, not hardcoded. We'll
           show you exactly <strong className="text-white">how</strong> and{" "}
@@ -162,7 +162,7 @@ export function DemoPipelinePanel() {
                       ? "border-purple-400 bg-purple-400/20 text-purple-400 scale-110"
                       : isPassed
                         ? "border-purple-500 bg-purple-500 text-white"
-                        : "border-slate-700 bg-slate-800 text-slate-500"
+                        : "border-slate-700 bg-slate-800 text-white/30"
                   }`}
                 >
                   <step.icon size={18} />
@@ -172,8 +172,8 @@ export function DemoPipelinePanel() {
                     isActive
                       ? "text-purple-300"
                       : isPassed
-                        ? "text-slate-300"
-                        : "text-slate-600"
+                        ? "text-white/50"
+                        : "text-white/25"
                   }`}
                 >
                   {step.title}
@@ -262,7 +262,7 @@ export function DemoPipelinePanel() {
         <button
           onClick={resetDemo}
           disabled={currentStep === 0}
-          className="px-5 py-2.5 rounded-xl border border-line text-slate-400 hover:text-white transition uppercase text-xs tracking-wider disabled:opacity-30 disabled:cursor-not-allowed"
+          className="px-5 py-2.5 rounded-xl border border-line text-white/40 hover:text-white transition uppercase text-xs tracking-wider disabled:opacity-30 disabled:cursor-not-allowed"
         >
           Reset
         </button>
@@ -308,13 +308,13 @@ export function DemoPipelinePanel() {
    ═══════════════════════════════════════════════════════════════════ */
 function Step0_Watchtower({ data }) {
   if (!data)
-    return <p className="text-slate-500 font-mono">Loading data…</p>;
+    return <p className="text-white/30 font-mono">Loading data…</p>;
   return (
     <div className="flex flex-col h-full animate-fade-in relative z-10">
       <h2 className="text-2xl font-display text-white mb-2">
         🏰 Step 1: The Watchtower
       </h2>
-      <p className="text-slate-300 text-sm mb-6 leading-relaxed">
+      <p className="text-white/50 text-sm mb-6 leading-relaxed">
         Imagine we're sitting in a control room, watching{" "}
         <strong className="text-white">every single bank transfer</strong>{" "}
         happening across India in real-time — like CCTV, but for money.
@@ -344,7 +344,7 @@ function Step0_Watchtower({ data }) {
         <div className="text-4xl font-display text-white">
           {data.national_overview?.active_suspicious_chains || 0}
         </div>
-        <p className="text-slate-400 text-xs mt-2">
+        <p className="text-white/40 text-xs mt-2">
           These are groups of accounts where money is moving in a pattern
           that looks like fraud — before anyone has even reported it.
         </p>
@@ -368,7 +368,7 @@ function Step0_Watchtower({ data }) {
    ═══════════════════════════════════════════════════════════════════ */
 function Step1_FollowMoney({ data, explain, target }) {
   if (!explain)
-    return <p className="text-slate-500 font-mono">Analyzing target…</p>;
+    return <p className="text-white/30 font-mono">Analyzing target…</p>;
 
   const info = explain.node_info;
   const txSummary = explain.transaction_summary;
@@ -386,7 +386,7 @@ function Step1_FollowMoney({ data, explain, target }) {
           Flagged Account
         </div>
         <div className="font-mono text-lg text-white mb-1">{target}</div>
-        <div className="text-slate-400 text-sm">
+        <div className="text-white/40 text-sm">
           Bank:{" "}
           <span className="text-white font-medium">{info?.bank || "—"}</span>{" "}
           · Type:{" "}
@@ -415,10 +415,10 @@ function Step1_FollowMoney({ data, explain, target }) {
         />
       </div>
 
-      <p className="text-slate-300 text-sm mb-3 leading-relaxed">
+      <p className="text-white/50 text-sm mb-3 leading-relaxed">
         💡 <strong className="text-white">In simple terms:</strong> This
         account received{" "}
-        <span className="text-emerald-400 font-semibold">
+        <span className="text-[#FF4500] font-semibold">
           ₹{(txSummary.total_received || 0).toLocaleString()}
         </span>{" "}
         and rapidly sent out{" "}
@@ -432,22 +432,22 @@ function Step1_FollowMoney({ data, explain, target }) {
       </p>
 
       {/* Transaction list */}
-      <div className="bg-black/40 border border-line/30 rounded-xl p-3 flex-1 overflow-y-auto custom-scrollbar max-h-[200px]">
-        <div className="text-[10px] uppercase text-slate-500 tracking-wider mb-2 font-bold">
+      <div className="bg-black/40 border border-white/[0.03] rounded-xl p-3 flex-1 overflow-y-auto custom-scrollbar max-h-[200px]">
+        <div className="text-[10px] uppercase text-white/30 tracking-wider mb-2 font-bold">
           📊 Actual Transactions (Live Data)
         </div>
         <div className="space-y-2 font-mono text-xs">
           {txSummary.transactions?.slice(0, 8).map((tx, i) => (
             <div
               key={i}
-              className="flex items-center gap-2 bg-white/[0.02] p-2 rounded-lg border border-line/30"
+              className="flex items-center gap-2 bg-white/[0.02] p-2 rounded-lg border border-white/[0.03]"
             >
               <span
-                className={`px-1.5 py-0.5 rounded text-[10px] font-bold ${tx.direction === "SENT" ? "bg-red/10 text-red" : "bg-emerald-500/10 text-emerald-400"}`}
+                className={`px-1.5 py-0.5 rounded text-[10px] font-bold ${tx.direction === "SENT" ? "bg-red/10 text-red" : "bg-emerald-500/10 text-[#FF4500]"}`}
               >
                 {tx.direction === "SENT" ? "↑ SENT" : "↓ GOT"}
               </span>
-              <span className="text-slate-400 truncate flex-1" title={tx.direction === "SENT" ? tx.to : tx.from}>
+              <span className="text-white/40 truncate flex-1" title={tx.direction === "SENT" ? tx.to : tx.from}>
                 {tx.direction === "SENT" ? `→ ${tx.to}` : `← ${tx.from}`}
               </span>
               <span className="text-white font-semibold whitespace-nowrap">
@@ -467,7 +467,7 @@ function Step1_FollowMoney({ data, explain, target }) {
    ═══════════════════════════════════════════════════════════════════ */
 function Step2_FourBrains({ explain }) {
   if (!explain)
-    return <p className="text-slate-500 font-mono">Loading analysis…</p>;
+    return <p className="text-white/30 font-mono">Loading analysis…</p>;
 
   const brains = [
     {
@@ -476,7 +476,7 @@ function Step2_FourBrains({ explain }) {
       title: "Brain 1: The Shape Matcher",
       subtitle: "Graph Attention Network (GAT)",
       color: "emerald",
-      borderColor: "border-emerald-500/30",
+      borderColor: "border-[#FF4500]/30",
       bgColor: "bg-emerald-500/5",
       barColor: "bg-emerald-500",
     },
@@ -486,9 +486,9 @@ function Step2_FourBrains({ explain }) {
       title: "Brain 2: The Timing Expert",
       subtitle: "Long Short-Term Memory (LSTM)",
       color: "cyan",
-      borderColor: "border-cyan/30",
-      bgColor: "bg-cyan/5",
-      barColor: "bg-cyan",
+      borderColor: "border-[#FF4500]/30",
+      bgColor: "bg-[#FF4500]/5",
+      barColor: "bg-[#FF4500]",
     },
     {
       data: explain.brain_3_eif,
@@ -517,7 +517,7 @@ function Step2_FourBrains({ explain }) {
       <h2 className="text-2xl font-display text-white mb-2">
         🧠 Step 3: The 4 Brains
       </h2>
-      <p className="text-slate-300 text-sm mb-5 leading-relaxed">
+      <p className="text-white/50 text-sm mb-5 leading-relaxed">
         VARUNA doesn't rely on just one opinion. It uses{" "}
         <strong className="text-white">4 completely different AI systems</strong>{" "}
         to analyze the suspect. Each one looks at the problem from a
@@ -535,7 +535,7 @@ function Step2_FourBrains({ explain }) {
         <div className="text-xs text-orange uppercase tracking-wider mb-2 font-bold">
           🕸️ Network Role: {explain.graph_role?.role}
         </div>
-        <p className="text-slate-300 text-sm leading-relaxed">
+        <p className="text-white/50 text-sm leading-relaxed">
           {explain.graph_role?.layman}
         </p>
       </div>
@@ -552,7 +552,7 @@ function BrainCard({ data, icon, title, subtitle, borderColor, bgColor, barColor
           <div className="text-sm font-bold text-white">
             {icon} {title}
           </div>
-          <div className="text-[10px] text-slate-500 uppercase tracking-wider">
+          <div className="text-[10px] text-white/30 uppercase tracking-wider">
             {subtitle}
           </div>
         </div>
@@ -561,7 +561,7 @@ function BrainCard({ data, icon, title, subtitle, borderColor, bgColor, barColor
         </div>
       </div>
       {/* Score bar */}
-      <div className="h-2 rounded-full bg-slate-800 overflow-hidden border border-line/30 mb-3">
+      <div className="h-2 rounded-full bg-slate-800 overflow-hidden border border-white/[0.03] mb-3">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${data.score_pct}%` }}
@@ -569,7 +569,7 @@ function BrainCard({ data, icon, title, subtitle, borderColor, bgColor, barColor
           className={`h-full ${barColor} shadow-[0_0_10px_rgba(168,85,247,0.5)]`}
         />
       </div>
-      <p className="text-slate-400 text-xs leading-relaxed">{data.layman}</p>
+      <p className="text-white/40 text-xs leading-relaxed">{data.layman}</p>
 
       {/* Show triggered rules for Rule Book */}
       {data.flag_hits && data.flag_hits.length > 0 && (
@@ -585,8 +585,8 @@ function BrainCard({ data, icon, title, subtitle, borderColor, bgColor, barColor
               <XCircle size={12} className="text-red mt-0.5 flex-shrink-0" />
               <div>
                 <span className="text-red font-mono font-bold">{f.flag}</span>
-                <span className="text-slate-400 mx-1">—</span>
-                <span className="text-slate-300">
+                <span className="text-white/40 mx-1">—</span>
+                <span className="text-white/50">
                   {data.all_flags?.[f.flag]?.name}: {f.detail}
                 </span>
               </div>
@@ -604,7 +604,7 @@ function BrainCard({ data, icon, title, subtitle, borderColor, bgColor, barColor
    ═══════════════════════════════════════════════════════════════════ */
 function Step3_TheMath({ explain }) {
   if (!explain)
-    return <p className="text-slate-500 font-mono">Loading calculation…</p>;
+    return <p className="text-white/30 font-mono">Loading calculation…</p>;
 
   const calc = explain.final_calculation;
   const gat = explain.brain_1_gat;
@@ -618,7 +618,7 @@ function Step3_TheMath({ explain }) {
       <h2 className="text-2xl font-display text-white mb-2">
         🧮 Step 4: The Math — Live Calculation
       </h2>
-      <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+      <p className="text-white/50 text-sm mb-4 leading-relaxed">
         Here's the{" "}
         <strong className="text-white">exact formula</strong> VARUNA used.
         Every number below was <em>just</em> calculated by our backend —
@@ -630,7 +630,7 @@ function Step3_TheMath({ explain }) {
         <div className="text-purple-300 text-xs uppercase tracking-wider mb-3 font-bold">
           📐 The Formula
         </div>
-        <div className="text-slate-300 mb-4 text-xs leading-relaxed">
+        <div className="text-white/50 mb-4 text-xs leading-relaxed">
           Final Score = (Shape × 35%) + (Timing × 25%) + (Outlier × 20%) + (Rules × 20%) × Role Multiplier
         </div>
 
@@ -642,7 +642,7 @@ function Step3_TheMath({ explain }) {
             value={gat?.score_pct}
             weight={35}
             result={gat?.weighted_contribution ? (gat.weighted_contribution * 100).toFixed(2) : "—"}
-            color="text-emerald-400"
+            color="text-[#FF4500]"
           />
           <CalcLine
             emoji="⏱️"
@@ -650,7 +650,7 @@ function Step3_TheMath({ explain }) {
             value={lstm?.score_pct}
             weight={25}
             result={lstm?.weighted_contribution ? (lstm.weighted_contribution * 100).toFixed(2) : "—"}
-            color="text-cyan"
+            color="text-[#FF4500]"
           />
           <CalcLine
             emoji="🔬"
@@ -669,17 +669,17 @@ function Step3_TheMath({ explain }) {
             color="text-red"
           />
 
-          <div className="border-t border-dashed border-line/40 my-2" />
+          <div className="border-t border-dashed border-white/[0.04] my-2" />
 
           <div className="flex justify-between text-sm">
-            <span className="text-slate-400">Base Score (sum)</span>
+            <span className="text-white/40">Base Score (sum)</span>
             <span className="text-white font-bold">
               {calc?.raw_combined_pct}%
             </span>
           </div>
 
           <div className="flex justify-between text-sm">
-            <span className="text-slate-400">
+            <span className="text-white/40">
               Role Multiplier ({role?.role}){" "}
               <span className="text-orange">×{role?.role_multiplier}</span>
             </span>
@@ -708,8 +708,8 @@ function Step3_TheMath({ explain }) {
       </div>
 
       {/* Threshold explanation */}
-      <div className="bg-black/40 border border-line/30 rounded-2xl p-4">
-        <div className="text-xs text-slate-500 uppercase tracking-wider mb-2 font-bold">
+      <div className="bg-black/40 border border-white/[0.03] rounded-2xl p-4">
+        <div className="text-xs text-white/30 uppercase tracking-wider mb-2 font-bold">
           What does this score mean?
         </div>
         <div className="space-y-2 text-sm">
@@ -746,9 +746,9 @@ function CalcLine({ emoji, label, value, weight, result, color }) {
       <span className="w-5 text-center">{emoji}</span>
       <span className={`${color} w-[140px] truncate`}>{label}</span>
       <span className="text-white w-[45px] text-right">{value}%</span>
-      <span className="text-slate-500 mx-1">×</span>
-      <span className="text-slate-400 w-[30px]">{weight}%</span>
-      <span className="text-slate-500 mx-1">=</span>
+      <span className="text-white/30 mx-1">×</span>
+      <span className="text-white/40 w-[30px]">{weight}%</span>
+      <span className="text-white/30 mx-1">=</span>
       <span className="text-white font-bold ml-auto">{result}%</span>
     </div>
   );
@@ -758,11 +758,11 @@ function ThresholdRow({ range, label, desc, active, color }) {
   const colors = {
     red: "border-red/40 bg-red/10 text-red",
     orange: "border-orange/40 bg-orange/10 text-orange",
-    emerald: "border-emerald-500/40 bg-emerald-500/10 text-emerald-400",
+    emerald: "border-emerald-500/40 bg-emerald-500/10 text-[#FF4500]",
   };
   return (
     <div
-      className={`flex items-center gap-3 p-2 rounded-lg border transition-all ${active ? colors[color] : "border-line/20 bg-black/20 text-slate-500"}`}
+      className={`flex items-center gap-3 p-2 rounded-lg border transition-all ${active ? colors[color] : "border-line/20 bg-black/20 text-white/30"}`}
     >
       {active ? (
         <CheckCircle size={14} className="flex-shrink-0" />
@@ -784,7 +784,7 @@ function ThresholdRow({ range, label, desc, active, color }) {
    ═══════════════════════════════════════════════════════════════════ */
 function Step4_Verdict({ explain, target }) {
   if (!explain)
-    return <p className="text-slate-500 font-mono">Loading verdict…</p>;
+    return <p className="text-white/30 font-mono">Loading verdict…</p>;
 
   const calc = explain.final_calculation;
   const info = explain.node_info;
@@ -810,7 +810,7 @@ function Step4_Verdict({ explain, target }) {
         )}
         <Lock
           size={48}
-          className={`mx-auto mb-4 ${calc?.decision === "BLOCK" ? "text-red" : calc?.decision === "REVIEW" ? "text-orange" : "text-emerald-400"} drop-shadow-[0_0_20px_rgba(255,0,0,0.6)]`}
+          className={`mx-auto mb-4 ${calc?.decision === "BLOCK" ? "text-red" : calc?.decision === "REVIEW" ? "text-orange" : "text-[#FF4500]"} drop-shadow-[0_0_20px_rgba(255,0,0,0.6)]`}
         />
         <div className="text-3xl font-display font-bold text-white uppercase tracking-[0.3em] mb-2 relative z-10">
           {calc?.decision === "BLOCK"
@@ -819,17 +819,17 @@ function Step4_Verdict({ explain, target }) {
               ? "⚠️ SENT FOR REVIEW"
               : "✅ ACCOUNT CLEARED"}
         </div>
-        <div className="font-mono text-sm text-slate-300 bg-black/30 px-4 py-2 rounded-xl inline-block relative z-10">
+        <div className="font-mono text-sm text-white/50 bg-black/30 px-4 py-2 rounded-xl inline-block relative z-10">
           {target}
         </div>
       </div>
 
       {/* Why */}
-      <div className="bg-black/40 border border-line/40 rounded-2xl p-5 mb-4">
-        <div className="text-xs text-slate-500 uppercase tracking-wider mb-3 font-bold">
+      <div className="bg-black/40 border border-white/[0.04] rounded-2xl p-5 mb-4">
+        <div className="text-xs text-white/30 uppercase tracking-wider mb-3 font-bold">
           Why?
         </div>
-        <p className="text-slate-300 text-sm leading-relaxed">
+        <p className="text-white/50 text-sm leading-relaxed">
           {calc?.decision === "BLOCK" ? (
             <>
               Account{" "}
@@ -862,7 +862,7 @@ function Step4_Verdict({ explain, target }) {
               Account{" "}
               <span className="text-white font-mono font-bold">{target}</span>{" "}
               scored only{" "}
-              <span className="text-emerald-400 font-bold text-lg">
+              <span className="text-[#FF4500] font-bold text-lg">
                 {calc?.final_score_pct}%
               </span>
               . This is within the normal range. No action was taken.
@@ -872,7 +872,7 @@ function Step4_Verdict({ explain, target }) {
       </div>
 
       {/* Timeline */}
-      <div className="bg-purple-500/5 border border-purple-500/30 rounded-2xl p-4 text-xs text-slate-400 leading-relaxed">
+      <div className="bg-purple-500/5 border border-purple-500/30 rounded-2xl p-4 text-xs text-white/40 leading-relaxed">
         <div className="text-purple-300 font-bold uppercase text-[10px] tracking-wider mb-2">
           Complete Timeline
         </div>
@@ -890,11 +890,11 @@ function Step4_Verdict({ explain, target }) {
 
 /* ── Helper Components ── */
 function InfoCard({ icon: Icon, label, value, color }) {
-  const colors = { cyan: "text-cyan", emerald: "text-emerald-400", red: "text-red", orange: "text-orange" };
+  const colors = { cyan: "text-[#FF4500]", emerald: "text-[#FF4500]", red: "text-red", orange: "text-orange" };
   return (
-    <div className="bg-black/30 border border-line/40 rounded-2xl p-5 text-center shadow-lg">
+    <div className="bg-black/30 border border-white/[0.04] rounded-2xl p-5 text-center shadow-lg">
       <Icon className={`mx-auto mb-3 ${colors[color]}`} size={24} />
-      <div className="text-[10px] uppercase text-slate-500 tracking-[0.15em] mb-1">
+      <div className="text-[10px] uppercase text-white/30 tracking-[0.15em] mb-1">
         {label}
       </div>
       <div className="text-3xl font-display text-white">{value}</div>
@@ -904,7 +904,7 @@ function InfoCard({ icon: Icon, label, value, color }) {
 
 function MiniStat({ label, value, color }) {
   const colors = {
-    emerald: "border-emerald-500/30 text-emerald-400",
+    emerald: "border-[#FF4500]/30 text-[#FF4500]",
     red: "border-red/30 text-red",
     orange: "border-orange/30 text-orange",
   };
@@ -1011,8 +1011,8 @@ function SimulationGraph({ graph, chainData, step, target }) {
         enablePointerInteraction={true}
       />
 
-      <div className="absolute top-4 left-4 bg-black/60 border border-line/50 p-3 rounded-xl backdrop-blur-sm shadow-xl z-10 pointer-events-none">
-        <div className="text-[10px] uppercase text-slate-400 font-bold tracking-[0.2em] mb-2 border-b border-line/30 pb-1">
+      <div className="absolute top-4 left-4 bg-black/60 border border-white/[0.05] p-3 rounded-xl backdrop-blur-sm shadow-xl z-10 pointer-events-none">
+        <div className="text-[10px] uppercase text-white/40 font-bold tracking-[0.2em] mb-2 border-b border-white/[0.03] pb-1">
           Live Network
         </div>
         {step === 0 ? (
@@ -1027,7 +1027,7 @@ function SimulationGraph({ graph, chainData, step, target }) {
         )}
       </div>
 
-      <div className="absolute bottom-4 left-4 flex gap-3 text-[10px] uppercase tracking-wider text-slate-500 z-10 pointer-events-none">
+      <div className="absolute bottom-4 left-4 flex gap-3 text-[10px] uppercase tracking-wider text-white/30 z-10 pointer-events-none">
         <span className="flex items-center gap-1">
           <span className="w-2 h-2 rounded-full bg-[#f97316]" /> Mule
         </span>

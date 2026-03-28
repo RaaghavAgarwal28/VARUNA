@@ -63,7 +63,7 @@ function isAnomalous(nodeType) {
 
 function StatBox({ label, value, accent = "cyan" }) {
   const accents = {
-    cyan: "border-cyan/30 bg-cyan/5 text-cyan",
+    cyan: "border-[#FF4500]/30 bg-[#FF4500]/5 text-[#FF4500]",
     red: "border-red/30 bg-red/5 text-red",
     orange: "border-orange/30 bg-orange/5 text-orange",
     purple: "border-purple-400/30 bg-purple-400/5 text-purple-400",
@@ -81,8 +81,8 @@ function RingCard({ ring, isActive, onClick }) {
     <button
       onClick={() => onClick(ring)}
       className={`w-full text-left rounded-xl border p-2.5 transition-all text-xs ${isActive
-          ? "border-cyan/40 bg-cyan/10 shadow-lg shadow-cyan/5"
-          : "border-line/50 bg-white/[0.02] hover:bg-white/[0.06] hover:border-line"
+          ? "border-[#FF4500]/40 bg-[#FF4500]/10 shadow-lg shadow-[#FF4500]/5"
+          : "border-white/[0.05] bg-white/[0.02] hover:bg-white/[0.06] hover:border-line"
         }`}
     >
       <div className="flex items-center gap-2 mb-1">
@@ -94,8 +94,8 @@ function RingCard({ ring, isActive, onClick }) {
           {ring.type}
         </span>
       </div>
-      <div className="text-slate-300 font-medium">{ring.label}</div>
-      <div className="text-slate-500 mt-0.5">{ring.size} nodes</div>
+      <div className="text-white/50 font-medium">{ring.label}</div>
+      <div className="text-white/30 mt-0.5">{ring.size} nodes</div>
     </button>
   );
 }
@@ -451,7 +451,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
           className="text-center"
         >
           <div className="font-display text-3xl mb-3">Initializing Mule Hunter 3D Engine…</div>
-          <div className="text-slate-400 text-sm">Loading WebGL renderer, detecting ring structures, building 3D graph</div>
+          <div className="text-white/40 text-sm">Loading WebGL renderer, detecting ring structures, building 3D graph</div>
         </motion.div>
       </div>
     );
@@ -475,7 +475,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
             <h2 className="font-display text-3xl text-white">
               3D Fraud Network Intelligence
             </h2>
-            <p className="mt-2 max-w-2xl text-sm text-slate-400">
+            <p className="mt-2 max-w-2xl text-sm text-white/40">
               Immersive 3D visualization engine ported from MULE_HUNTER. Detect ring structures (Star, Chain, Cycle, Dense Cluster),
               assign node roles (HUB, BRIDGE, MULE), and analyze fraud networks in real-time 3D space.
             </p>
@@ -498,7 +498,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
         <div className="space-y-4">
           {/* Search */}
           <div className="panel p-4">
-            <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-slate-500">
+            <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/30">
               <Search size={12} />
               Search Account
             </div>
@@ -509,9 +509,9 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
                 value={searchId}
                 onChange={(e) => { setSearchId(e.target.value); setSearchError(""); }}
                 onKeyDown={(e) => { if (e.key === "Enter") handleSearch(); }}
-                className="flex-1 rounded-lg border border-line/70 bg-white/[0.05] px-3 py-2 text-sm text-white placeholder-slate-500 focus:border-cyan/50 focus:outline-none"
+                className="flex-1 rounded-lg border border-white/[0.07] bg-white/[0.05] px-3 py-2 text-sm text-white placeholder-slate-500 focus:border-[#FF4500]/50 focus:outline-none"
               />
-              <button onClick={handleSearch} className="rounded-lg border border-line/70 bg-white/[0.05] px-3 hover:bg-white/[0.1] text-white transition">
+              <button onClick={handleSearch} className="rounded-lg border border-white/[0.07] bg-white/[0.05] px-3 hover:bg-white/[0.1] text-white transition">
                 <Search size={14} />
               </button>
             </div>
@@ -520,7 +520,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
 
           {/* Filters */}
           <div className="panel p-4">
-            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-500">Filters</div>
+            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30">Filters</div>
 
             {/* Type filter */}
             <div className="mb-3 flex flex-wrap gap-1.5">
@@ -529,8 +529,8 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
                   key={type}
                   onClick={() => setFilterType(type)}
                   className={`rounded-full px-2.5 py-1 text-[10px] uppercase tracking-wider transition ${filterType === type
-                      ? "border border-cyan/40 bg-cyan/10 text-cyan"
-                      : "border border-line/50 bg-white/[0.02] text-slate-400 hover:text-white"
+                      ? "border border-[#FF4500]/40 bg-[#FF4500]/10 text-[#FF4500]"
+                      : "border border-white/[0.05] bg-white/[0.02] text-white/40 hover:text-white"
                     }`}
                 >
                   {type}
@@ -540,16 +540,16 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
 
             {/* Toggle switches */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 cursor-pointer text-xs text-slate-300">
+              <label className="flex items-center gap-2 cursor-pointer text-xs text-white/50">
                 <input type="checkbox" checked={showOnlyFraud} onChange={() => setShowOnlyFraud((v) => !v)} className="accent-red-600" />
                 Fraud nodes only
               </label>
-              <label className="flex items-center gap-2 cursor-pointer text-xs text-slate-300">
+              <label className="flex items-center gap-2 cursor-pointer text-xs text-white/50">
                 <input type="checkbox" checked={showRoles} onChange={() => setShowRoles((v) => !v)} className="accent-cyan-500" />
                 Show roles (HUB/BRIDGE/MULE)
               </label>
-              <label className="flex items-center gap-2 cursor-pointer text-xs text-slate-300">
-                <input type="checkbox" checked={showParticles} onChange={() => setShowParticles((v) => !v)} className="accent-green-500" />
+              <label className="flex items-center gap-2 cursor-pointer text-xs text-white/50">
+                <input type="checkbox" checked={showParticles} onChange={() => setShowParticles((v) => !v)} className="accent-[#FF4500]" />
                 Animated particles
               </label>
             </div>
@@ -557,18 +557,18 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
 
           {/* Controls */}
           <div className="panel p-4">
-            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-500">Controls</div>
+            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30">Controls</div>
             <div className="grid grid-cols-2 gap-2">
-              <button onClick={handleZoomIn} className="rounded-lg border border-line/70 bg-white/[0.05] py-2 text-xs text-slate-300 hover:bg-white/[0.1] transition flex items-center justify-center gap-1">
+              <button onClick={handleZoomIn} className="rounded-lg border border-white/[0.07] bg-white/[0.05] py-2 text-xs text-white/50 hover:bg-white/[0.1] transition flex items-center justify-center gap-1">
                 <ZoomIn size={12} /> Zoom In
               </button>
-              <button onClick={handleZoomOut} className="rounded-lg border border-line/70 bg-white/[0.05] py-2 text-xs text-slate-300 hover:bg-white/[0.1] transition flex items-center justify-center gap-1">
+              <button onClick={handleZoomOut} className="rounded-lg border border-white/[0.07] bg-white/[0.05] py-2 text-xs text-white/50 hover:bg-white/[0.1] transition flex items-center justify-center gap-1">
                 <ZoomOut size={12} /> Zoom Out
               </button>
-              <button onClick={handleResetView} className="rounded-lg border border-line/70 bg-white/[0.05] py-2 text-xs text-slate-300 hover:bg-white/[0.1] transition flex items-center justify-center gap-1">
+              <button onClick={handleResetView} className="rounded-lg border border-white/[0.07] bg-white/[0.05] py-2 text-xs text-white/50 hover:bg-white/[0.1] transition flex items-center justify-center gap-1">
                 <RotateCcw size={12} /> Reset
               </button>
-              <button onClick={handleToggleBundle} className={`rounded-lg border py-2 text-xs transition flex items-center justify-center gap-1 ${isBundled ? "border-cyan/30 bg-cyan/10 text-cyan" : "border-line/70 bg-white/[0.05] text-slate-300 hover:bg-white/[0.1]"
+              <button onClick={handleToggleBundle} className={`rounded-lg border py-2 text-xs transition flex items-center justify-center gap-1 ${isBundled ? "border-[#FF4500]/30 bg-[#FF4500]/10 text-[#FF4500]" : "border-white/[0.07] bg-white/[0.05] text-white/50 hover:bg-white/[0.1]"
                 }`}>
                 <Layers size={12} /> Bundle
               </button>
@@ -578,18 +578,18 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
           {/* Detected Rings */}
           <div className="panel p-4 max-h-[350px] overflow-y-auto">
             <div className="mb-3 flex items-center justify-between">
-              <div className="text-xs uppercase tracking-[0.2em] text-slate-500 flex items-center gap-1.5">
+              <div className="text-xs uppercase tracking-[0.2em] text-white/30 flex items-center gap-1.5">
                 <Network size={12} />
                 Detected Rings ({rings.length})
               </div>
               {activeRing && (
-                <button onClick={() => setActiveRing(null)} className="text-[10px] text-cyan hover:text-white flex items-center gap-1">
+                <button onClick={() => setActiveRing(null)} className="text-[10px] text-[#FF4500] hover:text-white flex items-center gap-1">
                   <X size={10} /> Clear
                 </button>
               )}
             </div>
             {rings.length === 0 ? (
-              <div className="text-xs text-slate-600 py-2">No ring structures detected</div>
+              <div className="text-xs text-white/25 py-2">No ring structures detected</div>
             ) : (
               <div className="space-y-2">
                 {rings.map((ring) => (
@@ -616,31 +616,31 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
             >
               <Target size={12} />
               Isolating: {activeRing.label} ({activeRing.type})
-              <button onClick={() => setActiveRing(null)} className="ml-2 text-slate-400 hover:text-white"><X size={12} /></button>
+              <button onClick={() => setActiveRing(null)} className="ml-2 text-white/40 hover:text-white"><X size={12} /></button>
             </motion.div>
           )}
 
           {/* Node count badge */}
-          <div className="absolute top-4 right-4 z-20 rounded-xl border border-line/70 bg-black/80 backdrop-blur-xl px-3 py-2 text-[10px] text-slate-400">
+          <div className="absolute top-4 right-4 z-20 rounded-xl border border-white/[0.07] bg-black/80 backdrop-blur-xl px-3 py-2 text-[10px] text-white/40">
             <span className="text-white font-semibold">{visibleGraph.nodes.length}</span> nodes ·{" "}
             <span className="text-white font-semibold">{visibleGraph.links.length}</span> edges
           </div>
 
           {/* Legend */}
-          <div className="absolute bottom-4 left-4 z-20 rounded-xl border border-line/70 bg-black/80 backdrop-blur-xl p-3 text-[10px]">
-            <div className="text-slate-500 uppercase tracking-[0.2em] mb-2 font-semibold">Legend</div>
+          <div className="absolute bottom-4 left-4 z-20 rounded-xl border border-white/[0.07] bg-black/80 backdrop-blur-xl p-3 text-[10px]">
+            <div className="text-white/30 uppercase tracking-[0.2em] mb-2 font-semibold">Legend</div>
             <div className="space-y-1.5">
               {Object.entries(NODE_COLORS).filter(([k]) => k !== "default").map(([type, color]) => (
-                <div key={type} className="flex items-center gap-2 text-slate-300">
+                <div key={type} className="flex items-center gap-2 text-white/50">
                   <span className="w-2.5 h-2.5 rounded-full inline-block" style={{ background: color }} />
                   <span className="capitalize">{type}</span>
                 </div>
               ))}
               {showRoles && (
                 <>
-                  <div className="border-t border-line/50 pt-1.5 mt-1.5" />
+                  <div className="border-t border-white/[0.05] pt-1.5 mt-1.5" />
                   {Object.entries(ROLE_COLORS).map(([role, color]) => (
-                    <div key={role} className="flex items-center gap-2 text-slate-300">
+                    <div key={role} className="flex items-center gap-2 text-white/50">
                       <span className="w-2.5 h-2.5 rounded-full inline-block" style={{ background: color }} />
                       <span>{ROLE_ICONS[role]} {role}</span>
                     </div>
@@ -695,21 +695,21 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
                 className="panel p-4"
               >
                 <div className="mb-3 flex items-center justify-between">
-                  <div className="text-xs uppercase tracking-[0.2em] text-cyan flex items-center gap-1.5">
+                  <div className="text-xs uppercase tracking-[0.2em] text-[#FF4500] flex items-center gap-1.5">
                     <Shield size={12} />
                     Node Inspector
                   </div>
-                  <button onClick={() => { setActiveNodeId(null); }} className="text-slate-400 hover:text-white text-sm">✕</button>
+                  <button onClick={() => { setActiveNodeId(null); }} className="text-white/40 hover:text-white text-sm">✕</button>
                 </div>
 
                 <div className="font-display text-xl text-white mb-1">{activeNodeData.id}</div>
-                <div className="text-xs text-slate-400 mb-4">
+                <div className="text-xs text-white/40 mb-4">
                   {activeNodeData.bank || "Unknown Bank"} · {(activeNodeData.node_type || "unknown").toUpperCase()} · {activeNodeData.status || "active"}
                 </div>
 
                 {/* Status badges */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  <span className={`rounded-full px-2 py-0.5 text-[10px] uppercase ${activeNodeData.is_anomalous ? "bg-red/10 border border-red/30 text-red" : "bg-green-500/10 border border-green-500/30 text-green-400"
+                  <span className={`rounded-full px-2 py-0.5 text-[10px] uppercase ${activeNodeData.is_anomalous ? "bg-red/10 border border-red/30 text-red" : "bg-[#FF4500]/10 border border-[#FF4500]/30 text-[#FF4500]"
                     }`}>
                     {activeNodeData.is_anomalous ? "🔴 Anomalous" : "🟢 Normal"}
                   </span>
@@ -736,7 +736,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
                 {/* F1-F10 flags */}
                 {activeScore?.flag_hits?.length > 0 && (
                   <div className="mb-4">
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2">Flag Hits</div>
+                    <div className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-2">Flag Hits</div>
                     <div className="flex flex-wrap gap-1">
                       {activeScore.flag_hits.map((flag) => (
                         <span key={flag} className="rounded-lg border border-red/30 bg-red/10 px-2 py-0.5 text-[10px] text-red font-mono">{flag}</span>
@@ -759,11 +759,11 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
                 animate={{ opacity: 1 }}
                 className="panel p-4"
               >
-                <div className="text-xs uppercase tracking-[0.2em] text-slate-500 flex items-center gap-1.5 mb-3">
+                <div className="text-xs uppercase tracking-[0.2em] text-white/30 flex items-center gap-1.5 mb-3">
                   <Shield size={12} />
                   Node Inspector
                 </div>
-                <div className="text-center py-8 text-xs text-slate-600">
+                <div className="text-center py-8 text-xs text-white/25">
                   <Hexagon size={24} className="mx-auto mb-2 opacity-30" />
                   Click a node in the 3D graph to inspect it
                 </div>
@@ -773,7 +773,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
 
           {/* Ring Detection Stats */}
           <div className="panel p-4">
-            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-500 flex items-center gap-1.5">
+            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30 flex items-center gap-1.5">
               <Target size={12} />
               Ring Detection Summary
             </div>
@@ -787,7 +787,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
 
           {/* Role Distribution */}
           <div className="panel p-4">
-            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-500">Role Distribution</div>
+            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30">Role Distribution</div>
             {(() => {
               const roleCounts = { HUB: 0, BRIDGE: 0, MULE: 0 };
               roles.forEach((role) => { if (roleCounts[role] !== undefined) roleCounts[role]++; });
@@ -795,7 +795,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
                 <div className="space-y-2">
                   {Object.entries(roleCounts).map(([role, count]) => (
                     <div key={role} className="flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-2 text-slate-300">
+                      <div className="flex items-center gap-2 text-white/50">
                         <span className="w-2 h-2 rounded-full" style={{ background: ROLE_COLORS[role] }} />
                         {ROLE_ICONS[role]} {role}
                       </div>
@@ -809,7 +809,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
 
           {/* Node Type Distribution */}
           <div className="panel p-4">
-            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-500">Node Types</div>
+            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30">Node Types</div>
             {(() => {
               const typeCounts = {};
               (graph?.nodes || []).forEach((n) => {
@@ -819,7 +819,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
                 <div className="space-y-2">
                   {Object.entries(typeCounts).map(([type, count]) => (
                     <div key={type} className="flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-2 text-slate-300">
+                      <div className="flex items-center gap-2 text-white/50">
                         <span className="w-2 h-2 rounded-full" style={{ background: NODE_COLORS[type] || NODE_COLORS.default }} />
                         <span className="capitalize">{type}</span>
                       </div>
@@ -840,8 +840,8 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
 
 function ScoreRow({ icon, label, value, color }) {
   return (
-    <div className="flex items-center justify-between rounded-lg border border-line/50 bg-white/[0.02] px-3 py-2">
-      <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.15em] text-slate-400">
+    <div className="flex items-center justify-between rounded-lg border border-white/[0.05] bg-white/[0.02] px-3 py-2">
+      <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.15em] text-white/40">
         {icon} {label}
       </div>
       <div className="font-display text-sm" style={{ color }}>{value}</div>
@@ -851,8 +851,8 @@ function ScoreRow({ icon, label, value, color }) {
 
 function DetailRow({ label, value }) {
   return (
-    <div className="flex items-center justify-between rounded-lg border border-line/50 bg-white/[0.01] px-3 py-1.5 text-xs">
-      <span className="text-slate-500">{label}</span>
+    <div className="flex items-center justify-between rounded-lg border border-white/[0.05] bg-white/[0.01] px-3 py-1.5 text-xs">
+      <span className="text-white/30">{label}</span>
       <span className="text-white">{value}</span>
     </div>
   );

@@ -6,7 +6,7 @@ export function ModelMetricsPanel({ metrics }) {
     return (
       <div className="panel p-5">
         <div className="panel-heading">ML Model Metrics</div>
-        <div className="mt-2 text-sm text-slate-400">Models initializing…</div>
+        <div className="mt-2 text-sm text-white/40">Models initializing…</div>
       </div>
     );
   }
@@ -23,7 +23,7 @@ export function ModelMetricsPanel({ metrics }) {
       animate={{ opacity: 1, y: 0 }}
       className="panel overflow-hidden p-5"
     >
-      <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-cyan">
+      <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[#FF4500]/20 bg-[#FF4500]/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-[#FF4500]">
         <Cpu size={12} /> ML Pipeline Metrics
       </div>
       <div className="mb-5 font-display text-2xl text-white">Model Performance Dashboard</div>
@@ -83,7 +83,7 @@ export function ModelMetricsPanel({ metrics }) {
               { label: "EWC Lambda", value: cl.ewc_lambda || "—" },
               { label: "Status", value: "✅ Trained" },
             ]}
-            color="green"
+            color="accent"
           />
         )}
 
@@ -95,26 +95,27 @@ export function ModelMetricsPanel({ metrics }) {
 
 function ModelCard({ icon, title, subtitle, stats, color }) {
   const colorMap = {
-    cyan: "border-cyan/30",
+    cyan: "border-[#FF4500]/30",
+    accent: "border-[#FF4500]/30",
     orange: "border-orange/30",
-    green: "border-emerald-500/30",
+    green: "border-[#FF4500]/30",
     purple: "border-purple-400/30",
     rose: "border-rose-400/30",
   };
 
   return (
-    <div className={`rounded-2xl border ${colorMap[color] || "border-line/70"} bg-white/[0.03] p-4`}>
+    <div className={`rounded-2xl border ${colorMap[color] || "border-white/[0.07]"} bg-white/[0.03] p-4`}>
       <div className="mb-3 flex items-center gap-2 text-sm text-white">
         {icon}
         <div>
           <div className="font-display text-base">{title}</div>
-          <div className="text-[10px] text-slate-500">{subtitle}</div>
+          <div className="text-[10px] text-white/30">{subtitle}</div>
         </div>
       </div>
       <div className="grid grid-cols-2 gap-2">
         {stats.map((s) => (
           <div key={s.label} className="rounded-xl bg-white/[0.03] px-3 py-2">
-            <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500">{s.label}</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-white/30">{s.label}</div>
             <div className="mt-1 font-display text-sm text-white">{s.value}</div>
           </div>
         ))}

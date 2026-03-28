@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useCallback } from "react";
+import { Routes, Route } from "react-router-dom";
 import {
   AlertTriangle,
   ShieldCheck,
@@ -29,6 +30,8 @@ import { StatesSection } from "./components/panels/StatesSection";
 import { TimelinePanel } from "./components/panels/TimelinePanel";
 import { DemoPipelinePanel } from "./components/panels/DemoPipelinePanel";
 import { LoginScreen } from "./components/auth/LoginScreen";
+import { LandingPage } from "./components/landing/LandingPage";
+import { CrystallineCube } from "./components/ui/CrystallineCube";
 import { useAuth } from "./context/AuthContext";
 import { useDashboardData } from "./hooks/useDashboardData";
 import { buildBankIntel, buildStateIntel } from "./lib/bankIntel";
@@ -36,9 +39,17 @@ import { formatCurrency, formatSeconds } from "./lib/format";
 import { getApiBase } from "./lib/api";
 
 export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/dashboard" element={<DashboardGate />} />
+    </Routes>
+  );
+}
+
+function DashboardGate() {
   const { isAuthenticated, user, logout, authFetch, isAdmin } = useAuth();
 
-  // ── Auth Gate ──
   if (!isAuthenticated) {
     return <LoginScreen />;
   }
@@ -52,13 +63,11 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
   const [selectedNodeId, setSelectedNodeId] = useState(null);
   const [generating, setGenerating] = useState(false);
 
-  // ── Generate Fraud Sequence — calls /generate-fraud, then refreshes dashboard ──
   const handleGenerateFraud = useCallback(async () => {
     setGenerating(true);
     try {
       const res = await authFetch(`${getApiBase()}/generate-fraud`, { method: "POST" });
       if (res.ok) {
-        // Small delay to let state propagate, then refresh dashboard
         setTimeout(() => refresh?.(), 300);
       }
     } catch {
@@ -76,7 +85,7 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
     return (
       <Shell>
         <div className="flex min-h-[80vh] items-center justify-center">
-          <div className="panel max-w-xl p-10 text-center">
+          <div className="panel max-w-xl p-10 text-center accent-glow">
             <motion.div
               animate={{ opacity: [0.4, 1, 0.4] }}
               transition={{ repeat: Infinity, duration: 2 }}
@@ -84,7 +93,7 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
             >
               Initializing VARUNA
             </motion.div>
-            <div className="mt-3 text-slate-400">
+            <div className="mt-3 text-white/40">
               Loading ML models, scoring dissipation risk, staging freeze pathways…
             </div>
           </div>
@@ -97,8 +106,8 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
     return (
       <Shell>
         <div className="panel p-8">
-          <div className="font-display text-2xl text-red">Dashboard feed unavailable</div>
-          <div className="mt-2 text-slate-400">{error || "Backend is not responding."}</div>
+          <div className="font-display text-2xl text-[#FF4500]">Dashboard feed unavailable</div>
+          <div className="mt-2 text-white/40">{error || "Backend is not responding."}</div>
         </div>
       </Shell>
     );
@@ -116,33 +125,41 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
     : null;
 
   const roleBadgeStyle = {
-    admin: "border-red/30 bg-red/10 text-red",
+    admin: "border-[#FF4500]/30 bg-[#FF4500]/10 text-[#FF4500]",
     analyst: "border-orange/30 bg-orange/10 text-orange",
-    viewer: "border-cyan/30 bg-cyan/10 text-cyan",
+    viewer: "border-white/20 bg-white/5 text-white/60",
   };
 
   return (
     <Shell>
-      <header className="mb-6 flex flex-col gap-6 rounded-[32px] border border-line/70 bg-black/20 p-6 backdrop-blur-xl xl:flex-row xl:items-end xl:justify-between">
-        <div className="max-w-3xl">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-xs uppercase tracking-[0.28em] text-cyan">
+      {/* ─── HEADER — with WebGL crystalline cube backdrop ─── */}
+      <header className="relative mb-6 overflow-hidden rounded-[32px] border border-white/[0.07] bg-white/[0.03] p-6 backdrop-blur-xl xl:flex-row xl:flex xl:items-end xl:justify-between">
+        {/* Crystalline WebGL backdrop filling the header */}
+        <div className="pointer-events-none absolute inset-0 opacity-30 rounded-[32px] overflow-hidden">
+          <CrystallineCube complexity={3.0} colorShift={0.15} lightIntensity={1.2} mouseInfluence={0.3} />
+        </div>
+        {/* Dark overlay so text stays readable */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 rounded-[32px]" />
+
+        <div className="relative z-10 max-w-3xl">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#FF4500]/20 bg-[#FF4500]/10 px-3 py-1 text-xs uppercase tracking-[0.28em] text-[#FF4500]">
             <Sparkles size={14} />
             National Fraud Interception Command Center
           </div>
-          <h1 className="font-display text-4xl font-bold tracking-tight text-white md:text-6xl">
+          <h1 className="font-display text-4xl font-bold tracking-[-0.04em] text-white md:text-6xl">
             VARUNA
           </h1>
-          <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
+          <p className="mt-3 max-w-2xl text-base leading-7 text-white/50 md:text-lg">
             Real-time mule-chain interception powered by VarunaGAT + VarunaLSTM + 10-flag RBI rule engine.
             Detect, predict, freeze, and brief before funds disappear.
           </p>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="relative z-10 flex flex-col gap-3 mt-6 xl:mt-0">
           {/* User badge + logout */}
           <div className="flex items-center gap-3">
-            <div className="flex flex-1 items-center gap-2.5 rounded-2xl border border-line/50 bg-white/[0.03] px-4 py-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan/10">
-                <User size={16} className="text-cyan" />
+            <div className="flex flex-1 items-center gap-2.5 rounded-2xl border border-white/[0.07] bg-white/[0.04] px-4 py-3">
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#FF4500]/10">
+                <User size={16} className="text-[#FF4500]" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="truncate text-sm font-medium text-white">{user?.username}</div>
@@ -156,7 +173,7 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={logout}
-              className="flex h-[52px] w-[52px] flex-shrink-0 items-center justify-center rounded-2xl border border-line/50 bg-white/[0.03] text-slate-400 transition hover:border-red/30 hover:bg-red/10 hover:text-red"
+              className="flex h-[52px] w-[52px] flex-shrink-0 items-center justify-center rounded-2xl border border-white/[0.07] bg-white/[0.04] text-white/40 transition hover:border-[#FF4500]/30 hover:bg-[#FF4500]/10 hover:text-[#FF4500]"
               title="Logout"
             >
               <LogOut size={18} />
@@ -166,7 +183,7 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
           <div className="grid gap-3 sm:grid-cols-3">
             <StatusPill icon={AlertTriangle} label="Threat Index" value={`${overview.threat_index}/100`} tone="red" />
             <StatusPill icon={TimerReset} label="Intercept Window" value={formatSeconds(overview.average_intercept_time_seconds)} tone="orange" />
-            <StatusPill icon={ShieldCheck} label="Case Mode" value={activeCase.threat_level} tone="cyan" />
+            <StatusPill icon={ShieldCheck} label="Case Mode" value={activeCase.threat_level} tone="accent" />
           </div>
 
           {/* Generate Fraud Sequence Button */}
@@ -177,8 +194,8 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
             disabled={generating}
             className={`w-full rounded-2xl border px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] transition ${
               generating
-                ? "border-red/50 bg-red/20 text-red cursor-wait"
-                : "border-red/30 bg-red/10 text-red hover:bg-red/20 hover:border-red/50"
+                ? "border-[#FF4500]/50 bg-[#FF4500]/20 text-[#FF4500] cursor-wait"
+                : "border-[#FF4500]/30 bg-[#FF4500]/10 text-[#FF4500] hover:bg-[#FF4500]/20 hover:border-[#FF4500]/50"
             }`}
           >
             <span className="flex items-center justify-center gap-2">
@@ -189,7 +206,8 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
         </div>
       </header>
 
-      <section className="mb-6 rounded-[28px] border border-line/70 bg-black/20 p-4 backdrop-blur-xl">
+      {/* ─── TAB BAR ─── */}
+      <section className="mb-6 rounded-[28px] border border-white/[0.07] bg-white/[0.03] p-4 backdrop-blur-xl">
         <div className="flex flex-wrap gap-3">
           {[
             { id: "command", label: "Command Center" },
@@ -205,8 +223,8 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
               onClick={() => setActiveDashboard(item.id)}
               className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs uppercase tracking-[0.2em] transition ${
                 activeDashboard === item.id
-                  ? "border-cyan/30 bg-cyan/10 text-cyan"
-                  : "border-line bg-white/[0.02] text-slate-300 hover:bg-white/[0.08]"
+                  ? "border-[#FF4500]/30 bg-[#FF4500]/10 text-[#FF4500]"
+                  : "border-white/[0.07] bg-white/[0.02] text-white/50 hover:bg-white/[0.08] hover:text-white/80"
               }`}
             >
               {item.icon && <item.icon size={12} />}
@@ -216,6 +234,7 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
         </div>
       </section>
 
+      {/* ─── METRICS ROW ─── */}
       <section className="mb-6 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
         <MetricCard
           label="Active Suspicious Chains"
@@ -331,13 +350,13 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
 
 function StatusPill({ icon: Icon, label, value, tone }) {
   const tones = {
-    red: "border-red/30 bg-red/10 text-red",
+    red: "border-[#FF4500]/30 bg-[#FF4500]/10 text-[#FF4500]",
     orange: "border-orange/30 bg-orange/10 text-orange",
-    cyan: "border-cyan/30 bg-cyan/10 text-cyan",
+    accent: "border-white/15 bg-white/[0.06] text-white/70",
   };
 
   return (
-    <div className={`rounded-3xl border px-4 py-4 ${tones[tone]}`}>
+    <div className={`rounded-3xl border px-4 py-4 ${tones[tone] || tones.accent}`}>
       <div className="mb-2 flex items-center gap-2 text-xs uppercase tracking-[0.2em]">
         <Icon size={14} />
         {label}
@@ -365,18 +384,18 @@ function CaseSpotlight({ caseItem }) {
       >
         <div className="mb-5 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div>
-            <div className="mb-2 inline-flex rounded-full border border-red/30 bg-red/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-red">
+            <div className="mb-2 inline-flex rounded-full border border-[#FF4500]/30 bg-[#FF4500]/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-[#FF4500]">
               Case Detail Mode
             </div>
             <div className="font-display text-3xl text-white">{caseItem.title}</div>
-            <div className="mt-3 max-w-3xl text-slate-300">
+            <div className="mt-3 max-w-3xl text-white/50">
               Victim-origin funds entered a coordinated mule chain, expanded across three hops, and began dissipation toward wallet and cash-out rails before VARUNA initiated cross-bank interception.
             </div>
           </div>
-          <div className="rounded-3xl border border-line/70 bg-black/20 px-5 py-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-slate-500">Flagged Source</div>
+          <div className="rounded-3xl border border-white/[0.07] bg-white/[0.03] px-5 py-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-white/35">Flagged Source</div>
             <div className="mt-2 font-display text-xl text-white">{caseItem.flagged_source_account}</div>
-            <div className="mt-3 text-sm text-orange">
+            <div className="mt-3 text-sm text-[#FF4500]">
               Predicted next-hop spread: {caseItem.predicted_next_hops.join(", ")}
             </div>
           </div>
@@ -384,8 +403,8 @@ function CaseSpotlight({ caseItem }) {
 
         <div className="grid gap-4 md:grid-cols-3">
           {stats.map((stat) => (
-            <div key={stat.label} className="rounded-3xl border border-line/70 bg-white/[0.02] p-4">
-              <div className="text-xs uppercase tracking-[0.2em] text-slate-500">{stat.label}</div>
+            <div key={stat.label} className="rounded-3xl border border-white/[0.07] bg-white/[0.02] p-4">
+              <div className="text-xs uppercase tracking-[0.2em] text-white/35">{stat.label}</div>
               <div className="mt-3 font-display text-3xl text-white">{stat.value}</div>
             </div>
           ))}
@@ -398,11 +417,11 @@ function CaseSpotlight({ caseItem }) {
 function StatesHero() {
   return (
     <div className="panel p-6">
-      <div className="mb-2 inline-flex rounded-full border border-cyan/30 bg-cyan/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-cyan">
+      <div className="mb-2 inline-flex rounded-full border border-[#FF4500]/30 bg-[#FF4500]/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-[#FF4500]">
         State Dashboard
       </div>
       <div className="font-display text-3xl text-white">State-wise Fraud Spread Intelligence</div>
-      <div className="mt-3 max-w-3xl text-slate-300">
+      <div className="mt-3 max-w-3xl text-white/50">
         View the fraud chain bifurcated by impacted states, linked banks, suspicious accounts, frozen accounts, and anomaly signatures.
       </div>
     </div>
@@ -416,7 +435,7 @@ function BanksHero() {
         Bank Dashboard
       </div>
       <div className="font-display text-3xl text-white">Bank-wise Operational Anomaly View</div>
-      <div className="mt-3 max-w-3xl text-slate-300">
+      <div className="mt-3 max-w-3xl text-white/50">
         Open the bank dashboard to inspect each bank as its own subsection with exposure, linked states, suspicious accounts, freeze status, and anomaly narrative.
       </div>
     </div>

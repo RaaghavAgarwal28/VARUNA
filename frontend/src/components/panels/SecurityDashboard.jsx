@@ -59,7 +59,7 @@ export function SecurityDashboard() {
       <div className="panel p-8 text-center">
         <Ban size={40} className="mx-auto mb-3 text-red/60" />
         <div className="font-display text-xl text-white">Access Denied</div>
-        <div className="mt-2 text-sm text-slate-400">
+        <div className="mt-2 text-sm text-white/40">
           Security Dashboard requires ANALYST or ADMIN role.
           <br />
           Your role: <span className="text-orange">{user?.role}</span>
@@ -75,9 +75,9 @@ export function SecurityDashboard() {
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
         >
-          <Shield size={28} className="text-cyan/60" />
+          <Shield size={28} className="text-[#FF4500]/60" />
         </motion.div>
-        <span className="ml-3 text-slate-400">Loading security metrics…</span>
+        <span className="ml-3 text-white/40">Loading security metrics…</span>
       </div>
     );
   }
@@ -87,7 +87,7 @@ export function SecurityDashboard() {
       <div className="panel p-8 text-center">
         <AlertTriangle size={32} className="mx-auto mb-3 text-orange" />
         <div className="font-display text-lg text-white">Security Feed Unavailable</div>
-        <div className="mt-2 text-sm text-slate-400">{error}</div>
+        <div className="mt-2 text-sm text-white/40">{error}</div>
       </div>
     );
   }
@@ -99,12 +99,12 @@ export function SecurityDashboard() {
     <div className="space-y-6">
       {/* Header */}
       <div className="panel p-6">
-        <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-cyan">
+        <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[#FF4500]/20 bg-[#FF4500]/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-[#FF4500]">
           <Shield size={14} />
           Security Command
         </div>
         <div className="font-display text-3xl text-white">Security Operations Dashboard</div>
-        <div className="mt-3 max-w-3xl text-slate-300">
+        <div className="mt-3 max-w-3xl text-white/50">
           Real-time security posture monitoring, authentication events, rate limiting status,
           and cryptographic audit trail for VARUNA API infrastructure.
         </div>
@@ -117,16 +117,16 @@ export function SecurityDashboard() {
           className={`rounded-3xl border p-5 ${
             isElevated
               ? "border-red/30 bg-red/10"
-              : "border-emerald-500/30 bg-emerald-500/10"
+              : "border-[#FF4500]/30 bg-[#FF4500]/10"
           }`}
           animate={isElevated ? { opacity: [1, 0.7, 1] } : {}}
           transition={{ repeat: Infinity, duration: 2 }}
         >
-          <div className="mb-2 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-slate-400">
-            {isElevated ? <ShieldAlert size={14} className="text-red" /> : <ShieldCheck size={14} className="text-emerald-400" />}
+          <div className="mb-2 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/40">
+            {isElevated ? <ShieldAlert size={14} className="text-red" /> : <ShieldCheck size={14} className="text-[#FF4500]" />}
             Security Posture
           </div>
-          <div className={`font-display text-2xl ${isElevated ? "text-red" : "text-emerald-400"}`}>
+          <div className={`font-display text-2xl ${isElevated ? "text-red" : "text-[#FF4500]"}`}>
             {posture}
           </div>
         </motion.div>
@@ -161,8 +161,8 @@ export function SecurityDashboard() {
       <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
         {/* Security Events Feed */}
         <div className="panel p-6">
-          <div className="mb-5 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-slate-400">
-            <Activity size={14} className="text-cyan" />
+          <div className="mb-5 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/40">
+            <Activity size={14} className="text-[#FF4500]" />
             Latest Security Events
           </div>
           <div className="space-y-2 max-h-[420px] overflow-y-auto scrollbar-thin pr-1">
@@ -173,7 +173,7 @@ export function SecurityDashboard() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className="rounded-xl border border-line/40 bg-white/[0.02] p-3"
+                  className="rounded-xl border border-white/[0.04] bg-white/[0.02] p-3"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-2">
@@ -182,20 +182,20 @@ export function SecurityDashboard() {
                         <div className="text-xs font-medium text-white">
                           {formatEventType(event.event_type)}
                         </div>
-                        <div className="mt-0.5 text-[11px] text-slate-500">
+                        <div className="mt-0.5 text-[11px] text-white/30">
                           {event.username} · {event.ip_address}
                         </div>
                       </div>
                     </div>
                     <div className="flex-shrink-0 text-right">
                       <SeverityBadge severity={event.severity} />
-                      <div className="mt-1 text-[10px] text-slate-600">
+                      <div className="mt-1 text-[10px] text-white/25">
                         {formatTimestamp(event.timestamp)}
                       </div>
                     </div>
                   </div>
                   {event.details && (
-                    <div className="mt-2 rounded-lg bg-black/20 px-2.5 py-1.5 text-[11px] font-mono text-slate-400">
+                    <div className="mt-2 rounded-lg bg-black/20 px-2.5 py-1.5 text-[11px] font-mono text-white/40">
                       {event.details}
                     </div>
                   )}
@@ -203,7 +203,7 @@ export function SecurityDashboard() {
               ))}
             </AnimatePresence>
             {(!metrics?.latest_events || metrics.latest_events.length === 0) && (
-              <div className="py-8 text-center text-sm text-slate-500">
+              <div className="py-8 text-center text-sm text-white/30">
                 No security events recorded
               </div>
             )}
@@ -214,8 +214,8 @@ export function SecurityDashboard() {
         <div className="space-y-6">
           {/* Encryption Details */}
           <div className="panel p-6">
-            <div className="mb-4 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-slate-400">
-              <Lock size={14} className="text-cyan" />
+            <div className="mb-4 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/40">
+              <Lock size={14} className="text-[#FF4500]" />
               Encryption & Cryptography
             </div>
             <div className="space-y-3">
@@ -243,13 +243,13 @@ export function SecurityDashboard() {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-center justify-between rounded-xl border border-line/30 bg-white/[0.02] px-4 py-3"
+                  className="flex items-center justify-between rounded-xl border border-white/[0.03] bg-white/[0.02] px-4 py-3"
                 >
                   <div className="flex items-center gap-2.5">
-                    <item.icon size={14} className="text-slate-500" />
-                    <span className="text-xs text-slate-400">{item.label}</span>
+                    <item.icon size={14} className="text-white/30" />
+                    <span className="text-xs text-white/40">{item.label}</span>
                   </div>
-                  <span className="text-xs font-medium font-mono text-cyan">{item.value}</span>
+                  <span className="text-xs font-medium font-mono text-[#FF4500]">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -257,7 +257,7 @@ export function SecurityDashboard() {
 
           {/* Rate Limits */}
           <div className="panel p-6">
-            <div className="mb-4 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-slate-400">
+            <div className="mb-4 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/40">
               <Gauge size={14} className="text-orange" />
               Rate Limit Status
             </div>
@@ -266,13 +266,13 @@ export function SecurityDashboard() {
                 {Object.entries(metrics.rate_limits).map(([ip, info]) => (
                   <div
                     key={ip}
-                    className="rounded-xl border border-line/30 bg-white/[0.02] p-3"
+                    className="rounded-xl border border-white/[0.03] bg-white/[0.02] p-3"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono text-slate-300">{ip}</span>
+                      <span className="text-xs font-mono text-white/50">{ip}</span>
                       <span
                         className={`text-xs font-medium ${
-                          info.remaining < 20 ? "text-red" : "text-emerald-400"
+                          info.remaining < 20 ? "text-red" : "text-[#FF4500]"
                         }`}
                       >
                         {info.remaining}/{info.max_requests}
@@ -282,7 +282,7 @@ export function SecurityDashboard() {
                     <div className="mt-2 h-1.5 rounded-full bg-white/[0.05] overflow-hidden">
                       <motion.div
                         className={`h-full rounded-full ${
-                          info.remaining < 20 ? "bg-red/60" : "bg-cyan/40"
+                          info.remaining < 20 ? "bg-red/60" : "bg-[#FF4500]/40"
                         }`}
                         initial={{ width: 0 }}
                         animate={{
@@ -291,14 +291,14 @@ export function SecurityDashboard() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                       />
                     </div>
-                    <div className="mt-1.5 text-[10px] text-slate-600">
+                    <div className="mt-1.5 text-[10px] text-white/25">
                       {info.requests_in_window} requests in {info.window_seconds}s window
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="py-4 text-center text-xs text-slate-500">
+              <div className="py-4 text-center text-xs text-white/30">
                 No active rate-limited IPs
               </div>
             )}
@@ -306,18 +306,18 @@ export function SecurityDashboard() {
 
           {/* Total Events Counter */}
           <div className="panel p-6">
-            <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-slate-400">
-              <Activity size={14} className="text-cyan" />
+            <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/40">
+              <Activity size={14} className="text-[#FF4500]" />
               Audit Summary
             </div>
             <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-xl border border-line/30 bg-white/[0.02] p-3 text-center">
-                <div className="text-[10px] uppercase tracking-wider text-slate-500">Total Events</div>
+              <div className="rounded-xl border border-white/[0.03] bg-white/[0.02] p-3 text-center">
+                <div className="text-[10px] uppercase tracking-wider text-white/30">Total Events</div>
                 <div className="mt-1 font-display text-2xl text-white">{metrics?.total_events ?? 0}</div>
               </div>
-              <div className="rounded-xl border border-line/30 bg-white/[0.02] p-3 text-center">
-                <div className="text-[10px] uppercase tracking-wider text-slate-500">Recent (1h)</div>
-                <div className="mt-1 font-display text-2xl text-cyan">{metrics?.recent_events_1h ?? 0}</div>
+              <div className="rounded-xl border border-white/[0.03] bg-white/[0.02] p-3 text-center">
+                <div className="text-[10px] uppercase tracking-wider text-white/30">Recent (1h)</div>
+                <div className="mt-1 font-display text-2xl text-[#FF4500]">{metrics?.recent_events_1h ?? 0}</div>
               </div>
             </div>
           </div>
@@ -333,12 +333,12 @@ function SecurityMetricCard({ icon: Icon, label, value, tone }) {
   const tones = {
     red: "border-red/20 text-red",
     orange: "border-orange/20 text-orange",
-    cyan: "border-cyan/20 text-cyan",
+    cyan: "border-[#FF4500]/20 text-[#FF4500]",
   };
 
   return (
     <div className={`rounded-3xl border bg-white/[0.02] p-5 ${tones[tone] || tones.cyan}`}>
-      <div className="mb-2 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-slate-400">
+      <div className="mb-2 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/40">
         <Icon size={14} />
         {label}
       </div>
@@ -353,7 +353,7 @@ function EventIcon({ type, severity }) {
     return <XCircle size={14} className="text-red flex-shrink-0" />;
   }
   if (type.includes("SUCCESS") || type === "API_KEY_AUTH") {
-    return <CheckCircle size={14} className="text-emerald-400 flex-shrink-0" />;
+    return <CheckCircle size={14} className="text-[#FF4500] flex-shrink-0" />;
   }
   if (type === "RATE_LIMIT_EXCEEDED") {
     return <AlertTriangle size={14} className="text-orange flex-shrink-0" />;
@@ -361,13 +361,13 @@ function EventIcon({ type, severity }) {
   if (isWarning) {
     return <AlertTriangle size={14} className="text-orange flex-shrink-0" />;
   }
-  return <Activity size={14} className="text-cyan flex-shrink-0" />;
+  return <Activity size={14} className="text-[#FF4500] flex-shrink-0" />;
 }
 
 function SeverityBadge({ severity }) {
   const styles = {
     WARNING: "border-orange/20 bg-orange/10 text-orange",
-    INFO: "border-cyan/20 bg-cyan/10 text-cyan",
+    INFO: "border-[#FF4500]/20 bg-[#FF4500]/10 text-[#FF4500]",
     ERROR: "border-red/20 bg-red/10 text-red",
   };
 

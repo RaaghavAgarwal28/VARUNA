@@ -124,7 +124,7 @@ export function ThreatGraph({ graph, selectedCase, onNodeClick, selectedAccount 
       <div className="mb-3 flex items-center justify-between">
         <div>
           <div className="panel-heading">VARUNA Sentinel Graph</div>
-          <div className="text-sm text-slate-400">
+          <div className="text-sm text-white/40">
             Multi-bank mule chain expansion · Click any node to investigate
           </div>
         </div>
@@ -306,7 +306,7 @@ export function ThreatGraph({ graph, selectedCase, onNodeClick, selectedAccount 
       />
 
       {/* Legend */}
-      <div className="mt-2 flex flex-wrap gap-3 text-xs uppercase tracking-[0.18em] text-slate-400">
+      <div className="mt-2 flex flex-wrap gap-3 text-xs uppercase tracking-[0.18em] text-white/40">
         <span className="flex items-center gap-1.5">
           <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ background: nodePalette.victim }} />
           Victim
