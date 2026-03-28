@@ -47,15 +47,15 @@ export function LoginScreen() {
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Layered background */}
       <div className="pointer-events-none absolute inset-0 bg-grid grid-overlay opacity-20" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(89,167,255,0.18),transparent_50%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,95,121,0.12),transparent_50%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(125,226,209,0.08),transparent_40%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,69,0,0.10),transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,69,0,0.06),transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,69,0,0.08),transparent_40%)]" />
 
       {/* Floating particles effect */}
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="pointer-events-none absolute h-1 w-1 rounded-full bg-cyan/30"
+          className="pointer-events-none absolute h-1 w-1 rounded-full bg-[#FF4500]/30"
           style={{
             left: `${15 + i * 14}%`,
             top: `${20 + (i % 3) * 25}%`,
@@ -84,14 +84,14 @@ export function LoginScreen() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-cyan/20 bg-cyan/10 shadow-[0_0_40px_rgba(125,226,209,0.15)]"
+            className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-[#FF4500]/20 bg-[#FF4500]/10 shadow-[0_0_40px_rgba(255,69,0,0.15)]"
           >
-            <Shield size={36} className="text-cyan" />
+            <Shield size={36} className="text-[#FF4500]" />
           </motion.div>
           <h1 className="font-display text-4xl font-bold tracking-tight text-white">
             VARUNA
           </h1>
-          <p className="mt-2 text-sm tracking-[0.2em] uppercase text-slate-400">
+          <p className="mt-2 text-sm tracking-[0.2em] uppercase text-white/40">
             Secure Command Access
           </p>
         </div>
@@ -100,28 +100,28 @@ export function LoginScreen() {
         <motion.div
           animate={shake ? { x: [-12, 12, -8, 8, -4, 4, 0] } : {}}
           transition={{ duration: 0.5 }}
-          className="rounded-3xl border border-line/80 bg-panel/80 p-8 shadow-glow backdrop-blur-xl"
+          className="rounded-3xl border border-white/[0.08] bg-black/80 p-8 shadow-framer-dark backdrop-blur-xl"
         >
           <div className="mb-6 flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan/10">
-              <Fingerprint size={18} className="text-cyan" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FF4500]/10">
+              <Fingerprint size={18} className="text-[#FF4500]" />
             </div>
             <div>
               <div className="text-sm font-semibold text-white">Authentication Required</div>
-              <div className="text-xs text-slate-400">Enter your credentials to proceed</div>
+              <div className="text-xs text-white/40">Enter your credentials to proceed</div>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Username */}
             <div>
-              <label className="mb-1.5 block text-xs uppercase tracking-[0.16em] text-slate-400">
+              <label className="mb-1.5 block text-xs uppercase tracking-[0.16em] text-white/40">
                 Username
               </label>
               <div className="group relative">
                 <User
                   size={16}
-                  className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 transition group-focus-within:text-cyan"
+                  className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/30 transition group-focus-within:text-[#FF4500]"
                 />
                 <input
                   type="text"
@@ -129,20 +129,20 @@ export function LoginScreen() {
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="Enter username"
                   autoComplete="username"
-                  className="w-full rounded-xl border border-line/60 bg-white/[0.03] py-3 pl-10 pr-4 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan/40 focus:bg-white/[0.05] focus:ring-1 focus:ring-cyan/20"
+                  className="w-full rounded-xl border border-white/[0.06] bg-white/[0.03] py-3 pl-10 pr-4 text-sm text-white placeholder-slate-500 outline-none transition focus:border-[#FF4500]/40 focus:bg-white/[0.05] focus:ring-1 focus:ring-[#FF4500]/20"
                 />
               </div>
             </div>
 
             {/* Password */}
             <div>
-              <label className="mb-1.5 block text-xs uppercase tracking-[0.16em] text-slate-400">
+              <label className="mb-1.5 block text-xs uppercase tracking-[0.16em] text-white/40">
                 Password
               </label>
               <div className="group relative">
                 <Lock
                   size={16}
-                  className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 transition group-focus-within:text-cyan"
+                  className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/30 transition group-focus-within:text-[#FF4500]"
                 />
                 <input
                   type={showPassword ? "text" : "password"}
@@ -150,12 +150,12 @@ export function LoginScreen() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter password"
                   autoComplete="current-password"
-                  className="w-full rounded-xl border border-line/60 bg-white/[0.03] py-3 pl-10 pr-11 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan/40 focus:bg-white/[0.05] focus:ring-1 focus:ring-cyan/20"
+                  className="w-full rounded-xl border border-white/[0.06] bg-white/[0.03] py-3 pl-10 pr-11 text-sm text-white placeholder-slate-500 outline-none transition focus:border-[#FF4500]/40 focus:bg-white/[0.05] focus:ring-1 focus:ring-[#FF4500]/20"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 transition hover:text-slate-300"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 transition hover:text-white/50"
                 >
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
@@ -183,7 +183,7 @@ export function LoginScreen() {
               disabled={loginLoading || !username.trim() || !password.trim()}
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
-              className="group flex w-full items-center justify-center gap-2 rounded-xl border border-cyan/30 bg-cyan/10 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan transition hover:bg-cyan/20 hover:border-cyan/50 disabled:opacity-40 disabled:cursor-not-allowed"
+              className="group flex w-full items-center justify-center gap-2 rounded-xl border border-[#FF4500]/30 bg-[#FF4500]/10 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#FF4500] transition hover:bg-[#FF4500]/20 hover:border-[#FF4500]/50 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               {loginLoading ? (
                 <motion.div
@@ -202,10 +202,10 @@ export function LoginScreen() {
           </form>
 
           {/* Demo credentials toggle */}
-          <div className="mt-6 border-t border-line/40 pt-4">
+          <div className="mt-6 border-t border-white/[0.04] pt-4">
             <button
               onClick={() => setShowCredentials(!showCredentials)}
-              className="flex w-full items-center justify-between text-xs uppercase tracking-[0.16em] text-slate-500 transition hover:text-slate-300"
+              className="flex w-full items-center justify-between text-xs uppercase tracking-[0.16em] text-white/30 transition hover:text-white/50"
             >
               <span>Demo Credentials</span>
               <ChevronRight
@@ -225,23 +225,23 @@ export function LoginScreen() {
                   {[
                     { user: "varuna_admin", pass: "DevHouse2026$ecure", role: "Admin", color: "text-red" },
                     { user: "analyst", pass: "Analyst2026$ecure", role: "Analyst", color: "text-orange" },
-                    { user: "viewer", pass: "ViewOnly2026", role: "Viewer", color: "text-cyan" },
+                    { user: "viewer", pass: "ViewOnly2026", role: "Viewer", color: "text-[#FF4500]" },
                   ].map((cred) => (
                     <button
                       key={cred.user}
                       onClick={() => quickLogin(cred.user, cred.pass)}
                       disabled={loginLoading}
-                      className="group flex w-full items-center justify-between rounded-lg border border-line/30 bg-white/[0.02] px-3 py-2 text-left transition hover:bg-white/[0.05] hover:border-line/60 disabled:opacity-40"
+                      className="group flex w-full items-center justify-between rounded-lg border border-white/[0.03] bg-white/[0.02] px-3 py-2 text-left transition hover:bg-white/[0.05] hover:border-white/[0.06] disabled:opacity-40"
                     >
                       <div>
-                        <span className="text-xs font-medium text-slate-300">{cred.user}</span>
+                        <span className="text-xs font-medium text-white/50">{cred.user}</span>
                         <span className={`ml-2 text-[10px] uppercase tracking-wider ${cred.color}`}>
                           {cred.role}
                         </span>
                       </div>
                       <ChevronRight
                         size={12}
-                        className="text-slate-600 transition group-hover:text-slate-300 group-hover:translate-x-0.5"
+                        className="text-white/25 transition group-hover:text-white/50 group-hover:translate-x-0.5"
                       />
                     </button>
                   ))}
@@ -253,7 +253,7 @@ export function LoginScreen() {
 
         {/* Security footer */}
         <div className="mt-6 text-center">
-          <div className="text-[10px] uppercase tracking-[0.2em] text-slate-600">
+          <div className="text-[10px] uppercase tracking-[0.2em] text-white/25">
             256-bit encrypted · JWT HS256 · bcrypt hashed
           </div>
         </div>

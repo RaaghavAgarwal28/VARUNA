@@ -304,7 +304,7 @@ export function FraudGraph3D({ graph, onNodeClick }) {
       <div className="panel flex h-[700px] items-center justify-center text-white">
         <div className="text-center">
           <div className="font-display text-2xl mb-2">Initializing 3D Engine…</div>
-          <div className="text-slate-400 text-sm">Loading WebGL renderer and graph data</div>
+          <div className="text-white/40 text-sm">Loading WebGL renderer and graph data</div>
         </div>
       </div>
     );
@@ -315,13 +315,13 @@ export function FraudGraph3D({ graph, onNodeClick }) {
       {/* ── Left panel ── */}
       <div
         className="absolute top-4 left-4 z-20
-                   rounded-2xl border border-line/70 bg-black/80 backdrop-blur-xl
-                   p-4 w-60 text-sm text-slate-300"
+                   rounded-2xl border border-white/[0.07] bg-black/80 backdrop-blur-xl
+                   p-4 w-60 text-sm text-white/50"
       >
         <h3 className="text-white font-display text-base font-semibold mb-1">
           Fraud Transaction Network
         </h3>
-        <p className="text-xs text-slate-500 mb-4">
+        <p className="text-xs text-white/30 mb-4">
           Red nodes indicate anomalous accounts. Hover for details.
         </p>
 
@@ -338,7 +338,7 @@ export function FraudGraph3D({ graph, onNodeClick }) {
             onKeyDown={(e) => {
               if (e.key === "Enter") handleSearch();
             }}
-            className="w-full px-3 py-2 text-sm bg-white/[0.05] border border-line/70 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan/50"
+            className="w-full px-3 py-2 text-sm bg-white/[0.05] border border-white/[0.07] rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-[#FF4500]/50"
           />
           {searchError && (
             <p className="text-red text-xs mt-1">{searchError}</p>
@@ -365,22 +365,22 @@ export function FraudGraph3D({ graph, onNodeClick }) {
 
         {/* Bundle layout legend */}
         {isBundled && (
-          <div className="mt-3 pt-3 border-t border-line/70 space-y-1 text-xs text-slate-500">
-            <p className="font-medium text-slate-300 mb-1">Clusters</p>
+          <div className="mt-3 pt-3 border-t border-white/[0.07] space-y-1 text-xs text-white/30">
+            <p className="font-medium text-white/50 mb-1">Clusters</p>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-red-900 inline-block" />
               <span>Fraud accounts</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-900 inline-block" />
+              <span className="w-2 h-2 rounded-full bg-[#FF4500]/20 inline-block" />
               <span>Low connectivity</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-700 inline-block" />
+              <span className="w-2 h-2 rounded-full bg-[#FF4500]/40 inline-block" />
               <span>Mid connectivity</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />
+              <span className="w-2 h-2 rounded-full bg-[#FF4500]/60 inline-block" />
               <span>High connectivity</span>
             </div>
           </div>
@@ -391,8 +391,8 @@ export function FraudGraph3D({ graph, onNodeClick }) {
           onClick={handleResetView}
           className="mt-4 w-full py-2 text-xs
                      bg-white/[0.05] hover:bg-white/[0.1]
-                     border border-line/70
-                     rounded-lg text-slate-300 transition"
+                     border border-white/[0.07]
+                     rounded-lg text-white/50 transition"
         >
           Reset View
         </button>
@@ -402,8 +402,8 @@ export function FraudGraph3D({ graph, onNodeClick }) {
           onClick={handleToggleBundle}
           className={`mt-2 w-full py-2 text-xs rounded-lg border transition ${
             isBundled
-              ? "bg-cyan/10 border-cyan/30 text-cyan"
-              : "bg-white/[0.05] hover:bg-white/[0.1] border-line/70 text-slate-300"
+              ? "bg-[#FF4500]/10 border-[#FF4500]/30 text-[#FF4500]"
+              : "bg-white/[0.05] hover:bg-white/[0.1] border-white/[0.07] text-white/50"
           }`}
         >
           {isBundled ? "⬡ Bundle Layout ON" : "⬡ Bundle Layout OFF"}
@@ -421,9 +421,9 @@ export function FraudGraph3D({ graph, onNodeClick }) {
             onClick={fn}
             className="w-10 h-10 rounded-full
                        bg-black/80 backdrop-blur-xl
-                       border border-line/70
+                       border border-white/[0.07]
                        text-white text-lg
-                       hover:border-cyan/50
+                       hover:border-[#FF4500]/50
                        hover:shadow-[0_0_10px_rgba(0,200,255,0.3)]
                        transition duration-200"
           >

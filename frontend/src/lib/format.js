@@ -13,7 +13,7 @@ export function formatSeconds(value) {
 export function severityTone(level) {
   if (level === "critical") return "text-red bg-red/10 border-red/30";
   if (level === "high") return "text-orange bg-orange/10 border-orange/30";
-  if (level === "success") return "text-lime bg-lime/10 border-lime/30";
-  return "text-cyan bg-cyan/10 border-cyan/30";
+  if (level === "success") return "text-[#FF4500] bg-[#FF4500]/10 border-[#FF4500]/30";
+  return "text-white/50 bg-white/[0.04] border-white/[0.07]";
 }
 

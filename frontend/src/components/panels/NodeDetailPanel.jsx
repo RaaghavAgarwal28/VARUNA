@@ -32,16 +32,16 @@ export function NodeDetailPanel({ node, score, onClose }) {
       {/* Header */}
       <div className="mb-5 flex items-start justify-between">
         <div>
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-cyan">
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[#FF4500]/20 bg-[#FF4500]/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-[#FF4500]">
             <Shield size={12} /> Account Investigation
           </div>
           <div className="font-display text-2xl text-white">{node.id}</div>
-          <div className="mt-1 text-sm text-slate-400">
+          <div className="mt-1 text-sm text-white/40">
             {node.bank} · {node.node_type} · {node.status}
           </div>
         </div>
         {onClose && (
-          <button onClick={onClose} className="text-slate-400 hover:text-white text-lg">✕</button>
+          <button onClick={onClose} className="text-white/40 hover:text-white text-lg">✕</button>
         )}
       </div>
 
@@ -72,7 +72,7 @@ export function NodeDetailPanel({ node, score, onClose }) {
 
       {/* F1-F10 Flag Grid */}
       <div className="mb-5">
-        <div className="mb-3 text-xs uppercase tracking-[0.2em] text-slate-500">
+        <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30">
           RBI Mule Detection Flags (F1–F10)
         </div>
         <div className="grid grid-cols-5 gap-2">
@@ -85,8 +85,8 @@ export function NodeDetailPanel({ node, score, onClose }) {
                 transition={{ duration: 0.5, repeat: isHit ? Infinity : 0, repeatDelay: 2 }}
                 className={`rounded-xl border px-2 py-2 text-center text-xs ${
                   isHit
-                    ? "border-red/40 bg-red/15 text-red shadow-lg shadow-red/10"
-                    : "border-line/50 bg-white/[0.02] text-slate-600"
+                    ? "border-red/40 bg-red/15 text-red shadow-lg shadow-[#FF4500]/10"
+                    : "border-white/[0.05] bg-white/[0.02] text-white/25"
                 }`}
                 title={meta.name}
               >
@@ -100,12 +100,12 @@ export function NodeDetailPanel({ node, score, onClose }) {
 
       {/* Risk Indicators */}
       <div className="mb-4">
-        <div className="mb-2 text-xs uppercase tracking-[0.2em] text-slate-500">
+        <div className="mb-2 text-xs uppercase tracking-[0.2em] text-white/30">
           Risk Indicators
         </div>
         <div className="space-y-1.5 max-h-40 overflow-y-auto">
           {indicators.map((ind, i) => (
-            <div key={i} className="flex items-start gap-2 rounded-xl border border-line/50 bg-white/[0.02] px-3 py-2 text-xs text-slate-300">
+            <div key={i} className="flex items-start gap-2 rounded-xl border border-white/[0.05] bg-white/[0.02] px-3 py-2 text-xs text-white/50">
               <Zap size={10} className="mt-0.5 shrink-0 text-orange" />
               {ind}
             </div>
@@ -128,7 +128,7 @@ function ScoreCard({ icon, label, value, color, sublabel }) {
   const colors = {
     red: "border-red/30 bg-red/10 text-red",
     orange: "border-orange/30 bg-orange/10 text-orange",
-    cyan: "border-cyan/30 bg-cyan/10 text-cyan",
+    cyan: "border-[#FF4500]/30 bg-[#FF4500]/10 text-[#FF4500]",
   };
 
   return (
@@ -137,15 +137,15 @@ function ScoreCard({ icon, label, value, color, sublabel }) {
         {icon} {label}
       </div>
       <div className="font-display text-xl text-white">{value}</div>
-      <div className="mt-0.5 text-[10px] text-slate-500">{sublabel}</div>
+      <div className="mt-0.5 text-[10px] text-white/30">{sublabel}</div>
     </div>
   );
 }
 
 function Row({ label, value }) {
   return (
-    <div className="flex items-start justify-between gap-4 rounded-2xl border border-line/70 bg-white/[0.02] px-4 py-3">
-      <div className="text-xs uppercase tracking-[0.2em] text-slate-500">{label}</div>
+    <div className="flex items-start justify-between gap-4 rounded-2xl border border-white/[0.07] bg-white/[0.02] px-4 py-3">
+      <div className="text-xs uppercase tracking-[0.2em] text-white/30">{label}</div>
       <div className="text-right text-sm text-white">{value}</div>
     </div>
   );
