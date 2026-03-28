@@ -1,16 +1,3 @@
-/**
- * FraudGraph3D — 3D Fraud Transaction Network Visualization
- * Ported from MULE_HUNTER's FraudGraph3D.tsx, adapted for VARUNA's data model.
- *
- * Uses react-force-graph-3d + THREE.js for immersive 3D graph rendering.
- * Features:
- *   - Node hover tooltip (Account ID + Anomalous/Normal status)
- *   - Click-to-inspect (triggers VARUNA's NodeDetailPanel)
- *   - Search by account ID
- *   - Fraud-only filter
- *   - Bundle layout toggle
- *   - Zoom in/out + reset view
- */
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
@@ -400,11 +387,10 @@ export function FraudGraph3D({ graph, onNodeClick }) {
         {/* Bundle layout toggle */}
         <button
           onClick={handleToggleBundle}
-          className={`mt-2 w-full py-2 text-xs rounded-lg border transition ${
-            isBundled
+          className={`mt-2 w-full py-2 text-xs rounded-lg border transition ${isBundled
               ? "bg-cyan/10 border-cyan/30 text-cyan"
               : "bg-white/[0.05] hover:bg-white/[0.1] border-line/70 text-slate-300"
-          }`}
+            }`}
         >
           {isBundled ? "⬡ Bundle Layout ON" : "⬡ Bundle Layout OFF"}
         </button>

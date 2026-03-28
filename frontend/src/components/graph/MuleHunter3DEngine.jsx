@@ -1,19 +1,3 @@
-/**
- * MuleHunter3DEngine — Full 3D Mule Hunter Engine Dashboard
- *
- * Imported and adapted from the MULE_HUNTER repository's 3D engine.
- * Renders all vertices and nodes in immersive 3D with:
- *   - Ring detection (STAR, CHAIN, CYCLE, DENSE CLUSTER)
- *   - Node role assignment (HUB, BRIDGE, MULE)
- *   - Multi-layer risk coloring (Victim, Mule, Sink, Predicted)
- *   - Directional animated edges with particle flow
- *   - Search, filter by type & ring
- *   - Bundle layout clustering
- *   - Ring isolation view
- *   - Live statistics overlay
- *   - Node inspector on click
- *   - Premium glassmorphism UI
- */
 
 import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -40,29 +24,29 @@ import {
 
 /* ── Constants ── */
 const NODE_COLORS = {
-  victim:    "#4da6ff",
-  mule:      "#e8475f",
-  sink:      "#f0a040",
-  suspect:   "#ff6b6b",
+  victim: "#4da6ff",
+  mule: "#e8475f",
+  sink: "#f0a040",
+  suspect: "#ff6b6b",
   predicted: "#c084fc",
-  default:   "#5ee9d5",
+  default: "#5ee9d5",
 };
 
 const ROLE_COLORS = {
-  HUB:    "#ff2d55",
+  HUB: "#ff2d55",
   BRIDGE: "#ffcc02",
-  MULE:   "#8e8e93",
+  MULE: "#8e8e93",
 };
 
 const ROLE_ICONS = {
-  HUB:    "🔴",
+  HUB: "🔴",
   BRIDGE: "🟡",
-  MULE:   "⚪",
+  MULE: "⚪",
 };
 
 const RING_TYPE_COLORS = {
   CYCLE: "#ef4444",
-  STAR:  "#f59e0b",
+  STAR: "#f59e0b",
   CHAIN: "#8b5cf6",
   DENSE: "#ec4899",
 };
@@ -96,11 +80,10 @@ function RingCard({ ring, isActive, onClick }) {
   return (
     <button
       onClick={() => onClick(ring)}
-      className={`w-full text-left rounded-xl border p-2.5 transition-all text-xs ${
-        isActive
+      className={`w-full text-left rounded-xl border p-2.5 transition-all text-xs ${isActive
           ? "border-cyan/40 bg-cyan/10 shadow-lg shadow-cyan/5"
           : "border-line/50 bg-white/[0.02] hover:bg-white/[0.06] hover:border-line"
-      }`}
+        }`}
     >
       <div className="flex items-center gap-2 mb-1">
         <span>{ring.icon}</span>
@@ -545,11 +528,10 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
                 <button
                   key={type}
                   onClick={() => setFilterType(type)}
-                  className={`rounded-full px-2.5 py-1 text-[10px] uppercase tracking-wider transition ${
-                    filterType === type
+                  className={`rounded-full px-2.5 py-1 text-[10px] uppercase tracking-wider transition ${filterType === type
                       ? "border border-cyan/40 bg-cyan/10 text-cyan"
                       : "border border-line/50 bg-white/[0.02] text-slate-400 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {type}
                 </button>
@@ -586,9 +568,8 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
               <button onClick={handleResetView} className="rounded-lg border border-line/70 bg-white/[0.05] py-2 text-xs text-slate-300 hover:bg-white/[0.1] transition flex items-center justify-center gap-1">
                 <RotateCcw size={12} /> Reset
               </button>
-              <button onClick={handleToggleBundle} className={`rounded-lg border py-2 text-xs transition flex items-center justify-center gap-1 ${
-                isBundled ? "border-cyan/30 bg-cyan/10 text-cyan" : "border-line/70 bg-white/[0.05] text-slate-300 hover:bg-white/[0.1]"
-              }`}>
+              <button onClick={handleToggleBundle} className={`rounded-lg border py-2 text-xs transition flex items-center justify-center gap-1 ${isBundled ? "border-cyan/30 bg-cyan/10 text-cyan" : "border-line/70 bg-white/[0.05] text-slate-300 hover:bg-white/[0.1]"
+                }`}>
                 <Layers size={12} /> Bundle
               </button>
             </div>
@@ -728,9 +709,8 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
 
                 {/* Status badges */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  <span className={`rounded-full px-2 py-0.5 text-[10px] uppercase ${
-                    activeNodeData.is_anomalous ? "bg-red/10 border border-red/30 text-red" : "bg-green-500/10 border border-green-500/30 text-green-400"
-                  }`}>
+                  <span className={`rounded-full px-2 py-0.5 text-[10px] uppercase ${activeNodeData.is_anomalous ? "bg-red/10 border border-red/30 text-red" : "bg-green-500/10 border border-green-500/30 text-green-400"
+                    }`}>
                     {activeNodeData.is_anomalous ? "🔴 Anomalous" : "🟢 Normal"}
                   </span>
                   {activeNodeData.role && (
