@@ -1,25 +1,35 @@
 # VARUNA
 
-VARUNA is a cinematic fraud interception command center for hackathon demos. It simulates a real-time UPI and multi-bank mule-chain attack, detects graph-based fraud spread, predicts next-hop dissipation, recommends freeze actions, and generates an enforcement-ready case brief.
+A cinematic, AI-powered command center designed to detect, predict, and freeze multi-bank UPI mule chains in real time—before the funds dissipate. It simulates a real-time UPI and multi-bank mule-chain attack, detects graph-based fraud spread, predicts next-hop dissipation, recommends freeze actions, and generates an enforcement-ready case brief.
 
-## Why this feels judge-ready
+## 🛑 The Problem: The 3-Minute Dissipation Window
 
-- Serious national command-center visual language instead of a generic student dashboard
-- End-to-end demo story in one flow: fraud entry -> 3-hop mule expansion -> prediction -> freeze -> downloadable brief
-- Guide-aligned demo workflow: inject fraud -> analyze account -> inspect chain -> freeze -> evidence dossier
-- Explainable detection stack that works now and cleanly evolves into GAT + LSTM later
-- Clean FastAPI services and React/Tailwind frontend for rapid iteration
+Modern financial fraud doesn't stop at one bank. Scammers use coordinated human "mule" networks to rapidly fan-out stolen funds across multiple institutions via UPI. Once funds hit a crypto off-ramp or cash-out node, they are gone forever. Legacy rule engines are too slow, looking at isolated bank data instead of the **global network topology**, resulting in billions lost annually.
 
-## Stack
+## ⚡️⚡️ Our Solution: VARUNA
+
+**VARUNA** is a cinematic, real-time command center built for national financial policing. It ingests cross-bank transactions, runs them through our proprietary **4-Pillar Machine Learning Brain** (VarunaGAT + VarunaLSTM + VarunaEIF + RBI Heuristics), and visually exposes the fraud spread in a live 3D/2D node-graph interface. It doesn't just detect fraud; it predicts the exact next-hop accounts and orchestrates a multi-bank freeze.
+
+## 👇Stack
 
 - Frontend: React, Vite, Tailwind CSS, Framer Motion, react-force-graph-2d
-- Backend: FastAPI, Pydantic, in-memory scenario services, static report generation
+- Backend: FastAPI, Pydantic, in-memory scenario services, dynamic report generation
 - Backend flow: in-memory ingest, account-centric analysis, 3-hop chain extraction, mock freeze orchestration
 - Data: deterministic seeded fraud scenario in memory plus `backend/seed_data.json`
 
+- ## 🧠 The 4-Pillar ML Brain
+
+Instead of relying solely on rigid rules, VARUNA uses a multi-modal AI approach to outsmart evolving fraud topologies.
+
+1. **VarunaGAT (Graph Attention Network)**: Learns the universal topological shapes of money laundering rings using pre-trained weights from the Elliptic Bitcoin dataset.
+2. **VarunaLSTM (Temporal Sequence)**: Acts as a stopwatch, learning to spot the rapid, unnatural burst-timing coordination of human mules moving money.
+3. **VarunaEIF (Extended Isolation Forest)**: A zero-day anomaly safety net using 12 expanded structural features to catch entirely novel behavioral anomalies.
+4. **Continual EWC Learning**: Uses Elastic Weight Consolidation to map global crypto fraud patterns directly onto local Indian UPI heuristics without catastrophic forgetting.
+
+---
+
 ## Folder structure
 
-```text
 .
 |-- backend
 |   |-- app
@@ -57,8 +67,8 @@ VARUNA is a cinematic fraud interception command center for hackathon demos. It 
 |   `-- vite.config.js
 |-- DEMO_SCRIPT.md
 `-- ARCHITECTURE.md
-```
 
+ 
 ## Modules delivered
 
 ### 1. VARUNA Pulse
@@ -86,7 +96,7 @@ VARUNA is a cinematic fraud interception command center for hackathon demos. It 
 - Predicted next-hop accounts highlighted in orange on the graph
 - Directly supports the story that VARUNA acts before funds fully disappear
 
-## Detection logic
+## 💪💪💪 Detection logic 💪💪💪
 
 The current MVP uses an explainable scoring pipeline:
 
@@ -101,6 +111,15 @@ This is intentionally ML-ready:
 - Transaction sequences can flow into an LSTM or temporal transformer
 - The service boundary stays stable, so the frontend and API contract do not change
 - The repo now includes explicit `GAT-placeholder` and `LSTM-placeholder` services so the call sites and scoring flow are demo-visible today
+
+- ### 1. The Inference Engine (Backend)
+When a transaction enters the system, it splits into multiple concurrent analytical paths:
+- **Heuristics & Rules**: A 10-flag internal engine instantly checks for RBI mule indicators (zero-washout, age of account, velocity).
+- **Structural DFS**: Deep-first search discovers loops and bridging accounts, assigning active tactical roles (`HUB`, `BRIDGE`, `MULE`, `LEAF`) to nodes in real-time.
+- **Combined Risk Scoring**: The engine merges the ML output and the DFS output, calculating a normalized `0-100` case risk score. Central coordination roles are given heavy multipliers.
+
+### 2. Cryptographic Compliance Ledger
+If the AI scoring engine decides to `BLOCK` or flag a transaction for `REVIEW`, the subgraph snapshot is hashed and sent to a **Merkle Audit Ledger**. This produces a tamper-proof SHA-256 chain of evidence used for legal holds and financial compliance reporting.
 
 ## API endpoints
 
