@@ -408,7 +408,7 @@ export function IndiaNetworkMap({ stateIntel }) {
         </div>
 
         {/* ── Detail Panel ── */}
-        <div className="space-y-4 max-h-[580px] overflow-y-auto custom-scrollbar">
+        <div className="space-y-4 max-h-[580px] overflow-y-auto scrollbar-thin pr-2">
           {!selectedState ? (
             <div className="space-y-3">
               <div className="rounded-[20px] border border-white/[0.07] bg-white/[0.02] p-4">

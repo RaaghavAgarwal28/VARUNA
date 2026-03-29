@@ -279,7 +279,7 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
               </div>
               <AnimatePresence>
                 {selectedNode && (
-                  <div className="shrink-0 max-h-[60%] overflow-y-auto custom-scrollbar rounded-[20px]">
+                  <div className="shrink-0 max-h-[60%] overflow-y-auto overflow-x-hidden scrollbar-thin rounded-[20px] pr-2">
                     <NodeDetailPanel
                       node={selectedNode}
                       score={scoreByAccount[selectedNodeId]}

@@ -291,7 +291,7 @@ export function DemoPipelinePanel() {
             <div className="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
           </div>
         </div>
-        <div className="p-4 bg-[rgb(5,5,5)] font-mono text-[11px] overflow-y-auto max-h-[400px] custom-scrollbar text-emerald-400">
+        <div className="p-4 bg-[rgb(5,5,5)] font-mono text-[11px] overflow-y-auto max-h-[400px] scrollbar-thin text-emerald-400">
           <pre className="whitespace-pre-wrap word-break">
 <span className="text-slate-400">{getExecutionTrace()}</span>
 {JSON.stringify(getCurrentPayload(), null, 2)}

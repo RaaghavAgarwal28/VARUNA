@@ -620,11 +620,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
             </motion.div>
           )}
 
-          {/* Node count badge */}
-          <div className="absolute top-4 right-4 z-20 rounded-xl border border-white/[0.07] bg-black/80 backdrop-blur-xl px-3 py-2 text-[10px] text-white/40">
-            <span className="text-white font-semibold">{visibleGraph.nodes.length}</span> nodes ·{" "}
-            <span className="text-white font-semibold">{visibleGraph.links.length}</span> edges
-          </div>
+          {/* Node count moved to right panel */}
 
           {/* Legend */}
           <div className="absolute bottom-4 left-4 z-20 rounded-xl border border-white/[0.07] bg-black/80 backdrop-blur-xl p-3 text-[10px]">
@@ -681,8 +677,16 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
             }}
           />
 
-          {/* ── Right Panel: Node Inspector + Stats (overlaid on graph) ── */}
-          <div className="absolute top-4 right-4 z-20 w-[260px] space-y-3 max-h-[calc(100%-2rem)] overflow-y-auto custom-scrollbar">
+          {/* ── Right Panel: Stats & Inspector (overlaid on graph) ── */}
+          <div className="absolute top-4 right-4 z-20 w-[280px] space-y-4 max-h-[calc(100%-2rem)] overflow-y-auto overflow-x-hidden scrollbar-thin pr-2 pb-4">
+            
+            {/* Global Node & Edge Count */}
+            <div className="rounded-xl border border-white/[0.07] bg-black/80 backdrop-blur-xl px-4 py-3 flex justify-between items-center text-xs text-white/40">
+              <div><span className="text-white font-semibold text-lg">{visibleGraph.nodes.length}</span> nodes</div>
+              <div className="h-4 w-px bg-white/10" />
+              <div><span className="text-white font-semibold text-lg">{visibleGraph.links.length}</span> edges</div>
+            </div>
+
             <AnimatePresence mode="wait">
               {activeNodeData ? (
                 <motion.div
