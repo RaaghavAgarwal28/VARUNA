@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function TimelinePanel({ timeline }) {
   return (
-    <div className="panel p-5">
+    <div className="panel p-5 h-full flex flex-col justify-between">
       <div className="mb-4 flex items-center justify-between">
         <div>
           <div className="panel-heading">Replayable Scenario Timeline</div>

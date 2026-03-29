@@ -3,7 +3,7 @@ import { Brain, Activity, Flag } from "lucide-react";
 
 export function SentinelPanel({ scores, onSelectAccount }) {
   return (
-    <div className="panel p-5">
+    <div className="panel p-5 h-full flex flex-col">
       <div className="mb-4">
         <div className="panel-heading">VARUNA Sentinel</div>
         <div className="text-sm text-white/40">

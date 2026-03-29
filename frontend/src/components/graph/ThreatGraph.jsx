@@ -112,10 +112,19 @@ export function ThreatGraph({ graph, selectedCase, onNodeClick, selectedAccount 
       linkForce.distance(80).strength(0.5);
     }
 
-    // Auto zoom-to-fit once
+    // Auto zoom into the mule/fraud cluster on first load
     if (!fittedRef.current) {
       fittedRef.current = true;
-      setTimeout(() => fg.zoomToFit(400, 50), 1800);
+      setTimeout(() => {
+        // Zoom to just the fraud nodes (mule, victim, sink, suspect) for a tighter initial view
+        const fraudTypes = new Set(["mule", "victim", "sink", "suspect"]);
+        const hasFraud = data.nodes.some(n => fraudTypes.has(n.node_type));
+        if (hasFraud) {
+          fg.zoomToFit(1000, 60, (node) => fraudTypes.has(node.node_type));
+        } else {
+          fg.zoomToFit(800, 50);
+        }
+      }, 1800);
     }
   }, [data]);
 

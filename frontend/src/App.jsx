@@ -32,6 +32,7 @@ import { DemoPipelinePanel } from "./components/panels/DemoPipelinePanel";
 import { LoginScreen } from "./components/auth/LoginScreen";
 import { LandingPage } from "./components/landing/LandingPage";
 import { CrystallineCube } from "./components/ui/CrystallineCube";
+import { DottedSurface } from "./components/ui/DottedSurface";
 import { useAuth } from "./context/AuthContext";
 import { useDashboardData } from "./hooks/useDashboardData";
 import { buildBankIntel, buildStateIntel } from "./lib/bankIntel";
@@ -132,6 +133,9 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
 
   return (
     <Shell>
+      {/* Ambient particle wave background */}
+      <DottedSurface className="opacity-40" />
+
       {/* ─── HEADER — with WebGL crystalline cube backdrop ─── */}
       <header className="relative mb-6 overflow-hidden rounded-[32px] border border-white/[0.07] bg-white/[0.03] p-6 backdrop-blur-xl xl:flex-row xl:flex xl:items-end xl:justify-between">
         {/* Crystalline WebGL backdrop filling the header */}
@@ -211,7 +215,7 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
         <div className="flex flex-wrap gap-3">
           {[
             { id: "command", label: "Command Center" },
-            { id: "muleHunter3d", label: "Mule Hunter 3D", icon: Shield },
+            { id: "muleHunter3d", label: "3D Network", icon: Shield },
             { id: "demo", label: "Live Simulation", icon: PlayCircle },
             { id: "ml", label: "ML Models", icon: Brain },
             { id: "security", label: "Security", icon: Shield },
@@ -267,17 +271,21 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
 
       {activeDashboard === "command" && (
         <>
-          <section className="mb-6 grid gap-6 xl:grid-cols-[1.4fr_0.8fr]">
-            <ThreatGraph graph={data.graph} selectedCase={activeCase} onNodeClick={handleSelectAccount} />
-            <div className="space-y-6">
-              <EventFeed events={data.event_feed} />
+          <section className="mb-6 grid gap-6 xl:grid-cols-[1.4fr_0.8fr] items-stretch">
+            <ThreatGraph graph={data.graph} selectedCase={activeCase} onNodeClick={handleSelectAccount} selectedAccount={selectedNodeId} />
+            <div className="flex flex-col h-[580px] space-y-6">
+              <div className="flex-1 overflow-hidden">
+                <EventFeed events={data.event_feed} />
+              </div>
               <AnimatePresence>
                 {selectedNode && (
-                  <NodeDetailPanel
-                    node={selectedNode}
-                    score={scoreByAccount[selectedNodeId]}
-                    onClose={() => setSelectedNodeId(null)}
-                  />
+                  <div className="shrink-0 max-h-[60%] overflow-y-auto custom-scrollbar rounded-[20px]">
+                    <NodeDetailPanel
+                      node={selectedNode}
+                      score={scoreByAccount[selectedNodeId]}
+                      onClose={() => setSelectedNodeId(null)}
+                    />
+                  </div>
                 )}
               </AnimatePresence>
             </div>
@@ -287,15 +295,17 @@ function AuthenticatedApp({ user, logout, authFetch, isAdmin }) {
             <IndiaNetworkMap stateIntel={stateIntel} />
           </section>
 
-          <section className="mb-6 grid gap-6 xl:grid-cols-[1.25fr_0.95fr]">
-            <div className="space-y-6">
+          <section className="mb-6 grid gap-6 xl:grid-cols-[1.25fr_0.95fr] items-stretch">
+            <div className="flex flex-col space-y-6">
               <CaseSpotlight caseItem={activeCase} />
-              <TimelinePanel timeline={data.timeline} />
+              <div className="flex-1">
+                <TimelinePanel timeline={data.timeline} />
+              </div>
             </div>
             <SentinelPanel scores={data.sentinel_scores} onSelectAccount={handleSelectAccount} />
           </section>
 
-          <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+          <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr] items-stretch">
             <InterceptPanel intercept={data.intercept} />
             <BriefPanel brief={data.brief} caseItem={activeCase} />
           </section>

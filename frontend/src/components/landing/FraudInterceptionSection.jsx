@@ -83,10 +83,10 @@ export function FraudInterceptionSection() {
             ))}
           </motion.div>
 
-          {/* Right: Visual mockup card */}
+          {/* Right: Visual mockup card with real VARUNA data */}
           <motion.div style={{ y: rightY }} className="relative">
-            <div className="aspect-[3/4] overflow-hidden rounded-[40px] border border-black/10 bg-white p-10 shadow-[0_40px_80px_rgba(0,0,0,0.06)]">
-              <div className="flex items-center justify-between border-b border-black/8 pb-7">
+            <div className="overflow-hidden rounded-[40px] border border-black/10 bg-white p-8 md:p-10 shadow-[0_40px_80px_rgba(0,0,0,0.06)]">
+              <div className="flex items-center justify-between border-b border-black/8 pb-6">
                 <div className="font-display text-[1.1rem] font-bold tracking-[-0.03em] text-[#111]">
                   Active Trace ID: <span className="text-[#FF4500]">#4892</span>
                 </div>
@@ -95,31 +95,67 @@ export function FraudInterceptionSection() {
                 </span>
               </div>
 
-              <div className="mt-7 space-y-4">
-                {[90, 65, 45].map((w, i) => (
+              {/* ML Brain Scores — real data representation */}
+              <div className="mt-6 space-y-3">
+                {[
+                  { label: "GAT Structural Match", score: 92, color: "#FF4500" },
+                  { label: "LSTM Temporal Signal", score: 78, color: "#111" },
+                  { label: "EIF Anomaly Index", score: 64, color: "#111" },
+                  { label: "RBI 10-Flag Engine", score: 85, color: "#FF4500" },
+                ].map((m, i) => (
                   <motion.div
-                    key={i}
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${w}%` }}
+                    key={m.label}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1.2, delay: 0.4 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                    className="h-14 rounded-2xl bg-black/5"
-                  />
+                    transition={{ duration: 0.6, delay: 0.3 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-[0.78rem] font-semibold tracking-[-0.01em] text-[#333]">{m.label}</span>
+                      <span className="text-[0.78rem] font-bold" style={{ color: m.color }}>{m.score}%</span>
+                    </div>
+                    <div className="h-2.5 w-full rounded-full bg-black/5 overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${m.score}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.2, delay: 0.5 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                        className="h-full rounded-full"
+                        style={{ background: m.score > 80 ? "#FF4500" : "#111" }}
+                      />
+                    </div>
+                  </motion.div>
                 ))}
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "55%" }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.2, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
-                  className="h-14 rounded-2xl bg-[#FF4500]/15"
-                />
               </div>
 
-              {/* Chain steps */}
-              <div className="mt-8 space-y-3">
-                {["Detect", "Score", "Trace", "Freeze"].map((step, i) => (
+              {/* Fusion formula */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+                className="mt-5 rounded-2xl bg-black/[0.03] border border-black/6 px-5 py-4"
+              >
+                <div className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-black/30 mb-2">Cross-Pillar Fusion</div>
+                <div className="font-mono text-[0.78rem] text-[#333] leading-relaxed">
+                  (GAT×0.35) + (LSTM×0.25) + (EIF×0.20) + (Rules×0.20)
+                </div>
+                <div className="mt-2 flex items-center gap-2">
+                  <div className="text-[1.3rem] font-display font-bold text-[#FF4500]">87.4</div>
+                  <div className="text-[0.72rem] text-black/40 font-semibold">/100 Risk Score</div>
+                </div>
+              </motion.div>
+
+              {/* Chain steps — with real descriptions */}
+              <div className="mt-5 space-y-2.5">
+                {[
+                  { step: "Detect", desc: "Mule chain pattern identified in 340ms" },
+                  { step: "Score", desc: "4-brain ensemble risk: 87.4/100" },
+                  { step: "Trace", desc: "3-hop chain across HDFC → SBI → PNB" },
+                  { step: "Freeze", desc: "Cross-bank lien initiated, ₹14.2L held" },
+                ].map((item, i) => (
                   <motion.div
-                    key={step}
+                    key={item.step}
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -129,9 +165,11 @@ export function FraudInterceptionSection() {
                     <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#FF4500]/30 bg-[#FF4500]/10 text-[0.7rem] font-bold text-[#FF4500]">
                       {i + 1}
                     </div>
-                    <div className="text-sm font-semibold tracking-[-0.01em] text-[#333]">{step}</div>
-                    <div className="flex-1 h-px bg-black/8" />
-                    <div className="h-2 w-2 rounded-full bg-[#FF4500]/40" />
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-semibold tracking-[-0.01em] text-[#333]">{item.step}</div>
+                      <div className="text-[0.72rem] text-[#888] truncate">{item.desc}</div>
+                    </div>
+                    <div className="h-2 w-2 rounded-full bg-[#FF4500]/40 shrink-0" />
                   </motion.div>
                 ))}
               </div>

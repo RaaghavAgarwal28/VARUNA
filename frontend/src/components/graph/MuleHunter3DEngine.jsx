@@ -470,13 +470,13 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
           <div>
             <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-red/20 bg-red/10 px-3 py-1 text-xs uppercase tracking-[0.28em] text-red">
               <Shield size={12} />
-              Mule Hunter 3D Engine
+              3D Network Engine
             </div>
             <h2 className="font-display text-3xl text-white">
               3D Fraud Network Intelligence
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-white/40">
-              Immersive 3D visualization engine ported from MULE_HUNTER. Detect ring structures (Star, Chain, Cycle, Dense Cluster),
+              Immersive 3D visualization engine. Detect ring structures (Star, Chain, Cycle, Dense Cluster),
               assign node roles (HUB, BRIDGE, MULE), and analyze fraud networks in real-time 3D space.
             </p>
           </div>
@@ -492,7 +492,7 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
       </div>
 
       {/* ── Main Engine Area ── */}
-      <div className="grid gap-6 xl:grid-cols-[280px_1fr_280px]">
+      <div className="grid gap-6 xl:grid-cols-[280px_1fr]">
 
         {/* ── Left Panel: Controls + Rings ── */}
         <div className="space-y-4">
@@ -680,155 +680,154 @@ export function MuleHunter3DEngine({ graph, onNodeClick, sentinelScores }) {
               }
             }}
           />
-        </div>
 
-        {/* ── Right Panel: Node Inspector + Ring Stats ── */}
-        <div className="space-y-4">
-          {/* Node Inspector */}
-          <AnimatePresence mode="wait">
-            {activeNodeData ? (
-              <motion.div
-                key={activeNodeData.id}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                className="panel p-4"
-              >
-                <div className="mb-3 flex items-center justify-between">
-                  <div className="text-xs uppercase tracking-[0.2em] text-[#FF4500] flex items-center gap-1.5">
+          {/* ── Right Panel: Node Inspector + Stats (overlaid on graph) ── */}
+          <div className="absolute top-4 right-4 z-20 w-[260px] space-y-3 max-h-[calc(100%-2rem)] overflow-y-auto custom-scrollbar">
+            <AnimatePresence mode="wait">
+              {activeNodeData ? (
+                <motion.div
+                  key={activeNodeData.id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  className="rounded-xl border border-white/[0.07] bg-black/80 backdrop-blur-xl p-4"
+                >
+                  <div className="mb-3 flex items-center justify-between">
+                    <div className="text-xs uppercase tracking-[0.2em] text-[#FF4500] flex items-center gap-1.5">
+                      <Shield size={12} />
+                      Node Inspector
+                    </div>
+                    <button onClick={() => { setActiveNodeId(null); }} className="text-white/40 hover:text-white text-sm">✕</button>
+                  </div>
+
+                  <div className="font-display text-xl text-white mb-1">{activeNodeData.id}</div>
+                  <div className="text-xs text-white/40 mb-4">
+                    {activeNodeData.bank || "Unknown Bank"} · {(activeNodeData.node_type || "unknown").toUpperCase()} · {activeNodeData.status || "active"}
+                  </div>
+
+                  {/* Status badges */}
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    <span className={`rounded-full px-2 py-0.5 text-[10px] uppercase ${activeNodeData.is_anomalous ? "bg-red/10 border border-red/30 text-red" : "bg-[#FF4500]/10 border border-[#FF4500]/30 text-[#FF4500]"
+                      }`}>
+                      {activeNodeData.is_anomalous ? "🔴 Anomalous" : "🟢 Normal"}
+                    </span>
+                    {activeNodeData.role && (
+                      <span className="rounded-full px-2 py-0.5 text-[10px] uppercase border" style={{
+                        borderColor: ROLE_COLORS[activeNodeData.role] + "50",
+                        background: ROLE_COLORS[activeNodeData.role] + "15",
+                        color: ROLE_COLORS[activeNodeData.role],
+                      }}>
+                        {ROLE_ICONS[activeNodeData.role]} {activeNodeData.role}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* ML scores */}
+                  {activeScore && (
+                    <div className="space-y-2 mb-4">
+                      <ScoreRow icon={<Brain size={12} />} label="GAT Score" value={`${((activeScore.gat_score ?? 0) * 100).toFixed(1)}%`} color={activeScore.gat_score > 0.7 ? "#ef4444" : "#5ee9d5"} />
+                      <ScoreRow icon={<Activity size={12} />} label="LSTM Score" value={`${((activeScore.lstm_score ?? 0) * 100).toFixed(1)}%`} color={activeScore.lstm_score > 0.7 ? "#ef4444" : "#5ee9d5"} />
+                      <ScoreRow icon={<AlertTriangle size={12} />} label="Risk Score" value={activeScore.risk_score?.toFixed(1) ?? "N/A"} color={activeScore.risk_score > 70 ? "#ef4444" : "#5ee9d5"} />
+                    </div>
+                  )}
+
+                  {/* F1-F10 flags */}
+                  {activeScore?.flag_hits?.length > 0 && (
+                    <div className="mb-4">
+                      <div className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-2">Flag Hits</div>
+                      <div className="flex flex-wrap gap-1">
+                        {activeScore.flag_hits.map((flag) => (
+                          <span key={flag} className="rounded-lg border border-red/30 bg-red/10 px-2 py-0.5 text-[10px] text-red font-mono">{flag}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Account details */}
+                  <div className="space-y-1.5">
+                    <DetailRow label="Risk Score" value={activeNodeData.risk_score ?? "N/A"} />
+                    <DetailRow label="Balance" value={`₹${activeNodeData.balance?.toLocaleString?.() ?? "0"}`} />
+                    <DetailRow label="Neighbors" value={focusData.neighborSet.size - 1} />
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="empty"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="rounded-xl border border-white/[0.07] bg-black/80 backdrop-blur-xl p-4"
+                >
+                  <div className="text-xs uppercase tracking-[0.2em] text-white/30 flex items-center gap-1.5 mb-3">
                     <Shield size={12} />
                     Node Inspector
                   </div>
-                  <button onClick={() => { setActiveNodeId(null); }} className="text-white/40 hover:text-white text-sm">✕</button>
-                </div>
-
-                <div className="font-display text-xl text-white mb-1">{activeNodeData.id}</div>
-                <div className="text-xs text-white/40 mb-4">
-                  {activeNodeData.bank || "Unknown Bank"} · {(activeNodeData.node_type || "unknown").toUpperCase()} · {activeNodeData.status || "active"}
-                </div>
-
-                {/* Status badges */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  <span className={`rounded-full px-2 py-0.5 text-[10px] uppercase ${activeNodeData.is_anomalous ? "bg-red/10 border border-red/30 text-red" : "bg-[#FF4500]/10 border border-[#FF4500]/30 text-[#FF4500]"
-                    }`}>
-                    {activeNodeData.is_anomalous ? "🔴 Anomalous" : "🟢 Normal"}
-                  </span>
-                  {activeNodeData.role && (
-                    <span className="rounded-full px-2 py-0.5 text-[10px] uppercase border" style={{
-                      borderColor: ROLE_COLORS[activeNodeData.role] + "50",
-                      background: ROLE_COLORS[activeNodeData.role] + "15",
-                      color: ROLE_COLORS[activeNodeData.role],
-                    }}>
-                      {ROLE_ICONS[activeNodeData.role]} {activeNodeData.role}
-                    </span>
-                  )}
-                </div>
-
-                {/* ML scores */}
-                {activeScore && (
-                  <div className="space-y-2 mb-4">
-                    <ScoreRow icon={<Brain size={12} />} label="GAT Score" value={`${((activeScore.gat_score ?? 0) * 100).toFixed(1)}%`} color={activeScore.gat_score > 0.7 ? "#ef4444" : "#5ee9d5"} />
-                    <ScoreRow icon={<Activity size={12} />} label="LSTM Score" value={`${((activeScore.lstm_score ?? 0) * 100).toFixed(1)}%`} color={activeScore.lstm_score > 0.7 ? "#ef4444" : "#5ee9d5"} />
-                    <ScoreRow icon={<AlertTriangle size={12} />} label="Risk Score" value={activeScore.risk_score?.toFixed(1) ?? "N/A"} color={activeScore.risk_score > 70 ? "#ef4444" : "#5ee9d5"} />
+                  <div className="text-center py-8 text-xs text-white/25">
+                    <Hexagon size={24} className="mx-auto mb-2 opacity-30" />
+                    Click a node in the 3D graph to inspect it
                   </div>
-                )}
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-                {/* F1-F10 flags */}
-                {activeScore?.flag_hits?.length > 0 && (
-                  <div className="mb-4">
-                    <div className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-2">Flag Hits</div>
-                    <div className="flex flex-wrap gap-1">
-                      {activeScore.flag_hits.map((flag) => (
-                        <span key={flag} className="rounded-lg border border-red/30 bg-red/10 px-2 py-0.5 text-[10px] text-red font-mono">{flag}</span>
-                      ))}
-                    </div>
+            {/* Ring Detection Stats */}
+            <div className="rounded-xl border border-white/[0.07] bg-black/80 backdrop-blur-xl p-4">
+              <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30 flex items-center gap-1.5">
+                <Target size={12} />
+                Ring Detection Summary
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <MiniStat icon="🔄" label="Cycles" value={stats.cyclesFound ?? 0} color="#ef4444" />
+                <MiniStat icon="⭐" label="Stars" value={stats.starsFound ?? 0} color="#f59e0b" />
+                <MiniStat icon="🔗" label="Chains" value={stats.chainsFound ?? 0} color="#8b5cf6" />
+                <MiniStat icon="🕸️" label="Clusters" value={stats.denseClustersFound ?? 0} color="#ec4899" />
+              </div>
+            </div>
+
+            {/* Role Distribution */}
+            <div className="rounded-xl border border-white/[0.07] bg-black/80 backdrop-blur-xl p-4">
+              <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30">Role Distribution</div>
+              {(() => {
+                const roleCounts = { HUB: 0, BRIDGE: 0, MULE: 0 };
+                roles.forEach((role) => { if (roleCounts[role] !== undefined) roleCounts[role]++; });
+                return (
+                  <div className="space-y-2">
+                    {Object.entries(roleCounts).map(([role, count]) => (
+                      <div key={role} className="flex items-center justify-between text-xs">
+                        <div className="flex items-center gap-2 text-white/50">
+                          <span className="w-2 h-2 rounded-full" style={{ background: ROLE_COLORS[role] }} />
+                          {ROLE_ICONS[role]} {role}
+                        </div>
+                        <div className="text-white font-semibold">{count}</div>
+                      </div>
+                    ))}
                   </div>
-                )}
-
-                {/* Account details */}
-                <div className="space-y-1.5">
-                  <DetailRow label="Risk Score" value={activeNodeData.risk_score ?? "N/A"} />
-                  <DetailRow label="Balance" value={`₹${activeNodeData.balance?.toLocaleString?.() ?? "0"}`} />
-                  <DetailRow label="Neighbors" value={focusData.neighborSet.size - 1} />
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div
-                key="empty"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="panel p-4"
-              >
-                <div className="text-xs uppercase tracking-[0.2em] text-white/30 flex items-center gap-1.5 mb-3">
-                  <Shield size={12} />
-                  Node Inspector
-                </div>
-                <div className="text-center py-8 text-xs text-white/25">
-                  <Hexagon size={24} className="mx-auto mb-2 opacity-30" />
-                  Click a node in the 3D graph to inspect it
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Ring Detection Stats */}
-          <div className="panel p-4">
-            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30 flex items-center gap-1.5">
-              <Target size={12} />
-              Ring Detection Summary
+                );
+              })()}
             </div>
-            <div className="grid grid-cols-2 gap-2">
-              <MiniStat icon="🔄" label="Cycles" value={stats.cyclesFound ?? 0} color="#ef4444" />
-              <MiniStat icon="⭐" label="Stars" value={stats.starsFound ?? 0} color="#f59e0b" />
-              <MiniStat icon="🔗" label="Chains" value={stats.chainsFound ?? 0} color="#8b5cf6" />
-              <MiniStat icon="🕸️" label="Clusters" value={stats.denseClustersFound ?? 0} color="#ec4899" />
+
+            {/* Node Type Distribution */}
+            <div className="rounded-xl border border-white/[0.07] bg-black/80 backdrop-blur-xl p-4">
+              <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30">Node Types</div>
+              {(() => {
+                const typeCounts = {};
+                (graph?.nodes || []).forEach((n) => {
+                  typeCounts[n.node_type] = (typeCounts[n.node_type] || 0) + 1;
+                });
+                return (
+                  <div className="space-y-2">
+                    {Object.entries(typeCounts).map(([type, count]) => (
+                      <div key={type} className="flex items-center justify-between text-xs">
+                        <div className="flex items-center gap-2 text-white/50">
+                          <span className="w-2 h-2 rounded-full" style={{ background: NODE_COLORS[type] || NODE_COLORS.default }} />
+                          <span className="capitalize">{type}</span>
+                        </div>
+                        <div className="text-white font-semibold">{count}</div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
             </div>
-          </div>
-
-          {/* Role Distribution */}
-          <div className="panel p-4">
-            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30">Role Distribution</div>
-            {(() => {
-              const roleCounts = { HUB: 0, BRIDGE: 0, MULE: 0 };
-              roles.forEach((role) => { if (roleCounts[role] !== undefined) roleCounts[role]++; });
-              return (
-                <div className="space-y-2">
-                  {Object.entries(roleCounts).map(([role, count]) => (
-                    <div key={role} className="flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-2 text-white/50">
-                        <span className="w-2 h-2 rounded-full" style={{ background: ROLE_COLORS[role] }} />
-                        {ROLE_ICONS[role]} {role}
-                      </div>
-                      <div className="text-white font-semibold">{count}</div>
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
-          </div>
-
-          {/* Node Type Distribution */}
-          <div className="panel p-4">
-            <div className="mb-3 text-xs uppercase tracking-[0.2em] text-white/30">Node Types</div>
-            {(() => {
-              const typeCounts = {};
-              (graph?.nodes || []).forEach((n) => {
-                typeCounts[n.node_type] = (typeCounts[n.node_type] || 0) + 1;
-              });
-              return (
-                <div className="space-y-2">
-                  {Object.entries(typeCounts).map(([type, count]) => (
-                    <div key={type} className="flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-2 text-white/50">
-                        <span className="w-2 h-2 rounded-full" style={{ background: NODE_COLORS[type] || NODE_COLORS.default }} />
-                        <span className="capitalize">{type}</span>
-                      </div>
-                      <div className="text-white font-semibold">{count}</div>
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
           </div>
         </div>
       </div>

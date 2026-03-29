@@ -387,10 +387,11 @@ export function FraudGraph3D({ graph, onNodeClick }) {
         {/* Bundle layout toggle */}
         <button
           onClick={handleToggleBundle}
-          className={`mt-2 w-full py-2 text-xs rounded-lg border transition ${isBundled
+          className={`mt-2 w-full py-2 text-xs rounded-lg border transition ${
+            isBundled
               ? "bg-[#FF4500]/10 border-[#FF4500]/30 text-[#FF4500]"
               : "bg-white/[0.05] hover:bg-white/[0.1] border-white/[0.07] text-white/50"
-            }`}
+          }`}
         >
           {isBundled ? "⬡ Bundle Layout ON" : "⬡ Bundle Layout OFF"}
         </button>
